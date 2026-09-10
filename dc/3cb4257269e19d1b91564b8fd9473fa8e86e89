@@ -1,0 +1,900 @@
+README.md
+  s_e415c3405a27de::t_2dc7176f7e9093 3-11
+  s_e415c3405a27de::t_2a60d86d3520df 1-2
+  s_e415c3405a27de::t_e64a7c712054cc 12-14
+  s_e415c3405a27de::t_4790ff13c013e9 15-121
+.snyk
+  s_e415c3405a27de::t_6400cd477b5f30 1-13
+MANIFEST.in
+  s_e415c3405a27de::t_08aa7cde0b19ab 1-2
+check_version.py
+  s_e415c3405a27de::t_e79af3c9ae468c 1-33
+data_integration_sources_examples/__init__.py
+  s_e415c3405a27de::t_279d57540b6647 1-4
+data_integration_sources_examples/examples/custom_report/adobe_analytics/analytics/bigquery/get.json
+  s_e415c3405a27de::t_2986a1323d3516 1-266
+data_integration_sources_examples/examples/custom_report/adobe_analytics/analytics/bigquery/post.json
+  s_e415c3405a27de::t_97d5cac58fd45c 1-248
+data_integration_sources_examples/examples/custom_report/adobe_analytics/analytics/redshift/get.json
+  s_e415c3405a27de::t_757343b914366d 1-288
+data_integration_sources_examples/examples/custom_report/adobe_analytics/analytics/redshift/post.json
+  s_e415c3405a27de::t_b431c56a204bfe 1-301
+data_integration_sources_examples/examples/custom_report/adobe_analytics/analytics/s3/get.json
+  s_e415c3405a27de::t_e7afa36468fe0f 1-116
+data_integration_sources_examples/examples/custom_report/adobe_analytics/analytics/s3/post.json
+  s_e415c3405a27de::t_0ffe38d5326561 1-101
+data_integration_sources_examples/examples/custom_report/adobe_analytics/analytics/snowflake/get.json
+  s_e415c3405a27de::t_424d86e5958640 1-273
+data_integration_sources_examples/examples/custom_report/adobe_analytics/analytics/snowflake/post.json
+  s_e415c3405a27de::t_501a5bd83a759a 1-255
+data_integration_sources_examples/examples/custom_report/adobe_analytics/users/snowflake/get.json
+  s_e415c3405a27de::t_9f3f47a86f4f31 1-851
+data_integration_sources_examples/examples/custom_report/adobe_analytics/users/snowflake/post.json
+  s_e415c3405a27de::t_612ce72d74bfcb 1-833
+data_integration_sources_examples/examples/custom_report/display_video_360/entity_lineitems/snowflake/get.json
+  s_e415c3405a27de::t_ca1b8d40086836 1-923
+data_integration_sources_examples/examples/custom_report/display_video_360/entity_lineitems/snowflake/post.json
+  s_e415c3405a27de::t_7e734ca89020a9 1-905
+data_integration_sources_examples/examples/custom_report/display_video_360/entity_sdf/snowflake/get.json
+  s_e415c3405a27de::t_b28b7daee82c56 1-169
+data_integration_sources_examples/examples/custom_report/display_video_360/entity_sdf/snowflake/post.json
+  s_e415c3405a27de::t_5a968be97295db 1-151
+data_integration_sources_examples/examples/custom_report/display_video_360/existing/snowflake/get.json
+  s_e415c3405a27de::t_ce1319c2c30168 1-355
+data_integration_sources_examples/examples/custom_report/display_video_360/existing/snowflake/post.json
+  s_e415c3405a27de::t_e548fc3b3a3d27 1-339
+data_integration_sources_examples/examples/custom_report/display_video_360/new/snowflake/get.json
+  s_e415c3405a27de::t_3729331820018f 1-248
+data_integration_sources_examples/examples/custom_report/display_video_360/new/snowflake/post.json
+  s_e415c3405a27de::t_a6bfeb235dded0 1-229
+data_integration_sources_examples/examples/custom_report/facebook_ads/ad_account/snowflake/get.json
+  s_e415c3405a27de::t_eeab9b9387c78a 1-974
+data_integration_sources_examples/examples/custom_report/facebook_ads/ad_account/snowflake/post.json
+  s_e415c3405a27de::t_0930edc285bb3d 1-958
+data_integration_sources_examples/examples/custom_report/facebook_ads/adsets/snowflake/get.json
+  s_e415c3405a27de::t_71d45e371a8851 1-259
+data_integration_sources_examples/examples/custom_report/facebook_ads/adsets/snowflake/post.json
+  s_e415c3405a27de::t_4a830ce61ab4a4 1-243
+data_integration_sources_examples/examples/custom_report/facebook_ads/campaigns/snowflake/get.json
+  s_e415c3405a27de::t_15f39fd91cacd8 1-574
+data_integration_sources_examples/examples/custom_report/facebook_ads/campaigns/snowflake/post.json
+  s_e415c3405a27de::t_4b14ee2469f75a 1-558
+data_integration_sources_examples/examples/custom_report/facebook_ads/insight_report/snowflake/get.json
+  s_e415c3405a27de::t_640d936402d338 1-442
+data_integration_sources_examples/examples/custom_report/facebook_ads/insight_report/snowflake/post.json
+  s_e415c3405a27de::t_e2109bc73c000f 1-426
+data_integration_sources_examples/examples/custom_report/facebook_social/feed/snowflake/get.json
+  s_e415c3405a27de::t_4ead384ea013d8 1-1243
+data_integration_sources_examples/examples/custom_report/facebook_social/feed/snowflake/post.json
+  s_e415c3405a27de::t_050c9ae1c2ea39 1-1229
+data_integration_sources_examples/examples/custom_report/facebook_social/insights/snowflake/get.json
+  s_e415c3405a27de::t_12f5d7c9a75323 1-301
+data_integration_sources_examples/examples/custom_report/facebook_social/insights/snowflake/post.json
+  s_e415c3405a27de::t_f565bda8490bb4 1-286
+data_integration_sources_examples/examples/custom_report/facebook_social/insights_post/snowflake/get.json
+  s_e415c3405a27de::t_8df572fbce8815 1-945
+data_integration_sources_examples/examples/custom_report/facebook_social/insights_post/snowflake/post.json
+  s_e415c3405a27de::t_9c2042dc2a18a3 1-934
+data_integration_sources_examples/examples/custom_report/facebook_social/insights_video/snowflake/get.json
+  s_e415c3405a27de::t_8f7ca22323a41b 1-2971
+data_integration_sources_examples/examples/custom_report/facebook_social/insights_video/snowflake/post.json
+  s_e415c3405a27de::t_a3ddde799d1adc 1-2958
+data_integration_sources_examples/examples/custom_report/facebook_social/pages/snowflake/get.json
+  s_e415c3405a27de::t_5eba9f2f1ee3d8 1-224
+data_integration_sources_examples/examples/custom_report/facebook_social/pages/snowflake/post.json
+  s_e415c3405a27de::t_130a8d902f84f3 1-207
+data_integration_sources_examples/examples/custom_report/google_ads/accessible_bidding_strategy/bq/get.json
+  s_e415c3405a27de::t_e83a9f256361ce 1-278
+data_integration_sources_examples/examples/custom_report/google_ads/accessible_bidding_strategy/bq/post.json
+  s_e415c3405a27de::t_b7c6f8dc206790 1-276
+data_integration_sources_examples/examples/custom_report/google_ads/ad/snowflake/get.json
+  s_e415c3405a27de::t_6629fc926cf524 1-453
+data_integration_sources_examples/examples/custom_report/google_ads/ad/snowflake/post.json
+  s_e415c3405a27de::t_76ea09d344beb9 1-450
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_ad/snowflake/get.json
+  s_e415c3405a27de::t_c74628769f9a9e 1-709
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_ad/snowflake/post.json
+  s_e415c3405a27de::t_b346dbe2410df6 1-697
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_ad_asset_combination_view/snowflake/get.json
+  s_e415c3405a27de::t_d09143d4289974 1-548
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_ad_asset_combination_view/snowflake/post.json
+  s_e415c3405a27de::t_7e2ec35bad8f40 1-547
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_ad_asset_view/snowflake/get.json
+  s_e415c3405a27de::t_e8ffdf308da120 1-747
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_ad_asset_view/snowflake/post.json
+  s_e415c3405a27de::t_f5f34c549ffb2c 1-738
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_ad_label/snowflake/get.json
+  s_e415c3405a27de::t_763c17fdc6c41f 1-454
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_ad_label/snowflake/post.json
+  s_e415c3405a27de::t_882f3687ba9a13 1-452
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_asset/s3/get.json
+  s_e415c3405a27de::t_bb8a70640ce89c 1-158
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_asset/s3/post.json
+  s_e415c3405a27de::t_d046892bce79ea 1-159
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_criterion/s3/get.json
+  s_e415c3405a27de::t_368056c6500942 1-177
+data_integration_sources_examples/examples/custom_report/google_ads/ad_group_criterion/s3/post.json
+  s_e415c3405a27de::t_94055f02c7286c 1-177
+data_integration_sources_examples/examples/custom_report/google_ads/asset/databricks/get.json
+  s_e415c3405a27de::t_68f5d057f2b01b 1-347
+data_integration_sources_examples/examples/custom_report/google_ads/asset/databricks/post.json
+  s_e415c3405a27de::t_51ac92e5fb339f 1-342
+data_integration_sources_examples/examples/custom_report/google_ads/asset_group_asset/snowflake/get.json
+  s_e415c3405a27de::t_98b0acbb97e89e 1-512
+data_integration_sources_examples/examples/custom_report/google_ads/asset_group_asset/snowflake/post.json
+  s_e415c3405a27de::t_29ddce35812230 1-510
+data_integration_sources_examples/examples/custom_report/google_ads/asset_set_asset/snowflake/get.json
+  s_e415c3405a27de::t_1bace3c4b14af3 1-252
+data_integration_sources_examples/examples/custom_report/google_ads/asset_set_asset/snowflake/post.json
+  s_e415c3405a27de::t_920734677884aa 1-249
+data_integration_sources_examples/examples/custom_report/google_ads/bidding_strategy/s3/get.json
+  s_e415c3405a27de::t_a06ba63433738e 1-231
+data_integration_sources_examples/examples/custom_report/google_ads/bidding_strategy/s3/post.json
+  s_e415c3405a27de::t_4e7bff869f6d4d 1-231
+data_integration_sources_examples/examples/custom_report/google_ads/campaign/snowflake/get.json
+  s_e415c3405a27de::t_9f7956ce7cd2b8 1-465
+data_integration_sources_examples/examples/custom_report/google_ads/campaign/snowflake/post.json
+  s_e415c3405a27de::t_b41eb817f66215 1-457
+data_integration_sources_examples/examples/custom_report/google_ads/campaign_asset/s3/get.json
+  s_e415c3405a27de::t_e9700d32bab13a 1-165
+data_integration_sources_examples/examples/custom_report/google_ads/campaign_asset/s3/post.json
+  s_e415c3405a27de::t_de23c21ecb8c1d 1-166
+data_integration_sources_examples/examples/custom_report/google_ads/campaign_criterion/databricks/get.json
+  s_e415c3405a27de::t_426aaefadfe50b 1-325
+data_integration_sources_examples/examples/custom_report/google_ads/campaign_criterion/databricks/post.json
+  s_e415c3405a27de::t_095d5b4c0a18f4 1-323
+data_integration_sources_examples/examples/custom_report/google_ads/campaign_label/snowflake/get.json
+  s_e415c3405a27de::t_73e1f7823374d8 1-413
+data_integration_sources_examples/examples/custom_report/google_ads/campaign_label/snowflake/post.json
+  s_e415c3405a27de::t_5392a12cc9c994 1-407
+data_integration_sources_examples/examples/custom_report/google_ads/change_event/snowflake/get.json
+  s_e415c3405a27de::t_ddb3555371b9aa 1-410
+data_integration_sources_examples/examples/custom_report/google_ads/change_event/snowflake/post.json
+  s_e415c3405a27de::t_7afc59867e41b1 1-404
+data_integration_sources_examples/examples/custom_report/google_ads/change_status/snowflake/get.json
+  s_e415c3405a27de::t_9553c271f9a7fa 1-370
+data_integration_sources_examples/examples/custom_report/google_ads/change_status/snowflake/post.json
+  s_e415c3405a27de::t_f1b5e06836ec37 1-363
+data_integration_sources_examples/examples/custom_report/google_ads/click_view/snowflake/get.json
+  s_e415c3405a27de::t_047589113c923a 1-342
+data_integration_sources_examples/examples/custom_report/google_ads/click_view/snowflake/post.json
+  s_e415c3405a27de::t_467ecd5b124aa2 1-337
+data_integration_sources_examples/examples/custom_report/google_ads/customer_asset/s3/get.json
+  s_e415c3405a27de::t_d29e7e2d8cd2be 1-165
+data_integration_sources_examples/examples/custom_report/google_ads/customer_asset/s3/post.json
+  s_e415c3405a27de::t_a7bde4a283f8fc 1-166
+data_integration_sources_examples/examples/custom_report/google_ads/customer_manager_link/snowflake/get.json
+  s_e415c3405a27de::t_5ece5a2761f639 1-241
+data_integration_sources_examples/examples/custom_report/google_ads/customer_manager_link/snowflake/post.json
+  s_e415c3405a27de::t_ea59079aff2a17 1-238
+data_integration_sources_examples/examples/custom_report/google_ads/customer_user_access/snowflake/get.json
+  s_e415c3405a27de::t_dfef8785a856bd 1-356
+data_integration_sources_examples/examples/custom_report/google_ads/customer_user_access/snowflake/post.json
+  s_e415c3405a27de::t_d8f7f8267ba38a 1-348
+data_integration_sources_examples/examples/custom_report/google_ads/geo_target_constant/snowflake/get.json
+  s_e415c3405a27de::t_10e0da93e13395 1-372
+data_integration_sources_examples/examples/custom_report/google_ads/geo_target_constant/snowflake/post.json
+  s_e415c3405a27de::t_5404f4a8e024ad 1-367
+data_integration_sources_examples/examples/custom_report/google_ads/geographic_view/snowflake/get.json
+  s_e415c3405a27de::t_00eb2a9033c146 1-601
+data_integration_sources_examples/examples/custom_report/google_ads/geographic_view/snowflake/post.json
+  s_e415c3405a27de::t_ba67080768eaa9 1-597
+data_integration_sources_examples/examples/custom_report/google_ads/income_range_view/snowflake/get.json
+  s_e415c3405a27de::t_ca7be012dc13ca 1-1046
+data_integration_sources_examples/examples/custom_report/google_ads/income_range_view/snowflake/post.json
+  s_e415c3405a27de::t_d86de0fb19532a 1-1032
+data_integration_sources_examples/examples/custom_report/google_ads/keyword_view/s3/get.json
+  s_e415c3405a27de::t_9347ff5dde3c82 1-441
+data_integration_sources_examples/examples/custom_report/google_ads/keyword_view/s3/post.json
+  s_e415c3405a27de::t_090fc097dd2a87 1-441
+data_integration_sources_examples/examples/custom_report/google_ads/label/snowflake/get.json
+  s_e415c3405a27de::t_b954460748a875 1-232
+data_integration_sources_examples/examples/custom_report/google_ads/label/snowflake/post.json
+  s_e415c3405a27de::t_719cecaad7dae5 1-229
+data_integration_sources_examples/examples/custom_report/google_ads/landing_page_view/snowflake/get.json
+  s_e415c3405a27de::t_a6d63f6e8120fc 1-299
+data_integration_sources_examples/examples/custom_report/google_ads/landing_page_view/snowflake/post.json
+  s_e415c3405a27de::t_fb12de13116903 1-290
+data_integration_sources_examples/examples/custom_report/google_ads/media_file/snowflake/get.json
+  s_e415c3405a27de::t_af34f3be366458 1-385
+data_integration_sources_examples/examples/custom_report/google_ads/media_file/snowflake/post.json
+  s_e415c3405a27de::t_8c74ef2869d213 1-383
+data_integration_sources_examples/examples/custom_report/google_ads/performance_max_placement_view/s3/get.json
+  s_e415c3405a27de::t_7faa2a7befa9a6 1-159
+data_integration_sources_examples/examples/custom_report/google_ads/performance_max_placement_view/s3/post.json
+  s_e415c3405a27de::t_5955a2ffcc3d30 1-160
+data_integration_sources_examples/examples/custom_report/google_ads/shared_criterion/s3/get.json
+  s_e415c3405a27de::t_e760a10d32737c 1-145
+data_integration_sources_examples/examples/custom_report/google_ads/shared_criterion/s3/post.json
+  s_e415c3405a27de::t_ec4c2f28f4bfcc 1-145
+data_integration_sources_examples/examples/custom_report/google_ads/shared_set/s3/get.json
+  s_e415c3405a27de::t_6e2f457a058f62 1-171
+data_integration_sources_examples/examples/custom_report/google_ads/shared_set/s3/post.json
+  s_e415c3405a27de::t_4c30606956c48c 1-172
+data_integration_sources_examples/examples/custom_report/google_analytics/ga4_cohort/snowflake/get.json
+  s_e415c3405a27de::t_9a2265d7cae3d3 1-276
+data_integration_sources_examples/examples/custom_report/google_analytics/ga4_cohort/snowflake/post.json
+  s_e415c3405a27de::t_57e3c6fd8574fc 1-260
+data_integration_sources_examples/examples/custom_report/google_analytics/ga4_standard/snowflake/get.json
+  s_e415c3405a27de::t_73cca6efc06707 1-327
+data_integration_sources_examples/examples/custom_report/google_analytics/ga4_standard/snowflake/post.json
+  s_e415c3405a27de::t_8a51ff91494baa 1-310
+data_integration_sources_examples/examples/custom_report/intercom/admins/snowflake/get.json
+  s_e415c3405a27de::t_c49dedad7c7dea 1-322
+data_integration_sources_examples/examples/custom_report/intercom/admins/snowflake/post.json
+  s_e415c3405a27de::t_a8d594edc44552 1-304
+data_integration_sources_examples/examples/custom_report/intercom/articles/databricks/get.json
+  s_e415c3405a27de::t_b2769b8d34284b 1-384
+data_integration_sources_examples/examples/custom_report/intercom/articles/databricks/post.json
+  s_e415c3405a27de::t_f998444bd16e30 1-365
+data_integration_sources_examples/examples/custom_report/intercom/articles/s3/get.json
+  s_e415c3405a27de::t_0a94638ebfbae2 1-77
+data_integration_sources_examples/examples/custom_report/intercom/articles/s3/post.json
+  s_e415c3405a27de::t_044b336d7acdc2 1-63
+data_integration_sources_examples/examples/custom_report/intercom/articles/snowflake/get.json
+  s_e415c3405a27de::t_92cd8985dc1f05 1-381
+data_integration_sources_examples/examples/custom_report/intercom/articles/snowflake/post.json
+  s_e415c3405a27de::t_73444854a3b9ec 1-362
+data_integration_sources_examples/examples/custom_report/intercom/companies/snowflake/get.json
+  s_e415c3405a27de::t_b14f9c79fcec6e 1-483
+data_integration_sources_examples/examples/custom_report/intercom/companies/snowflake/post.json
+  s_e415c3405a27de::t_1c327bf33bff02 1-468
+data_integration_sources_examples/examples/custom_report/intercom/contacts/snowflake/get.json
+  s_e415c3405a27de::t_fe0821c12803bb 1-1535
+data_integration_sources_examples/examples/custom_report/intercom/contacts/snowflake/post.json
+  s_e415c3405a27de::t_3fc72dffe09f10 1-1524
+data_integration_sources_examples/examples/custom_report/intercom/conversations/snowflake/get.json
+  s_e415c3405a27de::t_decd8110aa7be7 1-1610
+data_integration_sources_examples/examples/custom_report/intercom/conversations/snowflake/post.json
+  s_e415c3405a27de::t_48ef0d5037c6d7 1-1608
+data_integration_sources_examples/examples/custom_report/intercom/segments/snowflake/get.json
+  s_e415c3405a27de::t_cab02a5eecaa61 1-176
+data_integration_sources_examples/examples/custom_report/intercom/segments/snowflake/post.json
+  s_e415c3405a27de::t_a96fbaaf8ee620 1-158
+data_integration_sources_examples/examples/custom_report/intercom/teams/snowflake/get.json
+  s_e415c3405a27de::t_7c31ee984e1bb0 1-198
+data_integration_sources_examples/examples/custom_report/intercom/teams/snowflake/post.json
+  s_e415c3405a27de::t_345680c15a8eae 1-179
+data_integration_sources_examples/examples/custom_report/jira/issue_changelogs/knowledge_hub/get.json
+  s_e415c3405a27de::t_ac707fafadca22 1-93
+data_integration_sources_examples/examples/custom_report/jira/issue_changelogs/knowledge_hub/post.json
+  s_e415c3405a27de::t_52e6475c962ca7 1-94
+data_integration_sources_examples/examples/custom_report/jira/project/knowledge_hub/get.json
+  s_e415c3405a27de::t_425312ecdefb5b 1-87
+data_integration_sources_examples/examples/custom_report/jira/project/knowledge_hub/post.json
+  s_e415c3405a27de::t_16ae4e787bf799 1-89
+data_integration_sources_examples/examples/custom_report/jira/project_type/knowledge_hub/get.json
+  s_e415c3405a27de::t_d98dfef4db24a5 1-82
+data_integration_sources_examples/examples/custom_report/jira/project_type/knowledge_hub/post.json
+  s_e415c3405a27de::t_0eae0e68c6910b 1-83
+data_integration_sources_examples/examples/custom_report/jira/resolution/knowledge_hub/get.json
+  s_e415c3405a27de::t_5a3fd026dc40a4 1-87
+data_integration_sources_examples/examples/custom_report/jira/resolution/knowledge_hub/post.json
+  s_e415c3405a27de::t_cdeb127b5f8b6a 1-89
+data_integration_sources_examples/examples/custom_report/jira/sprint/knowledge_hub/get.json
+  s_e415c3405a27de::t_82b05a9d73b4ea 1-88
+data_integration_sources_examples/examples/custom_report/jira/sprint/knowledge_hub/post.json
+  s_e415c3405a27de::t_94166a0004f2e5 1-89
+data_integration_sources_examples/examples/custom_report/jira/work_logs/knowledge_hub/get.json
+  s_e415c3405a27de::t_04523ebc13f72d 1-92
+data_integration_sources_examples/examples/custom_report/jira/work_logs/knowledge_hub/post.json
+  s_e415c3405a27de::t_e478692db1b583 1-93
+data_integration_sources_examples/examples/custom_report/s3/csv/bigquery/get.json
+  s_e415c3405a27de::t_1161e1a3c23fc0 1-212
+data_integration_sources_examples/examples/custom_report/s3/csv/bigquery/post.json
+  s_e415c3405a27de::t_e62cf70e8a3de3 1-209
+data_integration_sources_examples/examples/custom_report/s3/csv/knowledge_hub/get.json
+  s_e415c3405a27de::t_e85c25cfb64c54 1-92
+data_integration_sources_examples/examples/custom_report/s3/csv/knowledge_hub/post.json
+  s_e415c3405a27de::t_ccd94fedeab779 1-93
+data_integration_sources_examples/examples/custom_report/s3/csv/postgres_rds/get.json
+  s_e415c3405a27de::t_8198a8845a9ef3 1-214
+data_integration_sources_examples/examples/custom_report/s3/csv/postgres_rds/post.json
+  s_e415c3405a27de::t_430b475cebad49 1-209
+data_integration_sources_examples/examples/custom_report/s3/csv/s3/get.json
+  s_e415c3405a27de::t_96408018198e24 1-100
+data_integration_sources_examples/examples/custom_report/s3/csv/s3/post.json
+  s_e415c3405a27de::t_ca60bdfcfbafac 1-100
+data_integration_sources_examples/examples/custom_report/s3/csv/snowflake/get.json
+  s_e415c3405a27de::t_cc08110b9828b0 1-212
+data_integration_sources_examples/examples/custom_report/s3/csv/snowflake/post.json
+  s_e415c3405a27de::t_d0cef078d81509 1-207
+data_integration_sources_examples/examples/custom_report/s3/excel/knowledge_hub/get.json
+  s_e415c3405a27de::t_d500072c230227 1-94
+data_integration_sources_examples/examples/custom_report/s3/excel/knowledge_hub/post.json
+  s_e415c3405a27de::t_bef0dc3a550eec 1-95
+data_integration_sources_examples/examples/custom_report/s3/jsonl/knowledge_hub/get.json
+  s_e415c3405a27de::t_2b14289b23e9cc 1-92
+data_integration_sources_examples/examples/custom_report/s3/jsonl/knowledge_hub/post.json
+  s_e415c3405a27de::t_a7edc82de1cc13 1-93
+data_integration_sources_examples/examples/custom_report/s3/parquet/knowledge_hub/get.json
+  s_e415c3405a27de::t_4eba7de02479e4 1-88
+data_integration_sources_examples/examples/custom_report/s3/parquet/knowledge_hub/post.json
+  s_e415c3405a27de::t_32e5af6dfdcff1 1-87
+data_integration_sources_examples/examples/custom_report/s3/tsv/knowledge_hub/get.json
+  s_e415c3405a27de::t_6890cdab64ae3b 1-92
+data_integration_sources_examples/examples/custom_report/s3/tsv/knowledge_hub/post.json
+  s_e415c3405a27de::t_a2ae57d674f3fa 1-93
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/databricks/get.json
+  s_e415c3405a27de::t_c07f90e4b7b4aa 1-261
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/databricks/post.json
+  s_e415c3405a27de::t_04934fc905cbc0 1-252
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/knowledge_hub/get.json
+  s_e415c3405a27de::t_a573660b4f9a7f 1-97
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/knowledge_hub/post.json
+  s_e415c3405a27de::t_ad553f61211093 1-94
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/postgres/get.json
+  s_e415c3405a27de::t_1c02a5c6895283 1-260
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/postgres/post.json
+  s_e415c3405a27de::t_ffd1203676704c 1-251
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/s3/get.json
+  s_e415c3405a27de::t_8ed232530b8bb3 1-105
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/s3/post.json
+  s_e415c3405a27de::t_f665ca1407dc2c 1-101
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/snowflake/get.json
+  s_e415c3405a27de::t_79aa8287bd1de4 1-258
+data_integration_sources_examples/examples/custom_report/sharepoint/csv/snowflake/post.json
+  s_e415c3405a27de::t_444a06128bd67d 1-249
+data_integration_sources_examples/examples/custom_report/sharepoint/excel/knowledge_hub/get.json
+  s_e415c3405a27de::t_863a58efe1c568 1-99
+data_integration_sources_examples/examples/custom_report/sharepoint/excel/knowledge_hub/post.json
+  s_e415c3405a27de::t_180c77c8eab4a1 1-96
+data_integration_sources_examples/examples/custom_report/sharepoint/html/knowledge_hub/get.json
+  s_e415c3405a27de::t_df720495e23a18 1-93
+data_integration_sources_examples/examples/custom_report/sharepoint/html/knowledge_hub/post.json
+  s_e415c3405a27de::t_2c7ca1ed7fcbbd 1-88
+data_integration_sources_examples/examples/custom_report/sharepoint/json/knowledge_hub/get.json
+  s_e415c3405a27de::t_24b69418d45efd 1-97
+data_integration_sources_examples/examples/custom_report/sharepoint/json/knowledge_hub/post.json
+  s_e415c3405a27de::t_793ea29b7dfc17 1-94
+data_integration_sources_examples/examples/custom_report/sharepoint/markdown/knowledge_hub/get.json
+  s_e415c3405a27de::t_4a82d215210f76 1-93
+data_integration_sources_examples/examples/custom_report/sharepoint/markdown/knowledge_hub/post.json
+  s_e415c3405a27de::t_5d1017150e0c3a 1-88
+data_integration_sources_examples/examples/custom_report/sharepoint/pdf/knowledge_hub/get.json
+  s_e415c3405a27de::t_8a936af6da1089 1-93
+data_integration_sources_examples/examples/custom_report/sharepoint/pdf/knowledge_hub/post.json
+  s_e415c3405a27de::t_5a0ed9ad65e93f 1-88
+data_integration_sources_examples/examples/custom_report/sharepoint/text/knowledge_hub/get.json
+  s_e415c3405a27de::t_bbb8df995c6688 1-93
+data_integration_sources_examples/examples/custom_report/sharepoint/text/knowledge_hub/post.json
+  s_e415c3405a27de::t_401c7809ce2769 1-88
+data_integration_sources_examples/examples/custom_report/sharepoint/word/knowledge_hub/get.json
+  s_e415c3405a27de::t_474d5f33fb4254 1-93
+data_integration_sources_examples/examples/custom_report/sharepoint/word/knowledge_hub/post.json
+  s_e415c3405a27de::t_132888ba1874cf 1-88
+data_integration_sources_examples/examples/predefined/apple_search_ads/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_3543e82a0c6262 1-272
+data_integration_sources_examples/examples/predefined/apple_search_ads/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_9c500934105f11 1-276
+data_integration_sources_examples/examples/predefined/apple_search_ads/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_b40331771ba568 1-269
+data_integration_sources_examples/examples/predefined/apple_search_ads/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_1fef3a9fc4d9f7 1-273
+data_integration_sources_examples/examples/predefined/apple_search_ads/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_fef7e130a62bb0 1-240
+data_integration_sources_examples/examples/predefined/apple_search_ads/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_1efd71d13cb175 1-251
+data_integration_sources_examples/examples/predefined/apple_search_ads/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_fb8b1a95dbdb78 1-274
+data_integration_sources_examples/examples/predefined/apple_search_ads/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_c2e3ab13aa8b8b 1-273
+data_integration_sources_examples/examples/predefined/appsflyer/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_9ce26281984b24 1-3271
+data_integration_sources_examples/examples/predefined/appsflyer/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_286b2b3c87193a 1-3272
+data_integration_sources_examples/examples/predefined/appsflyer/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_c35e9e26a1ef0c 1-3268
+data_integration_sources_examples/examples/predefined/appsflyer/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_47d31cb5599e3f 1-3269
+data_integration_sources_examples/examples/predefined/appsflyer/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_6693404230f55a 1-3239
+data_integration_sources_examples/examples/predefined/appsflyer/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_cd2d0eda57c49b 1-3247
+data_integration_sources_examples/examples/predefined/appsflyer/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_a0a7e03ce1c86f 1-3273
+data_integration_sources_examples/examples/predefined/appsflyer/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_99f48ff5a9f376 1-3269
+data_integration_sources_examples/examples/predefined/bing_ads/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_bcf85540dedc41 1-352
+data_integration_sources_examples/examples/predefined/bing_ads/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_8837cf85acbd4b 1-352
+data_integration_sources_examples/examples/predefined/bing_ads/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_f24ea671de59ee 1-349
+data_integration_sources_examples/examples/predefined/bing_ads/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_882f035cfd1868 1-349
+data_integration_sources_examples/examples/predefined/bing_ads/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_0058a2a212d72e 1-320
+data_integration_sources_examples/examples/predefined/bing_ads/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_2abd561d5ab1a3 1-327
+data_integration_sources_examples/examples/predefined/bing_ads/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_59f8319b707dea 1-354
+data_integration_sources_examples/examples/predefined/bing_ads/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_08078d1ea7e929 1-349
+data_integration_sources_examples/examples/predefined/branch_io/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_b5f6d9074904a8 1-1122
+data_integration_sources_examples/examples/predefined/branch_io/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_14967f79b7db10 1-1180
+data_integration_sources_examples/examples/predefined/branch_io/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_6fb53f6a53b60d 1-1119
+data_integration_sources_examples/examples/predefined/branch_io/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_6f92256cbf50a0 1-1177
+data_integration_sources_examples/examples/predefined/branch_io/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_b75729821ed553 1-1090
+data_integration_sources_examples/examples/predefined/branch_io/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_3f24549ee28aea 1-1155
+data_integration_sources_examples/examples/predefined/branch_io/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_7f274595c7a766 1-1124
+data_integration_sources_examples/examples/predefined/branch_io/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_a00b59ecf56645 1-1177
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/bq/get.json
+  s_e415c3405a27de::t_4982d727e659e0 1-210
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/bq/post.json
+  s_e415c3405a27de::t_db47a0f45e932c 1-192
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_6a01e4bcc7f6d1 1-206
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_c645cf33bc1173 1-194
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_501264f11ca601 1-203
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_2116f035cde594 1-191
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_32032205b407f9 1-174
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_47b24bbb29403d 1-169
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_55d8da06b0c656 1-208
+data_integration_sources_examples/examples/predefined/cellexpert/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_be11853801c05b 1-191
+data_integration_sources_examples/examples/predefined/facebook_ads/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_441a98ef2db01d 1-381
+data_integration_sources_examples/examples/predefined/facebook_ads/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_b78945417f8c69 1-369
+data_integration_sources_examples/examples/predefined/facebook_ads/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_b48af048000cf6 1-378
+data_integration_sources_examples/examples/predefined/facebook_ads/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_6846fb64b6911c 1-365
+data_integration_sources_examples/examples/predefined/facebook_ads/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_bb8e6acd5b8beb 1-332
+data_integration_sources_examples/examples/predefined/facebook_ads/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_80e34056b78b99 1-327
+data_integration_sources_examples/examples/predefined/facebook_ads/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_8096a62ba4ad21 1-366
+data_integration_sources_examples/examples/predefined/facebook_ads/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_fc9a2c8ee7866f 1-349
+data_integration_sources_examples/examples/predefined/genesys/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_321c60df0363e9 1-378
+data_integration_sources_examples/examples/predefined/genesys/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_0ba2eee4e3cd36 1-365
+data_integration_sources_examples/examples/predefined/genesys/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_ea8ac7d97bb37a 1-375
+data_integration_sources_examples/examples/predefined/genesys/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_dac6a704d07ca5 1-362
+data_integration_sources_examples/examples/predefined/genesys/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_27119ef0388872 1-287
+data_integration_sources_examples/examples/predefined/genesys/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_2029063af2222d 1-281
+data_integration_sources_examples/examples/predefined/genesys/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_e6fbb220d52746 1-380
+data_integration_sources_examples/examples/predefined/genesys/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_5dc15ac4d21cdd 1-362
+data_integration_sources_examples/examples/predefined/google_ad_manager/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_647fcf1664eceb 1-163
+data_integration_sources_examples/examples/predefined/google_ad_manager/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_ed748e6755cf90 1-144
+data_integration_sources_examples/examples/predefined/google_ad_manager/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_e1142d79daffcf 1-160
+data_integration_sources_examples/examples/predefined/google_ad_manager/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_de251e6de0403b 1-141
+data_integration_sources_examples/examples/predefined/google_ad_manager/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_8bd98baed0bb69 1-131
+data_integration_sources_examples/examples/predefined/google_ad_manager/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_6002653d6c7376 1-117
+data_integration_sources_examples/examples/predefined/google_ad_manager/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_181589fed8163b 1-165
+data_integration_sources_examples/examples/predefined/google_ad_manager/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_f8b93c20aeea21 1-141
+data_integration_sources_examples/examples/predefined/google_ads/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_b7df92bd23d1b0 1-330
+data_integration_sources_examples/examples/predefined/google_ads/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_9a86e0e3cae0ed 1-318
+data_integration_sources_examples/examples/predefined/google_ads/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_9975e4978874e5 1-308
+data_integration_sources_examples/examples/predefined/google_ads/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_03f566aec7f150 1-314
+data_integration_sources_examples/examples/predefined/google_ads/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_f38f4ea14db2d0 1-287
+data_integration_sources_examples/examples/predefined/google_ads/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_d0367f8e4b01aa 1-280
+data_integration_sources_examples/examples/predefined/google_ads/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_6be7a298fedea4 1-332
+data_integration_sources_examples/examples/predefined/google_ads/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_c7b1372d5937a7 1-315
+data_integration_sources_examples/examples/predefined/google_analytics/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_ca057d4fe3508a 1-1146
+data_integration_sources_examples/examples/predefined/google_analytics/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_88dfe6fba4743c 1-1202
+data_integration_sources_examples/examples/predefined/google_analytics/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_8a37956aaf842d 1-1143
+data_integration_sources_examples/examples/predefined/google_analytics/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_e4a686d9fd3198 1-1199
+data_integration_sources_examples/examples/predefined/google_analytics/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_329fa3c53dffa7 1-1057
+data_integration_sources_examples/examples/predefined/google_analytics/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_a469ecbefe44eb 1-1119
+data_integration_sources_examples/examples/predefined/google_analytics/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_f0f46b255d7188 1-1156
+data_integration_sources_examples/examples/predefined/google_analytics/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_047c7a6b5ec276 1-1211
+data_integration_sources_examples/examples/predefined/google_sheets/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_016eb3ee5a5ed6 1-198
+data_integration_sources_examples/examples/predefined/google_sheets/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_0532ad93e0b275 1-170
+data_integration_sources_examples/examples/predefined/google_sheets/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_6a3edde38df26b 1-197
+data_integration_sources_examples/examples/predefined/google_sheets/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_73c453c2228102 1-171
+data_integration_sources_examples/examples/predefined/google_sheets/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_b21da33a3e06bb 1-189
+data_integration_sources_examples/examples/predefined/google_sheets/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_8f7693954b2986 1-165
+data_integration_sources_examples/examples/predefined/google_sheets/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_57379e1de99b87 1-917
+data_integration_sources_examples/examples/predefined/google_sheets/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_7e64d88a6fabb6 1-889
+data_integration_sources_examples/examples/predefined/hibob/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_3d1457cb9abc1a 1-232
+data_integration_sources_examples/examples/predefined/hibob/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_71c819c3dab1ae 1-214
+data_integration_sources_examples/examples/predefined/hibob/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_3a72111085b9c4 1-229
+data_integration_sources_examples/examples/predefined/hibob/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_c4ed41557713cb 1-211
+data_integration_sources_examples/examples/predefined/hibob/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_a1c529c6261bf8 1-200
+data_integration_sources_examples/examples/predefined/hibob/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_8542570c1d5fe5 1-189
+data_integration_sources_examples/examples/predefined/hibob/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_5c0b200751dc08 1-234
+data_integration_sources_examples/examples/predefined/hibob/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_9bd57e36fbe884 1-211
+data_integration_sources_examples/examples/predefined/hubspot_legacy/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_1c763aff8e7e3c 1-284
+data_integration_sources_examples/examples/predefined/hubspot_legacy/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_c194f1e47bd1e5 1-264
+data_integration_sources_examples/examples/predefined/hubspot_legacy/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_0c484e86056086 1-281
+data_integration_sources_examples/examples/predefined/hubspot_legacy/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_68258157279070 1-261
+data_integration_sources_examples/examples/predefined/hubspot_legacy/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_c13d670879ff6d 1-252
+data_integration_sources_examples/examples/predefined/hubspot_legacy/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_26212e50747750 1-237
+data_integration_sources_examples/examples/predefined/hubspot_legacy/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_812f4a927635a5 1-288
+data_integration_sources_examples/examples/predefined/hubspot_legacy/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_a8b9dfa4f91baa 1-271
+data_integration_sources_examples/examples/predefined/instagram_social/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_6d08d7e64d3369 1-438
+data_integration_sources_examples/examples/predefined/instagram_social/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_9ec67d834f72fc 1-447
+data_integration_sources_examples/examples/predefined/instagram_social/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_cf2ca22e28ccc5 1-435
+data_integration_sources_examples/examples/predefined/instagram_social/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_f93bbb6af403cd 1-444
+data_integration_sources_examples/examples/predefined/instagram_social/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_4f758bae25ff90 1-394
+data_integration_sources_examples/examples/predefined/instagram_social/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_4f7f0852e780f6 1-410
+data_integration_sources_examples/examples/predefined/instagram_social/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_95266e2fe3b58b 1-440
+data_integration_sources_examples/examples/predefined/instagram_social/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_4ba37b23e67931 1-444
+data_integration_sources_examples/examples/predefined/intercom/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_38ecc6474e170f 1-290
+data_integration_sources_examples/examples/predefined/intercom/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_cba2b1feaf70e0 1-273
+data_integration_sources_examples/examples/predefined/intercom/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_183b605cd7523f 1-287
+data_integration_sources_examples/examples/predefined/intercom/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_3f488752217db6 1-270
+data_integration_sources_examples/examples/predefined/intercom/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_8090c61fb72aa7 1-258
+data_integration_sources_examples/examples/predefined/intercom/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_6047684c00a72d 1-248
+data_integration_sources_examples/examples/predefined/intercom/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_34e931aeaaab87 1-292
+data_integration_sources_examples/examples/predefined/intercom/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_ef71d248408202 1-270
+data_integration_sources_examples/examples/predefined/jira/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_1239e6095cdb11 1-310
+data_integration_sources_examples/examples/predefined/jira/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_6abf32dcacaf66 1-291
+data_integration_sources_examples/examples/predefined/jira/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_d387d96dcb8c9a 1-307
+data_integration_sources_examples/examples/predefined/jira/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_4da56ee60b6b98 1-288
+data_integration_sources_examples/examples/predefined/jira/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_ceaf6839072028 1-278
+data_integration_sources_examples/examples/predefined/jira/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_5b3d11e9a01719 1-266
+data_integration_sources_examples/examples/predefined/jira/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_0860fb1ada0959 1-312
+data_integration_sources_examples/examples/predefined/jira/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_1b8bac94ceb0d7 1-288
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/bq/get.json
+  s_e415c3405a27de::t_933c9b2a38d1c0 1-459
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/bq/post.json
+  s_e415c3405a27de::t_14a92f57a7f631 1-454
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_22f6def8717fdb 1-455
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_f978d947b2ec06 1-456
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_6fac9f81b74262 1-452
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_9b6a6481bbc563 1-453
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_211e99a1369a09 1-423
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_371b1a95f5ee72 1-431
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_f4d1e22d9ab194 1-457
+data_integration_sources_examples/examples/predefined/klaviyo/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_b17e7931877977 1-453
+data_integration_sources_examples/examples/predefined/linkedin_ads/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_d4da15f6a9290a 1-334
+data_integration_sources_examples/examples/predefined/linkedin_ads/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_fa6e985c03c907 1-330
+data_integration_sources_examples/examples/predefined/linkedin_ads/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_1e77e40f74875c 1-331
+data_integration_sources_examples/examples/predefined/linkedin_ads/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_7b2e735003aa01 1-327
+data_integration_sources_examples/examples/predefined/linkedin_ads/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_46eb8c07cc5e95 1-302
+data_integration_sources_examples/examples/predefined/linkedin_ads/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_04b876d0f17ff1 1-305
+data_integration_sources_examples/examples/predefined/linkedin_ads/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_2baccbaadcd780 1-336
+data_integration_sources_examples/examples/predefined/linkedin_ads/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_2d7a3c5be74f33 1-327
+data_integration_sources_examples/examples/predefined/linkedin_social/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_1fe423b9b6630b 1-413
+data_integration_sources_examples/examples/predefined/linkedin_social/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_2488540f4220d6 1-405
+data_integration_sources_examples/examples/predefined/linkedin_social/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_65c46b896d85b6 1-410
+data_integration_sources_examples/examples/predefined/linkedin_social/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_da0250c5275745 1-402
+data_integration_sources_examples/examples/predefined/linkedin_social/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_5bda914378611c 1-306
+data_integration_sources_examples/examples/predefined/linkedin_social/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_603c06c8634596 1-305
+data_integration_sources_examples/examples/predefined/linkedin_social/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_df521cde0e3e9a 1-415
+data_integration_sources_examples/examples/predefined/linkedin_social/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_221b5ab0d16ed4 1-402
+data_integration_sources_examples/examples/predefined/outbrain/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_b75467e4131c19 1-282
+data_integration_sources_examples/examples/predefined/outbrain/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_389ccf494ba5d7 1-276
+data_integration_sources_examples/examples/predefined/outbrain/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_1ef9e658f4ef1a 1-279
+data_integration_sources_examples/examples/predefined/outbrain/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_6ddab7e12a0cd9 1-273
+data_integration_sources_examples/examples/predefined/outbrain/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_92fc26dafe3cb2 1-250
+data_integration_sources_examples/examples/predefined/outbrain/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_35af2f12400d80 1-251
+data_integration_sources_examples/examples/predefined/outbrain/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_873055ee5e15ae 1-284
+data_integration_sources_examples/examples/predefined/outbrain/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_3698aa2d0f4831 1-273
+data_integration_sources_examples/examples/predefined/pendo/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_4f2d59ed76d963 1-533
+data_integration_sources_examples/examples/predefined/pendo/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_180139a6c4c933 1-516
+data_integration_sources_examples/examples/predefined/pendo/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_3f87da8840b977 1-530
+data_integration_sources_examples/examples/predefined/pendo/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_04c56fce99a8b8 1-513
+data_integration_sources_examples/examples/predefined/pendo/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_9af1fdcb51bbc4 1-501
+data_integration_sources_examples/examples/predefined/pendo/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_22e16c00f0a3e2 1-491
+data_integration_sources_examples/examples/predefined/pendo/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_74e8fd3925067c 1-535
+data_integration_sources_examples/examples/predefined/pendo/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_5fca3858a82db9 1-513
+data_integration_sources_examples/examples/predefined/s3/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_29422aefa7cca7 1-240
+data_integration_sources_examples/examples/predefined/s3/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_524a36bec32658 1-220
+data_integration_sources_examples/examples/predefined/s3/all_predefined_reports/postgres_rds/get.json
+  s_e415c3405a27de::t_741586349476cc 1-219
+data_integration_sources_examples/examples/predefined/s3/all_predefined_reports/postgres_rds/post.json
+  s_e415c3405a27de::t_0aa0fd3e73450a 1-203
+data_integration_sources_examples/examples/predefined/s3/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_29809ff0a7def2 1-101
+data_integration_sources_examples/examples/predefined/s3/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_c82e961d017108 1-89
+data_integration_sources_examples/examples/predefined/s3/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_3d638d44cf03d7 1-644
+data_integration_sources_examples/examples/predefined/s3/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_df7ec8e1d20083 1-628
+data_integration_sources_examples/examples/predefined/shopify/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_52e38e09a7edae 1-1014
+data_integration_sources_examples/examples/predefined/shopify/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_6e361676ecba47 1-1005
+data_integration_sources_examples/examples/predefined/shopify/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_04ee978f56ab78 1-1011
+data_integration_sources_examples/examples/predefined/shopify/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_b2cfb059c081fa 1-1002
+data_integration_sources_examples/examples/predefined/shopify/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_0f8e11f50eb2a4 1-982
+data_integration_sources_examples/examples/predefined/shopify/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_e5d838af3e5a45 1-980
+data_integration_sources_examples/examples/predefined/shopify/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_2c298d184b2529 1-1016
+data_integration_sources_examples/examples/predefined/shopify/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_9e792f99c6b511 1-1002
+data_integration_sources_examples/examples/predefined/snapchat_ads/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_24f6c1ac96a564 1-388
+data_integration_sources_examples/examples/predefined/snapchat_ads/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_f042c72cb2c2cc 1-428
+data_integration_sources_examples/examples/predefined/snapchat_ads/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_a26e1ff0c1cd45 1-385
+data_integration_sources_examples/examples/predefined/snapchat_ads/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_a6c38a00217d6b 1-425
+data_integration_sources_examples/examples/predefined/snapchat_ads/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_2dfd3898943494 1-356
+data_integration_sources_examples/examples/predefined/snapchat_ads/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_ef29e8a41afac8 1-403
+data_integration_sources_examples/examples/predefined/snapchat_ads/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_868eaf1e0076dc 1-390
+data_integration_sources_examples/examples/predefined/snapchat_ads/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_3abdcca6a2071c 1-425
+data_integration_sources_examples/examples/predefined/stripe/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_a44b5d86c0139a 1-1684
+data_integration_sources_examples/examples/predefined/stripe/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_069cdd9873b736 1-1686
+data_integration_sources_examples/examples/predefined/stripe/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_399c340a1ece44 1-1681
+data_integration_sources_examples/examples/predefined/stripe/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_0e1b2e4c9bcd72 1-1683
+data_integration_sources_examples/examples/predefined/stripe/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_ab42605810deb8 1-1046
+data_integration_sources_examples/examples/predefined/stripe/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_d1afffb99f6252 1-1055
+data_integration_sources_examples/examples/predefined/stripe/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_fb2021d5dbad34 1-1686
+data_integration_sources_examples/examples/predefined/stripe/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_780e0e2babb34a 1-1683
+data_integration_sources_examples/examples/predefined/taboola/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_b4f5bd5249ad8f 1-215
+data_integration_sources_examples/examples/predefined/taboola/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_3a7002b57cc296 1-204
+data_integration_sources_examples/examples/predefined/taboola/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_ebac420d0faed8 1-212
+data_integration_sources_examples/examples/predefined/taboola/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_71efa8e568f2e7 1-201
+data_integration_sources_examples/examples/predefined/taboola/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_b29d59a04aad89 1-183
+data_integration_sources_examples/examples/predefined/taboola/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_2d8090388f2b4f 1-179
+data_integration_sources_examples/examples/predefined/taboola/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_76b2a97103ed20 1-217
+data_integration_sources_examples/examples/predefined/taboola/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_f191617f9c4e38 1-201
+data_integration_sources_examples/examples/predefined/the_trade_desk/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_c007c7a1843782 1-788
+data_integration_sources_examples/examples/predefined/the_trade_desk/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_82bb57a1d33d60 1-794
+data_integration_sources_examples/examples/predefined/the_trade_desk/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_24afb0ae548624 1-785
+data_integration_sources_examples/examples/predefined/the_trade_desk/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_60cba29c4060cb 1-791
+data_integration_sources_examples/examples/predefined/the_trade_desk/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_44d0254aaa1f84 1-221
+data_integration_sources_examples/examples/predefined/the_trade_desk/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_3b7d6bd18b2166 1-234
+data_integration_sources_examples/examples/predefined/the_trade_desk/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_c11556914c1389 1-790
+data_integration_sources_examples/examples/predefined/the_trade_desk/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_6b3eba04912a48 1-791
+data_integration_sources_examples/examples/predefined/tiktok/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_0469372ab98295 1-718
+data_integration_sources_examples/examples/predefined/tiktok/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_6362a44a72cecc 1-751
+data_integration_sources_examples/examples/predefined/tiktok/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_b45b74a17830ee 1-715
+data_integration_sources_examples/examples/predefined/tiktok/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_76dad94b2da402 1-748
+data_integration_sources_examples/examples/predefined/tiktok/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_6f6f4ed0f74129 1-686
+data_integration_sources_examples/examples/predefined/tiktok/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_28126bd5600876 1-726
+data_integration_sources_examples/examples/predefined/tiktok/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_5e1daf190df9d8 1-720
+data_integration_sources_examples/examples/predefined/tiktok/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_cbb7b2ba15d23a 1-748
+data_integration_sources_examples/examples/predefined/twitter_ads/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_c9f5171d5cafd5 1-677
+data_integration_sources_examples/examples/predefined/twitter_ads/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_b70c2642027d3a 1-826
+data_integration_sources_examples/examples/predefined/twitter_ads/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_0bc32c14f3e8ed 1-674
+data_integration_sources_examples/examples/predefined/twitter_ads/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_9631aa85982e0b 1-823
+data_integration_sources_examples/examples/predefined/twitter_ads/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_6b5d83672690d6 1-645
+data_integration_sources_examples/examples/predefined/twitter_ads/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_39685c3748923f 1-799
+data_integration_sources_examples/examples/predefined/twitter_ads/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_9b44df10fb0cb6 1-702
+data_integration_sources_examples/examples/predefined/twitter_ads/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_3954793b83416a 1-837
+data_integration_sources_examples/examples/predefined/yotpo/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_3f5380a117aeb4 1-250
+data_integration_sources_examples/examples/predefined/yotpo/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_0a96d9ca43244a 1-236
+data_integration_sources_examples/examples/predefined/yotpo/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_a4b18fb90172a4 1-247
+data_integration_sources_examples/examples/predefined/yotpo/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_63222d55e15d53 1-233
+data_integration_sources_examples/examples/predefined/yotpo/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_232a4f1737084c 1-218
+data_integration_sources_examples/examples/predefined/yotpo/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_ec8313aa3fe610 1-211
+data_integration_sources_examples/examples/predefined/yotpo/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_82f58df4186ed9 1-252
+data_integration_sources_examples/examples/predefined/yotpo/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_acb90bb3e8ca60 1-233
+data_integration_sources_examples/examples/predefined/youtube_reporting/all_predefined_reports/databricks/get.json
+  s_e415c3405a27de::t_2eae83d9c678ee 1-917
+data_integration_sources_examples/examples/predefined/youtube_reporting/all_predefined_reports/databricks/post.json
+  s_e415c3405a27de::t_394abc23030dd7 1-946
+data_integration_sources_examples/examples/predefined/youtube_reporting/all_predefined_reports/postgres/get.json
+  s_e415c3405a27de::t_9d98b5aa791123 1-914
+data_integration_sources_examples/examples/predefined/youtube_reporting/all_predefined_reports/postgres/post.json
+  s_e415c3405a27de::t_74609f30728a44 1-943
+data_integration_sources_examples/examples/predefined/youtube_reporting/all_predefined_reports/s3/get.json
+  s_e415c3405a27de::t_d9bee11b068662 1-885
+data_integration_sources_examples/examples/predefined/youtube_reporting/all_predefined_reports/s3/post.json
+  s_e415c3405a27de::t_ad83f433a5e7ec 1-921
+data_integration_sources_examples/examples/predefined/youtube_reporting/all_predefined_reports/snowflake/get.json
+  s_e415c3405a27de::t_d7ee8eefc9a315 1-919
+data_integration_sources_examples/examples/predefined/youtube_reporting/all_predefined_reports/snowflake/post.json
+  s_e415c3405a27de::t_069d93e807dd12 1-943
+data_integration_sources_examples/helpers.py
+  s_e415c3405a27de::t_eee436ee2cf693 1-115
+pyproject.toml
+  s_e415c3405a27de::t_5efdceab583b28 1-29
+requirements.txt
+  s_e415c3405a27de::t_6c34568cdf1ad4 1-3
+setup.py
+  s_e415c3405a27de::t_8d5618a8df3bd8 1-31
+tests/test_version_check.py
+  s_e415c3405a27de::t_af2cbbe9f0bb76 1-22
+uv.lock
+  s_e415c3405a27de::t_45f1850fbeacf8 1-306
+verify_library.py
+  s_e415c3405a27de::t_82300c5e01b9b5 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "dc3cb4257269e19d1b91564b8fd9473fa8e86e89",
+  "prompts": {},
+  "sessions": {
+    "s_e415c3405a27de": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "906aa11b-7f6b-4804-ba11-ec024f0be10a",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "shirancohen <shiran.cohen@boomi.com>"
+    }
+  }
+}
