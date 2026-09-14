@@ -1,0 +1,280 @@
+{
+  "name": "MCP_v2_predefined_google_ads_s3",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "metadata": {
+    "description": ""
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "report_field_list": [],
+        "quote": "\"",
+        "accounts_manual": true,
+        "accounts_ids": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All Google Ads accounts, or specific ones? Leave as-is for all. Each entry is a bare 10-digit customer id like \"7419478371\".",
+            "value_type": "string_list",
+            "default": []
+          }
+        },
+        "delimiter": ",",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [],
+        "increment_field": null,
+        "report": "ad_group_ad",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_account_performance_by_day_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_account_performance_by_day",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_account_performance_by_hour_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_account_performance_by_hour",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_ad_group_performance_by_day_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_group_performance_by_day",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_ad_group_performance_by_hour_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_group_performance_by_hour",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_ad_performance_by_day_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_performance_by_day",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_audience_performance_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_audience_performance",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_campaign_performance_by_day_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaign_performance_by_day",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_campaign_performance_by_hour_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaign_performance_by_hour",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_geographic_performance_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_geographic_performance",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_keyword_performance_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_keyword_performance",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_media_file_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_media_file",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 09:07:14.055000",
+              "end_date": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [],
+  "group_id": "<GROUP_ID>"
+}

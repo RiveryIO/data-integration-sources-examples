@@ -1,0 +1,2 @@
+recursive-include data_integration_sources_examples/examples *.json *.csv
+include README.md

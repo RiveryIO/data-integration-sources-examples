@@ -1,0 +1,171 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_gspreadsheet_postgres",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_sheets",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "start_header": {
+          "header_row": 1
+        },
+        "null_rep_words": "#N/A",
+        "required_tabs": 1,
+        "connection_type": "gspreadsheet",
+        "extract_type": "file",
+        "has_headers": true,
+        "interval_time": "dont_split",
+        "fz_partition": "d",
+        "source_column_by": "name",
+        "source_format": "CSV",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "quote": "\"",
+        "gzipTypeMust": null,
+        "start_date": "2026-06-23 11:24:14.641000",
+        "extract_method": "all",
+        "end_date": null,
+        "object_guid": "<YOUR_OBJECT_GUID>",
+        "required_mapping_flag": false,
+        "fz_batched": true,
+        "fields": [
+          {
+            "source_type": "source",
+            "length": 4,
+            "type": "INTEGER",
+            "name": "id",
+            "alias": "id"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "name",
+            "alias": "name"
+          }
+        ],
+        "interval_type": "datetime",
+        "delimiter": ",",
+        "is_mapping_in_source": true,
+        "end_header": {
+          "header_row": null
+        }
+      }
+    },
+    "target": {
+      "name": "postgres_rds",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "alias": "id",
+            "id": "id",
+            "fieldName": "id",
+            "fields": []
+          },
+          {
+            "name": "name",
+            "type": "VARCHAR",
+            "alias": "name",
+            "id": "name",
+            "fieldName": "name",
+            "fields": []
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "delete_insert",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "allow_quoted_new_line": true,
+        "header": 1,
+        "max_bad_records": 0,
+        "recreate_keys": false,
+        "compression": false,
+        "analyze_tables": true,
+        "sync_schema_back": false,
+        "source_format": "CSV",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1782213869860,
+        "quote": "\"",
+        "csvTypeMust": "csv",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "has_headers": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "id",
+            "source_type": "source",
+            "fields": [],
+            "alias": "id",
+            "length": 4,
+            "fieldName": "id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "name",
+            "source_type": "source",
+            "fields": [],
+            "alias": "name",
+            "length": 8,
+            "fieldName": "name",
+            "type": "VARCHAR"
+          }
+        ]
+      },
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "analyze_table": true
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

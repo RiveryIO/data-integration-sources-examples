@@ -1,0 +1,372 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "ods_google_ads_geo_target_constant_new_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-30T17:38:23.772000Z",
+    "last_updated_at": "2026-06-30T17:38:23.772000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "utc_offset": 0,
+        "accounts": [
+          "<ACCOUNTS - leave accounts empty to automatically discover/use all entities accessible via this connection; add specific entries to restrict to particular accounts. Each entry looks like: {\"manager_account\": <MANAGER_ACCOUNT>, \"manager_id\": <MANAGER_ID>, \"name\": <NAME>, \"id\": <ID>}.>"
+        ],
+        "filters": [],
+        "last_days": 7,
+        "interval_time": "daily",
+        "interval_size": 1,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": "2022-08-29 10:34:55.782000",
+        "accounts_manual": false,
+        "required_mapping_flag": false,
+        "report": "geo_target_constant",
+        "time_period": "date_range",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "parent": "geo_target_constant",
+            "type": "STRING",
+            "name": "geo_target_constant.canonical_name",
+            "selectableWith": []
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "geo_target_constant.country_code",
+            "parent": "geo_target_constant"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "geo_target_constant.id",
+            "parent": "geo_target_constant"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "geo_target_constant.name",
+            "parent": "geo_target_constant"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "geo_target_constant.parent_geo_target",
+            "parent": "geo_target_constant"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "geo_target_constant.resource_name",
+            "parent": "geo_target_constant"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "geo_target_constant.status",
+            "parent": "geo_target_constant"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "geo_target_constant.target_type",
+            "parent": "geo_target_constant"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "geo_target_constant.canonical_name",
+            "parent": "geo_target_constant"
+          }
+        ]
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": [
+          "geoTargetConstant_id"
+        ],
+        "mapping": [
+          {
+            "name": "geoTargetConstant_resourceName",
+            "type": "STRING",
+            "alias": "geoTargetConstant_resourceName",
+            "mode": "NULLABLE",
+            "id": "geoTargetConstant_resourceName",
+            "fieldName": "geoTargetConstant_resourceName",
+            "fields": []
+          },
+          {
+            "name": "geoTargetConstant_status",
+            "type": "STRING",
+            "alias": "geoTargetConstant_status",
+            "mode": "NULLABLE",
+            "id": "geoTargetConstant_status",
+            "fieldName": "geoTargetConstant_status",
+            "fields": []
+          },
+          {
+            "name": "geoTargetConstant_id",
+            "type": "INTEGER",
+            "alias": "geoTargetConstant_id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "id": "geoTargetConstant_id",
+            "fieldName": "geoTargetConstant_id",
+            "fields": []
+          },
+          {
+            "name": "geoTargetConstant_name",
+            "type": "STRING",
+            "alias": "geoTargetConstant_name",
+            "mode": "NULLABLE",
+            "id": "geoTargetConstant_name",
+            "fieldName": "geoTargetConstant_name",
+            "fields": []
+          },
+          {
+            "name": "geoTargetConstant_countryCode",
+            "type": "STRING",
+            "alias": "geoTargetConstant_countryCode",
+            "mode": "NULLABLE",
+            "id": "geoTargetConstant_countryCode",
+            "fieldName": "geoTargetConstant_countryCode",
+            "fields": []
+          },
+          {
+            "name": "geoTargetConstant_targetType",
+            "type": "STRING",
+            "alias": "geoTargetConstant_targetType",
+            "mode": "NULLABLE",
+            "id": "geoTargetConstant_targetType",
+            "fieldName": "geoTargetConstant_targetType",
+            "fields": []
+          },
+          {
+            "name": "geoTargetConstant_canonicalName",
+            "type": "STRING",
+            "alias": "geoTargetConstant_canonicalName",
+            "mode": "NULLABLE",
+            "id": "geoTargetConstant_canonicalName",
+            "fieldName": "geoTargetConstant_canonicalName",
+            "fields": []
+          },
+          {
+            "name": "customer_id",
+            "type": "INTEGER",
+            "alias": "customer_id",
+            "mode": "NULLABLE",
+            "is_key": false,
+            "id": "customer_id",
+            "fieldName": "customer_id",
+            "fields": []
+          },
+          {
+            "name": "customer_descriptiveName",
+            "type": "STRING",
+            "alias": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "id": "customer_descriptiveName",
+            "fieldName": "customer_descriptiveName",
+            "fields": []
+          },
+          {
+            "name": "geoTargetConstant_parentGeoTarget",
+            "type": "STRING",
+            "alias": "geoTargetConstant_parentGeoTarget",
+            "mode": "NULLABLE",
+            "id": "geoTargetConstant_parentGeoTarget",
+            "fieldName": "geoTargetConstant_parentGeoTarget",
+            "fields": []
+          }
+        ],
+        "sql_dialect": "legacy",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "switch_tables",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "dataset_id": "<YOUR_DATASET_ID>",
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1775666017721,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "geoTargetConstant_resourceName",
+            "fields": [],
+            "alias": "geoTargetConstant_resourceName",
+            "length": 32,
+            "fieldName": "geoTargetConstant_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geoTargetConstant_status",
+            "fields": [],
+            "alias": "geoTargetConstant_status",
+            "length": 16,
+            "fieldName": "geoTargetConstant_status",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geoTargetConstant_id",
+            "fields": [],
+            "alias": "geoTargetConstant_id",
+            "length": 8,
+            "fieldName": "geoTargetConstant_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geoTargetConstant_name",
+            "fields": [],
+            "alias": "geoTargetConstant_name",
+            "length": 64,
+            "fieldName": "geoTargetConstant_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geoTargetConstant_countryCode",
+            "fields": [],
+            "alias": "geoTargetConstant_countryCode",
+            "length": 2,
+            "fieldName": "geoTargetConstant_countryCode",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geoTargetConstant_targetType",
+            "fields": [],
+            "alias": "geoTargetConstant_targetType",
+            "length": 32,
+            "fieldName": "geoTargetConstant_targetType",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geoTargetConstant_canonicalName",
+            "fields": [],
+            "alias": "geoTargetConstant_canonicalName",
+            "length": 128,
+            "fieldName": "geoTargetConstant_canonicalName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customer_id",
+            "fields": [],
+            "alias": "customer_id",
+            "length": 8589934592,
+            "fieldName": "customer_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "fields": [],
+            "alias": "customer_descriptiveName",
+            "length": 4,
+            "fieldName": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geoTargetConstant_parentGeoTarget",
+            "fields": [],
+            "alias": "geoTargetConstant_parentGeoTarget",
+            "length": 32,
+            "fieldName": "geoTargetConstant_parentGeoTarget",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ],
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

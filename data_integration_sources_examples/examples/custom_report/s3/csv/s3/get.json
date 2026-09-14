@@ -1,0 +1,100 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_s3_s3_csv",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-08-03T11:55:56.071000Z",
+    "last_updated_at": "2026-08-03T11:55:56.071000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "s3",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "aws",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "extract_method": "all",
+        "file_delimiter": "\\r\\n",
+        "interval_type": "datetime",
+        "interval_time": "dont_split",
+        "file_pattern": "*.csv",
+        "filters": [
+          {
+            "file_type": "csv",
+            "fields": [],
+            "header_row": 1,
+            "file_adjs": {},
+            "has_headers": true
+          }
+        ],
+        "copied_files": "remain_original",
+        "bucket": "<YOUR_BUCKET>",
+        "file_path": "<YOUR_FILE_PATH>",
+        "start_date": "2026-07-23 13:55:59"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

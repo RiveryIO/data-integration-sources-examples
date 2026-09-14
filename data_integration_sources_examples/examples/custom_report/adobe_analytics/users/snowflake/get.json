@@ -1,0 +1,851 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "adobe_analytics-users__v2_example",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-08T08:28:21.098000Z",
+    "last_updated_at": "2026-06-08T08:28:21.098000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "adobe_analytics",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "adobe_analytics",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "last_days": 30,
+        "dimensions": [
+          {
+            "definition": "",
+            "id": "variables/daterangeday",
+            "name": "Day"
+          }
+        ],
+        "segments": [
+          {
+            "name": "Segment_1",
+            "value": [
+              {
+                "id": "<YOUR_ID>",
+                "name": "<YOUR_NAME>"
+              }
+            ]
+          }
+        ],
+        "interval_time": "dont_split",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": "2025-01-01 00:00:00",
+        "utc_offset": "-4",
+        "end_date": "2025-03-09 00:00:00",
+        "required_mapping_flag": false,
+        "metrics": [
+          {
+            "definition": "",
+            "id": "metrics/visits",
+            "name": "Visits"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5af4b1580402fd69a3eb835b",
+            "name": "Organic Traffic Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60da2573f94d726de1231534",
+            "name": "Paid Traffic: Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60da266586eea35d5f22722b",
+            "name": "Tier 1 Traffic: Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60da26d693dd703557b930a2",
+            "name": "Regional Tier 2 Traffic: Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60da272786eea35d5f22722c",
+            "name": "National Tier 2 Traffic: Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5c9121d3e315c360bf401cb2",
+            "name": "Engaged Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_57c7230445b49c43438197e4",
+            "name": "Average Time Spent"
+          },
+          {
+            "definition": "",
+            "id": "metrics/pageviewspervisit",
+            "name": "Average Page Views per Visit"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5a34318a22fa9921dc1cf88d",
+            "name": "Level 1 Action: BYO Start Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5de933b16ef9671eec336f8a",
+            "name": "Level 1 Action: View Local Offers [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5b92b29a3e958a4e95d6ead5",
+            "name": "Level 1 Action: Click to Calls [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5e7cd37c8fadd45909c9c46c",
+            "name": "Level 1 Action: BYO Print [Official]"
+          },
+          {
+            "definition": "",
+            "id": "metrics/event10",
+            "name": "Handraiser Lead Success"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5b92b231746e7a0aff76f88a",
+            "name": "Level 1 Action: Exits to MyBMW [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5b92b3278b49b7600a5820ad",
+            "name": "Level 1 Action: Exits to Est. Trade-in [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5e7cee685cfd1f56bcb56a4a",
+            "name": "Level 2 Action: BYO Complete [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5a53e69cf30aae3641521f69",
+            "name": "Level 2 Action: New Inventory/CPO Search Results [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5e7cef885f13371c15d42c14",
+            "name": "Level 2 Action: Dealer Locator Usage [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5be609c15595bc5e15cd36b8",
+            "name": "Level 2 Action: Exits to Dealer Sites [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5de93453b3ede24e0c6d934c",
+            "name": "Level 2 Action: Payment Estimator Usage [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5b92b602c477fc36314c22f8",
+            "name": "Level 2 Action: Exits to Credit App [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5c09b69c7e273012764db4bf",
+            "name": "Level 3 Leads (+ Pre-Orders) [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60db1e02454c1e09d5d1e2cd",
+            "name": "Level 3 Leads (+ Pre-Orders): Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60db1e28454c1e09d5d1e2ce",
+            "name": "Level 3 Leads (+ Pre-Orders): Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_59a47aa28b49b73d63b2000a",
+            "name": "Level 3 Leads: BYO [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5e14a3f04041710e805f55e3",
+            "name": "Level 3 Leads: PDP Pages [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_593861824084962d88b3d758",
+            "name": "Level 3 Leads: Offers [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5a625a1bf73f233ba1a768b2",
+            "name": "Level 3 Leads: Inventory [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5e87693e3b0ac1076482878b",
+            "name": "Level 3 Leads: Global Lead Forms [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5d027b3a794c23640168921a",
+            "name": "Level 3 Leads: Other Lead Forms [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5fa062bcdcd42f41d6677856",
+            "name": "Level 3 Leads: CPO Lead Forms [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_61117068ca8a4b6d1bd881d0",
+            "name": "Level 1 Action: Handraisers [Official]"
+          },
+          {
+            "definition": "",
+            "id": "metrics/visitors",
+            "name": "Unique Visitors"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63068510fcbc397e285f15cb",
+            "name": "BYO Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_607f53489624af47f8efcef7",
+            "name": "Level 2 Action: New Inventory Search Results [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_630688109ee63a59086aa587",
+            "name": "Homepage Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_630ce561c83f275dc43d4a69",
+            "name": "CPO Experience Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63068a732caebe557111dbc5",
+            "name": "PDP\u00a0Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "metrics/pageviews",
+            "name": "Page Views"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60c7c5c311d7f72ab71720a6",
+            "name": "Pricing Tool Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6307ba1c44ad6a268b72b387",
+            "name": "Pricing Tool Starts Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60c7cf293449e605afad2d3e",
+            "name": "Pricing Tool: Summary Page Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_60c7d55f93b7e9247719b916",
+            "name": "Pricing Tool: Lead Submissions by Visit [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_630d0e76e0873c70cf2b0f63",
+            "name": "Contact a Dealer Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_630d11115dfc91503e698065",
+            "name": "Inventory Radius Updates [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_615e9a4cd7e8fe2828c4b8e2",
+            "name": "[Mean] BYO Advancement Score (All Traffic) [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_615e972f62cd7d14b1326f0f",
+            "name": "BYO Advancement Rate (% of Total Visits) [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6318bbd9d846352777e601df",
+            "name": "New Inventory Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "metrics/event90",
+            "name": "General Field Success"
+          },
+          {
+            "definition": "",
+            "id": "metrics/bounces",
+            "name": "Bounces"
+          },
+          {
+            "definition": "",
+            "id": "metrics/event1",
+            "name": "Lead Form Started"
+          },
+          {
+            "definition": "",
+            "id": "metrics/event2",
+            "name": "Lead Form Completed"
+          },
+          {
+            "definition": "",
+            "id": "metrics/event11",
+            "name": "Pre-order success"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63727acb87768e17251c66de",
+            "name": "Level 1 Action: BYO Start Visits Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63727a2ffc5cb72a42d20ed3",
+            "name": "Level 1 Action: BYO Start Visits Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63727b7c6cefcc173b304bbd",
+            "name": "PDP Visits Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63727c0fa6b7d178986c90f5",
+            "name": "PDP Visits Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63727caafc5cb72a42d20ed9",
+            "name": "Level 3 Leads: BYO Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63727d10657c012db98b49f8",
+            "name": "Level 3 Leads: BYO Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63728d6a38999f18b45a2a9e",
+            "name": "Level 3 Leads: Offers Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63728de1da844606009d34f5",
+            "name": "Level 3 Leads: Offers Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63728e3f863609480df65454",
+            "name": "Level 3 Leads: Inventory Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63728eb2863609480df65455",
+            "name": "Level 3 Leads: Inventory Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63729be1805ab00c9389f38b",
+            "name": "Level 3 Leads: Global Lead Forms Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63729c3efc5cb72a42d20f50",
+            "name": "Level 3 Leads: Global Lead Forms Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63729c9b6cefcc173b304c33",
+            "name": "Level 3 Leads: Other Lead Forms Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63729ddf9e774b6d2444c812",
+            "name": "Level 3 Leads: Other Lead Forms Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63729e9c805ab00c9389f39c",
+            "name": "Level 3 Leads: CPO Lead Forms Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63729ee987768e17251c6769",
+            "name": "Level 3 Leads: CPO Lead Forms Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_63739e6a805ab00c9389f495",
+            "name": "BYO Form Submissions w/o Qmerit [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6373d03a8bb7e74959fe2c68",
+            "name": "BYO Form Submissions w/o Qmerit Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6373d08b8bb7e74959fe2c69",
+            "name": "BYO Form Submissions w/o Qmerit Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6372be67da844606009d3588",
+            "name": "BYO Form Submissions with Qmerit  [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6373d0e88bb7e74959fe2c6b",
+            "name": "BYO Form Submissions with Qmerit Paid Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6373d12d87768e17251c6946",
+            "name": "BYO Form Submissions with Qmerit Organic Traffic [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5c09beaee1dc877cc814b306",
+            "name": "Level 3 Leads (+ Pre-Orders) Rate [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_5df8e3a37d91e5119cc43d60",
+            "name": "Level 1 Action: BYO Starts Rate [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_640b3ba7afcd0072fc8d4ea1",
+            "name": "Global | BMW | Interacting Web Visits [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_65539bc6717bba2b95944439",
+            "name": "Paid Engaged Visits [Test]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_65539d5af9d3dc180657fd1d",
+            "name": "Paid Interacting Web Visits [Test]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_616871a3837de058f2139f67",
+            "name": "BYO Completion Rate (All BYO Starts) [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6443090b94bbf354d9030eb6",
+            "name": "Global | BMW | Interacting Web Visit Rate (%) [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_6669bf396e24e575c66c992e",
+            "name": "Leads (+ Pre-Orders): excluding CPO [Official]"
+          },
+          {
+            "definition": "",
+            "id": "cm300006636_68767b682ba22ab3b1c2f2ae",
+            "name": "Local Offer Details Views | Total [Official]"
+          }
+        ],
+        "report": "users",
+        "time_period": "yesterday",
+        "segment": [
+          {
+            "id": "<YOUR_ID>",
+            "name": "<YOUR_NAME>"
+          }
+        ],
+        "report_suite": "vrs_bmwmot3_bmwusavrs"
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "companyid",
+            "type": "INTEGER",
+            "alias": "companyid",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "companyid",
+            "fieldName": "companyid"
+          },
+          {
+            "name": "loginId",
+            "type": "INTEGER",
+            "alias": "loginId",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "loginId",
+            "fieldName": "loginId"
+          },
+          {
+            "name": "login",
+            "type": "STRING",
+            "alias": "login",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "login",
+            "fieldName": "login"
+          },
+          {
+            "name": "admin",
+            "type": "BOOLEAN",
+            "alias": "admin",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "admin",
+            "fieldName": "admin"
+          },
+          {
+            "name": "createDate",
+            "type": "STRING",
+            "alias": "createDate",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "createDate",
+            "fieldName": "createDate"
+          },
+          {
+            "name": "disabled",
+            "type": "BOOLEAN",
+            "alias": "disabled",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "disabled",
+            "fieldName": "disabled"
+          },
+          {
+            "name": "email",
+            "type": "STRING",
+            "alias": "email",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "email",
+            "fieldName": "email"
+          },
+          {
+            "name": "firstName",
+            "type": "STRING",
+            "alias": "firstName",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "firstName",
+            "fieldName": "firstName"
+          },
+          {
+            "name": "fullName",
+            "type": "STRING",
+            "alias": "fullName",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "fullName",
+            "fieldName": "fullName"
+          },
+          {
+            "name": "imsUserId",
+            "type": "STRING",
+            "alias": "imsUserId",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "imsUserId",
+            "fieldName": "imsUserId"
+          },
+          {
+            "name": "lastName",
+            "type": "STRING",
+            "alias": "lastName",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "lastName",
+            "fieldName": "lastName"
+          },
+          {
+            "name": "lastAccess",
+            "type": "STRING",
+            "alias": "lastAccess",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "lastAccess",
+            "fieldName": "lastAccess"
+          },
+          {
+            "name": "phoneNumber",
+            "type": "STRING",
+            "alias": "phoneNumber",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "phoneNumber",
+            "fieldName": "phoneNumber"
+          },
+          {
+            "name": "tempLoginEnd",
+            "type": "STRING",
+            "alias": "tempLoginEnd",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "tempLoginEnd",
+            "fieldName": "tempLoginEnd"
+          },
+          {
+            "name": "title",
+            "type": "STRING",
+            "alias": "title",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "title",
+            "fieldName": "title"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "switch_tables",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1780838330291,
+        "replace_cascade": true,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "distribution_method": "even",
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "companyid",
+            "fields": [],
+            "alias": "companyid",
+            "length": 536870912,
+            "fieldName": "companyid",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "loginId",
+            "fields": [],
+            "alias": "loginId",
+            "length": 268435456,
+            "fieldName": "loginId",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "login",
+            "fields": [],
+            "alias": "login",
+            "length": 64,
+            "fieldName": "login",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "admin",
+            "fields": [],
+            "alias": "admin",
+            "length": 1,
+            "fieldName": "admin",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "createDate",
+            "fields": [],
+            "alias": "createDate",
+            "length": 32,
+            "fieldName": "createDate",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "disabled",
+            "fields": [],
+            "alias": "disabled",
+            "length": 1,
+            "fieldName": "disabled",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "email",
+            "fields": [],
+            "alias": "email",
+            "length": 64,
+            "fieldName": "email",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "firstName",
+            "fields": [],
+            "alias": "firstName",
+            "length": 64,
+            "fieldName": "firstName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "fullName",
+            "fields": [],
+            "alias": "fullName",
+            "length": 64,
+            "fieldName": "fullName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "imsUserId",
+            "fields": [],
+            "alias": "imsUserId",
+            "length": 64,
+            "fieldName": "imsUserId",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "lastName",
+            "fields": [],
+            "alias": "lastName",
+            "length": 32,
+            "fieldName": "lastName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "lastAccess",
+            "fields": [],
+            "alias": "lastAccess",
+            "length": 32,
+            "fieldName": "lastAccess",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "phoneNumber",
+            "fields": [],
+            "alias": "phoneNumber",
+            "length": 4,
+            "fieldName": "phoneNumber",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "tempLoginEnd",
+            "fields": [],
+            "alias": "tempLoginEnd",
+            "length": 32,
+            "fieldName": "tempLoginEnd",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "title",
+            "fields": [],
+            "alias": "title",
+            "length": 64,
+            "fieldName": "title",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ],
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

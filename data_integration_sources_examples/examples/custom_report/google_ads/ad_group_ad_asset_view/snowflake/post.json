@@ -1,0 +1,738 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "Epicosity Google Ads Custom Report: Ad Group Ad Asset View Dimensions_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-04-13T22:13:19.416000Z",
+    "last_updated_at": "2026-06-30T14:33:25.872000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "parent": "ad_group_ad",
+            "type": "INT64",
+            "name": "ad_group_ad.ad.id",
+            "selectableWith": []
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad_group_ad.ad.name",
+            "parent": "ad_group_ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "MESSAGE",
+            "name": "ad_group_ad.ad.responsive_search_ad.headlines",
+            "parent": "ad_group_ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "MESSAGE",
+            "name": "ad_group_ad.ad.responsive_search_ad.descriptions",
+            "parent": "ad_group_ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "ad_group_ad.status",
+            "parent": "ad_group_ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad_group_ad.ad.final_urls",
+            "parent": "ad_group_ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "customer.id",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "campaign.id",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "ad_group.id",
+            "parent": "ad_group"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "ad_group_ad_asset_view.ad_group_ad",
+            "parent": "ad_group_ad_asset_view"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "ad_group_ad_asset_view.asset",
+            "parent": "ad_group_ad_asset_view"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "ad_group_ad_asset_view.field_type",
+            "parent": "ad_group_ad_asset_view"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "ad_group_ad_asset_view.performance_label",
+            "parent": "ad_group_ad_asset_view"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "BOOLEAN",
+            "name": "ad_group_ad_asset_view.enabled",
+            "parent": "ad_group_ad_asset_view"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "asset.text_asset.text",
+            "parent": "asset"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "asset.id",
+            "parent": "asset"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad_group_ad.ad.responsive_search_ad.path1",
+            "parent": "ad_group_ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad_group_ad.ad.responsive_search_ad.path2",
+            "parent": "ad_group_ad"
+          }
+        ],
+        "quote": "\"",
+        "accounts_manual": false,
+        "required_mapping_flag": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "extract_method": "all",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [
+          {
+            "operator": ">=",
+            "field": {
+              "name": "segments.date",
+              "filterable": true,
+              "is_repeated": false,
+              "values": [],
+              "operator_type": "DATE",
+              "type": "DATE",
+              "format_type": "date"
+            },
+            "value": 1672531200000
+          },
+          {
+            "operator": "<=",
+            "field": {
+              "name": "segments.date",
+              "filterable": true,
+              "is_repeated": false,
+              "values": [],
+              "operator_type": "DATE",
+              "type": "DATE",
+              "format_type": "date"
+            },
+            "value": 1774915200000
+          }
+        ],
+        "increment_field": null,
+        "report": "ad_group_ad_asset_view",
+        "is_custom_query": false,
+        "gzipTypeMust": null,
+        "custom_query": "SELECT\n    ad_group_ad.ad.id\n    , ad_group_ad.ad.name\n    , ad_group_ad.ad.responsive_search_ad.headlines\n    , ad_group_ad.ad.responsive_search_ad.descriptions\n    , ad_group_ad.status\n    , ad_group_ad.ad.final_urls\n    , customer.id\n    , campaign.id\n    , ad_group.id\n    , ad_group_ad_asset_view.ad_group_ad\n    , ad_group_ad_asset_view.asset\n    , ad_group_ad_asset_view.field_type\n    , ad_group_ad_asset_view.performance_label\n    , ad_group_ad_asset_view.enabled\n    , asset.text_asset.text\n    , asset.id\n    , ad_group_ad.ad.responsive_search_ad.path1\n    , ad_group_ad.ad.responsive_search_ad.path2\n    , metrics.cost_micros\n    , metrics.impressions\n    , metrics.clicks\n    , metrics.conversions\n    , metrics.all_conversions_value\n    , segments.date\n\nFROM ad_group_ad_asset_view\n\nWHERE segments.date BETWEEN '2026-01-01' AND '2026-03-31'\n"
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "customer_resourceName",
+            "type": "STRING",
+            "alias": "customer_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "customer_resourceName",
+            "fields": [],
+            "id": "customer_resourceName"
+          },
+          {
+            "name": "customer_id",
+            "type": "INTEGER",
+            "alias": "customer_id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "customer_id",
+            "id": "customer_id",
+            "fields": []
+          },
+          {
+            "name": "campaign_resourceName",
+            "type": "STRING",
+            "alias": "campaign_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "campaign_resourceName",
+            "fields": [],
+            "id": "campaign_resourceName"
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "alias": "campaign_id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "campaign_id",
+            "id": "campaign_id",
+            "fields": []
+          },
+          {
+            "name": "adGroup_resourceName",
+            "type": "STRING",
+            "alias": "adGroup_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "adGroup_resourceName",
+            "fields": [],
+            "id": "adGroup_resourceName"
+          },
+          {
+            "name": "adGroup_id",
+            "type": "STRING",
+            "alias": "adGroup_id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "adGroup_id",
+            "id": "adGroup_id",
+            "fields": []
+          },
+          {
+            "name": "adGroupAd_resourceName",
+            "type": "STRING",
+            "alias": "adGroupAd_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAd_resourceName",
+            "fields": [],
+            "id": "adGroupAd_resourceName"
+          },
+          {
+            "name": "adGroupAd_status",
+            "type": "STRING",
+            "alias": "adGroupAd_status",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAd_status",
+            "fields": [],
+            "id": "adGroupAd_status"
+          },
+          {
+            "name": "adGroupAd_ad_responsiveSearchAd_headlines",
+            "type": "STRING",
+            "alias": "adGroupAd_ad_responsiveSearchAd_headlines",
+            "mode": "REPEATED",
+            "fieldName": "adGroupAd_ad_responsiveSearchAd_headlines",
+            "fields": [],
+            "id": "adGroupAd_ad_responsiveSearchAd_headlines"
+          },
+          {
+            "name": "adGroupAd_ad_responsiveSearchAd_descriptions",
+            "type": "STRING",
+            "alias": "adGroupAd_ad_responsiveSearchAd_descriptions",
+            "mode": "REPEATED",
+            "fieldName": "adGroupAd_ad_responsiveSearchAd_descriptions",
+            "fields": [],
+            "id": "adGroupAd_ad_responsiveSearchAd_descriptions"
+          },
+          {
+            "name": "adGroupAd_ad_responsiveSearchAd_path1",
+            "type": "STRING",
+            "alias": "adGroupAd_ad_responsiveSearchAd_path1",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAd_ad_responsiveSearchAd_path1",
+            "fields": [],
+            "id": "adGroupAd_ad_responsiveSearchAd_path1"
+          },
+          {
+            "name": "adGroupAd_ad_responsiveSearchAd_path2",
+            "type": "STRING",
+            "alias": "adGroupAd_ad_responsiveSearchAd_path2",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAd_ad_responsiveSearchAd_path2",
+            "fields": [],
+            "id": "adGroupAd_ad_responsiveSearchAd_path2"
+          },
+          {
+            "name": "adGroupAd_ad_resourceName",
+            "type": "STRING",
+            "alias": "adGroupAd_ad_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAd_ad_resourceName",
+            "fields": [],
+            "id": "adGroupAd_ad_resourceName"
+          },
+          {
+            "name": "adGroupAd_ad_id",
+            "type": "STRING",
+            "alias": "adGroupAd_ad_id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "adGroupAd_ad_id",
+            "id": "adGroupAd_ad_id",
+            "fields": []
+          },
+          {
+            "name": "adGroupAd_ad_finalUrls",
+            "type": "STRING",
+            "alias": "adGroupAd_ad_finalUrls",
+            "mode": "REPEATED",
+            "fieldName": "adGroupAd_ad_finalUrls",
+            "fields": [],
+            "id": "adGroupAd_ad_finalUrls"
+          },
+          {
+            "name": "asset_resourceName",
+            "type": "STRING",
+            "alias": "asset_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "asset_resourceName",
+            "fields": [],
+            "id": "asset_resourceName"
+          },
+          {
+            "name": "asset_textAsset_text",
+            "type": "STRING",
+            "alias": "asset_textAsset_text",
+            "mode": "NULLABLE",
+            "fieldName": "asset_textAsset_text",
+            "fields": [],
+            "id": "asset_textAsset_text"
+          },
+          {
+            "name": "asset_id",
+            "type": "STRING",
+            "alias": "asset_id",
+            "mode": "NULLABLE",
+            "fieldName": "asset_id",
+            "fields": [],
+            "id": "asset_id"
+          },
+          {
+            "name": "adGroupAdAssetView_resourceName",
+            "type": "STRING",
+            "alias": "adGroupAdAssetView_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAdAssetView_resourceName",
+            "fields": [],
+            "id": "adGroupAdAssetView_resourceName"
+          },
+          {
+            "name": "adGroupAdAssetView_fieldType",
+            "type": "STRING",
+            "alias": "adGroupAdAssetView_fieldType",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "adGroupAdAssetView_fieldType",
+            "id": "adGroupAdAssetView_fieldType",
+            "fields": []
+          },
+          {
+            "name": "adGroupAdAssetView_performanceLabel",
+            "type": "STRING",
+            "alias": "adGroupAdAssetView_performanceLabel",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAdAssetView_performanceLabel",
+            "fields": [],
+            "id": "adGroupAdAssetView_performanceLabel"
+          },
+          {
+            "name": "adGroupAdAssetView_enabled",
+            "type": "BOOLEAN",
+            "alias": "adGroupAdAssetView_enabled",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAdAssetView_enabled",
+            "fields": [],
+            "id": "adGroupAdAssetView_enabled"
+          },
+          {
+            "name": "adGroupAdAssetView_adGroupAd",
+            "type": "STRING",
+            "alias": "adGroupAdAssetView_adGroupAd",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAdAssetView_adGroupAd",
+            "fields": [],
+            "id": "adGroupAdAssetView_adGroupAd"
+          },
+          {
+            "name": "adGroupAdAssetView_asset",
+            "type": "STRING",
+            "alias": "adGroupAdAssetView_asset",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAdAssetView_asset",
+            "fields": [],
+            "id": "adGroupAdAssetView_asset"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "type": "STRING",
+            "alias": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "fieldName": "customer_descriptiveName",
+            "fields": [],
+            "id": "customer_descriptiveName"
+          },
+          {
+            "name": "adGroupAd_ad_name",
+            "type": "STRING",
+            "alias": "adGroupAd_ad_name",
+            "mode": "NULLABLE",
+            "fieldName": "adGroupAd_ad_name",
+            "fields": [],
+            "id": "adGroupAd_ad_name"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1776119803183,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "customer_resourceName",
+            "fields": [],
+            "alias": "customer_resourceName",
+            "length": 32,
+            "fieldName": "customer_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customer_id",
+            "fields": [],
+            "alias": "customer_id",
+            "length": 17179869184,
+            "fieldName": "customer_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "campaign_resourceName",
+            "fields": [],
+            "alias": "campaign_resourceName",
+            "length": 64,
+            "fieldName": "campaign_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "campaign_id",
+            "fields": [],
+            "alias": "campaign_id",
+            "length": 16,
+            "fieldName": "campaign_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroup_resourceName",
+            "fields": [],
+            "alias": "adGroup_resourceName",
+            "length": 64,
+            "fieldName": "adGroup_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroup_id",
+            "fields": [],
+            "alias": "adGroup_id",
+            "length": 16,
+            "fieldName": "adGroup_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_resourceName",
+            "fields": [],
+            "alias": "adGroupAd_resourceName",
+            "length": 64,
+            "fieldName": "adGroupAd_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_status",
+            "fields": [],
+            "alias": "adGroupAd_status",
+            "length": 8,
+            "fieldName": "adGroupAd_status",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_ad_responsiveSearchAd_headlines",
+            "fields": [],
+            "alias": "adGroupAd_ad_responsiveSearchAd_headlines",
+            "length": 4096,
+            "fieldName": "adGroupAd_ad_responsiveSearchAd_headlines",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_ad_responsiveSearchAd_descriptions",
+            "fields": [],
+            "alias": "adGroupAd_ad_responsiveSearchAd_descriptions",
+            "length": 1024,
+            "fieldName": "adGroupAd_ad_responsiveSearchAd_descriptions",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_ad_responsiveSearchAd_path1",
+            "fields": [],
+            "alias": "adGroupAd_ad_responsiveSearchAd_path1",
+            "length": 16,
+            "fieldName": "adGroupAd_ad_responsiveSearchAd_path1",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_ad_responsiveSearchAd_path2",
+            "fields": [],
+            "alias": "adGroupAd_ad_responsiveSearchAd_path2",
+            "length": 16,
+            "fieldName": "adGroupAd_ad_responsiveSearchAd_path2",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_ad_resourceName",
+            "fields": [],
+            "alias": "adGroupAd_ad_resourceName",
+            "length": 64,
+            "fieldName": "adGroupAd_ad_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_ad_id",
+            "fields": [],
+            "alias": "adGroupAd_ad_id",
+            "length": 16,
+            "fieldName": "adGroupAd_ad_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_ad_finalUrls",
+            "fields": [],
+            "alias": "adGroupAd_ad_finalUrls",
+            "length": 256,
+            "fieldName": "adGroupAd_ad_finalUrls",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_resourceName",
+            "fields": [],
+            "alias": "asset_resourceName",
+            "length": 64,
+            "fieldName": "asset_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_textAsset_text",
+            "fields": [],
+            "alias": "asset_textAsset_text",
+            "length": 128,
+            "fieldName": "asset_textAsset_text",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_id",
+            "fields": [],
+            "alias": "asset_id",
+            "length": 16,
+            "fieldName": "asset_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAdAssetView_resourceName",
+            "fields": [],
+            "alias": "adGroupAdAssetView_resourceName",
+            "length": 128,
+            "fieldName": "adGroupAdAssetView_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAdAssetView_fieldType",
+            "fields": [],
+            "alias": "adGroupAdAssetView_fieldType",
+            "length": 16,
+            "fieldName": "adGroupAdAssetView_fieldType",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAdAssetView_performanceLabel",
+            "fields": [],
+            "alias": "adGroupAdAssetView_performanceLabel",
+            "length": 8,
+            "fieldName": "adGroupAdAssetView_performanceLabel",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAdAssetView_enabled",
+            "fields": [],
+            "alias": "adGroupAdAssetView_enabled",
+            "length": 1,
+            "fieldName": "adGroupAdAssetView_enabled",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "adGroupAdAssetView_adGroupAd",
+            "fields": [],
+            "alias": "adGroupAdAssetView_adGroupAd",
+            "length": 64,
+            "fieldName": "adGroupAdAssetView_adGroupAd",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAdAssetView_asset",
+            "fields": [],
+            "alias": "adGroupAdAssetView_asset",
+            "length": 64,
+            "fieldName": "adGroupAdAssetView_asset",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "fields": [],
+            "alias": "customer_descriptiveName",
+            "length": 32,
+            "fieldName": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroupAd_ad_name",
+            "fields": [],
+            "alias": "adGroupAd_ad_name",
+            "length": 64,
+            "fieldName": "adGroupAd_ad_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": []
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

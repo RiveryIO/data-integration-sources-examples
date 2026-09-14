@@ -1,0 +1,1155 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_branch_io_s3",
+  "metadata": {
+    "description": "MCP predefined example: branch_io / s3"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "branch_io",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "branch_io",
+        "extract_method": "all",
+        "quote": "\"",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "analytics",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>",
+      "additional_settings": {},
+      "table_name": "<YOUR_TABLE_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_reinstall_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_reinstall_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_install_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_install_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_content_event_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_content_event_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_user_lifecycle_event_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_user_lifecycle_event_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_open_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_open_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_web_to_app_auto_redirect_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_web_to_app_auto_redirect_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_open_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_open_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_custom_event_total_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_custom_event_total_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_sms_sent_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_sms_sent_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_custom_event_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_custom_event_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_open_unique_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_open_unique_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_content_event_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_content_event_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_web_session_start_unique_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_web_session_start_unique_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_web_to_app_auto_redirect_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_web_to_app_auto_redirect_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_web_session_start_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_web_session_start_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_install_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_install_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_web_session_start_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_web_session_start_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_pageview_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_pageview_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_click_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_click_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "cost_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_cost",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_click_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_click_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_impression_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_impression_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_impression_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_impression_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_user_lifecycle_event_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_user_lifecycle_event_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_click_unique_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_click_unique_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_install_total_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_install_total_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_reinstall_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_reinstall_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_branch_cta_view_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_branch_cta_view_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_commerce_event_revenue_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_commerce_event_revenue",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_click_total_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_click_total_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_dismissal_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_dismissal_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_sms_sent_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_sms_sent_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_custom_event_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_custom_event_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_web_session_start_total_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_web_session_start_total_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_branch_cta_view_total_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_branch_cta_view_total_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_custom_event_unique_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_custom_event_unique_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_dismissal_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_dismissal_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_open_total_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_open_total_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_pageview_unique_count_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_pageview_unique_count",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "eo_install_unique_count_by_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_eo_install_unique_count_by_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "default_interval": "daily",
+                "disable_dont_split": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "daily",
+              "last_days": 1,
+              "interval_by": "result_timestamp",
+              "max_batch_time": 1783431772197,
+              "time_period": "date_range",
+              "start_date": "2026-07-07 13:42:33.687000",
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "name": "MCP_v2_predefined_fb_ads_databricks",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "metadata": {
+    "description": "MCP predefined fb_ads databricks full-reports example"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "facebook_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "ad_account_type": "ad_accounts_ids",
+        "connection_type": "fb",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "auto_complete": false,
+        "gzipTypeMust": null,
+        "extract_method": "all",
+        "data_level": "ad_account",
+        "quote": "\"",
+        "required_mapping_flag": true,
+        "campaigns_type": "campaigns_ids",
+        "fz_batched": true,
+        "time_resolution": "daily",
+        "report": "insight_report",
+        "ads_type": "ads_ids",
+        "adsets_type": "adsets_ids",
+        "delimiter": ",",
+        "ad_accounts_ids": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All Facebook ad accounts, or specific ones? Leave as-is for all. Each entry is a bare id like \"act_1234567890\".",
+            "value_type": "string_list",
+            "default": []
+          }
+        },
+        "extract_business_ad_accounts": false
+      }
+    },
+    "target": {
+      "name": "databricks",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "fieldName": "",
+            "id": 0
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "catalog_name": "<YOUR_CATALOG_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "store_in_custom_location": null,
+      "custom_location_type": null,
+      "custom_location_path": null
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_campaigns_v2",
+              "extract_method": "all",
+              "table_name": "predefined_campaigns",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_ad_account_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ad_account",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_ad_account_activities_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ad_account_activities",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_ad_creatives_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ad_creatives",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_ad_leads_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ad_leads",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_ad_leads_forms_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ad_leads_forms",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_ads_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ads",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_ads_pixels_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ads_pixels",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_adsets_v2",
+              "extract_method": "all",
+              "table_name": "predefined_adsets",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_custom_audiences_v2",
+              "extract_method": "all",
+              "table_name": "predefined_custom_audiences",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_custom_conversions_v2",
+              "extract_method": "all",
+              "table_name": "predefined_custom_conversions",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_insight_report_age_gender_v2",
+              "extract_method": "all",
+              "table_name": "predefined_insight_report_age_gender",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_insight_report_basic_v2",
+              "extract_method": "all",
+              "table_name": "predefined_insight_report_basic",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_insight_report_country_v2",
+              "extract_method": "all",
+              "table_name": "predefined_insight_report_country",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_insight_report_platform_v2",
+              "extract_method": "all",
+              "table_name": "predefined_insight_report_platform",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_insight_report_product_v2",
+              "extract_method": "all",
+              "table_name": "predefined_insight_report_product",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "fb_ads_saved_audiences_v2",
+              "extract_method": "all",
+              "table_name": "predefined_saved_audiences",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-06 00:00:00",
+              "max_batch_time": 1783321657987
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [],
+  "group_id": "<GROUP_ID>"
+}

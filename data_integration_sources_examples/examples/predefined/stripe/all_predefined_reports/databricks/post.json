@@ -1,0 +1,1686 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_stripe_databricks",
+  "metadata": {
+    "description": "MCP predefined example: stripe / databricks"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "stripe",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "stripe",
+        "status": [],
+        "extract_method": "all",
+        "quote": "\"",
+        "report_field_name": "report_run_type",
+        "required_mapping_flag": false,
+        "delimiter": ",",
+        "fz_partition": "d",
+        "report_run_type": "entity",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "increment_field": "created",
+        "report": "customers",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "databricks",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "account_balance",
+            "type": "INTEGER",
+            "alias": "account_balance",
+            "mode": "NULLABLE",
+            "fieldName": "account_balance",
+            "fields": [],
+            "id": "account_balance"
+          },
+          {
+            "name": "address_city",
+            "type": "STRING",
+            "alias": "address_city",
+            "mode": "NULLABLE",
+            "fieldName": "address_city",
+            "fields": [],
+            "id": "address_city"
+          },
+          {
+            "name": "address_country",
+            "type": "STRING",
+            "alias": "address_country",
+            "mode": "NULLABLE",
+            "fieldName": "address_country",
+            "fields": [],
+            "id": "address_country"
+          },
+          {
+            "name": "address_line1",
+            "type": "STRING",
+            "alias": "address_line_1",
+            "mode": "NULLABLE",
+            "fieldName": "address_line1",
+            "fields": [],
+            "id": "address_line1"
+          },
+          {
+            "name": "address_line2",
+            "type": "STRING",
+            "alias": "address_line_2",
+            "mode": "NULLABLE",
+            "fieldName": "address_line2",
+            "fields": [],
+            "id": "address_line2"
+          },
+          {
+            "name": "address_postal_code",
+            "type": "STRING",
+            "alias": "address_postal_code",
+            "mode": "NULLABLE",
+            "fieldName": "address_postal_code",
+            "fields": [],
+            "id": "address_postal_code"
+          },
+          {
+            "name": "address_state",
+            "type": "STRING",
+            "alias": "address_state",
+            "mode": "NULLABLE",
+            "fieldName": "address_state",
+            "fields": [],
+            "id": "address_state"
+          },
+          {
+            "name": "balance",
+            "type": "INTEGER",
+            "alias": "balance",
+            "mode": "NULLABLE",
+            "fieldName": "balance",
+            "fields": [],
+            "id": "balance"
+          },
+          {
+            "name": "created",
+            "type": "INTEGER",
+            "alias": "created",
+            "mode": "NULLABLE",
+            "fieldName": "created",
+            "fields": [],
+            "id": "created"
+          },
+          {
+            "name": "currency",
+            "type": "STRING",
+            "alias": "currency",
+            "mode": "NULLABLE",
+            "fieldName": "currency",
+            "fields": [],
+            "id": "currency"
+          },
+          {
+            "name": "default_source",
+            "type": "STRING",
+            "alias": "default_source",
+            "mode": "NULLABLE",
+            "fieldName": "default_source",
+            "fields": [],
+            "id": "default_source"
+          },
+          {
+            "name": "delinquent",
+            "type": "BOOLEAN",
+            "alias": "delinquent",
+            "mode": "NULLABLE",
+            "fieldName": "delinquent",
+            "fields": [],
+            "id": "delinquent"
+          },
+          {
+            "name": "description",
+            "type": "STRING",
+            "alias": "description",
+            "mode": "NULLABLE",
+            "fieldName": "description",
+            "fields": [],
+            "id": "description"
+          },
+          {
+            "name": "discount",
+            "type": "STRING",
+            "alias": "discount",
+            "mode": "NULLABLE",
+            "fieldName": "discount",
+            "fields": [],
+            "id": "discount"
+          },
+          {
+            "name": "discount_coupon_amount_off",
+            "type": "INTEGER",
+            "alias": "discount_coupon_amount_off",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_amount_off",
+            "fields": [],
+            "id": "discount_coupon_amount_off"
+          },
+          {
+            "name": "discount_coupon_created",
+            "type": "INTEGER",
+            "alias": "discount_coupon_created",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_created",
+            "fields": [],
+            "id": "discount_coupon_created"
+          },
+          {
+            "name": "discount_coupon_currency",
+            "type": "STRING",
+            "alias": "discount_coupon_currency",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_currency",
+            "fields": [],
+            "id": "discount_coupon_currency"
+          },
+          {
+            "name": "discount_coupon_duration",
+            "type": "STRING",
+            "alias": "discount_coupon_duration",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_duration",
+            "fields": [],
+            "id": "discount_coupon_duration"
+          },
+          {
+            "name": "discount_coupon_duration_in_months",
+            "type": "INTEGER",
+            "alias": "discount_coupon_duration_in_months",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_duration_in_months",
+            "fields": [],
+            "id": "discount_coupon_duration_in_months"
+          },
+          {
+            "name": "discount_coupon_id",
+            "type": "STRING",
+            "alias": "discount_coupon_id",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_id",
+            "fields": [],
+            "id": "discount_coupon_id"
+          },
+          {
+            "name": "discount_coupon_livemode",
+            "type": "BOOLEAN",
+            "alias": "discount_coupon_livemode",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_livemode",
+            "fields": [],
+            "id": "discount_coupon_livemode"
+          },
+          {
+            "name": "discount_coupon_max_redemptions",
+            "type": "STRING",
+            "alias": "discount_coupon_max_redemptions",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_max_redemptions",
+            "fields": [],
+            "id": "discount_coupon_max_redemptions"
+          },
+          {
+            "name": "discount_coupon_name",
+            "type": "STRING",
+            "alias": "discount_coupon_name",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_name",
+            "fields": [],
+            "id": "discount_coupon_name"
+          },
+          {
+            "name": "discount_coupon_object",
+            "type": "STRING",
+            "alias": "discount_coupon_object",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_object",
+            "fields": [],
+            "id": "discount_coupon_object"
+          },
+          {
+            "name": "discount_coupon_percent_off",
+            "type": "FLOAT",
+            "alias": "discount_coupon_percent_off",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_percent_off",
+            "fields": [],
+            "id": "discount_coupon_percent_off"
+          },
+          {
+            "name": "discount_coupon_percent_off_precise",
+            "type": "FLOAT",
+            "alias": "discount_coupon_percent_off_precise",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_percent_off_precise",
+            "fields": [],
+            "id": "discount_coupon_percent_off_precise"
+          },
+          {
+            "name": "discount_coupon_redeem_by",
+            "type": "INTEGER",
+            "alias": "discount_coupon_redeem_by",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_redeem_by",
+            "fields": [],
+            "id": "discount_coupon_redeem_by"
+          },
+          {
+            "name": "discount_coupon_times_redeemed",
+            "type": "INTEGER",
+            "alias": "discount_coupon_times_redeemed",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_times_redeemed",
+            "fields": [],
+            "id": "discount_coupon_times_redeemed"
+          },
+          {
+            "name": "discount_coupon_valid",
+            "type": "BOOLEAN",
+            "alias": "discount_coupon_valid",
+            "mode": "NULLABLE",
+            "fieldName": "discount_coupon_valid",
+            "fields": [],
+            "id": "discount_coupon_valid"
+          },
+          {
+            "name": "discount_customer",
+            "type": "STRING",
+            "alias": "discount_customer",
+            "mode": "NULLABLE",
+            "fieldName": "discount_customer",
+            "fields": [],
+            "id": "discount_customer"
+          },
+          {
+            "name": "discount_end",
+            "type": "INTEGER",
+            "alias": "discount_end",
+            "mode": "NULLABLE",
+            "fieldName": "discount_end",
+            "fields": [],
+            "id": "discount_end"
+          },
+          {
+            "name": "discount_object",
+            "type": "STRING",
+            "alias": "discount_object",
+            "mode": "NULLABLE",
+            "fieldName": "discount_object",
+            "fields": [],
+            "id": "discount_object"
+          },
+          {
+            "name": "discount_start",
+            "type": "INTEGER",
+            "alias": "discount_start",
+            "mode": "NULLABLE",
+            "fieldName": "discount_start",
+            "fields": [],
+            "id": "discount_start"
+          },
+          {
+            "name": "discount_subscription",
+            "type": "STRING",
+            "alias": "discount_subscription",
+            "mode": "NULLABLE",
+            "fieldName": "discount_subscription",
+            "fields": [],
+            "id": "discount_subscription"
+          },
+          {
+            "name": "email",
+            "type": "STRING",
+            "alias": "email",
+            "mode": "NULLABLE",
+            "fieldName": "email",
+            "fields": [],
+            "id": "email"
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "id",
+            "fields": [],
+            "id": "id"
+          },
+          {
+            "name": "invoice_prefix",
+            "type": "STRING",
+            "alias": "invoice_prefix",
+            "mode": "NULLABLE",
+            "fieldName": "invoice_prefix",
+            "fields": [],
+            "id": "invoice_prefix"
+          },
+          {
+            "name": "invoice_settings_custom_fields",
+            "type": "STRING",
+            "alias": "invoice_settings_custom_fields",
+            "mode": "NULLABLE",
+            "fieldName": "invoice_settings_custom_fields",
+            "fields": [],
+            "id": "invoice_settings_custom_fields"
+          },
+          {
+            "name": "invoice_settings_default_payment_method",
+            "type": "STRING",
+            "alias": "invoice_settings_default_payment_method",
+            "mode": "NULLABLE",
+            "fieldName": "invoice_settings_default_payment_method",
+            "fields": [],
+            "id": "invoice_settings_default_payment_method"
+          },
+          {
+            "name": "invoice_settings_footer",
+            "type": "STRING",
+            "alias": "invoice_settings_footer",
+            "mode": "NULLABLE",
+            "fieldName": "invoice_settings_footer",
+            "fields": [],
+            "id": "invoice_settings_footer"
+          },
+          {
+            "name": "livemode",
+            "type": "BOOLEAN",
+            "alias": "livemode",
+            "mode": "NULLABLE",
+            "fieldName": "livemode",
+            "fields": [],
+            "id": "livemode"
+          },
+          {
+            "name": "metadata_Address_Country",
+            "type": "STRING",
+            "alias": "metadata_Address_Country",
+            "mode": "NULLABLE",
+            "fieldName": "metadata_Address_Country",
+            "fields": [],
+            "id": "metadata_Address_Country"
+          },
+          {
+            "name": "metadata_Address_PostalCode",
+            "type": "STRING",
+            "alias": "metadata_Address_PostalCode",
+            "mode": "NULLABLE",
+            "fieldName": "metadata_Address_PostalCode",
+            "fields": [],
+            "id": "metadata_Address_PostalCode"
+          },
+          {
+            "name": "metadata_account_id",
+            "type": "STRING",
+            "alias": "metadata_account_id",
+            "mode": "NULLABLE",
+            "fieldName": "metadata_account_id",
+            "fields": [],
+            "id": "metadata_account_id"
+          },
+          {
+            "name": "metadata_fp_uid",
+            "type": "STRING",
+            "alias": "metadata_fp_uid",
+            "mode": "NULLABLE",
+            "fieldName": "metadata_fp_uid",
+            "fields": [],
+            "id": "metadata_fp_uid"
+          },
+          {
+            "name": "metadata_state",
+            "type": "STRING",
+            "alias": "metadata_state",
+            "mode": "NULLABLE",
+            "fieldName": "metadata_state",
+            "fields": [],
+            "id": "metadata_state"
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "alias": "name",
+            "mode": "NULLABLE",
+            "fieldName": "name",
+            "fields": [],
+            "id": "name"
+          },
+          {
+            "name": "object",
+            "type": "STRING",
+            "alias": "object",
+            "mode": "NULLABLE",
+            "fieldName": "object",
+            "fields": [],
+            "id": "object"
+          },
+          {
+            "name": "phone",
+            "type": "STRING",
+            "alias": "phone",
+            "mode": "NULLABLE",
+            "fieldName": "phone",
+            "fields": [],
+            "id": "phone"
+          },
+          {
+            "name": "shipping",
+            "type": "STRING",
+            "alias": "shipping",
+            "mode": "NULLABLE",
+            "fieldName": "shipping",
+            "fields": [],
+            "id": "shipping"
+          },
+          {
+            "name": "sources_data",
+            "type": "STRING",
+            "alias": "sources_data",
+            "mode": "REPEATED",
+            "fieldName": "sources_data",
+            "fields": [],
+            "id": "sources_data"
+          },
+          {
+            "name": "sources_has_more",
+            "type": "BOOLEAN",
+            "alias": "sources_has_more",
+            "mode": "NULLABLE",
+            "fieldName": "sources_has_more",
+            "fields": [],
+            "id": "sources_has_more"
+          },
+          {
+            "name": "sources_object",
+            "type": "STRING",
+            "alias": "sources_object",
+            "mode": "NULLABLE",
+            "fieldName": "sources_object",
+            "fields": [],
+            "id": "sources_object"
+          },
+          {
+            "name": "sources_total_count",
+            "type": "INTEGER",
+            "alias": "sources_total_count",
+            "mode": "NULLABLE",
+            "fieldName": "sources_total_count",
+            "fields": [],
+            "id": "sources_total_count"
+          },
+          {
+            "name": "sources_url",
+            "type": "STRING",
+            "alias": "sources_url",
+            "mode": "NULLABLE",
+            "fieldName": "sources_url",
+            "fields": [],
+            "id": "sources_url"
+          },
+          {
+            "name": "subscriptions_data",
+            "type": "STRING",
+            "alias": "subscriptions_data",
+            "mode": "REPEATED",
+            "fieldName": "subscriptions_data",
+            "fields": [],
+            "id": "subscriptions_data"
+          },
+          {
+            "name": "subscriptions_has_more",
+            "type": "BOOLEAN",
+            "alias": "subscriptions_has_more",
+            "mode": "NULLABLE",
+            "fieldName": "subscriptions_has_more",
+            "fields": [],
+            "id": "subscriptions_has_more"
+          },
+          {
+            "name": "subscriptions_object",
+            "type": "STRING",
+            "alias": "subscriptions_object",
+            "mode": "NULLABLE",
+            "fieldName": "subscriptions_object",
+            "fields": [],
+            "id": "subscriptions_object"
+          },
+          {
+            "name": "subscriptions_total_count",
+            "type": "INTEGER",
+            "alias": "subscriptions_total_count",
+            "mode": "NULLABLE",
+            "fieldName": "subscriptions_total_count",
+            "fields": [],
+            "id": "subscriptions_total_count"
+          },
+          {
+            "name": "subscriptions_url",
+            "type": "STRING",
+            "alias": "subscriptions_url",
+            "mode": "NULLABLE",
+            "fieldName": "subscriptions_url",
+            "fields": [],
+            "id": "subscriptions_url"
+          },
+          {
+            "name": "tax_exempt",
+            "type": "STRING",
+            "alias": "tax_exempt",
+            "mode": "NULLABLE",
+            "fieldName": "tax_exempt",
+            "fields": [],
+            "id": "tax_exempt"
+          },
+          {
+            "name": "tax_ids_has_more",
+            "type": "BOOLEAN",
+            "alias": "tax_ids_has_more",
+            "mode": "NULLABLE",
+            "fieldName": "tax_ids_has_more",
+            "fields": [],
+            "id": "tax_ids_has_more"
+          },
+          {
+            "name": "tax_ids_object",
+            "type": "STRING",
+            "alias": "tax_ids_object",
+            "mode": "NULLABLE",
+            "fieldName": "tax_ids_object",
+            "fields": [],
+            "id": "tax_ids_object"
+          },
+          {
+            "name": "tax_ids_total_count",
+            "type": "INTEGER",
+            "alias": "tax_ids_total_count",
+            "mode": "NULLABLE",
+            "fieldName": "tax_ids_total_count",
+            "fields": [],
+            "id": "tax_ids_total_count"
+          },
+          {
+            "name": "tax_ids_url",
+            "type": "STRING",
+            "alias": "tax_ids_url",
+            "mode": "NULLABLE",
+            "fieldName": "tax_ids_url",
+            "fields": [],
+            "id": "tax_ids_url"
+          },
+          {
+            "name": "tax_info",
+            "type": "STRING",
+            "alias": "tax_info",
+            "mode": "NULLABLE",
+            "fieldName": "tax_info",
+            "fields": [],
+            "id": "tax_info"
+          },
+          {
+            "name": "tax_info_verification",
+            "type": "STRING",
+            "alias": "tax_info_verification",
+            "mode": "NULLABLE",
+            "fieldName": "tax_info_verification",
+            "fields": [],
+            "id": "tax_info_verification"
+          },
+          {
+            "name": "",
+            "type": "TIMESTAMP",
+            "alias": "_fivetran_synced",
+            "expression": "current_timestamp()",
+            "length": 256,
+            "id": "624110"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "catalog_name": "<YOUR_CATALOG_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "store_in_custom_location": null,
+      "custom_location_type": null,
+      "custom_location_path": null
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "customers",
+              "extract_method": "increment",
+              "table_name": "predefined_customers",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:42.963000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "customers",
+              "time_period": "date_range",
+              "max_batch_time": 1783519975585,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "disputes",
+              "extract_method": "increment",
+              "table_name": "predefined_disputes",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-06-26 06:01:29.486000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "charge": {
+                  "is_checked": true,
+                  "alias": "charge_id"
+                },
+                "evidence_details_due_by": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "disputes",
+              "time_period": "date_range",
+              "max_batch_time": 1782453706051,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "charges",
+              "extract_method": "increment",
+              "table_name": "predefined_charges",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:42.150000",
+              "columns": {
+                "customer": {
+                  "is_checked": true,
+                  "alias": "customer_id"
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "payment_method": {
+                  "is_checked": true,
+                  "alias": "payment_method_id"
+                },
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "payment_intent": {
+                  "is_checked": true,
+                  "alias": "payment_intent_id"
+                },
+                "invoice": {
+                  "is_checked": true,
+                  "alias": "invoice_id"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "charges",
+              "time_period": "date_range",
+              "max_batch_time": 1783519977923,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "events",
+              "extract_method": "increment",
+              "table_name": "predefined_events",
+              "table_status": "tracked",
+              "report_run_type": "entity",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "delivery_success": "all",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:44.437000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "events",
+              "time_period": "date_range",
+              "max_batch_time": 1783520006910,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "payout",
+              "extract_method": "increment",
+              "table_name": "predefined_payout",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:45.940000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "arrival_date": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "status": [],
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "payout",
+              "time_period": "date_range",
+              "max_batch_time": 1783519979534,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "cards",
+              "extract_method": "increment",
+              "table_name": "predefined_cards",
+              "table_status": "tracked",
+              "datasource_id": "stripe",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "required_mapping_flag": true,
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "orderIndex": 2,
+              "report": "cards",
+              "time_period": "date_range",
+              "gzipTypeMust": null,
+              "start_date": "2025-08-09 00:00:00",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "payment_intents",
+              "extract_method": "increment",
+              "table_name": "predefined_payment_intents",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 3,
+              "gzipTypeMust": null,
+              "start_date": "2026-07-08 14:12:45.501000",
+              "columns": {
+                "customer": {
+                  "is_checked": true,
+                  "alias": "customer_id"
+                },
+                "source": {
+                  "is_checked": true,
+                  "alias": "source_id"
+                },
+                "canceled_at": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "last_payment_error_charge": {
+                  "is_checked": true,
+                  "alias": "last_payment_error_charge_id"
+                },
+                "payment_method": {
+                  "is_checked": true,
+                  "alias": "payment_method_id"
+                },
+                "metadata": {
+                  "is_expression": true,
+                  "type": "VARIANT",
+                  "alias": "metadata",
+                  "is_checked": true,
+                  "expression": "TRY_PARSE_JSON(REPLACE(\n        REPLACE(\n          CHARGES_DATA[0],\n          'None', 'null'\n        ),\n        'metadata\": \"', 'metadata\": '\n      )):metadata",
+                  "order": 2
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "required_mapping_flag": true,
+              "report": "payment_intents",
+              "time_period": "date_range",
+              "max_batch_time": 1783519987968,
+              "interval_chunk_options": {},
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "invoices",
+              "extract_method": "increment",
+              "table_name": "predefined_invoices",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 3,
+              "start_date": "2026-07-08 14:12:47.916000",
+              "columns": {
+                "customer": {
+                  "is_checked": true,
+                  "alias": "customer_id"
+                },
+                "due_date": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "TOTAL_EXCLUDING_TAX": {
+                  "is_expression": true,
+                  "expression": "coalesce((REGEXP_SUBSTR(LINES_DATA, '''amount_excluding_tax'': ([0-9]+)', 1, 1, 'e', 1)::INT),0)+coalesce((REGEXP_SUBSTR(LINES_DATA, '''amount_excluding_tax'': ([0-9]+)', 1, 2, 'e', 1)::INT),0)",
+                  "alias": "TOTAL_EXCLUDING_TAX",
+                  "is_checked": true,
+                  "type": "INTEGER",
+                  "order": 2
+                },
+                "status_transitions_finalized_at": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "webhooks_delivered_at": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "charge": {
+                  "is_checked": true,
+                  "alias": "charge_id"
+                },
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "status_transitions_paid_at": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "payment_intent": {
+                  "is_checked": true,
+                  "alias": "payment_intent_id"
+                },
+                "period_end": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "period_start": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "status": [],
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "collection_method": "all",
+              "end_date": null,
+              "report": "invoices",
+              "time_period": "date_range",
+              "max_batch_time": 1783520002870,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "top_ups",
+              "extract_method": "increment",
+              "table_name": "predefined_top_ups",
+              "status": [],
+              "datasource_id": "stripe",
+              "merge_method": "switch_tables",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "orderIndex": 2,
+              "report": "topups",
+              "time_period": "date_range",
+              "start_date": "2020-01-01 00:00:00",
+              "columns": {
+                "source_created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "subscription_items",
+              "extract_method": "increment",
+              "table_name": "predefined_subscription_items",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:46.811000",
+              "columns": {
+                "plan_created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "price_created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "status": [],
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "collection_method": "all",
+              "end_date": null,
+              "report": "subscription_items",
+              "time_period": "date_range",
+              "max_batch_time": 1783519984591,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "connected_accounts",
+              "extract_method": "increment",
+              "table_name": "predefined_connected_accounts",
+              "table_status": "tracked",
+              "datasource_id": "stripe",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "required_mapping_flag": true,
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "orderIndex": 2,
+              "report": "connected_accounts",
+              "time_period": "date_range",
+              "gzipTypeMust": null,
+              "start_date": "2025-08-09 00:00:00",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "invoice_items",
+              "extract_method": "increment",
+              "table_name": "predefined_invoice_items",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-02-13 00:01:58.047000",
+              "columns": {
+                "date": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "period_end": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "plan_created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "period_start": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "price_created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "invoice_items",
+              "time_period": "date_range",
+              "max_batch_time": 1770940931207,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime",
+              "pending": "all"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "refunds",
+              "extract_method": "increment",
+              "table_name": "predefined_refunds",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "gzipTypeMust": null,
+              "start_date": "2026-06-21 18:01:47.416000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "id": {
+                  "is_checked": true,
+                  "is_key": true
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "required_mapping_flag": true,
+              "report": "refunds",
+              "time_period": "date_range",
+              "max_batch_time": 1782064922535,
+              "interval_chunk_options": {},
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "invoice_line_items",
+              "extract_method": "increment",
+              "table_name": "predefined_invoice_line_items",
+              "table_status": "tracked",
+              "utc_offset": 0,
+              "interval_chunk_options": {},
+              "end_date": null,
+              "merge_method": "switch_tables",
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "max_batch_time": 1783520369369,
+              "orderIndex": 2,
+              "report": "invoice_line_items",
+              "datasource_id": "stripe",
+              "time_period": "date_range",
+              "start_date": "2026-07-08 14:12:44.722000",
+              "columns": {
+                "_fivetran_synced": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_fivetran_synced",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "period_start": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "price_created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "period_end": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "balance_transaction",
+              "extract_method": "increment",
+              "table_name": "predefined_balance_transaction",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:41.035000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "available_on": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "balance_transaction",
+              "time_period": "date_range",
+              "max_batch_time": 1783519974304,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "subscriptions",
+              "extract_method": "increment",
+              "table_name": "predefined_subscriptions",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:47.289000",
+              "columns": {
+                "trial_start": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "ended_at": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "discount_coupon_created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "current_period_end": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "trial_end": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "current_period_start": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "plan_created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "start_date": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "status": [],
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "collection_method": "all",
+              "end_date": null,
+              "report": "subscriptions",
+              "time_period": "date_range",
+              "max_batch_time": 1783519979767,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "cardholders",
+              "extract_method": "increment",
+              "table_name": "predefined_cardholders",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:42.963000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "customers",
+              "time_period": "date_range",
+              "max_batch_time": 1783519975585,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "transactions",
+              "extract_method": "increment",
+              "table_name": "predefined_transactions",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:42.963000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "customers",
+              "time_period": "date_range",
+              "max_batch_time": 1783519975585,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "issuing_cards_list",
+              "extract_method": "increment",
+              "table_name": "predefined_issuing_cards_list",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report_run_type": "entity",
+              "interval_by": "created",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:12:42.963000",
+              "columns": {
+                "_FIVETRAN_SYNCED": {
+                  "is_expression": true,
+                  "type": "TIMESTAMP",
+                  "alias": "_FIVETRAN_SYNCED",
+                  "is_checked": true,
+                  "expression": "current_timestamp()",
+                  "order": 1
+                },
+                "created": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "stripe",
+              "end_date": null,
+              "report": "customers",
+              "time_period": "date_range",
+              "max_batch_time": 1783519975585,
+              "interval_chunk_options": {
+                "disable_minutes": true
+              },
+              "formatHour": "HH:mm",
+              "interval_type": "datetime",
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

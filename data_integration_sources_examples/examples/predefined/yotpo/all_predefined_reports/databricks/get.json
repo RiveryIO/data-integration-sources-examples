@@ -1,0 +1,250 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_yotpo_databricks",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP predefined example: yotpo / databricks",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-13T13:53:49.611000Z",
+    "last_updated_at": "2026-07-13T13:53:49.611000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "yotpo",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "yotpo",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "all_reviews"
+      }
+    },
+    "target": {
+      "name": "databricks",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "id": 0,
+            "fieldName": ""
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "databricks",
+        "connection_type": "databricks",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "quote": "\"",
+        "delimiter": ","
+      },
+      "catalog_name": "<YOUR_CATALOG_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "store_in_custom_location": null,
+      "custom_location_type": null,
+      "custom_location_path": null
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "daily_email_analytics",
+              "extract_method": "increment",
+              "table_name": "predefined_daily_email_analytics",
+              "max_batch_time": 1783950595042,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-07-13 13:49:41.121000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "products",
+              "extract_method": "all",
+              "table_name": "predefined_products",
+              "max_batch_time": 1783950615778,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2024-01-06 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "review_for_specific_products",
+              "extract_method": "increment",
+              "table_name": "predefined_review_for_specific_products",
+              "max_batch_time": 1783950807018,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2024-01-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "email_analytics_raw",
+              "extract_method": "increment",
+              "table_name": "predefined_email_analytics_raw",
+              "max_batch_time": 1783950593882,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-07-13 13:49:41.547000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "all_reviews",
+              "extract_method": "increment",
+              "table_name": "predefined_all_reviews",
+              "datasource_id": "yotpo",
+              "include_review_metadata": false,
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "include_unpublished_reviews": true,
+              "update_report": true,
+              "report": "all_reviews",
+              "since_date_type": "created",
+              "start_date": "2026-07-13 13:49:41.398000",
+              "max_batch_time": 1783950593737,
+              "time_period": "date_range",
+              "last_days": 3,
+              "table_status": "tracked",
+              "columns": {}
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "email_unsubscribers",
+              "extract_method": "all",
+              "table_name": "predefined_email_unsubscribers",
+              "max_batch_time": 1783950636257,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2024-01-06 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "product_grouping",
+              "extract_method": "increment",
+              "table_name": "predefined_product_grouping",
+              "max_batch_time": 1783950595042,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-07-13 13:49:41.121000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "orders",
+              "extract_method": "increment",
+              "table_name": "predefined_orders",
+              "max_batch_time": 1783950595042,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-07-13 13:49:41.121000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

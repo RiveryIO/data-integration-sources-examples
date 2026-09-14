@@ -1,0 +1,628 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_s3_snowflake",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "s3",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "aws",
+        "extract_method": "all",
+        "end_date": null,
+        "quote": "\"",
+        "filters": [
+          {
+            "file_adjs": {},
+            "file_type": "csv",
+            "fields": [],
+            "csv_details": {
+              "quotechar": "\"",
+              "delimiter": ","
+            },
+            "has_headers": true,
+            "header_row": 1,
+            "required_tabs": 1
+          }
+        ],
+        "interval_type": "datetime",
+        "required_mapping_flag": false,
+        "file_pattern": "*.csv",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "interval_time": "dont_split",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "file_delimiter": "\\r\\n",
+        "copied_files": "remain_original",
+        "bucket": "<YOUR_S3_BUCKET>",
+        "gzipTypeMust": null,
+        "start_date": "2026-06-05 15:48:13.163000",
+        "source_format": "CSV"
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "is_key": true,
+            "id": "id",
+            "fieldName": "id",
+            "fields": []
+          },
+          {
+            "name": "c1",
+            "type": "STRING",
+            "id": "c1",
+            "fieldName": "c1",
+            "fields": []
+          },
+          {
+            "name": "c2",
+            "type": "STRING",
+            "id": "c2",
+            "fieldName": "c2",
+            "fields": []
+          },
+          {
+            "name": "c3",
+            "type": "STRING",
+            "id": "c3",
+            "fieldName": "c3",
+            "fields": []
+          },
+          {
+            "name": "c4",
+            "type": "STRING",
+            "id": "c4",
+            "fieldName": "c4",
+            "fields": []
+          },
+          {
+            "name": "c5",
+            "type": "STRING",
+            "id": "c5",
+            "fieldName": "c5",
+            "fields": []
+          },
+          {
+            "name": "c6",
+            "type": "STRING",
+            "id": "c6",
+            "fieldName": "c6",
+            "fields": []
+          },
+          {
+            "name": "c7",
+            "type": "STRING",
+            "id": "c7",
+            "fieldName": "c7",
+            "fields": []
+          },
+          {
+            "name": "c8",
+            "type": "STRING",
+            "id": "c8",
+            "fieldName": "c8",
+            "fields": []
+          },
+          {
+            "name": "c9",
+            "type": "STRING",
+            "id": "c9",
+            "fieldName": "c9",
+            "fields": []
+          },
+          {
+            "name": "c10",
+            "type": "STRING",
+            "id": "c10",
+            "fieldName": "c10",
+            "fields": []
+          },
+          {
+            "name": "c11",
+            "type": "STRING",
+            "id": "c11",
+            "fieldName": "c11",
+            "fields": []
+          },
+          {
+            "name": "c12",
+            "type": "STRING",
+            "id": "c12",
+            "fieldName": "c12",
+            "fields": []
+          },
+          {
+            "name": "c13",
+            "type": "STRING",
+            "id": "c13",
+            "fieldName": "c13",
+            "fields": []
+          },
+          {
+            "name": "c14",
+            "type": "STRING",
+            "id": "c14",
+            "fieldName": "c14",
+            "fields": []
+          },
+          {
+            "name": "c15",
+            "type": "STRING",
+            "id": "c15",
+            "fieldName": "c15",
+            "fields": []
+          },
+          {
+            "name": "c16",
+            "type": "STRING",
+            "id": "c16",
+            "fieldName": "c16",
+            "fields": []
+          },
+          {
+            "name": "c17",
+            "type": "STRING",
+            "id": "c17",
+            "fieldName": "c17",
+            "fields": []
+          },
+          {
+            "name": "c18",
+            "type": "STRING",
+            "id": "c18",
+            "fieldName": "c18",
+            "fields": []
+          },
+          {
+            "name": "c19",
+            "type": "STRING",
+            "id": "c19",
+            "fieldName": "c19",
+            "fields": []
+          },
+          {
+            "name": "c20",
+            "type": "STRING",
+            "id": "c20",
+            "fieldName": "c20",
+            "fields": []
+          },
+          {
+            "name": "c21",
+            "type": "STRING",
+            "id": "c21",
+            "fieldName": "c21",
+            "fields": []
+          },
+          {
+            "name": "c22",
+            "type": "STRING",
+            "id": "c22",
+            "fieldName": "c22",
+            "fields": []
+          },
+          {
+            "name": "c23",
+            "type": "STRING",
+            "id": "c23",
+            "fieldName": "c23",
+            "fields": []
+          },
+          {
+            "name": "c24",
+            "type": "STRING",
+            "id": "c24",
+            "fieldName": "c24",
+            "fields": []
+          },
+          {
+            "name": "c25",
+            "type": "STRING",
+            "id": "c25",
+            "fieldName": "c25",
+            "fields": []
+          },
+          {
+            "name": "c26",
+            "type": "STRING",
+            "id": "c26",
+            "fieldName": "c26",
+            "fields": []
+          },
+          {
+            "name": "c27",
+            "type": "STRING",
+            "id": "c27",
+            "fieldName": "c27",
+            "fields": []
+          },
+          {
+            "name": "c28",
+            "type": "STRING",
+            "id": "c28",
+            "fieldName": "c28",
+            "fields": []
+          },
+          {
+            "name": "c29",
+            "type": "STRING",
+            "id": "c29",
+            "fieldName": "c29",
+            "fields": []
+          },
+          {
+            "name": "c30",
+            "type": "STRING",
+            "id": "c30",
+            "fieldName": "c30",
+            "fields": []
+          },
+          {
+            "name": "c31",
+            "type": "STRING",
+            "id": "c31",
+            "fieldName": "c31",
+            "fields": []
+          },
+          {
+            "name": "c32",
+            "type": "STRING",
+            "id": "c32",
+            "fieldName": "c32",
+            "fields": []
+          },
+          {
+            "name": "c33",
+            "type": "STRING",
+            "id": "c33",
+            "fieldName": "c33",
+            "fields": []
+          },
+          {
+            "name": "c34",
+            "type": "STRING",
+            "id": "c34",
+            "fieldName": "c34",
+            "fields": []
+          },
+          {
+            "name": "c35",
+            "type": "STRING",
+            "id": "c35",
+            "fieldName": "c35",
+            "fields": []
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "CSV",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1780674554828,
+        "quote": "\"",
+        "csvTypeMust": "csv",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "fieldName": "id",
+            "length": 67108864,
+            "type": "INTEGER",
+            "name": "id",
+            "fields": []
+          },
+          {
+            "fieldName": "c1",
+            "length": 16,
+            "type": "STRING",
+            "name": "c1",
+            "fields": []
+          },
+          {
+            "fieldName": "c2",
+            "length": 16,
+            "type": "STRING",
+            "name": "c2",
+            "fields": []
+          },
+          {
+            "fieldName": "c3",
+            "length": 16,
+            "type": "STRING",
+            "name": "c3",
+            "fields": []
+          },
+          {
+            "fieldName": "c4",
+            "length": 16,
+            "type": "STRING",
+            "name": "c4",
+            "fields": []
+          },
+          {
+            "fieldName": "c5",
+            "length": 16,
+            "type": "STRING",
+            "name": "c5",
+            "fields": []
+          },
+          {
+            "fieldName": "c6",
+            "length": 16,
+            "type": "STRING",
+            "name": "c6",
+            "fields": []
+          },
+          {
+            "fieldName": "c7",
+            "length": 16,
+            "type": "STRING",
+            "name": "c7",
+            "fields": []
+          },
+          {
+            "fieldName": "c8",
+            "length": 16,
+            "type": "STRING",
+            "name": "c8",
+            "fields": []
+          },
+          {
+            "fieldName": "c9",
+            "length": 16,
+            "type": "STRING",
+            "name": "c9",
+            "fields": []
+          },
+          {
+            "fieldName": "c10",
+            "length": 16,
+            "type": "STRING",
+            "name": "c10",
+            "fields": []
+          },
+          {
+            "fieldName": "c11",
+            "length": 16,
+            "type": "STRING",
+            "name": "c11",
+            "fields": []
+          },
+          {
+            "fieldName": "c12",
+            "length": 16,
+            "type": "STRING",
+            "name": "c12",
+            "fields": []
+          },
+          {
+            "fieldName": "c13",
+            "length": 16,
+            "type": "STRING",
+            "name": "c13",
+            "fields": []
+          },
+          {
+            "fieldName": "c14",
+            "length": 16,
+            "type": "STRING",
+            "name": "c14",
+            "fields": []
+          },
+          {
+            "fieldName": "c15",
+            "length": 16,
+            "type": "STRING",
+            "name": "c15",
+            "fields": []
+          },
+          {
+            "fieldName": "c16",
+            "length": 16,
+            "type": "STRING",
+            "name": "c16",
+            "fields": []
+          },
+          {
+            "fieldName": "c17",
+            "length": 16,
+            "type": "STRING",
+            "name": "c17",
+            "fields": []
+          },
+          {
+            "fieldName": "c18",
+            "length": 16,
+            "type": "STRING",
+            "name": "c18",
+            "fields": []
+          },
+          {
+            "fieldName": "c19",
+            "length": 16,
+            "type": "STRING",
+            "name": "c19",
+            "fields": []
+          },
+          {
+            "fieldName": "c20",
+            "length": 16,
+            "type": "STRING",
+            "name": "c20",
+            "fields": []
+          },
+          {
+            "fieldName": "c21",
+            "length": 16,
+            "type": "STRING",
+            "name": "c21",
+            "fields": []
+          },
+          {
+            "fieldName": "c22",
+            "length": 16,
+            "type": "STRING",
+            "name": "c22",
+            "fields": []
+          },
+          {
+            "fieldName": "c23",
+            "length": 16,
+            "type": "STRING",
+            "name": "c23",
+            "fields": []
+          },
+          {
+            "fieldName": "c24",
+            "length": 16,
+            "type": "STRING",
+            "name": "c24",
+            "fields": []
+          },
+          {
+            "fieldName": "c25",
+            "length": 16,
+            "type": "STRING",
+            "name": "c25",
+            "fields": []
+          },
+          {
+            "fieldName": "c26",
+            "length": 16,
+            "type": "STRING",
+            "name": "c26",
+            "fields": []
+          },
+          {
+            "fieldName": "c27",
+            "length": 16,
+            "type": "STRING",
+            "name": "c27",
+            "fields": []
+          },
+          {
+            "fieldName": "c28",
+            "length": 16,
+            "type": "STRING",
+            "name": "c28",
+            "fields": []
+          },
+          {
+            "fieldName": "c29",
+            "length": 16,
+            "type": "STRING",
+            "name": "c29",
+            "fields": []
+          },
+          {
+            "fieldName": "c30",
+            "length": 16,
+            "type": "STRING",
+            "name": "c30",
+            "fields": []
+          },
+          {
+            "fieldName": "c31",
+            "length": 16,
+            "type": "STRING",
+            "name": "c31",
+            "fields": []
+          },
+          {
+            "fieldName": "c32",
+            "length": 16,
+            "type": "STRING",
+            "name": "c32",
+            "fields": []
+          },
+          {
+            "fieldName": "c33",
+            "length": 16,
+            "type": "STRING",
+            "name": "c33",
+            "fields": []
+          },
+          {
+            "fieldName": "c34",
+            "length": 16,
+            "type": "STRING",
+            "name": "c34",
+            "fields": []
+          },
+          {
+            "fieldName": "c35",
+            "length": 16,
+            "type": "STRING",
+            "name": "c35",
+            "fields": []
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

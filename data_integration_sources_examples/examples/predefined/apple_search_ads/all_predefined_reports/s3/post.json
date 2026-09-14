@@ -1,0 +1,251 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_appleads_s3",
+  "metadata": {
+    "description": "MCP predefined example: appleads / s3"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "apple_search_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "appleads",
+        "extract_method": "all",
+        "quote": "\"",
+        "required_mapping_flag": true,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "campaigns": [],
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "Campaigns",
+        "accounts": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All Apple Search Ads accounts on this connection, or specific ones? Leave as-is for all.",
+            "value_type": "object_list",
+            "element_shape": {
+              "name": "",
+              "roles": [],
+              "id": ""
+            },
+            "default": []
+          }
+        },
+        "gzipTypeMust": null,
+        "return_results_without_metrics": true
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>",
+      "additional_settings": {},
+      "table_name": "<YOUR_TABLE_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaigns_country_code_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaigns_country_code",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "max_batch_time": 1783320680609,
+              "start_date": "2026-07-06 06:50:13.921000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "keywords_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_keywords",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "max_batch_time": 1783320680609,
+              "start_date": "2026-07-06 06:50:13.921000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "search_terms_country_region_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_search_terms_country_region",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "max_batch_time": 1783320680609,
+              "start_date": "2026-07-06 06:50:13.921000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "keywords_country_region_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_keywords_country_region",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "max_batch_time": 1783320680609,
+              "start_date": "2026-07-06 06:50:13.921000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "adgroups_country_code_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_adgroups_country_code",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "max_batch_time": 1783320680609,
+              "start_date": "2026-07-06 06:50:13.921000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "search_terms_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_search_terms",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "max_batch_time": 1783320680609,
+              "start_date": "2026-07-06 06:50:13.921000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaigns_country_region_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaigns_country_region",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "max_batch_time": 1783320680609,
+              "start_date": "2026-07-06 06:50:13.921000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "adgroups_country_region_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_adgroups_country_region",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "max_batch_time": 1783320680609,
+              "start_date": "2026-07-06 06:50:13.921000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_hubspot_postgres",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "MCP predefined hubspot postgres full-reports example"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "hubspot_legacy",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "hubspot",
+        "properties_to_rows": false,
+        "extract_method": "all",
+        "quote": "\"",
+        "modified_deals": false,
+        "required_mapping_flag": true,
+        "delimiter": ",",
+        "include_history": false,
+        "fz_partition": "d",
+        "filter_by_contact_lists": [],
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "contacts",
+        "gzipTypeMust": null,
+        "properties": [],
+        "source_format": "NEWLINE_DELIMITED_JSON"
+      }
+    },
+    "target": {
+      "name": "postgres_rds",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "id": 0,
+            "fieldName": ""
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "analyze_table": true
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_engagements_v2",
+              "extract_method": "all",
+              "table_name": "predefined_engagements",
+              "table_status": "tracked",
+              "max_batch_time": 1783609718621,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-01-19 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_companies_v2",
+              "extract_method": "all",
+              "table_name": "predefined_companies",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_contacts_v3_basic_v2",
+              "extract_method": "all",
+              "table_name": "predefined_contacts_v3",
+              "max_batch_time": 1783521331911,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-14 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_deals_v2",
+              "extract_method": "all",
+              "table_name": "predefined_deals",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_contacts_created_v2",
+              "extract_method": "all",
+              "table_name": "predefined_contacts_created",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_contacts_updated_v2",
+              "extract_method": "all",
+              "table_name": "predefined_contacts_updated",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_forms_v2",
+              "extract_method": "all",
+              "table_name": "predefined_forms",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_marketing_emails_v3_basic_v2",
+              "extract_method": "all",
+              "table_name": "predefined_marketing_emails_v3",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_owners_v2",
+              "extract_method": "all",
+              "table_name": "predefined_owners",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_pipelines_v2",
+              "extract_method": "all",
+              "table_name": "predefined_pipelines",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "hubspot_workflows_v2",
+              "extract_method": "all",
+              "table_name": "predefined_workflows",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-01-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": 43200,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

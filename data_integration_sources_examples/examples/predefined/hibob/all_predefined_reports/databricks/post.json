@@ -1,0 +1,214 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_hibob_databricks",
+  "metadata": {
+    "description": "MCP predefined example: hibob / databricks"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "hibob",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "hibob",
+        "extract_method": "All",
+        "showInactive": "false",
+        "quote": "\"",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "humanReadable": "false",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "search_for_employees",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "databricks",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "fieldName": "",
+            "id": 0
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "catalog_name": "<YOUR_CATALOG_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "store_in_custom_location": null,
+      "custom_location_type": null,
+      "custom_location_path": null
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "employment_history",
+              "extract_method": "all",
+              "table_name": "predefined_employment_history",
+              "datasource_id": "hibob",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "start_date": "2025-04-12 00:00:00",
+              "time_period": "date_range",
+              "report": "employment_history",
+              "mapping_order": [
+                "id"
+              ],
+              "showInactive": "false",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "sort": true,
+                  "sort_order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "life_cycle_history",
+              "extract_method": "all",
+              "table_name": "predefined_life_cycle_history",
+              "datasource_id": "hibob",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "start_date": "2025-04-13 00:00:00",
+              "time_period": "date_range",
+              "report": "employment_history",
+              "mapping_order": [
+                "id",
+                "id"
+              ],
+              "showInactive": "false",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "sort": true,
+                  "sort_order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "company_lists",
+              "extract_method": "all",
+              "table_name": "predefined_company_lists",
+              "datasource_id": "hibob",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "start_date": "2025-04-12 00:00:00",
+              "time_period": "date_range",
+              "report": "employment_history",
+              "mapping_order": [
+                "id"
+              ],
+              "showInactive": "false",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "sort": true,
+                  "sort_order": 1
+                }
+              },
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "search_for_employees",
+              "extract_method": "all",
+              "table_name": "predefined_search_for_employees",
+              "datasource_id": "hibob",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "start_date": "2025-04-12 00:00:00",
+              "time_period": "date_range",
+              "report": "employment_history",
+              "mapping_order": [
+                "id"
+              ],
+              "showInactive": "false",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "sort": true,
+                  "sort_order": 1
+                }
+              },
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

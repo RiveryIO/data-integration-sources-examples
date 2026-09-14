@@ -1,0 +1,92 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "mcp_example_s3_kh_csv_fix_6",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-08-02T12:41:44.474000Z",
+    "last_updated_at": "2026-08-02T12:41:44.474000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "s3",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "aws",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "extract_method": "all",
+        "file_delimiter": "\\r\\n",
+        "interval_type": "datetime",
+        "required_mapping_flag": false,
+        "file_pattern": "*.csv",
+        "interval_time": "dont_split",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [
+          {
+            "file_type": "csv",
+            "fields": [],
+            "header_row": 1,
+            "file_adjs": {},
+            "has_headers": true
+          }
+        ],
+        "copied_files": "remain_original",
+        "bucket": "<YOUR_BUCKET>",
+        "file_path": "<YOUR_FILE_PATH>",
+        "source_format": "CSV",
+        "start_date": "2026-08-02 12:08:21.440000"
+      }
+    },
+    "target": {
+      "name": "knowledge_hub",
+      "connection_id": null,
+      "connection_name": null,
+      "repository_id": "<KH_REPOSITORY_ID>",
+      "knowledge_base_id": "<KH_KNOWLEDGE_BASE_ID>",
+      "load_mode": "append"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

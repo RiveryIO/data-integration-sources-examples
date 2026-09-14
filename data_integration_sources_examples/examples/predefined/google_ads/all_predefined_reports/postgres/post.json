@@ -1,0 +1,314 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_google_ads_postgres",
+  "metadata": {
+    "description": "MCP example: google_ads predefined reports (postgres)."
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "report_field_list": [],
+        "quote": "\"",
+        "accounts_manual": true,
+        "accounts_ids": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All Google Ads accounts, or specific ones? Leave as-is for all. Each entry is a bare 10-digit customer id like \"7419478371\".",
+            "value_type": "string_list",
+            "default": []
+          }
+        },
+        "delimiter": ",",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [],
+        "increment_field": null,
+        "report": "ad_group_ad",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "postgres_rds",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "VARCHAR",
+            "fieldName": "",
+            "id": 0
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "analyze_table": true
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "google_ads_ad_performance_by_day_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_performance_by_day",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "account_performance_by_day_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_account_performance_by_day",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "account_performance_by_hour_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_account_performance_by_hour",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_group_performance_by_day_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_group_performance_by_day",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_group_performance_by_hour_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_group_performance_by_hour",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "audience_performance_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_audience_performance",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaign_performance_by_day_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaign_performance_by_day",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaign_performance_by_hour_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaign_performance_by_hour",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "geographic_performance_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_geographic_performance",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "keyword_performance_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_keyword_performance",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "media_file_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_media_file",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "segments.date",
+              "max_batch_time": 1783325442086,
+              "start_date": "2026-07-06 08:10:24.799000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

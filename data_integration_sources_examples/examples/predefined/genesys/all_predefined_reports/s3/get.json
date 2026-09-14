@@ -1,0 +1,287 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_genesys_s3",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP predefined example: genesys / s3",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-14T08:11:35.961000Z",
+    "last_updated_at": "2026-07-14T08:11:35.961000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "genesys",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "genesys",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "extract_method": "all",
+        "startOfDayIntervalMatching": false,
+        "check_data_availability": true,
+        "required_mapping_flag": false,
+        "report": "business_units",
+        "utc_offset": 0
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "routing_skills_v2",
+              "extract_method": "all",
+              "table_name": "predefined_routing_skills",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783416386077,
+              "start_date": "2026-03-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "conversations_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_conversations",
+              "hideEnd": true,
+              "interval_chunk_options": {
+                "without_interval_chunk_by": true
+              },
+              "formatHour": "HH:mm:ss",
+              "table_status": "tracked",
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "Conversation Date",
+              "max_batch_time": 1783416032009,
+              "time_period": "date_range",
+              "start_date": "2026-07-06 07:12:10"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "conversations_sessions_segments_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_conversations_sessions_segments",
+              "hideEnd": true,
+              "interval_chunk_options": {
+                "without_interval_chunk_by": true
+              },
+              "formatHour": "HH:mm:ss",
+              "table_status": "tracked",
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "Conversation Date",
+              "max_batch_time": 1783416027826,
+              "time_period": "date_range",
+              "start_date": "2026-07-06 07:12:10"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "conversations_participants_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_conversations_participants",
+              "hideEnd": true,
+              "interval_chunk_options": {
+                "without_interval_chunk_by": true
+              },
+              "formatHour": "HH:mm:ss",
+              "table_status": "tracked",
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "Conversation Date",
+              "max_batch_time": 1783416046123,
+              "time_period": "date_range",
+              "start_date": "2026-07-06 07:12:10"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "authorization_roles_v2",
+              "extract_method": "all",
+              "table_name": "predefined_authorization_roles",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783416387262,
+              "start_date": "2026-03-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "conversations_sessions_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_conversations_sessions",
+              "hideEnd": true,
+              "interval_chunk_options": {
+                "without_interval_chunk_by": true
+              },
+              "formatHour": "HH:mm:ss",
+              "table_status": "tracked",
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "Conversation Date",
+              "max_batch_time": 1783416024820,
+              "time_period": "date_range",
+              "start_date": "2026-07-06 07:12:10"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "routing_division_views_v2",
+              "extract_method": "all",
+              "table_name": "predefined_routing_division_views",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783416386809,
+              "start_date": "2026-03-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "agent_schedules_v2",
+              "extract_method": "all",
+              "table_name": "predefined_agent_schedules",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783416386077,
+              "start_date": "2026-03-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "business_units_division_views_v2",
+              "extract_method": "all",
+              "table_name": "predefined_business_units_division_views",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783416386077,
+              "start_date": "2026-03-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "business_units_v2",
+              "extract_method": "all",
+              "table_name": "predefined_business_units",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783416386077,
+              "start_date": "2026-03-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "agent_schedules_activities_v2",
+              "extract_method": "all",
+              "table_name": "predefined_agent_schedules_activities",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783416386077,
+              "start_date": "2026-03-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

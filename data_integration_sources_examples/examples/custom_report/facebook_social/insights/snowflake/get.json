@@ -1,0 +1,301 @@
+{
+  "cross_id": "<CROSS_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_fb_social_insights",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-22T11:10:17.952000Z",
+    "last_updated_at": "2026-06-22T11:10:17.952000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "fb_social",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "insights",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "fb_social",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "utc_offset": 0,
+        "video_fields": [
+          "id"
+        ],
+        "last_days": 1,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": "2026-06-19 00:00:00",
+        "required_mapping_flag": false,
+        "period": "day",
+        "metrics": [
+          "page_post_engagements",
+          "page_views_total"
+        ],
+        "time_resolution": "daily",
+        "time_period": "yesterday",
+        "pages": "<YOUR_PAGES>",
+        "posts_fields": [
+          "id",
+          "attachments"
+        ],
+        "feed_report_tree": [
+          {
+            "type": "feed",
+            "nodes": [
+              {
+                "type": "comments",
+                "nodes": [
+                  {
+                    "type": "reactions",
+                    "checked": true,
+                    "id": "_reactions2",
+                    "fields": []
+                  },
+                  {
+                    "checked": true,
+                    "nodes": [
+                      {
+                        "checked": true,
+                        "type": "reactions",
+                        "id": "reactions3",
+                        "fields": []
+                      }
+                    ],
+                    "type": "comments",
+                    "id": "_comments2",
+                    "fields": []
+                  }
+                ],
+                "checked": true,
+                "id": "comments1",
+                "fields": []
+              },
+              {
+                "checked": true,
+                "type": "reactions",
+                "id": "_reactions0",
+                "fields": []
+              }
+            ],
+            "checked": true,
+            "id": "_feed",
+            "fields": []
+          }
+        ],
+        "pages_fields": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "page_impressions_day",
+            "type": "INTEGER",
+            "alias": "page_impressions_day",
+            "mode": "NULLABLE",
+            "id": "page_impressions_day",
+            "fieldName": "page_impressions_day",
+            "fields": []
+          },
+          {
+            "name": "end_time",
+            "type": "STRING",
+            "alias": "end_time",
+            "mode": "NULLABLE",
+            "id": "end_time",
+            "fieldName": "end_time",
+            "fields": []
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "id": "id",
+            "fieldName": "id",
+            "fields": []
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "alias": "name",
+            "mode": "NULLABLE",
+            "id": "name",
+            "fieldName": "name",
+            "fields": []
+          },
+          {
+            "name": "date",
+            "type": "STRING",
+            "alias": "date",
+            "mode": "NULLABLE",
+            "id": "date",
+            "fieldName": "date",
+            "fields": []
+          },
+          {
+            "name": "page_post_engagements_day",
+            "type": "INTEGER",
+            "alias": "page_post_engagements_day",
+            "mode": "NULLABLE",
+            "id": "page_post_engagements_day",
+            "fieldName": "page_post_engagements_day",
+            "fields": []
+          },
+          {
+            "name": "page_views_total_day",
+            "type": "INTEGER",
+            "alias": "page_views_total_day",
+            "mode": "NULLABLE",
+            "id": "page_views_total_day",
+            "fieldName": "page_views_total_day",
+            "fields": []
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1781857550814,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "page_post_engagements_day",
+            "fields": [],
+            "alias": "page_post_engagements_day",
+            "length": 8,
+            "fieldName": "page_post_engagements_day",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "end_time",
+            "fields": [],
+            "alias": "end_time",
+            "length": 32,
+            "fieldName": "end_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "page_views_total_day",
+            "fields": [],
+            "alias": "page_views_total_day",
+            "length": 8,
+            "fieldName": "page_views_total_day",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "id",
+            "fields": [],
+            "alias": "id",
+            "length": 16,
+            "fieldName": "id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "name",
+            "fields": [],
+            "alias": "name",
+            "length": 16,
+            "fieldName": "name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "date",
+            "fields": [],
+            "alias": "date",
+            "length": 16,
+            "fieldName": "date",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ],
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

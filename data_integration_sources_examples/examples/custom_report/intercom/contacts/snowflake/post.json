@@ -1,0 +1,1524 @@
+{
+  "name": "MCP_v2_Intercom Bigquery v2 - Contacts_river_copied",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "intercom",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "intercom",
+        "extract_method": "incremental",
+        "end_date": null,
+        "quote": "\"",
+        "required_mapping_flag": false,
+        "interval_by": "created_at",
+        "last_days": 7,
+        "fz_partition": "d",
+        "delimiter": ",",
+        "utc_offset": 0,
+        "report": "contacts",
+        "fz_batched": true,
+        "time_period": "date_range",
+        "gzipTypeMust": null,
+        "source_format": "NEWLINE_DELIMITED_JSON"
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "type",
+            "type": "STRING",
+            "alias": "type",
+            "mode": "NULLABLE",
+            "cluster_key": 1,
+            "fieldName": "type",
+            "fields": [],
+            "id": "type",
+            "sort": true
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "id",
+            "fields": [],
+            "id": "id"
+          },
+          {
+            "name": "workspace_id",
+            "type": "STRING",
+            "alias": "workspace_id",
+            "mode": "NULLABLE",
+            "fieldName": "workspace_id",
+            "fields": [],
+            "id": "workspace_id"
+          },
+          {
+            "name": "external_id",
+            "type": "STRING",
+            "alias": "external_id",
+            "mode": "NULLABLE",
+            "fieldName": "external_id",
+            "fields": [],
+            "id": "external_id"
+          },
+          {
+            "name": "role",
+            "type": "STRING",
+            "alias": "role",
+            "mode": "NULLABLE",
+            "cluster_key": 2,
+            "fieldName": "role",
+            "fields": [],
+            "id": "role",
+            "sort": true
+          },
+          {
+            "name": "email",
+            "type": "STRING",
+            "alias": "email",
+            "mode": "NULLABLE",
+            "fieldName": "email",
+            "fields": [],
+            "id": "email"
+          },
+          {
+            "name": "phone",
+            "type": "STRING",
+            "alias": "phone",
+            "mode": "NULLABLE",
+            "fieldName": "phone",
+            "fields": [],
+            "id": "phone"
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "alias": "name",
+            "mode": "NULLABLE",
+            "fieldName": "name",
+            "fields": [],
+            "id": "name"
+          },
+          {
+            "name": "avatar",
+            "type": "STRING",
+            "alias": "avatar",
+            "mode": "NULLABLE",
+            "fieldName": "avatar",
+            "fields": [],
+            "id": "avatar"
+          },
+          {
+            "name": "owner_id",
+            "type": "STRING",
+            "alias": "owner_id",
+            "mode": "NULLABLE",
+            "fieldName": "owner_id",
+            "fields": [],
+            "id": "owner_id"
+          },
+          {
+            "name": "social_profiles",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "social_profiles",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "id": "social_profiles"
+          },
+          {
+            "name": "has_hard_bounced",
+            "type": "BOOLEAN",
+            "alias": "has_hard_bounced",
+            "mode": "NULLABLE",
+            "fieldName": "has_hard_bounced",
+            "fields": [],
+            "id": "has_hard_bounced"
+          },
+          {
+            "name": "marked_email_as_spam",
+            "type": "BOOLEAN",
+            "alias": "marked_email_as_spam",
+            "mode": "NULLABLE",
+            "fieldName": "marked_email_as_spam",
+            "fields": [],
+            "id": "marked_email_as_spam"
+          },
+          {
+            "name": "unsubscribed_from_emails",
+            "type": "BOOLEAN",
+            "alias": "unsubscribed_from_emails",
+            "mode": "NULLABLE",
+            "fieldName": "unsubscribed_from_emails",
+            "fields": [],
+            "id": "unsubscribed_from_emails"
+          },
+          {
+            "name": "created_at",
+            "type": "TIMESTAMP",
+            "alias": "created_at",
+            "mode": "NULLABLE",
+            "fieldName": "created_at",
+            "fields": [],
+            "id": "created_at",
+            "sort": false
+          },
+          {
+            "name": "updated_at",
+            "type": "INTEGER",
+            "alias": "updated_at",
+            "mode": "NULLABLE",
+            "fieldName": "updated_at",
+            "fields": [],
+            "id": "updated_at"
+          },
+          {
+            "name": "signed_up_at",
+            "type": "INTEGER",
+            "alias": "signed_up_at",
+            "mode": "NULLABLE",
+            "fieldName": "signed_up_at",
+            "fields": [],
+            "id": "signed_up_at"
+          },
+          {
+            "name": "last_seen_at",
+            "type": "INTEGER",
+            "alias": "last_seen_at",
+            "mode": "NULLABLE",
+            "fieldName": "last_seen_at",
+            "fields": [],
+            "id": "last_seen_at"
+          },
+          {
+            "name": "last_replied_at",
+            "type": "INTEGER",
+            "alias": "last_replied_at",
+            "mode": "NULLABLE",
+            "fieldName": "last_replied_at",
+            "fields": [],
+            "id": "last_replied_at"
+          },
+          {
+            "name": "last_contacted_at",
+            "type": "INTEGER",
+            "alias": "last_contacted_at",
+            "mode": "NULLABLE",
+            "fieldName": "last_contacted_at",
+            "fields": [],
+            "id": "last_contacted_at"
+          },
+          {
+            "name": "last_email_opened_at",
+            "type": "INTEGER",
+            "alias": "last_email_opened_at",
+            "mode": "NULLABLE",
+            "fieldName": "last_email_opened_at",
+            "fields": [],
+            "id": "last_email_opened_at"
+          },
+          {
+            "name": "last_email_clicked_at",
+            "type": "INTEGER",
+            "alias": "last_email_clicked_at",
+            "mode": "NULLABLE",
+            "fieldName": "last_email_clicked_at",
+            "fields": [],
+            "id": "last_email_clicked_at"
+          },
+          {
+            "name": "language_override",
+            "type": "STRING",
+            "alias": "language_override",
+            "mode": "NULLABLE",
+            "fieldName": "language_override",
+            "fields": [],
+            "id": "language_override"
+          },
+          {
+            "name": "browser",
+            "type": "STRING",
+            "alias": "browser",
+            "mode": "NULLABLE",
+            "fieldName": "browser",
+            "fields": [],
+            "id": "browser"
+          },
+          {
+            "name": "browser_version",
+            "type": "STRING",
+            "alias": "browser_version",
+            "mode": "NULLABLE",
+            "fieldName": "browser_version",
+            "fields": [],
+            "id": "browser_version"
+          },
+          {
+            "name": "browser_language",
+            "type": "STRING",
+            "alias": "browser_language",
+            "mode": "NULLABLE",
+            "fieldName": "browser_language",
+            "fields": [],
+            "id": "browser_language"
+          },
+          {
+            "name": "os",
+            "type": "STRING",
+            "alias": "os",
+            "mode": "NULLABLE",
+            "fieldName": "os",
+            "fields": [],
+            "id": "os"
+          },
+          {
+            "name": "location",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "location",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 8,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "country",
+                "fields": [],
+                "alias": "country",
+                "length": 32,
+                "fieldName": "country",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "region",
+                "fields": [],
+                "alias": "region",
+                "length": 32,
+                "fieldName": "region",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "city",
+                "fields": [],
+                "alias": "city",
+                "length": 32,
+                "fieldName": "city",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "country_code",
+                "fields": [],
+                "alias": "country_code",
+                "length": 4,
+                "fieldName": "country_code",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "continent_code",
+                "fields": [],
+                "alias": "continent_code",
+                "length": 2,
+                "fieldName": "continent_code",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "id": "location"
+          },
+          {
+            "name": "android_app_name",
+            "type": "STRING",
+            "alias": "android_app_name",
+            "mode": "NULLABLE",
+            "fieldName": "android_app_name",
+            "fields": [],
+            "id": "android_app_name"
+          },
+          {
+            "name": "android_app_version",
+            "type": "STRING",
+            "alias": "android_app_version",
+            "mode": "NULLABLE",
+            "fieldName": "android_app_version",
+            "fields": [],
+            "id": "android_app_version"
+          },
+          {
+            "name": "android_device",
+            "type": "STRING",
+            "alias": "android_device",
+            "mode": "NULLABLE",
+            "fieldName": "android_device",
+            "fields": [],
+            "id": "android_device"
+          },
+          {
+            "name": "android_os_version",
+            "type": "STRING",
+            "alias": "android_os_version",
+            "mode": "NULLABLE",
+            "fieldName": "android_os_version",
+            "fields": [],
+            "id": "android_os_version"
+          },
+          {
+            "name": "android_sdk_version",
+            "type": "STRING",
+            "alias": "android_sdk_version",
+            "mode": "NULLABLE",
+            "fieldName": "android_sdk_version",
+            "fields": [],
+            "id": "android_sdk_version"
+          },
+          {
+            "name": "android_last_seen_at",
+            "type": "STRING",
+            "alias": "android_last_seen_at",
+            "mode": "NULLABLE",
+            "fieldName": "android_last_seen_at",
+            "fields": [],
+            "id": "android_last_seen_at"
+          },
+          {
+            "name": "ios_app_name",
+            "type": "STRING",
+            "alias": "ios_app_name",
+            "mode": "NULLABLE",
+            "fieldName": "ios_app_name",
+            "fields": [],
+            "id": "ios_app_name"
+          },
+          {
+            "name": "ios_app_version",
+            "type": "STRING",
+            "alias": "ios_app_version",
+            "mode": "NULLABLE",
+            "fieldName": "ios_app_version",
+            "fields": [],
+            "id": "ios_app_version"
+          },
+          {
+            "name": "ios_device",
+            "type": "STRING",
+            "alias": "ios_device",
+            "mode": "NULLABLE",
+            "fieldName": "ios_device",
+            "fields": [],
+            "id": "ios_device"
+          },
+          {
+            "name": "ios_os_version",
+            "type": "STRING",
+            "alias": "ios_os_version",
+            "mode": "NULLABLE",
+            "fieldName": "ios_os_version",
+            "fields": [],
+            "id": "ios_os_version"
+          },
+          {
+            "name": "ios_sdk_version",
+            "type": "STRING",
+            "alias": "ios_sdk_version",
+            "mode": "NULLABLE",
+            "fieldName": "ios_sdk_version",
+            "fields": [],
+            "id": "ios_sdk_version"
+          },
+          {
+            "name": "ios_last_seen_at",
+            "type": "STRING",
+            "alias": "ios_last_seen_at",
+            "mode": "NULLABLE",
+            "fieldName": "ios_last_seen_at",
+            "fields": [],
+            "id": "ios_last_seen_at"
+          },
+          {
+            "name": "custom_attributes",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "custom_attributes",
+            "fields": [
+              {
+                "name": "Latest_FullStory_Session",
+                "fields": [],
+                "alias": "Latest_FullStory_Session",
+                "length": 256,
+                "fieldName": "Latest_FullStory_Session",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "marketo_tracking_cookie",
+                "fields": [],
+                "alias": "marketo_tracking_cookie",
+                "length": 4,
+                "fieldName": "marketo_tracking_cookie",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "id": "custom_attributes"
+          },
+          {
+            "name": "tags",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "tags",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 64,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 8,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "has_more",
+                "fields": [],
+                "alias": "has_more",
+                "length": 8,
+                "fieldName": "has_more",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "id": "tags"
+          },
+          {
+            "name": "notes",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "notes",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 64,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 8,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "has_more",
+                "fields": [],
+                "alias": "has_more",
+                "length": 8,
+                "fieldName": "has_more",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "id": "notes"
+          },
+          {
+            "name": "companies",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "companies",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 64,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 8,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "has_more",
+                "fields": [],
+                "alias": "has_more",
+                "length": 8,
+                "fieldName": "has_more",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "id": "companies"
+          },
+          {
+            "name": "opted_out_subscription_types",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "opted_out_subscription_types",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 64,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 8,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "has_more",
+                "fields": [],
+                "alias": "has_more",
+                "length": 8,
+                "fieldName": "has_more",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "id": "opted_out_subscription_types"
+          },
+          {
+            "name": "utm_campaign",
+            "type": "STRING",
+            "alias": "utm_campaign",
+            "mode": "NULLABLE",
+            "fieldName": "utm_campaign",
+            "fields": [],
+            "id": "utm_campaign"
+          },
+          {
+            "name": "utm_content",
+            "type": "STRING",
+            "alias": "utm_content",
+            "mode": "NULLABLE",
+            "fieldName": "utm_content",
+            "fields": [],
+            "id": "utm_content"
+          },
+          {
+            "name": "utm_medium",
+            "type": "STRING",
+            "alias": "utm_medium",
+            "mode": "NULLABLE",
+            "fieldName": "utm_medium",
+            "fields": [],
+            "id": "utm_medium"
+          },
+          {
+            "name": "utm_source",
+            "type": "STRING",
+            "alias": "utm_source",
+            "mode": "NULLABLE",
+            "fieldName": "utm_source",
+            "fields": [],
+            "id": "utm_source"
+          },
+          {
+            "name": "utm_term",
+            "type": "STRING",
+            "alias": "utm_term",
+            "mode": "NULLABLE",
+            "fieldName": "utm_term",
+            "fields": [],
+            "id": "utm_term"
+          },
+          {
+            "name": "referrer",
+            "type": "STRING",
+            "alias": "referrer",
+            "mode": "NULLABLE",
+            "fieldName": "referrer",
+            "fields": [],
+            "id": "referrer"
+          },
+          {
+            "name": "sms_consent",
+            "type": "BOOLEAN",
+            "alias": "sms_consent",
+            "mode": "NULLABLE",
+            "fieldName": "sms_consent",
+            "fields": [],
+            "id": "sms_consent"
+          },
+          {
+            "name": "unsubscribed_from_sms",
+            "type": "BOOLEAN",
+            "alias": "unsubscribed_from_sms",
+            "mode": "NULLABLE",
+            "fieldName": "unsubscribed_from_sms",
+            "fields": [],
+            "id": "unsubscribed_from_sms"
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": "TIMESTAMP",
+        "partition_granularity": "DAY",
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [
+          "type",
+          "role"
+        ],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "type",
+            "fields": [],
+            "alias": "type",
+            "length": 8,
+            "fieldName": "type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "id",
+            "fields": [],
+            "alias": "id",
+            "length": 32,
+            "fieldName": "id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "workspace_id",
+            "fields": [],
+            "alias": "workspace_id",
+            "length": 8,
+            "fieldName": "workspace_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "external_id",
+            "fields": [],
+            "alias": "external_id",
+            "length": 64,
+            "fieldName": "external_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "role",
+            "fields": [],
+            "alias": "role",
+            "length": 4,
+            "fieldName": "role",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "email",
+            "fields": [],
+            "alias": "email",
+            "length": 64,
+            "fieldName": "email",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "phone",
+            "fields": [],
+            "alias": "phone",
+            "length": 4,
+            "fieldName": "phone",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "name",
+            "fields": [],
+            "alias": "name",
+            "length": 64,
+            "fieldName": "name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "avatar",
+            "fields": [],
+            "alias": "avatar",
+            "length": 4,
+            "fieldName": "avatar",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "owner_id",
+            "fields": [],
+            "alias": "owner_id",
+            "length": 4,
+            "fieldName": "owner_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "social_profiles",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "social_profiles",
+            "fieldName": "social_profiles",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "has_hard_bounced",
+            "fields": [],
+            "alias": "has_hard_bounced",
+            "length": 8,
+            "fieldName": "has_hard_bounced",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "marked_email_as_spam",
+            "fields": [],
+            "alias": "marked_email_as_spam",
+            "length": 8,
+            "fieldName": "marked_email_as_spam",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "unsubscribed_from_emails",
+            "fields": [],
+            "alias": "unsubscribed_from_emails",
+            "length": 1,
+            "fieldName": "unsubscribed_from_emails",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "created_at",
+            "fields": [],
+            "alias": "created_at",
+            "length": 2147483648,
+            "fieldName": "created_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "updated_at",
+            "fields": [],
+            "alias": "updated_at",
+            "length": 2147483648,
+            "fieldName": "updated_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "signed_up_at",
+            "fields": [],
+            "alias": "signed_up_at",
+            "length": 2147483648,
+            "fieldName": "signed_up_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "last_seen_at",
+            "fields": [],
+            "alias": "last_seen_at",
+            "length": 2147483648,
+            "fieldName": "last_seen_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "last_replied_at",
+            "fields": [],
+            "alias": "last_replied_at",
+            "length": 2147483648,
+            "fieldName": "last_replied_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "last_contacted_at",
+            "fields": [],
+            "alias": "last_contacted_at",
+            "length": 2147483648,
+            "fieldName": "last_contacted_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "last_email_opened_at",
+            "fields": [],
+            "alias": "last_email_opened_at",
+            "length": 2147483648,
+            "fieldName": "last_email_opened_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "last_email_clicked_at",
+            "fields": [],
+            "alias": "last_email_clicked_at",
+            "length": 2147483648,
+            "fieldName": "last_email_clicked_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "language_override",
+            "fields": [],
+            "alias": "language_override",
+            "length": 4,
+            "fieldName": "language_override",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "browser",
+            "fields": [],
+            "alias": "browser",
+            "length": 16,
+            "fieldName": "browser",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "browser_version",
+            "fields": [],
+            "alias": "browser_version",
+            "length": 16,
+            "fieldName": "browser_version",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "browser_language",
+            "fields": [],
+            "alias": "browser_language",
+            "length": 8,
+            "fieldName": "browser_language",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "os",
+            "fields": [],
+            "alias": "os",
+            "length": 32,
+            "fieldName": "os",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "location",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 8,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "country",
+                "fields": [],
+                "alias": "country",
+                "length": 32,
+                "fieldName": "country",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "region",
+                "fields": [],
+                "alias": "region",
+                "length": 32,
+                "fieldName": "region",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "city",
+                "fields": [],
+                "alias": "city",
+                "length": 32,
+                "fieldName": "city",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "country_code",
+                "fields": [],
+                "alias": "country_code",
+                "length": 4,
+                "fieldName": "country_code",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "continent_code",
+                "fields": [],
+                "alias": "continent_code",
+                "length": 2,
+                "fieldName": "continent_code",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "location",
+            "fieldName": "location",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "android_app_name",
+            "fields": [],
+            "alias": "android_app_name",
+            "length": 4,
+            "fieldName": "android_app_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "android_app_version",
+            "fields": [],
+            "alias": "android_app_version",
+            "length": 4,
+            "fieldName": "android_app_version",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "android_device",
+            "fields": [],
+            "alias": "android_device",
+            "length": 4,
+            "fieldName": "android_device",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "android_os_version",
+            "fields": [],
+            "alias": "android_os_version",
+            "length": 4,
+            "fieldName": "android_os_version",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "android_sdk_version",
+            "fields": [],
+            "alias": "android_sdk_version",
+            "length": 4,
+            "fieldName": "android_sdk_version",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "android_last_seen_at",
+            "fields": [],
+            "alias": "android_last_seen_at",
+            "length": 4,
+            "fieldName": "android_last_seen_at",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ios_app_name",
+            "fields": [],
+            "alias": "ios_app_name",
+            "length": 4,
+            "fieldName": "ios_app_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ios_app_version",
+            "fields": [],
+            "alias": "ios_app_version",
+            "length": 4,
+            "fieldName": "ios_app_version",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ios_device",
+            "fields": [],
+            "alias": "ios_device",
+            "length": 4,
+            "fieldName": "ios_device",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ios_os_version",
+            "fields": [],
+            "alias": "ios_os_version",
+            "length": 4,
+            "fieldName": "ios_os_version",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ios_sdk_version",
+            "fields": [],
+            "alias": "ios_sdk_version",
+            "length": 4,
+            "fieldName": "ios_sdk_version",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ios_last_seen_at",
+            "fields": [],
+            "alias": "ios_last_seen_at",
+            "length": 4,
+            "fieldName": "ios_last_seen_at",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "custom_attributes",
+            "fields": [
+              {
+                "name": "Latest_FullStory_Session",
+                "fields": [],
+                "alias": "Latest_FullStory_Session",
+                "length": 256,
+                "fieldName": "Latest_FullStory_Session",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "marketo_tracking_cookie",
+                "fields": [],
+                "alias": "marketo_tracking_cookie",
+                "length": 4,
+                "fieldName": "marketo_tracking_cookie",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "custom_attributes",
+            "fieldName": "custom_attributes",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "tags",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 64,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 8,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "has_more",
+                "fields": [],
+                "alias": "has_more",
+                "length": 8,
+                "fieldName": "has_more",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "alias": "tags",
+            "fieldName": "tags",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "notes",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 64,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 8,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "has_more",
+                "fields": [],
+                "alias": "has_more",
+                "length": 8,
+                "fieldName": "has_more",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "alias": "notes",
+            "fieldName": "notes",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "companies",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 64,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 8,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "has_more",
+                "fields": [],
+                "alias": "has_more",
+                "length": 8,
+                "fieldName": "has_more",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "alias": "companies",
+            "fieldName": "companies",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "opted_out_subscription_types",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 4,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 64,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 8,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "has_more",
+                "fields": [],
+                "alias": "has_more",
+                "length": 8,
+                "fieldName": "has_more",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "alias": "opted_out_subscription_types",
+            "fieldName": "opted_out_subscription_types",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "utm_campaign",
+            "fields": [],
+            "alias": "utm_campaign",
+            "length": 64,
+            "fieldName": "utm_campaign",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "utm_content",
+            "fields": [],
+            "alias": "utm_content",
+            "length": 32,
+            "fieldName": "utm_content",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "utm_medium",
+            "fields": [],
+            "alias": "utm_medium",
+            "length": 8,
+            "fieldName": "utm_medium",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "utm_source",
+            "fields": [],
+            "alias": "utm_source",
+            "length": 32,
+            "fieldName": "utm_source",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "utm_term",
+            "fields": [],
+            "alias": "utm_term",
+            "length": 4,
+            "fieldName": "utm_term",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "referrer",
+            "fields": [],
+            "alias": "referrer",
+            "length": 2048,
+            "fieldName": "referrer",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "sms_consent",
+            "fields": [],
+            "alias": "sms_consent",
+            "length": 8,
+            "fieldName": "sms_consent",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "unsubscribed_from_sms",
+            "fields": [],
+            "alias": "unsubscribed_from_sms",
+            "length": 8,
+            "fieldName": "unsubscribed_from_sms",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

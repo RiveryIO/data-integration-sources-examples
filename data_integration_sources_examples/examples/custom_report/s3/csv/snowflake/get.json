@@ -1,0 +1,212 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_s3_snowflake_csv",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-08-03T11:56:24.400000Z",
+    "last_updated_at": "2026-08-03T11:56:24.400000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "s3",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "aws",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "file_delimiter": "\\r\\n",
+        "interval_type": "datetime",
+        "required_mapping_flag": false,
+        "file_pattern": "*.csv",
+        "interval_time": "dont_split",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [
+          {
+            "file_type": "csv",
+            "fields": [],
+            "header_row": 1,
+            "file_adjs": {},
+            "has_headers": true
+          }
+        ],
+        "copied_files": "remain_original",
+        "bucket": "<YOUR_BUCKET>",
+        "file_path": "<YOUR_FILE_PATH>",
+        "start_date": "2026-07-23 13:55:59"
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": [
+          "id"
+        ],
+        "mapping": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "is_key": true,
+            "fieldName": "id",
+            "fields": [],
+            "id": "id"
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "fieldName": "name",
+            "fields": [],
+            "id": "name"
+          },
+          {
+            "name": "amount",
+            "type": "FLOAT",
+            "fieldName": "amount",
+            "fields": [],
+            "id": "amount"
+          },
+          {
+            "name": "is_active",
+            "type": "BOOLEAN",
+            "fieldName": "is_active",
+            "fields": [],
+            "id": "is_active"
+          },
+          {
+            "name": "created_at",
+            "type": "TIMESTAMP",
+            "fieldName": "created_at",
+            "dateFormat": "yyyy-mm-dd HH:MM:SS",
+            "fields": [],
+            "id": "created_at"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "sync_schema_back": false,
+        "compression": false,
+        "ignore_unknown_values": true,
+        "quote": "\"",
+        "delimiter": ",",
+        "source_format": "CSV",
+        "header": 1,
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "mapping_order": [],
+        "source_mapping": [
+          {
+            "fieldName": "id",
+            "length": 8,
+            "type": "INTEGER",
+            "name": "id",
+            "fields": []
+          },
+          {
+            "fieldName": "name",
+            "length": 4,
+            "type": "STRING",
+            "name": "name",
+            "fields": []
+          },
+          {
+            "fieldName": "amount",
+            "type": "FLOAT",
+            "name": "amount",
+            "fields": []
+          },
+          {
+            "fieldName": "is_active",
+            "type": "BOOLEAN",
+            "name": "is_active",
+            "fields": []
+          },
+          {
+            "name": "created_at",
+            "dateFormat": "yyyy-mm-dd HH:MM:SS",
+            "fields": [],
+            "time_format": "%Y-%m-%dT%H:%M:%S",
+            "fieldName": "created_at",
+            "type": "TIMESTAMP"
+          }
+        ],
+        "start_date": 1785756427340,
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_jira_kh_worklogs",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-27T19:43:16.105000Z",
+    "last_updated_at": "2026-07-27T19:43:16.105000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "jira",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "jira",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "required_mapping_flag": false,
+        "utc_offset": 0,
+        "keep_raw_customfields": false,
+        "interval_time": "dont_split",
+        "use_strict_datatypes": false,
+        "report": "work_logs",
+        "time_period": "yesterday",
+        "last_days": 1,
+        "updated_work_logs": [
+          "<UPDATED_WORK_LOGS — empty means all worklogs, but only if start_date is also left empty. Each entry looks like: {\"id\": <ID>, \"name\": <NAME>}.>"
+        ],
+        "is_fields_description_content_string": false,
+        "start_date": "2026-07-27 00:00:00"
+      }
+    },
+    "target": {
+      "name": "knowledge_hub",
+      "connection_id": null,
+      "connection_name": null,
+      "repository_id": "<KH_REPOSITORY_ID>",
+      "knowledge_base_id": "<KH_KNOWLEDGE_BASE_ID>",
+      "load_mode": "append"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": []
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

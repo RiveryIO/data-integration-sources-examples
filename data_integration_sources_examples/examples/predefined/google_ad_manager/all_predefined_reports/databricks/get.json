@@ -1,0 +1,163 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_doubleclick_publisher_databricks",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP example: doubleclick_publisher predefined report",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-12T13:25:15.123000Z",
+    "last_updated_at": "2026-07-12T13:25:15.123000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ad_manager",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "doubleclick_publisher",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "CSV",
+        "filters": [
+          {
+            "file_type": "csv",
+            "csv_details": {
+              "quotechar": "\"",
+              "delimiter": ","
+            },
+            "has_headers": true,
+            "required_tabs": 1,
+            "header_row": 1
+          }
+        ],
+        "report_type": "report",
+        "network_code": {
+          "id": "<GAM_NETWORK_CODE - your Google Ad Manager network code, e.g. \"123456789\">",
+          "name": "<GAM_NETWORK_NAME - the display name of your Ad Manager network>"
+        },
+        "update_increment_on_failures": false,
+        "fz_path": "<YOUR_FZ_PATH>"
+      }
+    },
+    "target": {
+      "name": "databricks",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "id": 0,
+            "fieldName": ""
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "databricks",
+        "connection_type": "databricks",
+        "source_format": "CSV",
+        "quote": "\"",
+        "delimiter": ","
+      },
+      "catalog_name": "<YOUR_CATALOG_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "store_in_custom_location": null,
+      "custom_location_type": null,
+      "custom_location_path": null
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "entity",
+              "extract_method": "increment",
+              "table_name": "predefined_entity",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "lastmodifieddatetime",
+              "max_batch_time": 1783861468446,
+              "time_period": "date_range",
+              "start_date": "2026-07-12 13:02:58.641000"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

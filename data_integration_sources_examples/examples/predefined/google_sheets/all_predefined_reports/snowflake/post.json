@@ -1,0 +1,889 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_gspreadsheet_snowflake",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_sheets",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "start_header": {
+          "header_row": 1
+        },
+        "null_rep_words": "#N/A",
+        "required_tabs": "",
+        "connection_type": "gspreadsheet",
+        "extract_type": "file",
+        "has_headers": true,
+        "interval_time": "dont_split",
+        "fz_partition": "d",
+        "source_column_by": "name",
+        "source_format": "CSV",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "quote": "\"",
+        "gzipTypeMust": null,
+        "start_date": "2026-06-23 11:23:31.278000",
+        "extract_method": "all",
+        "end_date": null,
+        "object_guid": "<YOUR_OBJECT_GUID>",
+        "required_mapping_flag": false,
+        "fz_batched": true,
+        "fields": [
+          {
+            "source_type": "source",
+            "length": 137438953472,
+            "type": "INTEGER",
+            "name": "Response ID",
+            "alias": "Response_ID"
+          },
+          {
+            "source_type": "source",
+            "type": "TIMESTAMP",
+            "name": "Date Created",
+            "alias": "Date_Created"
+          },
+          {
+            "source_type": "source",
+            "type": "TIMESTAMP",
+            "name": "Date Modified",
+            "alias": "Date_Modified"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "IP Address",
+            "alias": "IP_Address"
+          },
+          {
+            "source_type": "source",
+            "length": 256,
+            "type": "INTEGER",
+            "name": "Duration (sec)",
+            "alias": "Duration__sec_"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "Response Status",
+            "alias": "Response_Status"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "Email",
+            "alias": "Email"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "First Name",
+            "alias": "First_Name"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "Last Name",
+            "alias": "Last_Name"
+          },
+          {
+            "source_type": "source",
+            "length": 536870912,
+            "type": "INTEGER",
+            "name": "Collector ID",
+            "alias": "Collector_ID"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "Collector Type",
+            "alias": "Collector_Type"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "Custom Value",
+            "alias": "Custom_Value"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "Please rate your overall OPS onboarding experience",
+            "alias": "Please_rate_your_overall_OPS_onboarding_experience"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "Please rate how accurately your Optibus OPS configuration reflects your transportation operation",
+            "alias": "Please_rate_how_accurately_your_Optibus_OPS_configuration_reflects_your_transportation_operation"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "Please rate how accurately your OPS configuration reflects your payroll set up",
+            "alias": "Please_rate_how_accurately_your_OPS_configuration_reflects_your_payroll_set_up"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "How would you rate your experience during these steps in the onboarding process? | Kick Off",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Kick_Off"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "How would you rate your experience during these steps in the onboarding process? | Workflow development/platform configuration",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Workflow_development_platform_configuration"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "How would you rate your experience during these steps in the onboarding process? | Payroll configuration",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Payroll_configuration"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "How would you rate your experience during these steps in the onboarding process? | Export & report configuration",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Export___report_configuration"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "How would you rate your experience during these steps in the onboarding process? | Parallel run",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Parallel_run"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "How would you rate your experience during these steps in the onboarding process? | Go live process",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Go_live_process"
+          },
+          {
+            "source_type": "source",
+            "length": 32,
+            "type": "STRING",
+            "name": "What type of training did you receive?",
+            "alias": "What_type_of_training_did_you_receive_"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "Please rate the On-Demand training",
+            "alias": "Please_rate_the_On_Demand_training"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "Please rate the Instructor-led: onsite training",
+            "alias": "Please_rate_the_Instructor_led__onsite_training"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "Please rate the Instructor-led: remote",
+            "alias": "Please_rate_the_Instructor_led__remote"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "Please rate, following onboarding, how equipped you feel to leverage value from the OPS platform?",
+            "alias": "Please_rate__following_onboarding__how_equipped_you_feel_to_leverage_value_from_the_OPS_platform_"
+          },
+          {
+            "source_type": "source",
+            "length": 16,
+            "type": "STRING",
+            "name": "What could we improve during the onboarding?",
+            "alias": "What_could_we_improve_during_the_onboarding_"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "What is your first name?",
+            "alias": "What_is_your_first_name_"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "What is your last name?",
+            "alias": "What_is_your_last_name_"
+          },
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "What is your company name?",
+            "alias": "What_is_your_company_name_"
+          },
+          {
+            "source_type": "source",
+            "length": 64,
+            "type": "STRING",
+            "name": "What is your role?",
+            "alias": "What_is_your_role_"
+          },
+          {
+            "source_type": "source",
+            "length": 32,
+            "type": "STRING",
+            "name": "Lastly, please add your business email:",
+            "alias": "Lastly__please_add_your_business_email_"
+          }
+        ],
+        "interval_type": "datetime",
+        "delimiter": ",",
+        "is_mapping_in_source": true,
+        "end_header": {
+          "header_row": 1
+        }
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "Response_ID",
+            "type": "INTEGER",
+            "alias": "Response_ID",
+            "fields": [],
+            "id": "Response_ID",
+            "fieldName": "Response_ID"
+          },
+          {
+            "name": "Date_Created",
+            "type": "TIMESTAMP",
+            "alias": "Date_Created",
+            "fields": [],
+            "dateFormat": "yyyy-mm-dd HH:MM:SS",
+            "id": "Date_Created",
+            "fieldName": "Date_Created"
+          },
+          {
+            "name": "Date_Modified",
+            "type": "TIMESTAMP",
+            "alias": "Date_Modified",
+            "fields": [],
+            "dateFormat": "yyyy-mm-dd HH:MM:SS",
+            "id": "Date_Modified",
+            "fieldName": "Date_Modified"
+          },
+          {
+            "name": "IP_Address",
+            "type": "STRING",
+            "alias": "IP_Address",
+            "fields": [],
+            "id": "IP_Address",
+            "fieldName": "IP_Address"
+          },
+          {
+            "name": "Duration__sec_",
+            "type": "INTEGER",
+            "alias": "Duration__sec_",
+            "fields": [],
+            "id": "Duration__sec_",
+            "fieldName": "Duration__sec_"
+          },
+          {
+            "name": "Response_Status",
+            "type": "STRING",
+            "alias": "Response_Status",
+            "fields": [],
+            "id": "Response_Status",
+            "fieldName": "Response_Status"
+          },
+          {
+            "name": "Email",
+            "type": "STRING",
+            "alias": "Email",
+            "fields": [],
+            "id": "Email",
+            "fieldName": "Email"
+          },
+          {
+            "name": "First_Name",
+            "type": "STRING",
+            "alias": "First_Name",
+            "fields": [],
+            "id": "First_Name",
+            "fieldName": "First_Name"
+          },
+          {
+            "name": "Last_Name",
+            "type": "STRING",
+            "alias": "Last_Name",
+            "fields": [],
+            "id": "Last_Name",
+            "fieldName": "Last_Name"
+          },
+          {
+            "name": "Collector_ID",
+            "type": "INTEGER",
+            "alias": "Collector_ID",
+            "fields": [],
+            "id": "Collector_ID",
+            "fieldName": "Collector_ID"
+          },
+          {
+            "name": "Collector_Type",
+            "type": "STRING",
+            "alias": "Collector_Type",
+            "fields": [],
+            "id": "Collector_Type",
+            "fieldName": "Collector_Type"
+          },
+          {
+            "name": "Custom_Value",
+            "type": "STRING",
+            "alias": "Custom_Value",
+            "fields": [],
+            "id": "Custom_Value",
+            "fieldName": "Custom_Value"
+          },
+          {
+            "name": "Please_rate_your_overall_OPS_onboarding_experience",
+            "type": "STRING",
+            "alias": "Please_rate_your_overall_OPS_onboarding_experience",
+            "fields": [],
+            "id": "Please_rate_your_overall_OPS_onboarding_experience",
+            "fieldName": "Please_rate_your_overall_OPS_onboarding_experience"
+          },
+          {
+            "name": "Please_rate_how_accurately_your_Optibus_OPS_configuration_reflects_your_transportation_operation",
+            "type": "STRING",
+            "alias": "Please_rate_how_accurately_your_Optibus_OPS_configuration_reflects_your_transportation_operation",
+            "fields": [],
+            "id": "Please_rate_how_accurately_your_Optibus_OPS_configuration_reflects_your_transportation_operation",
+            "fieldName": "Please_rate_how_accurately_your_Optibus_OPS_configuration_reflects_your_transportation_operation"
+          },
+          {
+            "name": "Please_rate_how_accurately_your_OPS_configuration_reflects_your_payroll_set_up",
+            "type": "STRING",
+            "alias": "Please_rate_how_accurately_your_OPS_configuration_reflects_your_payroll_set_up",
+            "fields": [],
+            "id": "Please_rate_how_accurately_your_OPS_configuration_reflects_your_payroll_set_up",
+            "fieldName": "Please_rate_how_accurately_your_OPS_configuration_reflects_your_payroll_set_up"
+          },
+          {
+            "name": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Kick_Off",
+            "type": "STRING",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Kick_Off",
+            "fields": [],
+            "id": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Kick_Off",
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Kick_Off"
+          },
+          {
+            "name": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Workflow_development_platform_configuration",
+            "type": "STRING",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Workflow_development_platform_configuration",
+            "fields": [],
+            "id": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Workflow_development_platform_configuration",
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Workflow_development_platform_configuration"
+          },
+          {
+            "name": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Payroll_configuration",
+            "type": "STRING",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Payroll_configuration",
+            "fields": [],
+            "id": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Payroll_configuration",
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Payroll_configuration"
+          },
+          {
+            "name": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Export___report_configuration",
+            "type": "STRING",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Export___report_configuration",
+            "fields": [],
+            "id": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Export___report_configuration",
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Export___report_configuration"
+          },
+          {
+            "name": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Parallel_run",
+            "type": "STRING",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Parallel_run",
+            "fields": [],
+            "id": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Parallel_run",
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Parallel_run"
+          },
+          {
+            "name": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Go_live_process",
+            "type": "STRING",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Go_live_process",
+            "fields": [],
+            "id": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Go_live_process",
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Go_live_process"
+          },
+          {
+            "name": "What_type_of_training_did_you_receive_",
+            "type": "STRING",
+            "alias": "What_type_of_training_did_you_receive_",
+            "fields": [],
+            "id": "What_type_of_training_did_you_receive_",
+            "fieldName": "What_type_of_training_did_you_receive_"
+          },
+          {
+            "name": "Please_rate_the_On_Demand_training",
+            "type": "STRING",
+            "alias": "Please_rate_the_On_Demand_training",
+            "fields": [],
+            "id": "Please_rate_the_On_Demand_training",
+            "fieldName": "Please_rate_the_On_Demand_training"
+          },
+          {
+            "name": "Please_rate_the_Instructor_led__onsite_training",
+            "type": "STRING",
+            "alias": "Please_rate_the_Instructor_led__onsite_training",
+            "fields": [],
+            "id": "Please_rate_the_Instructor_led__onsite_training",
+            "fieldName": "Please_rate_the_Instructor_led__onsite_training"
+          },
+          {
+            "name": "Please_rate_the_Instructor_led__remote",
+            "type": "STRING",
+            "alias": "Please_rate_the_Instructor_led__remote",
+            "fields": [],
+            "id": "Please_rate_the_Instructor_led__remote",
+            "fieldName": "Please_rate_the_Instructor_led__remote"
+          },
+          {
+            "name": "Please_rate__following_onboarding__how_equipped_you_feel_to_leverage_value_from_the_OPS_platform_",
+            "type": "STRING",
+            "alias": "Please_rate__following_onboarding__how_equipped_you_feel_to_leverage_value_from_the_OPS_platform_",
+            "fields": [],
+            "id": "Please_rate__following_onboarding__how_equipped_you_feel_to_leverage_value_from_the_OPS_platform_",
+            "fieldName": "Please_rate__following_onboarding__how_equipped_you_feel_to_leverage_value_from_the_OPS_platform_"
+          },
+          {
+            "name": "What_could_we_improve_during_the_onboarding_",
+            "type": "STRING",
+            "alias": "What_could_we_improve_during_the_onboarding_",
+            "fields": [],
+            "id": "What_could_we_improve_during_the_onboarding_",
+            "fieldName": "What_could_we_improve_during_the_onboarding_"
+          },
+          {
+            "name": "What_is_your_first_name_",
+            "type": "STRING",
+            "alias": "What_is_your_first_name_",
+            "fields": [],
+            "id": "What_is_your_first_name_",
+            "fieldName": "What_is_your_first_name_"
+          },
+          {
+            "name": "What_is_your_last_name_",
+            "type": "STRING",
+            "alias": "What_is_your_last_name_",
+            "fields": [],
+            "id": "What_is_your_last_name_",
+            "fieldName": "What_is_your_last_name_"
+          },
+          {
+            "name": "What_is_your_company_name_",
+            "type": "STRING",
+            "alias": "What_is_your_company_name_",
+            "fields": [],
+            "id": "What_is_your_company_name_",
+            "fieldName": "What_is_your_company_name_"
+          },
+          {
+            "name": "What_is_your_role_",
+            "type": "STRING",
+            "alias": "What_is_your_role_",
+            "fields": [],
+            "id": "What_is_your_role_",
+            "fieldName": "What_is_your_role_"
+          },
+          {
+            "name": "Lastly__please_add_your_business_email_",
+            "type": "STRING",
+            "alias": "Lastly__please_add_your_business_email_",
+            "fields": [],
+            "id": "Lastly__please_add_your_business_email_",
+            "fieldName": "Lastly__please_add_your_business_email_"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "CSV",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1782213829816,
+        "quote": "\"",
+        "csvTypeMust": "csv",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "has_headers": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "Response ID",
+            "alias": "Response_ID",
+            "fields": [],
+            "source_type": "source",
+            "length": 137438953472,
+            "fieldName": "Response_ID",
+            "type": "INTEGER"
+          },
+          {
+            "name": "Date Created",
+            "source_type": "source",
+            "fields": [],
+            "dateFormat": "yyyy-mm-dd HH:MM:SS",
+            "alias": "Date_Created",
+            "fieldName": "Date_Created",
+            "type": "TIMESTAMP"
+          },
+          {
+            "name": "Date Modified",
+            "source_type": "source",
+            "fields": [],
+            "dateFormat": "yyyy-mm-dd HH:MM:SS",
+            "alias": "Date_Modified",
+            "fieldName": "Date_Modified",
+            "type": "TIMESTAMP"
+          },
+          {
+            "name": "IP Address",
+            "alias": "IP_Address",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "IP_Address",
+            "type": "STRING"
+          },
+          {
+            "name": "Duration (sec)",
+            "alias": "Duration__sec_",
+            "fields": [],
+            "source_type": "source",
+            "length": 256,
+            "fieldName": "Duration__sec_",
+            "type": "INTEGER"
+          },
+          {
+            "name": "Response Status",
+            "alias": "Response_Status",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "Response_Status",
+            "type": "STRING"
+          },
+          {
+            "name": "Email",
+            "alias": "Email",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "Email",
+            "type": "STRING"
+          },
+          {
+            "name": "First Name",
+            "alias": "First_Name",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "First_Name",
+            "type": "STRING"
+          },
+          {
+            "name": "Last Name",
+            "alias": "Last_Name",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "Last_Name",
+            "type": "STRING"
+          },
+          {
+            "name": "Collector ID",
+            "alias": "Collector_ID",
+            "fields": [],
+            "source_type": "source",
+            "length": 536870912,
+            "fieldName": "Collector_ID",
+            "type": "INTEGER"
+          },
+          {
+            "name": "Collector Type",
+            "alias": "Collector_Type",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "Collector_Type",
+            "type": "STRING"
+          },
+          {
+            "name": "Custom Value",
+            "alias": "Custom_Value",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "Custom_Value",
+            "type": "STRING"
+          },
+          {
+            "name": "Please rate your overall OPS onboarding experience",
+            "alias": "Please_rate_your_overall_OPS_onboarding_experience",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "Please_rate_your_overall_OPS_onboarding_experience",
+            "type": "STRING"
+          },
+          {
+            "name": "Please rate how accurately your Optibus OPS configuration reflects your transportation operation",
+            "alias": "Please_rate_how_accurately_your_Optibus_OPS_configuration_reflects_your_transportation_operation",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "Please_rate_how_accurately_your_Optibus_OPS_configuration_reflects_your_transportation_operation",
+            "type": "STRING"
+          },
+          {
+            "name": "Please rate how accurately your OPS configuration reflects your payroll set up",
+            "alias": "Please_rate_how_accurately_your_OPS_configuration_reflects_your_payroll_set_up",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "Please_rate_how_accurately_your_OPS_configuration_reflects_your_payroll_set_up",
+            "type": "STRING"
+          },
+          {
+            "name": "How would you rate your experience during these steps in the onboarding process? | Kick Off",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Kick_Off",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Kick_Off",
+            "type": "STRING"
+          },
+          {
+            "name": "How would you rate your experience during these steps in the onboarding process? | Workflow development/platform configuration",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Workflow_development_platform_configuration",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Workflow_development_platform_configuration",
+            "type": "STRING"
+          },
+          {
+            "name": "How would you rate your experience during these steps in the onboarding process? | Payroll configuration",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Payroll_configuration",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Payroll_configuration",
+            "type": "STRING"
+          },
+          {
+            "name": "How would you rate your experience during these steps in the onboarding process? | Export & report configuration",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Export___report_configuration",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Export___report_configuration",
+            "type": "STRING"
+          },
+          {
+            "name": "How would you rate your experience during these steps in the onboarding process? | Parallel run",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Parallel_run",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Parallel_run",
+            "type": "STRING"
+          },
+          {
+            "name": "How would you rate your experience during these steps in the onboarding process? | Go live process",
+            "alias": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Go_live_process",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "How_would_you_rate_your_experience_during_these_steps_in_the_onboarding_process____Go_live_process",
+            "type": "STRING"
+          },
+          {
+            "name": "What type of training did you receive?",
+            "alias": "What_type_of_training_did_you_receive_",
+            "fields": [],
+            "source_type": "source",
+            "length": 32,
+            "fieldName": "What_type_of_training_did_you_receive_",
+            "type": "STRING"
+          },
+          {
+            "name": "Please rate the On-Demand training",
+            "alias": "Please_rate_the_On_Demand_training",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "Please_rate_the_On_Demand_training",
+            "type": "STRING"
+          },
+          {
+            "name": "Please rate the Instructor-led: onsite training",
+            "alias": "Please_rate_the_Instructor_led__onsite_training",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "Please_rate_the_Instructor_led__onsite_training",
+            "type": "STRING"
+          },
+          {
+            "name": "Please rate the Instructor-led: remote",
+            "alias": "Please_rate_the_Instructor_led__remote",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "Please_rate_the_Instructor_led__remote",
+            "type": "STRING"
+          },
+          {
+            "name": "Please rate, following onboarding, how equipped you feel to leverage value from the OPS platform?",
+            "alias": "Please_rate__following_onboarding__how_equipped_you_feel_to_leverage_value_from_the_OPS_platform_",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "Please_rate__following_onboarding__how_equipped_you_feel_to_leverage_value_from_the_OPS_platform_",
+            "type": "STRING"
+          },
+          {
+            "name": "What could we improve during the onboarding?",
+            "alias": "What_could_we_improve_during_the_onboarding_",
+            "fields": [],
+            "source_type": "source",
+            "length": 16,
+            "fieldName": "What_could_we_improve_during_the_onboarding_",
+            "type": "STRING"
+          },
+          {
+            "name": "What is your first name?",
+            "alias": "What_is_your_first_name_",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "What_is_your_first_name_",
+            "type": "STRING"
+          },
+          {
+            "name": "What is your last name?",
+            "alias": "What_is_your_last_name_",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "What_is_your_last_name_",
+            "type": "STRING"
+          },
+          {
+            "name": "What is your company name?",
+            "alias": "What_is_your_company_name_",
+            "fields": [],
+            "source_type": "source",
+            "length": 8,
+            "fieldName": "What_is_your_company_name_",
+            "type": "STRING"
+          },
+          {
+            "name": "What is your role?",
+            "alias": "What_is_your_role_",
+            "fields": [],
+            "source_type": "source",
+            "length": 64,
+            "fieldName": "What_is_your_role_",
+            "type": "STRING"
+          },
+          {
+            "name": "Lastly, please add your business email:",
+            "alias": "Lastly__please_add_your_business_email_",
+            "fields": [],
+            "source_type": "source",
+            "length": 32,
+            "fieldName": "Lastly__please_add_your_business_email_",
+            "type": "STRING"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

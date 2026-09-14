@@ -1,0 +1,2971 @@
+{
+  "cross_id": "<CROSS_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_fb_social_insights_video",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-22T11:10:28.446000Z",
+    "last_updated_at": "2026-06-22T11:10:28.446000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "fb_social",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "insights_video",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "fb_social",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "is_ignore_exceptions": false,
+        "period": "lifetime",
+        "video_fields": [
+          "id",
+          "created_time",
+          "event",
+          "from",
+          "updated_time"
+        ],
+        "metrics_post": [
+          "post_video_ad_break_earnings",
+          "post_video_ad_break_ad_cpm",
+          "post_video_ad_break_ad_impressions",
+          "post_activity_by_action_type",
+          "post_clicks",
+          "post_video_views_organic",
+          "post_video_views",
+          "post_clicks_by_type",
+          "monetization_approximate_earnings"
+        ],
+        "include_promotable_posts": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": "2025-09-01 05:34:48.211000",
+        "required_mapping_flag": false,
+        "metrics_video": [
+          "total_video_views",
+          "total_video_views_unique",
+          "total_video_views_autoplayed",
+          "total_video_views_clicked_to_play",
+          "total_video_views_organic_unique",
+          "total_video_views_paid_unique",
+          "total_video_views_sound_on",
+          "total_video_complete_views_unique",
+          "total_video_views_paid",
+          "total_video_views_organic",
+          "total_video_complete_views",
+          "total_video_retention_graph",
+          "total_video_retention_graph_clicked_to_play",
+          "total_video_retention_graph_autoplayed",
+          "total_video_avg_time_watched",
+          "total_video_view_total_time",
+          "total_video_view_total_time_paid",
+          "total_video_view_total_time_organic",
+          "total_video_impressions",
+          "total_video_impressions_unique",
+          "total_video_impressions_paid_unique",
+          "total_video_impressions_paid",
+          "total_video_impressions_organic_unique"
+        ],
+        "time_resolution": "no_split",
+        "time_period": "date_range",
+        "pages": "<YOUR_PAGES>",
+        "posts_fields": [
+          "id",
+          "attachments",
+          "created_time",
+          "from",
+          "is_published",
+          "parent_id",
+          "shares"
+        ],
+        "feed_report_tree": [
+          {
+            "type": "feed",
+            "nodes": [
+              {
+                "type": "comments",
+                "nodes": [
+                  {
+                    "type": "reactions",
+                    "checked": true,
+                    "id": "_reactions2",
+                    "fields": []
+                  },
+                  {
+                    "checked": true,
+                    "nodes": [
+                      {
+                        "checked": true,
+                        "type": "reactions",
+                        "id": "reactions3",
+                        "fields": []
+                      }
+                    ],
+                    "type": "comments",
+                    "id": "_comments2",
+                    "fields": []
+                  }
+                ],
+                "checked": true,
+                "id": "comments1",
+                "fields": []
+              },
+              {
+                "checked": true,
+                "type": "reactions",
+                "id": "_reactions0",
+                "fields": []
+              }
+            ],
+            "checked": true,
+            "id": "_feed",
+            "fields": []
+          }
+        ],
+        "pages_ids_to_ignore": [
+          {
+            "category": "Entertainment website",
+            "access_token": "<YOUR_ACCESS_TOKEN>",
+            "id": "<YOUR_AD_ACCOUNT_ID>",
+            "name": "<YOUR_AD_ACCOUNT_NAME>"
+          }
+        ],
+        "utc_offset": 0,
+        "pages_fields": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "total_video_views_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_lifetime",
+            "fieldName": "total_video_views_lifetime",
+            "fields": []
+          },
+          {
+            "name": "date",
+            "type": "STRING",
+            "alias": "date",
+            "mode": "NULLABLE",
+            "id": "date",
+            "fieldName": "date",
+            "fields": []
+          },
+          {
+            "name": "end_time",
+            "type": "STRING",
+            "alias": "end_time",
+            "mode": "NULLABLE",
+            "id": "end_time",
+            "fieldName": "end_time",
+            "fields": []
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "id": "id",
+            "fieldName": "id",
+            "fields": []
+          },
+          {
+            "name": "created_time",
+            "type": "STRING",
+            "alias": "created_time",
+            "mode": "NULLABLE",
+            "id": "created_time",
+            "fieldName": "created_time",
+            "fields": []
+          },
+          {
+            "name": "from",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "id": "from",
+            "fieldName": "from",
+            "fields": [
+              {
+                "name": "name",
+                "fields": [],
+                "alias": "name",
+                "length": 16,
+                "fieldName": "name",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "id",
+                "fields": [],
+                "alias": "id",
+                "length": 16,
+                "fieldName": "id",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "updated_time",
+            "type": "STRING",
+            "alias": "updated_time",
+            "mode": "NULLABLE",
+            "id": "updated_time",
+            "fieldName": "updated_time",
+            "fields": []
+          },
+          {
+            "name": "page_id",
+            "type": "STRING",
+            "alias": "page_id",
+            "mode": "NULLABLE",
+            "id": "page_id",
+            "fieldName": "page_id",
+            "fields": []
+          },
+          {
+            "name": "total_video_views_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_unique_lifetime",
+            "fieldName": "total_video_views_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_views_autoplayed_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_autoplayed_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_autoplayed_lifetime",
+            "fieldName": "total_video_views_autoplayed_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_views_clicked_to_play_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_clicked_to_play_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_clicked_to_play_lifetime",
+            "fieldName": "total_video_views_clicked_to_play_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_views_organic_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_organic_unique_lifetime",
+            "fieldName": "total_video_views_organic_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_views_paid_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_paid_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_paid_unique_lifetime",
+            "fieldName": "total_video_views_paid_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_views_sound_on_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_sound_on_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_sound_on_lifetime",
+            "fieldName": "total_video_views_sound_on_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_complete_views_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_complete_views_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_complete_views_unique_lifetime",
+            "fieldName": "total_video_complete_views_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_views_paid_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_paid_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_paid_lifetime",
+            "fieldName": "total_video_views_paid_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_views_organic_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_views_organic_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_views_organic_lifetime",
+            "fieldName": "total_video_views_organic_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_complete_views_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_complete_views_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_complete_views_lifetime",
+            "fieldName": "total_video_complete_views_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_avg_time_watched_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_avg_time_watched_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_avg_time_watched_lifetime",
+            "fieldName": "total_video_avg_time_watched_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_view_total_time_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_view_total_time_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_view_total_time_lifetime",
+            "fieldName": "total_video_view_total_time_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_view_total_time_paid_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_view_total_time_paid_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_view_total_time_paid_lifetime",
+            "fieldName": "total_video_view_total_time_paid_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_view_total_time_organic_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_view_total_time_organic_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_view_total_time_organic_lifetime",
+            "fieldName": "total_video_view_total_time_organic_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_impressions_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_impressions_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_impressions_lifetime",
+            "fieldName": "total_video_impressions_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_impressions_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_impressions_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_impressions_unique_lifetime",
+            "fieldName": "total_video_impressions_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_impressions_paid_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_impressions_paid_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_impressions_paid_unique_lifetime",
+            "fieldName": "total_video_impressions_paid_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_impressions_paid_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_impressions_paid_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_impressions_paid_lifetime",
+            "fieldName": "total_video_impressions_paid_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_impressions_organic_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "total_video_impressions_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_impressions_organic_unique_lifetime",
+            "fieldName": "total_video_impressions_organic_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_0_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_0_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_0_lifetime",
+            "fieldName": "total_video_retention_graph_0_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_1_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_1_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_1_lifetime",
+            "fieldName": "total_video_retention_graph_1_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_2_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_2_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_2_lifetime",
+            "fieldName": "total_video_retention_graph_2_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_3_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_3_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_3_lifetime",
+            "fieldName": "total_video_retention_graph_3_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_4_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_4_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_4_lifetime",
+            "fieldName": "total_video_retention_graph_4_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_5_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_5_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_5_lifetime",
+            "fieldName": "total_video_retention_graph_5_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_6_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_6_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_6_lifetime",
+            "fieldName": "total_video_retention_graph_6_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_7_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_7_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_7_lifetime",
+            "fieldName": "total_video_retention_graph_7_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_8_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_8_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_8_lifetime",
+            "fieldName": "total_video_retention_graph_8_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_9_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_9_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_9_lifetime",
+            "fieldName": "total_video_retention_graph_9_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_10_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_10_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_10_lifetime",
+            "fieldName": "total_video_retention_graph_10_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_11_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_11_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_11_lifetime",
+            "fieldName": "total_video_retention_graph_11_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_12_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_12_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_12_lifetime",
+            "fieldName": "total_video_retention_graph_12_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_13_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_13_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_13_lifetime",
+            "fieldName": "total_video_retention_graph_13_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_14_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_14_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_14_lifetime",
+            "fieldName": "total_video_retention_graph_14_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_15_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_15_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_15_lifetime",
+            "fieldName": "total_video_retention_graph_15_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_16_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_16_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_16_lifetime",
+            "fieldName": "total_video_retention_graph_16_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_17_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_17_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_17_lifetime",
+            "fieldName": "total_video_retention_graph_17_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_18_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_18_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_18_lifetime",
+            "fieldName": "total_video_retention_graph_18_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_19_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_19_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_19_lifetime",
+            "fieldName": "total_video_retention_graph_19_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_20_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_20_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_20_lifetime",
+            "fieldName": "total_video_retention_graph_20_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_21_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_21_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_21_lifetime",
+            "fieldName": "total_video_retention_graph_21_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_22_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_22_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_22_lifetime",
+            "fieldName": "total_video_retention_graph_22_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_23_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_23_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_23_lifetime",
+            "fieldName": "total_video_retention_graph_23_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_24_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_24_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_24_lifetime",
+            "fieldName": "total_video_retention_graph_24_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_25_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_25_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_25_lifetime",
+            "fieldName": "total_video_retention_graph_25_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_26_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_26_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_26_lifetime",
+            "fieldName": "total_video_retention_graph_26_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_27_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_27_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_27_lifetime",
+            "fieldName": "total_video_retention_graph_27_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_28_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_28_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_28_lifetime",
+            "fieldName": "total_video_retention_graph_28_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_29_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_29_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_29_lifetime",
+            "fieldName": "total_video_retention_graph_29_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_30_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_30_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_30_lifetime",
+            "fieldName": "total_video_retention_graph_30_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_31_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_31_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_31_lifetime",
+            "fieldName": "total_video_retention_graph_31_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_32_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_32_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_32_lifetime",
+            "fieldName": "total_video_retention_graph_32_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_33_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_33_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_33_lifetime",
+            "fieldName": "total_video_retention_graph_33_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_34_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_34_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_34_lifetime",
+            "fieldName": "total_video_retention_graph_34_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_35_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_35_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_35_lifetime",
+            "fieldName": "total_video_retention_graph_35_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_36_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_36_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_36_lifetime",
+            "fieldName": "total_video_retention_graph_36_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_37_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_37_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_37_lifetime",
+            "fieldName": "total_video_retention_graph_37_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_38_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_38_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_38_lifetime",
+            "fieldName": "total_video_retention_graph_38_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_39_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_39_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_39_lifetime",
+            "fieldName": "total_video_retention_graph_39_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_40_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_40_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_40_lifetime",
+            "fieldName": "total_video_retention_graph_40_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_0_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_0_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_0_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_0_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_1_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_1_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_1_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_1_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_2_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_2_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_2_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_2_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_3_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_3_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_3_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_3_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_4_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_4_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_4_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_4_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_5_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_5_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_5_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_5_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_6_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_6_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_6_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_6_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_7_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_7_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_7_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_7_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_8_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_8_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_8_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_8_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_9_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_9_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_9_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_9_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_10_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_10_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_10_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_10_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_11_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_11_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_11_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_11_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_12_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_12_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_12_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_12_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_13_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_13_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_13_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_13_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_14_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_14_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_14_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_14_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_15_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_15_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_15_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_15_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_16_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_16_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_16_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_16_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_17_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_17_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_17_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_17_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_18_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_18_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_18_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_18_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_19_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_19_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_19_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_19_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_20_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_20_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_20_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_20_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_21_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_21_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_21_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_21_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_22_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_22_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_22_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_22_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_23_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_23_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_23_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_23_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_24_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_24_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_24_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_24_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_25_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_25_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_25_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_25_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_26_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_26_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_26_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_26_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_27_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_27_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_27_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_27_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_28_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_28_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_28_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_28_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_29_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_29_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_29_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_29_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_30_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_30_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_30_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_30_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_31_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_31_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_31_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_31_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_32_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_32_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_32_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_32_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_33_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_33_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_33_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_33_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_34_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_34_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_34_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_34_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_35_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_35_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_35_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_35_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_36_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_36_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_36_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_36_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_37_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_37_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_37_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_37_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_38_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_38_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_38_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_38_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_39_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_39_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_39_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_39_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_40_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_clicked_to_play_40_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_clicked_to_play_40_lifetime",
+            "fieldName": "total_video_retention_graph_clicked_to_play_40_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_0_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_0_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_0_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_0_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_1_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_1_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_1_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_1_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_2_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_2_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_2_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_2_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_3_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_3_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_3_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_3_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_4_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_4_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_4_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_4_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_5_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_5_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_5_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_5_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_6_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_6_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_6_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_6_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_7_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_7_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_7_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_7_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_8_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_8_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_8_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_8_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_9_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_9_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_9_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_9_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_10_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_10_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_10_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_10_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_11_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_11_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_11_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_11_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_12_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_12_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_12_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_12_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_13_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_13_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_13_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_13_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_14_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_14_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_14_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_14_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_15_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_15_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_15_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_15_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_16_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_16_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_16_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_16_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_17_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_17_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_17_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_17_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_18_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_18_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_18_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_18_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_19_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_19_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_19_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_19_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_20_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_20_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_20_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_20_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_21_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_21_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_21_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_21_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_22_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_22_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_22_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_22_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_23_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_23_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_23_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_23_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_24_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_24_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_24_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_24_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_25_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_25_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_25_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_25_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_26_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_26_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_26_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_26_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_27_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_27_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_27_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_27_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_28_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_28_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_28_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_28_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_29_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_29_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_29_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_29_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_30_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_30_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_30_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_30_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_31_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_31_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_31_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_31_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_32_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_32_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_32_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_32_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_33_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_33_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_33_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_33_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_34_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_34_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_34_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_34_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_35_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_35_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_35_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_35_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_36_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_36_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_36_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_36_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_37_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_37_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_37_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_37_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_38_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_38_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_38_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_38_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_39_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_39_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_39_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_39_lifetime",
+            "fields": []
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_40_lifetime",
+            "type": "FLOAT",
+            "alias": "total_video_retention_graph_autoplayed_40_lifetime",
+            "mode": "NULLABLE",
+            "id": "total_video_retention_graph_autoplayed_40_lifetime",
+            "fieldName": "total_video_retention_graph_autoplayed_40_lifetime",
+            "fields": []
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": "TIMESTAMP",
+        "partition_granularity": "DAY",
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "switch_tables",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "dataset_id": "<YOUR_DATASET_ID>",
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1756704997807,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "total_video_views_lifetime",
+            "fields": [],
+            "alias": "total_video_views_lifetime",
+            "length": 1048576,
+            "fieldName": "total_video_views_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "date",
+            "fields": [],
+            "alias": "date",
+            "length": 16,
+            "fieldName": "date",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "end_time",
+            "fields": [],
+            "alias": "end_time",
+            "length": 32,
+            "fieldName": "end_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "id",
+            "fields": [],
+            "alias": "id",
+            "length": 16,
+            "fieldName": "id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "created_time",
+            "fields": [],
+            "alias": "created_time",
+            "length": 32,
+            "fieldName": "created_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "from",
+            "fields": [
+              {
+                "name": "name",
+                "fields": [],
+                "alias": "name",
+                "length": 16,
+                "fieldName": "name",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "id",
+                "fields": [],
+                "alias": "id",
+                "length": 16,
+                "fieldName": "id",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "from",
+            "fieldName": "from",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "updated_time",
+            "fields": [],
+            "alias": "updated_time",
+            "length": 32,
+            "fieldName": "updated_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "page_id",
+            "fields": [],
+            "alias": "page_id",
+            "length": 16,
+            "fieldName": "page_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "total_video_views_unique_lifetime",
+            "fields": [],
+            "alias": "total_video_views_unique_lifetime",
+            "length": 1048576,
+            "fieldName": "total_video_views_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_views_autoplayed_lifetime",
+            "fields": [],
+            "alias": "total_video_views_autoplayed_lifetime",
+            "length": 1048576,
+            "fieldName": "total_video_views_autoplayed_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_views_clicked_to_play_lifetime",
+            "fields": [],
+            "alias": "total_video_views_clicked_to_play_lifetime",
+            "length": 131072,
+            "fieldName": "total_video_views_clicked_to_play_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_views_organic_unique_lifetime",
+            "fields": [],
+            "alias": "total_video_views_organic_unique_lifetime",
+            "length": 1048576,
+            "fieldName": "total_video_views_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_views_paid_unique_lifetime",
+            "fields": [],
+            "alias": "total_video_views_paid_unique_lifetime",
+            "length": 8,
+            "fieldName": "total_video_views_paid_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_views_sound_on_lifetime",
+            "fields": [],
+            "alias": "total_video_views_sound_on_lifetime",
+            "length": 1048576,
+            "fieldName": "total_video_views_sound_on_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_complete_views_unique_lifetime",
+            "fields": [],
+            "alias": "total_video_complete_views_unique_lifetime",
+            "length": 131072,
+            "fieldName": "total_video_complete_views_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_views_paid_lifetime",
+            "fields": [],
+            "alias": "total_video_views_paid_lifetime",
+            "length": 8,
+            "fieldName": "total_video_views_paid_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_views_organic_lifetime",
+            "fields": [],
+            "alias": "total_video_views_organic_lifetime",
+            "length": 1048576,
+            "fieldName": "total_video_views_organic_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_complete_views_lifetime",
+            "fields": [],
+            "alias": "total_video_complete_views_lifetime",
+            "length": 131072,
+            "fieldName": "total_video_complete_views_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_avg_time_watched_lifetime",
+            "fields": [],
+            "alias": "total_video_avg_time_watched_lifetime",
+            "length": 65536,
+            "fieldName": "total_video_avg_time_watched_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_view_total_time_lifetime",
+            "fields": [],
+            "alias": "total_video_view_total_time_lifetime",
+            "length": 137438953472,
+            "fieldName": "total_video_view_total_time_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_view_total_time_paid_lifetime",
+            "fields": [],
+            "alias": "total_video_view_total_time_paid_lifetime",
+            "length": 8,
+            "fieldName": "total_video_view_total_time_paid_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_view_total_time_organic_lifetime",
+            "fields": [],
+            "alias": "total_video_view_total_time_organic_lifetime",
+            "length": 137438953472,
+            "fieldName": "total_video_view_total_time_organic_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_impressions_lifetime",
+            "fields": [],
+            "alias": "total_video_impressions_lifetime",
+            "length": 4194304,
+            "fieldName": "total_video_impressions_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_impressions_unique_lifetime",
+            "fields": [],
+            "alias": "total_video_impressions_unique_lifetime",
+            "length": 4194304,
+            "fieldName": "total_video_impressions_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_impressions_paid_unique_lifetime",
+            "fields": [],
+            "alias": "total_video_impressions_paid_unique_lifetime",
+            "length": 8,
+            "fieldName": "total_video_impressions_paid_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_impressions_paid_lifetime",
+            "fields": [],
+            "alias": "total_video_impressions_paid_lifetime",
+            "length": 8,
+            "fieldName": "total_video_impressions_paid_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_impressions_organic_unique_lifetime",
+            "fields": [],
+            "alias": "total_video_impressions_organic_unique_lifetime",
+            "length": 2097152,
+            "fieldName": "total_video_impressions_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "total_video_retention_graph_0_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_0_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_0_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_1_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_1_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_1_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_2_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_2_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_2_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_3_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_3_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_3_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_4_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_4_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_4_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_5_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_5_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_5_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_6_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_6_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_6_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_7_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_7_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_7_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_8_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_8_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_8_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_9_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_9_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_9_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_10_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_10_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_10_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_11_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_11_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_11_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_12_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_12_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_12_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_13_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_13_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_13_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_14_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_14_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_14_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_15_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_15_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_15_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_16_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_16_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_16_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_17_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_17_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_17_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_18_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_18_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_18_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_19_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_19_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_19_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_20_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_20_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_20_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_21_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_21_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_21_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_22_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_22_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_22_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_23_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_23_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_23_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_24_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_24_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_24_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_25_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_25_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_25_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_26_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_26_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_26_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_27_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_27_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_27_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_28_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_28_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_28_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_29_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_29_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_29_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_30_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_30_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_30_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_31_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_31_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_31_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_32_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_32_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_32_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_33_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_33_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_33_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_34_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_34_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_34_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_35_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_35_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_35_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_36_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_36_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_36_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_37_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_37_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_37_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_38_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_38_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_38_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_39_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_39_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_39_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_40_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_40_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_40_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_0_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_0_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_0_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_1_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_1_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_1_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_2_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_2_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_2_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_3_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_3_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_3_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_4_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_4_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_4_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_5_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_5_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_5_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_6_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_6_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_6_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_7_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_7_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_7_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_8_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_8_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_8_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_9_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_9_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_9_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_10_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_10_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_10_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_11_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_11_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_11_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_12_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_12_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_12_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_13_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_13_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_13_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_14_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_14_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_14_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_15_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_15_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_15_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_16_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_16_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_16_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_17_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_17_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_17_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_18_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_18_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_18_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_19_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_19_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_19_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_20_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_20_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_20_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_21_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_21_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_21_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_22_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_22_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_22_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_23_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_23_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_23_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_24_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_24_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_24_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_25_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_25_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_25_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_26_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_26_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_26_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_27_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_27_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_27_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_28_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_28_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_28_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_29_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_29_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_29_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_30_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_30_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_30_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_31_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_31_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_31_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_32_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_32_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_32_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_33_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_33_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_33_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_34_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_34_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_34_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_35_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_35_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_35_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_36_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_36_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_36_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_37_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_37_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_37_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_38_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_38_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_38_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_39_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_39_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_39_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_clicked_to_play_40_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_clicked_to_play_40_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_clicked_to_play_40_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_0_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_0_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_0_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_1_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_1_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_1_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_2_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_2_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_2_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_3_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_3_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_3_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_4_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_4_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_4_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_5_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_5_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_5_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_6_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_6_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_6_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_7_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_7_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_7_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_8_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_8_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_8_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_9_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_9_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_9_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_10_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_10_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_10_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_11_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_11_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_11_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_12_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_12_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_12_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_13_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_13_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_13_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_14_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_14_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_14_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_15_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_15_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_15_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_16_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_16_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_16_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_17_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_17_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_17_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_18_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_18_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_18_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_19_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_19_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_19_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_20_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_20_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_20_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_21_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_21_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_21_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_22_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_22_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_22_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_23_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_23_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_23_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_24_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_24_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_24_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_25_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_25_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_25_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_26_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_26_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_26_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_27_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_27_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_27_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_28_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_28_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_28_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_29_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_29_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_29_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_30_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_30_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_30_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_31_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_31_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_31_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_32_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_32_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_32_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_33_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_33_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_33_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_34_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_34_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_34_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_35_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_35_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_35_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_36_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_36_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_36_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_37_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_37_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_37_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_38_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_38_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_38_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_39_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_39_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_39_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "total_video_retention_graph_autoplayed_40_lifetime",
+            "fields": [],
+            "alias": "total_video_retention_graph_autoplayed_40_lifetime",
+            "length": 8,
+            "fieldName": "total_video_retention_graph_autoplayed_40_lifetime",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          }
+        ],
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

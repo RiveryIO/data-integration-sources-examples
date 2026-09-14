@@ -1,0 +1,785 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_the_trade_desk_postgres",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP example: the_trade_desk predefined report, full-reports v1 clone (postgres)",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-13T08:02:23.304000Z",
+    "last_updated_at": "2026-07-13T08:02:23.304000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "the_trade_desk",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "the_trade_desk",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "entity": "template_report",
+        "schedule_id": [],
+        "schedule_report": false,
+        "availabilities_available": true,
+        "timezone": "UTC",
+        "partners": [
+          "<PARTNER OBJECT — shape: {id, name}; add one entry per Trade Desk partner you want to scope this report to; leave the array empty to pull all partners accessible to this connection>"
+        ],
+        "report_date_range": "Yesterday",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "template": {
+          "id": "<YOUR_TEMPLATE_ID — the numeric ID of your saved Trade Desk report template, e.g. 3718873>",
+          "name": "<YOUR_TEMPLATE_NAME — the display name of your saved Trade Desk report template>",
+          "format": "<YOUR_TEMPLATE_FORMAT — the template's export format, either \"Text\" (CSV) or \"Excel\">"
+        },
+        "numeric_format": "US",
+        "utc_offset": 0,
+        "data_level": "Partners",
+        "required_mapping_flag": false,
+        "report_frequency": "Daily",
+        "report": "template_report",
+        "date_format": "Sortable",
+        "update_increment_on_failures": true
+      }
+    },
+    "target": {
+      "name": "postgres_rds",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "date",
+            "type": "TIMESTAMP",
+            "mode": "REQUIRED",
+            "is_key": true,
+            "cluster_key": 1,
+            "id": "date",
+            "fields": [],
+            "dateFormat": "yyyy-mm-dd HH:MM:SS",
+            "sort": true,
+            "fieldName": "date"
+          },
+          {
+            "name": "partner_integer_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED",
+            "is_key": true,
+            "sort": false,
+            "id": "partner_integer_id",
+            "fieldName": "partner_integer_id",
+            "fields": []
+          },
+          {
+            "name": "partner_id",
+            "type": "STRING",
+            "id": "partner_id",
+            "fieldName": "partner_id",
+            "fields": []
+          },
+          {
+            "name": "partner_name",
+            "type": "STRING",
+            "sort": false,
+            "id": "partner_name",
+            "fieldName": "partner_name",
+            "fields": []
+          },
+          {
+            "name": "partner_currency_code",
+            "type": "STRING",
+            "id": "partner_currency_code",
+            "fieldName": "partner_currency_code",
+            "fields": []
+          },
+          {
+            "name": "advertiser_integer_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED",
+            "is_key": true,
+            "fields": [],
+            "id": "advertiser_integer_id",
+            "fieldName": "advertiser_integer_id"
+          },
+          {
+            "name": "advertiser_id",
+            "type": "STRING",
+            "id": "advertiser_id",
+            "fieldName": "advertiser_id",
+            "fields": []
+          },
+          {
+            "name": "advertiser",
+            "type": "STRING",
+            "id": "advertiser",
+            "fieldName": "advertiser",
+            "fields": []
+          },
+          {
+            "name": "advertiser_currency_code",
+            "type": "STRING",
+            "id": "advertiser_currency_code",
+            "fieldName": "advertiser_currency_code",
+            "fields": []
+          },
+          {
+            "name": "campaign_integer_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED",
+            "is_key": true,
+            "fields": [],
+            "id": "campaign_integer_id",
+            "fieldName": "campaign_integer_id"
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "id": "campaign_id",
+            "fieldName": "campaign_id",
+            "fields": []
+          },
+          {
+            "name": "campaign",
+            "type": "STRING",
+            "id": "campaign",
+            "fieldName": "campaign",
+            "fields": []
+          },
+          {
+            "name": "campaign_budget_adv_currency",
+            "type": "FLOAT",
+            "id": "campaign_budget_adv_currency",
+            "fieldName": "campaign_budget_adv_currency",
+            "fields": []
+          },
+          {
+            "name": "ad_group_integer_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED",
+            "is_key": true,
+            "fields": [],
+            "id": "ad_group_integer_id",
+            "fieldName": "ad_group_integer_id"
+          },
+          {
+            "name": "ad_group_id",
+            "type": "STRING",
+            "id": "ad_group_id",
+            "fieldName": "ad_group_id",
+            "fields": []
+          },
+          {
+            "name": "ad_group",
+            "type": "STRING",
+            "id": "ad_group",
+            "fieldName": "ad_group",
+            "fields": []
+          },
+          {
+            "name": "ad_group_base_bid_cpm_adv_currency",
+            "type": "FLOAT",
+            "id": "ad_group_base_bid_cpm_adv_currency",
+            "fieldName": "ad_group_base_bid_cpm_adv_currency",
+            "fields": []
+          },
+          {
+            "name": "ad_group_budget_adv_currency",
+            "type": "FLOAT",
+            "id": "ad_group_budget_adv_currency",
+            "fieldName": "ad_group_budget_adv_currency",
+            "fields": []
+          },
+          {
+            "name": "ad_group_daily_target_adv_currency",
+            "type": "FLOAT",
+            "id": "ad_group_daily_target_adv_currency",
+            "fieldName": "ad_group_daily_target_adv_currency",
+            "fields": []
+          },
+          {
+            "name": "ad_group_budget_in_impressions",
+            "type": "FLOAT",
+            "id": "ad_group_budget_in_impressions",
+            "fieldName": "ad_group_budget_in_impressions",
+            "fields": []
+          },
+          {
+            "name": "ad_group_daily_target_in_impressions",
+            "type": "FLOAT",
+            "id": "ad_group_daily_target_in_impressions",
+            "fieldName": "ad_group_daily_target_in_impressions",
+            "fields": []
+          },
+          {
+            "name": "creative_integer_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fields": [],
+            "id": "creative_integer_id",
+            "fieldName": "creative_integer_id"
+          },
+          {
+            "name": "creative_id",
+            "type": "STRING",
+            "id": "creative_id",
+            "fieldName": "creative_id",
+            "fields": []
+          },
+          {
+            "name": "creative",
+            "type": "STRING",
+            "id": "creative",
+            "fieldName": "creative",
+            "fields": []
+          },
+          {
+            "name": "inventory_channel",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fields": [],
+            "id": "inventory_channel",
+            "fieldName": "inventory_channel"
+          },
+          {
+            "name": "media_type",
+            "type": "STRING",
+            "mode": "REQUIRED",
+            "is_key": true,
+            "fields": [],
+            "id": "media_type",
+            "fieldName": "media_type"
+          },
+          {
+            "name": "device_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fields": [],
+            "id": "device_type",
+            "fieldName": "device_type"
+          },
+          {
+            "name": "",
+            "type": "STRING",
+            "alias": "inventory_channel_calc",
+            "expression": "CASE WHEN (date <= '2024-10-02') THEN      (CASE WHEN (media_type = 'Video' AND device_type = 'ConndectedTV') THEN 'TV'            WHEN (device_type = 'OutOfHome') THEN 'OutOfHome'            WHEN (advertiser = 'Gotham Sports' AND contains(campaign, 'Audio')) THEN 'Audio'            WHEN (media_type = 'Native') THEN 'NativeDisplay'           WHEN (media_type = 'Unknown') THEN 'Other'           ELSE media_type END)  ELSE (CASE WHEN (inventory_channel is null) THEN media_type ELSE inventory_channel END) END",
+            "mode": "REQUIRED",
+            "length": 256,
+            "is_key": true,
+            "id": "185700"
+          },
+          {
+            "name": "ad_format",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fields": [],
+            "id": "ad_format",
+            "fieldName": "ad_format"
+          },
+          {
+            "name": "deal_id",
+            "type": "STRING",
+            "expression": "",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fields": [],
+            "id": "deal_id",
+            "fieldName": "deal_id"
+          },
+          {
+            "name": "managing_partner_cost_usd",
+            "type": "FLOAT",
+            "id": "managing_partner_cost_usd",
+            "fieldName": "managing_partner_cost_usd",
+            "fields": []
+          },
+          {
+            "name": "partner_cost_usd",
+            "type": "FLOAT",
+            "id": "partner_cost_usd",
+            "fieldName": "partner_cost_usd",
+            "fields": []
+          },
+          {
+            "name": "advertiser_cost_usd",
+            "type": "FLOAT",
+            "id": "advertiser_cost_usd",
+            "fieldName": "advertiser_cost_usd",
+            "fields": []
+          },
+          {
+            "name": "impressions",
+            "type": "INTEGER",
+            "id": "impressions",
+            "fieldName": "impressions",
+            "fields": []
+          },
+          {
+            "name": "bids",
+            "type": "INTEGER",
+            "id": "bids",
+            "fieldName": "bids",
+            "fields": []
+          },
+          {
+            "name": "clicks",
+            "type": "INTEGER",
+            "id": "clicks",
+            "fieldName": "clicks",
+            "fields": []
+          },
+          {
+            "name": "ctr",
+            "type": "FLOAT",
+            "id": "ctr",
+            "fieldName": "ctr",
+            "fields": []
+          },
+          {
+            "name": "unique_households",
+            "type": "INTEGER",
+            "id": "unique_households",
+            "fieldName": "unique_households",
+            "fields": []
+          },
+          {
+            "name": "unique_persons",
+            "type": "INTEGER",
+            "id": "unique_persons",
+            "fieldName": "unique_persons",
+            "fields": []
+          },
+          {
+            "name": "frequency_per_household",
+            "type": "INTEGER",
+            "id": "frequency_per_household",
+            "fieldName": "frequency_per_household",
+            "fields": []
+          },
+          {
+            "name": "frequency_per_person",
+            "type": "INTEGER",
+            "id": "frequency_per_person",
+            "fieldName": "frequency_per_person",
+            "fields": []
+          },
+          {
+            "name": "player_25_complete",
+            "type": "INTEGER",
+            "id": "player_25_complete",
+            "fieldName": "player_25_percent_complete",
+            "fields": []
+          },
+          {
+            "name": "player_50_complete",
+            "type": "INTEGER",
+            "id": "player_50_complete",
+            "fieldName": "player_50_percent_complete",
+            "fields": []
+          },
+          {
+            "name": "player_75_complete",
+            "type": "INTEGER",
+            "id": "player_75_complete",
+            "fieldName": "player_75_percent_complete",
+            "fields": []
+          },
+          {
+            "name": "player_completed_views",
+            "type": "INTEGER",
+            "id": "player_completed_views",
+            "fieldName": "player_completed_views",
+            "fields": []
+          },
+          {
+            "name": "_01_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_01",
+            "id": "_01_total_click_view_conversions",
+            "fieldName": "_01_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_02_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_02",
+            "id": "_02_total_click_view_conversions",
+            "fieldName": "_02_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_03_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_03",
+            "id": "_03_total_click_view_conversions",
+            "fieldName": "_03_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_04_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_04",
+            "id": "_04_total_click_view_conversions",
+            "fieldName": "_04_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_05_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_05",
+            "id": "_05_total_click_view_conversions",
+            "fieldName": "_05_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_06_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_06",
+            "id": "_06_total_click_view_conversions",
+            "fieldName": "_06_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_07_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_07",
+            "id": "_07_total_click_view_conversions",
+            "fieldName": "_07_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_08_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_08",
+            "id": "_08_total_click_view_conversions",
+            "fieldName": "_08_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_09_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_09",
+            "id": "_09_total_click_view_conversions",
+            "fieldName": "_09_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_10_total_click_view_conversions",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversions_10",
+            "id": "_10_total_click_view_conversions",
+            "fieldName": "_10_total_click_view_conversions",
+            "fields": []
+          },
+          {
+            "name": "_01_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_01",
+            "id": "_01_total_click_view_conversion_revenue",
+            "fieldName": "_01_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_02_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_02",
+            "id": "_02_total_click_view_conversion_revenue",
+            "fieldName": "_02_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_03_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_03",
+            "id": "_03_total_click_view_conversion_revenue",
+            "fieldName": "_03_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_04_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_04",
+            "id": "_04_total_click_view_conversion_revenue",
+            "fieldName": "_04_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_05_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_05",
+            "id": "_05_total_click_view_conversion_revenue",
+            "fieldName": "_05_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_06_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_06",
+            "id": "_06_total_click_view_conversion_revenue",
+            "fieldName": "_06_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_07_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_07",
+            "id": "_07_total_click_view_conversion_revenue",
+            "fieldName": "_07_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_08_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_08",
+            "id": "_08_total_click_view_conversion_revenue",
+            "fieldName": "_08_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_09_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_09",
+            "id": "_09_total_click_view_conversion_revenue",
+            "fieldName": "_09_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "_10_total_click_view_conversion_revenue",
+            "type": "FLOAT",
+            "alias": "total_click_view_conversion_revenue_10",
+            "id": "_10_total_click_view_conversion_revenue",
+            "fieldName": "_10_total_click_view_conversion_revenue",
+            "fields": []
+          },
+          {
+            "name": "",
+            "type": "TIMESTAMP",
+            "expression": "sysdate()",
+            "mode": "REQUIRED",
+            "length": 256,
+            "id": "269311",
+            "fieldName": "_last_update"
+          },
+          {
+            "name": "",
+            "type": "STRING",
+            "expression": "_rivery_run_id",
+            "mode": "NULLABLE",
+            "length": 256,
+            "id": "947805",
+            "fieldName": "_source_run_id"
+          },
+          {
+            "name": "",
+            "type": "STRING",
+            "expression": "_rivery_river_id",
+            "mode": "NULLABLE",
+            "length": 256,
+            "id": "880305",
+            "fieldName": "_source_id"
+          },
+          {
+            "name": "",
+            "type": "STRING",
+            "expression": "_rivery_river_name",
+            "length": 256,
+            "id": "715472",
+            "fieldName": "_source_name"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "postgres_rds",
+        "connection_type": "postgres",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "quote": "\"",
+        "delimiter": ","
+      },
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "analyze_table": true
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "report_advertisers",
+              "extract_method": "all",
+              "table_name": "predefined_advertisers",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783928360535,
+              "start_date": "2025-12-22 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "report_campaigns",
+              "extract_method": "all",
+              "table_name": "predefined_campaigns",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783928361709,
+              "start_date": "2025-12-22 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "report_audience_information",
+              "extract_method": "all",
+              "table_name": "predefined_audience_information",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783928365569,
+              "start_date": "2025-12-22 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "report_creatives",
+              "extract_method": "all",
+              "table_name": "predefined_creatives",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783928362310,
+              "start_date": "2025-12-22 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "report_dmp",
+              "extract_method": "all",
+              "table_name": "predefined_dmp",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2025-12-22 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "report_audience",
+              "extract_method": "all",
+              "table_name": "predefined_audience",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783928360927,
+              "start_date": "2025-12-22 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "report_ad_groups",
+              "extract_method": "all",
+              "table_name": "predefined_ad_groups",
+              "datasource_id": "the_trade_desk",
+              "start_date": "2025-12-22 00:00:00",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "entity": "ad_groups",
+              "report": "entity_report",
+              "max_batch_time": 1768994215367,
+              "availabilities_available": true,
+              "time_period": "date_range",
+              "last_days": 3,
+              "table_status": "tracked",
+              "columns": {}
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

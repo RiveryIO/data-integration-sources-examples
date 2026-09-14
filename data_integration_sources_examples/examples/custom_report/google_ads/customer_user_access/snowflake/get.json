@@ -1,0 +1,356 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "Quanties - Google Ads - User Permission_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-30T17:38:03.918000Z",
+    "last_updated_at": "2026-06-30T17:38:03.918000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "custom_query": "SELECT\ncustomer.id,\ncustomer.descriptive_name,\ncustomer_user_access.email_address,\ncustomer_user_access.user_id,\ncustomer_user_access.access_role,\ncustomer_user_access.access_creation_date_time,\ncustomer_user_access.inviter_user_email_address,\ncustomer_user_access.resource_name\n\nFROM customer_user_access",
+        "accounts_ids": [
+          "<ACCOUNTS_IDS - leave accounts_ids empty to automatically discover/use all entities accessible via this connection; add specific ID(s) to restrict to particular accounts_ids(s).>"
+        ],
+        "accounts": [],
+        "filters": [],
+        "interval_time": "monthly",
+        "interval_size": 1,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": "2026-04-28 00:00:00",
+        "utc_offset": 0,
+        "end_date": "2026-04-29 00:00:00",
+        "accounts_manual": false,
+        "required_mapping_flag": false,
+        "report": "customer_user_access",
+        "time_period": "date_range",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "parent": "customer",
+            "type": "INT64",
+            "name": "customer.id",
+            "selectableWith": []
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "customer.descriptive_name",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "customer_user_access.email_address",
+            "parent": "customer_user_access"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "customer_user_access.user_id",
+            "parent": "customer_user_access"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "customer_user_access.access_role",
+            "parent": "customer_user_access"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "customer_user_access.inviter_user_email_address",
+            "parent": "customer_user_access"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "customer_user_access.resource_name",
+            "parent": "customer_user_access"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "customer.resource_name",
+            "parent": "customer"
+          }
+        ],
+        "increment_field": "customer_user_access.access_creation_date_time",
+        "is_custom_query": false
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": [
+          "customerUserAccess_accessRole",
+          "customerUserAccess_emailAddress",
+          "customer_id"
+        ],
+        "mapping": [
+          {
+            "name": "customer_resourceName",
+            "type": "STRING",
+            "alias": "customer_resourceName",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "customer_resourceName",
+            "fieldName": "customer_resourceName"
+          },
+          {
+            "name": "customer_id",
+            "type": "INTEGER",
+            "alias": "customer_id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "cluster_key": 1,
+            "sort": true,
+            "fields": [],
+            "id": "customer_id",
+            "fieldName": "customer_id"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "type": "STRING",
+            "alias": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "customer_descriptiveName",
+            "fieldName": "customer_descriptiveName"
+          },
+          {
+            "name": "customerUserAccess_resourceName",
+            "type": "STRING",
+            "alias": "customerUserAccess_resourceName",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "customerUserAccess_resourceName",
+            "fieldName": "customerUserAccess_resourceName"
+          },
+          {
+            "name": "customerUserAccess_userId",
+            "type": "STRING",
+            "alias": "customerUserAccess_userId",
+            "mode": "NULLABLE",
+            "fields": [],
+            "id": "customerUserAccess_userId",
+            "fieldName": "customerUserAccess_userId"
+          },
+          {
+            "name": "customerUserAccess_emailAddress",
+            "type": "STRING",
+            "alias": "customerUserAccess_emailAddress",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "cluster_key": 2,
+            "sort": true,
+            "fields": [],
+            "id": "customerUserAccess_emailAddress",
+            "fieldName": "customerUserAccess_emailAddress"
+          },
+          {
+            "name": "customerUserAccess_accessRole",
+            "type": "STRING",
+            "alias": "customerUserAccess_accessRole",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "cluster_key": 3,
+            "sort": true,
+            "fields": [],
+            "id": "customerUserAccess_accessRole",
+            "fieldName": "customerUserAccess_accessRole"
+          },
+          {
+            "name": "customerUserAccess_inviterUserEmailAddress",
+            "type": "STRING",
+            "alias": "customerUserAccess_inviterUserEmailAddress",
+            "mode": "NULLABLE",
+            "is_key": false,
+            "cluster_key": 4,
+            "sort": true,
+            "fields": [],
+            "id": "customerUserAccess_inviterUserEmailAddress",
+            "fieldName": "customerUserAccess_inviterUserEmailAddress"
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "dataset_id": "<YOUR_DATASET_ID>",
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1780477313759,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [
+          "customer_id",
+          "customerUserAccess_emailAddress",
+          "customerUserAccess_accessRole",
+          "customerUserAccess_inviterUserEmailAddress"
+        ],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "customer_resourceName",
+            "fields": [],
+            "alias": "customer_resourceName",
+            "length": 32,
+            "fieldName": "customer_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customer_id",
+            "fields": [],
+            "alias": "customer_id",
+            "length": 17179869184,
+            "fieldName": "customer_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "fields": [],
+            "alias": "customer_descriptiveName",
+            "length": 16,
+            "fieldName": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customerUserAccess_resourceName",
+            "fields": [],
+            "alias": "customerUserAccess_resourceName",
+            "length": 64,
+            "fieldName": "customerUserAccess_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customerUserAccess_userId",
+            "fields": [],
+            "alias": "customerUserAccess_userId",
+            "length": 16,
+            "fieldName": "customerUserAccess_userId",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customerUserAccess_emailAddress",
+            "fields": [],
+            "alias": "customerUserAccess_emailAddress",
+            "length": 32,
+            "fieldName": "customerUserAccess_emailAddress",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customerUserAccess_accessRole",
+            "fields": [],
+            "alias": "customerUserAccess_accessRole",
+            "length": 8,
+            "fieldName": "customerUserAccess_accessRole",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customerUserAccess_inviterUserEmailAddress",
+            "fields": [],
+            "alias": "customerUserAccess_inviterUserEmailAddress",
+            "length": 32,
+            "fieldName": "customerUserAccess_inviterUserEmailAddress",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ],
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": []
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

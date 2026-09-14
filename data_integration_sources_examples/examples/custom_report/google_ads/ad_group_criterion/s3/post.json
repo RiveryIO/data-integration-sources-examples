@@ -1,0 +1,177 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "(archive)Google-Ads_YT_(A)Live-Campaigns+Ad-Groups_adgroupcriterion_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2022-01-19T11:25:55.265000Z",
+    "last_updated_at": "2026-06-30T14:37:30.160000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "accounts_ids": [
+          "<ACCOUNTS_IDS - leave accounts_ids empty to automatically discover/use all entities accessible via this connection; add specific ID(s) to restrict to particular accounts_ids(s).>"
+        ],
+        "accounts": [
+          "<ACCOUNTS - leave accounts empty to automatically discover/use all entities accessible via this connection; add specific entries to restrict to particular accounts. Each entry looks like: {\"manager_account\": <MANAGER_ACCOUNT>, \"id\": <ID>, \"name\": <NAME>, \"manager_id\": <MANAGER_ID>}.>"
+        ],
+        "filters": [
+          {
+            "operator": "IN",
+            "field": {
+              "name": "ad_group.type",
+              "filterable": true,
+              "is_repeated": false,
+              "values": [
+                "DISPLAY_STANDARD",
+                "HOTEL_ADS",
+                "PROMOTED_HOTEL_ADS",
+                "SEARCH_DYNAMIC_ADS",
+                "SEARCH_STANDARD",
+                "SHOPPING_COMPARISON_LISTING_ADS",
+                "SHOPPING_PRODUCT_ADS",
+                "SHOPPING_SMART_ADS",
+                "SMART_CAMPAIGN_ADS",
+                "UNKNOWN",
+                "UNSPECIFIED",
+                "VIDEO_BUMPER",
+                "VIDEO_EFFICIENT_REACH",
+                "VIDEO_NON_SKIPPABLE_IN_STREAM",
+                "VIDEO_OUTSTREAM",
+                "VIDEO_RESPONSIVE",
+                "VIDEO_TRUE_VIEW_IN_DISPLAY",
+                "VIDEO_TRUE_VIEW_IN_STREAM"
+              ],
+              "operator_type": "ENUM",
+              "type": "ENUM",
+              "format_type": "list"
+            },
+            "value": [
+              "VIDEO_BUMPER",
+              "VIDEO_EFFICIENT_REACH",
+              "VIDEO_NON_SKIPPABLE_IN_STREAM",
+              "VIDEO_RESPONSIVE",
+              "VIDEO_TRUE_VIEW_IN_DISPLAY",
+              "VIDEO_TRUE_VIEW_IN_STREAM"
+            ]
+          }
+        ],
+        "connection_type": "google_ads",
+        "interval_time": "monthly",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "interval_size": 1,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "gzipTypeMust": null,
+        "utc_offset": 0,
+        "extract_method": "all",
+        "end_date": null,
+        "quote": "\"",
+        "accounts_manual": false,
+        "required_mapping_flag": true,
+        "fz_batched": true,
+        "report": "ad_group_criterion",
+        "time_period": "date_range",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "campaign.name",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "campaign.id",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad_group.name",
+            "parent": "ad_group"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "ad_group.id",
+            "parent": "ad_group"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "DATE",
+            "name": "campaign.end_date_time",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "DATE",
+            "name": "campaign.start_date_time",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "campaign.serving_status",
+            "parent": "campaign"
+          }
+        ],
+        "increment_field": "campaign.end_date_time",
+        "delimiter": ","
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

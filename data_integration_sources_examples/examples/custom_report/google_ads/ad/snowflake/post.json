@@ -1,0 +1,450 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "Epicosity Google Ads Creative Asset MikeTest_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-04-15T18:42:13.112000Z",
+    "last_updated_at": "2026-06-30T14:33:10.034000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "utc_offset": 0,
+        "extract_method": "all",
+        "quote": "\"",
+        "accounts_manual": false,
+        "required_mapping_flag": false,
+        "fz_partition": "d",
+        "delimiter": ",",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "selectableWith": [],
+            "type": "INT64",
+            "name": "ad.id",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad.name",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "ad.type",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad.final_urls",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad.responsive_search_ad.path1",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad.responsive_search_ad.path2",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "ad.resource_name",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "MESSAGE",
+            "name": "ad.responsive_display_ad.descriptions",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad.responsive_display_ad.promo_text",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad.responsive_display_ad.call_to_action_text",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "MESSAGE",
+            "name": "ad.responsive_display_ad.headlines",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "MESSAGE",
+            "name": "ad.responsive_search_ad.descriptions",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "MESSAGE",
+            "name": "ad.responsive_search_ad.headlines",
+            "parent": "ad"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad.display_url",
+            "parent": "ad"
+          }
+        ],
+        "accounts": [
+          "<ACCOUNTS - leave accounts empty to automatically discover/use all entities accessible via this connection; add specific entries to restrict to particular accounts. Each entry looks like: {\"manager_account\": <MANAGER_ACCOUNT>, \"manager_id\": <MANAGER_ID>, \"name\": <NAME>, \"id\": <ID>}.>"
+        ],
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [],
+        "increment_field": null,
+        "report": "ad",
+        "fz_batched": true,
+        "gzipTypeMust": null,
+        "source_format": "NEWLINE_DELIMITED_JSON"
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "ad_type",
+            "type": "STRING",
+            "alias": "ad_type",
+            "mode": "NULLABLE",
+            "fieldName": "ad_type",
+            "fields": [],
+            "id": "ad_type"
+          },
+          {
+            "name": "ad_responsiveSearchAd_headlines",
+            "type": "STRING",
+            "alias": "ad_responsiveSearchAd_headlines",
+            "mode": "REPEATED",
+            "fieldName": "ad_responsiveSearchAd_headlines",
+            "fields": [],
+            "id": "ad_responsiveSearchAd_headlines"
+          },
+          {
+            "name": "ad_responsiveSearchAd_descriptions",
+            "type": "STRING",
+            "alias": "ad_responsiveSearchAd_descriptions",
+            "mode": "REPEATED",
+            "fieldName": "ad_responsiveSearchAd_descriptions",
+            "fields": [],
+            "id": "ad_responsiveSearchAd_descriptions"
+          },
+          {
+            "name": "ad_resourceName",
+            "type": "STRING",
+            "alias": "ad_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "ad_resourceName",
+            "fields": [],
+            "id": "ad_resourceName"
+          },
+          {
+            "name": "ad_id",
+            "type": "STRING",
+            "alias": "ad_id",
+            "mode": "NULLABLE",
+            "fieldName": "ad_id",
+            "fields": [],
+            "id": "ad_id"
+          },
+          {
+            "name": "ad_finalUrls",
+            "type": "STRING",
+            "alias": "ad_finalUrls",
+            "mode": "REPEATED",
+            "fieldName": "ad_finalUrls",
+            "fields": [],
+            "id": "ad_finalUrls"
+          },
+          {
+            "name": "customer_id",
+            "type": "INTEGER",
+            "alias": "customer_id",
+            "mode": "NULLABLE",
+            "fieldName": "customer_id",
+            "fields": [],
+            "id": "customer_id"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "type": "STRING",
+            "alias": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "fieldName": "customer_descriptiveName",
+            "fields": [],
+            "id": "customer_descriptiveName"
+          },
+          {
+            "name": "ad_displayUrl",
+            "type": "STRING",
+            "alias": "ad_displayUrl",
+            "mode": "NULLABLE",
+            "fieldName": "ad_displayUrl",
+            "fields": [],
+            "id": "ad_displayUrl"
+          },
+          {
+            "name": "ad_name",
+            "type": "STRING",
+            "alias": "ad_name",
+            "mode": "NULLABLE",
+            "fieldName": "ad_name",
+            "fields": [],
+            "id": "ad_name"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_headlines",
+            "type": "STRING",
+            "alias": "ad_responsiveDisplayAd_headlines",
+            "mode": "REPEATED",
+            "fieldName": "ad_responsiveDisplayAd_headlines",
+            "fields": [],
+            "id": "ad_responsiveDisplayAd_headlines"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_descriptions",
+            "type": "STRING",
+            "alias": "ad_responsiveDisplayAd_descriptions",
+            "mode": "REPEATED",
+            "fieldName": "ad_responsiveDisplayAd_descriptions",
+            "fields": [],
+            "id": "ad_responsiveDisplayAd_descriptions"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_callToActionText",
+            "type": "STRING",
+            "alias": "ad_responsiveDisplayAd_callToActionText",
+            "mode": "NULLABLE",
+            "fieldName": "ad_responsiveDisplayAd_callToActionText",
+            "fields": [],
+            "id": "ad_responsiveDisplayAd_callToActionText"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1776279739484,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "ad_type",
+            "fields": [],
+            "alias": "ad_type",
+            "length": 32,
+            "fieldName": "ad_type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveSearchAd_headlines",
+            "fields": [],
+            "alias": "ad_responsiveSearchAd_headlines",
+            "length": 1024,
+            "fieldName": "ad_responsiveSearchAd_headlines",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveSearchAd_descriptions",
+            "fields": [],
+            "alias": "ad_responsiveSearchAd_descriptions",
+            "length": 512,
+            "fieldName": "ad_responsiveSearchAd_descriptions",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_resourceName",
+            "fields": [],
+            "alias": "ad_resourceName",
+            "length": 64,
+            "fieldName": "ad_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_id",
+            "fields": [],
+            "alias": "ad_id",
+            "length": 16,
+            "fieldName": "ad_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_finalUrls",
+            "fields": [],
+            "alias": "ad_finalUrls",
+            "length": 512,
+            "fieldName": "ad_finalUrls",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "customer_id",
+            "fields": [],
+            "alias": "customer_id",
+            "length": 17179869184,
+            "fieldName": "customer_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "fields": [],
+            "alias": "customer_descriptiveName",
+            "length": 16,
+            "fieldName": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_displayUrl",
+            "fields": [],
+            "alias": "ad_displayUrl",
+            "length": 64,
+            "fieldName": "ad_displayUrl",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_name",
+            "fields": [],
+            "alias": "ad_name",
+            "length": 64,
+            "fieldName": "ad_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_headlines",
+            "fields": [],
+            "alias": "ad_responsiveDisplayAd_headlines",
+            "length": 256,
+            "fieldName": "ad_responsiveDisplayAd_headlines",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_descriptions",
+            "fields": [],
+            "alias": "ad_responsiveDisplayAd_descriptions",
+            "length": 1024,
+            "fieldName": "ad_responsiveDisplayAd_descriptions",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_callToActionText",
+            "fields": [],
+            "alias": "ad_responsiveDisplayAd_callToActionText",
+            "length": 16,
+            "fieldName": "ad_responsiveDisplayAd_callToActionText",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": []
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

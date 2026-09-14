@@ -1,0 +1,934 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_fb_social_insights_post",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "fb_social",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "insights_post",
+      "cdc_settings": null,
+      "additional_settings": {
+        "is_ignore_exceptions": true,
+        "period": "lifetime",
+        "video_fields": [
+          "id"
+        ],
+        "fz_partition": "d",
+        "metrics_post": [
+          "post_reactions_like_total",
+          "post_reactions_wow_total",
+          "post_reactions_love_total",
+          "post_reactions_haha_total",
+          "post_reactions_sorry_total",
+          "post_reactions_anger_total",
+          "post_video_views_organic",
+          "post_video_views",
+          "post_video_avg_time_watched",
+          "post_clicks",
+          "post_video_view_time",
+          "post_video_complete_views_organic",
+          "post_video_complete_views_paid",
+          "post_video_length",
+          "post_video_complete_views_organic_unique",
+          "post_video_complete_views_paid_unique",
+          "post_video_view_time_organic",
+          "post_video_views_organic_unique"
+        ],
+        "connection_type": "fb_social",
+        "last_days": 0,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "include_promotable_posts": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "exceptions_threshold": null,
+        "gzipTypeMust": null,
+        "start_date": "2024-06-26 00:00:00",
+        "end_date": null,
+        "quote": "\"",
+        "required_mapping_flag": false,
+        "fz_batched": true,
+        "time_resolution": "daily",
+        "time_period": "date_range",
+        "pages": "<YOUR_PAGES>",
+        "posts_fields": [
+          "id",
+          "message",
+          "parent_id",
+          "shares",
+          "privacy",
+          "permalink_url",
+          "picture",
+          "created_time"
+        ],
+        "feed_report_tree": [
+          {
+            "type": "feed",
+            "nodes": [
+              {
+                "type": "comments",
+                "nodes": [
+                  {
+                    "type": "reactions",
+                    "checked": true,
+                    "id": "_reactions2",
+                    "fields": []
+                  },
+                  {
+                    "checked": true,
+                    "nodes": [
+                      {
+                        "checked": true,
+                        "type": "reactions",
+                        "id": "reactions3",
+                        "fields": []
+                      }
+                    ],
+                    "type": "comments",
+                    "id": "_comments2",
+                    "fields": []
+                  }
+                ],
+                "checked": true,
+                "id": "comments1",
+                "fields": []
+              },
+              {
+                "checked": true,
+                "type": "reactions",
+                "id": "_reactions0",
+                "fields": []
+              }
+            ],
+            "checked": true,
+            "id": "_feed",
+            "fields": []
+          }
+        ],
+        "delimiter": ",",
+        "utc_offset": 0,
+        "pages_fields": [
+          "id"
+        ]
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "post_impressions_organic_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "post_impressions_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_impressions_organic_unique_lifetime",
+            "fieldName": "post_impressions_organic_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "date",
+            "type": "STRING",
+            "alias": "date",
+            "mode": "NULLABLE",
+            "id": "date",
+            "fieldName": "date",
+            "fields": []
+          },
+          {
+            "name": "end_time",
+            "type": "STRING",
+            "alias": "end_time",
+            "mode": "NULLABLE",
+            "id": "end_time",
+            "fieldName": "end_time",
+            "fields": []
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "id": "id",
+            "fieldName": "id",
+            "fields": []
+          },
+          {
+            "name": "message",
+            "type": "STRING",
+            "alias": "message",
+            "mode": "NULLABLE",
+            "id": "message",
+            "fieldName": "message",
+            "fields": []
+          },
+          {
+            "name": "shares",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "id": "shares",
+            "fieldName": "shares",
+            "fields": [
+              {
+                "name": "count",
+                "fields": [],
+                "alias": "count",
+                "length": 2048,
+                "fieldName": "count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ]
+          },
+          {
+            "name": "privacy",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "id": "privacy",
+            "fieldName": "privacy",
+            "fields": [
+              {
+                "name": "allow",
+                "fields": [],
+                "alias": "allow",
+                "length": 8,
+                "fieldName": "allow",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "deny",
+                "fields": [],
+                "alias": "deny",
+                "length": 8,
+                "fieldName": "deny",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "description",
+                "fields": [],
+                "alias": "description",
+                "length": 8,
+                "fieldName": "description",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "friends",
+                "fields": [],
+                "alias": "friends",
+                "length": 8,
+                "fieldName": "friends",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "value",
+                "fields": [],
+                "alias": "value",
+                "length": 8,
+                "fieldName": "value",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "permalink_url",
+            "type": "STRING",
+            "alias": "permalink_url",
+            "mode": "NULLABLE",
+            "id": "permalink_url",
+            "fieldName": "permalink_url",
+            "fields": []
+          },
+          {
+            "name": "picture",
+            "type": "STRING",
+            "alias": "picture",
+            "mode": "NULLABLE",
+            "id": "picture",
+            "fieldName": "picture",
+            "fields": []
+          },
+          {
+            "name": "created_time",
+            "type": "STRING",
+            "alias": "created_time",
+            "mode": "NULLABLE",
+            "id": "created_time",
+            "fieldName": "created_time",
+            "fields": []
+          },
+          {
+            "name": "page_id",
+            "type": "STRING",
+            "alias": "page_id",
+            "mode": "NULLABLE",
+            "id": "page_id",
+            "fieldName": "page_id",
+            "fields": []
+          },
+          {
+            "name": "post_impressions_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "post_impressions_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_impressions_unique_lifetime",
+            "fieldName": "post_impressions_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_impressions_paid_lifetime",
+            "type": "INTEGER",
+            "alias": "post_impressions_paid_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_impressions_paid_lifetime",
+            "fieldName": "post_impressions_paid_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_impressions_lifetime",
+            "type": "INTEGER",
+            "alias": "post_impressions_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_impressions_lifetime",
+            "fieldName": "post_impressions_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_reactions_like_total_lifetime",
+            "type": "INTEGER",
+            "alias": "post_reactions_like_total_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_reactions_like_total_lifetime",
+            "fieldName": "post_reactions_like_total_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_reactions_wow_total_lifetime",
+            "type": "INTEGER",
+            "alias": "post_reactions_wow_total_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_reactions_wow_total_lifetime",
+            "fieldName": "post_reactions_wow_total_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_reactions_love_total_lifetime",
+            "type": "INTEGER",
+            "alias": "post_reactions_love_total_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_reactions_love_total_lifetime",
+            "fieldName": "post_reactions_love_total_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_reactions_haha_total_lifetime",
+            "type": "INTEGER",
+            "alias": "post_reactions_haha_total_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_reactions_haha_total_lifetime",
+            "fieldName": "post_reactions_haha_total_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_reactions_sorry_total_lifetime",
+            "type": "INTEGER",
+            "alias": "post_reactions_sorry_total_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_reactions_sorry_total_lifetime",
+            "fieldName": "post_reactions_sorry_total_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_reactions_anger_total_lifetime",
+            "type": "INTEGER",
+            "alias": "post_reactions_anger_total_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_reactions_anger_total_lifetime",
+            "fieldName": "post_reactions_anger_total_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_views_organic_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_views_organic_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_views_organic_lifetime",
+            "fieldName": "post_video_views_organic_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_views_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_views_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_views_lifetime",
+            "fieldName": "post_video_views_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_clicks_lifetime",
+            "type": "INTEGER",
+            "alias": "post_clicks_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_clicks_lifetime",
+            "fieldName": "post_clicks_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_impressions_fan_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "post_impressions_fan_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_impressions_fan_unique_lifetime",
+            "fieldName": "post_impressions_fan_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_complete_views_organic_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_complete_views_organic_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_complete_views_organic_lifetime",
+            "fieldName": "post_video_complete_views_organic_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_complete_views_paid_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_complete_views_paid_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_complete_views_paid_lifetime",
+            "fieldName": "post_video_complete_views_paid_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_length_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_length_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_length_lifetime",
+            "fieldName": "post_video_length_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_complete_views_organic_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_complete_views_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_complete_views_organic_unique_lifetime",
+            "fieldName": "post_video_complete_views_organic_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_complete_views_paid_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_complete_views_paid_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_complete_views_paid_unique_lifetime",
+            "fieldName": "post_video_complete_views_paid_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_view_time_organic_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_view_time_organic_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_view_time_organic_lifetime",
+            "fieldName": "post_video_view_time_organic_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_clicks_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "post_clicks_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_clicks_unique_lifetime",
+            "fieldName": "post_clicks_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_impressions_organic_lifetime",
+            "type": "INTEGER",
+            "alias": "post_impressions_organic_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_impressions_organic_lifetime",
+            "fieldName": "post_impressions_organic_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_video_views_organic_unique_lifetime",
+            "type": "INTEGER",
+            "alias": "post_video_views_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_video_views_organic_unique_lifetime",
+            "fieldName": "post_video_views_organic_unique_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_impressions_fan_lifetime",
+            "type": "INTEGER",
+            "alias": "post_impressions_fan_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_impressions_fan_lifetime",
+            "fieldName": "post_impressions_fan_lifetime",
+            "fields": []
+          },
+          {
+            "name": "post_engaged_fan_lifetime",
+            "type": "INTEGER",
+            "alias": "post_engaged_fan_lifetime",
+            "mode": "NULLABLE",
+            "id": "post_engaged_fan_lifetime",
+            "fieldName": "post_engaged_fan_lifetime",
+            "fields": []
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1726642414586,
+        "distributionField": null,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "post_impressions_organic_unique_lifetime",
+            "fields": [],
+            "alias": "post_impressions_organic_unique_lifetime",
+            "length": 2097152,
+            "fieldName": "post_impressions_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "date",
+            "fields": [],
+            "alias": "date",
+            "length": 16,
+            "fieldName": "date",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "end_time",
+            "fields": [],
+            "alias": "end_time",
+            "length": 32,
+            "fieldName": "end_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "id",
+            "fields": [],
+            "alias": "id",
+            "length": 32,
+            "fieldName": "id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "message",
+            "fields": [],
+            "alias": "message",
+            "length": 256,
+            "fieldName": "message",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "shares",
+            "fields": [
+              {
+                "name": "count",
+                "fields": [],
+                "alias": "count",
+                "length": 2048,
+                "fieldName": "count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "alias": "shares",
+            "fieldName": "shares",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "privacy",
+            "fields": [
+              {
+                "name": "allow",
+                "fields": [],
+                "alias": "allow",
+                "length": 8,
+                "fieldName": "allow",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "deny",
+                "fields": [],
+                "alias": "deny",
+                "length": 8,
+                "fieldName": "deny",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "description",
+                "fields": [],
+                "alias": "description",
+                "length": 8,
+                "fieldName": "description",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "friends",
+                "fields": [],
+                "alias": "friends",
+                "length": 8,
+                "fieldName": "friends",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "value",
+                "fields": [],
+                "alias": "value",
+                "length": 8,
+                "fieldName": "value",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "privacy",
+            "fieldName": "privacy",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "permalink_url",
+            "fields": [],
+            "alias": "permalink_url",
+            "length": 64,
+            "fieldName": "permalink_url",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "picture",
+            "fields": [],
+            "alias": "picture",
+            "length": 512,
+            "fieldName": "picture",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "created_time",
+            "fields": [],
+            "alias": "created_time",
+            "length": 32,
+            "fieldName": "created_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "page_id",
+            "fields": [],
+            "alias": "page_id",
+            "length": 16,
+            "fieldName": "page_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "post_impressions_unique_lifetime",
+            "fields": [],
+            "alias": "post_impressions_unique_lifetime",
+            "length": 2097152,
+            "fieldName": "post_impressions_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_impressions_paid_lifetime",
+            "fields": [],
+            "alias": "post_impressions_paid_lifetime",
+            "length": 8,
+            "fieldName": "post_impressions_paid_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_impressions_lifetime",
+            "fields": [],
+            "alias": "post_impressions_lifetime",
+            "length": 2097152,
+            "fieldName": "post_impressions_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_reactions_like_total_lifetime",
+            "fields": [],
+            "alias": "post_reactions_like_total_lifetime",
+            "length": 16384,
+            "fieldName": "post_reactions_like_total_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_reactions_wow_total_lifetime",
+            "fields": [],
+            "alias": "post_reactions_wow_total_lifetime",
+            "length": 1024,
+            "fieldName": "post_reactions_wow_total_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_reactions_love_total_lifetime",
+            "fields": [],
+            "alias": "post_reactions_love_total_lifetime",
+            "length": 8192,
+            "fieldName": "post_reactions_love_total_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_reactions_haha_total_lifetime",
+            "fields": [],
+            "alias": "post_reactions_haha_total_lifetime",
+            "length": 256,
+            "fieldName": "post_reactions_haha_total_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_reactions_sorry_total_lifetime",
+            "fields": [],
+            "alias": "post_reactions_sorry_total_lifetime",
+            "length": 16,
+            "fieldName": "post_reactions_sorry_total_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_reactions_anger_total_lifetime",
+            "fields": [],
+            "alias": "post_reactions_anger_total_lifetime",
+            "length": 16,
+            "fieldName": "post_reactions_anger_total_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_views_organic_lifetime",
+            "fields": [],
+            "alias": "post_video_views_organic_lifetime",
+            "length": 8,
+            "fieldName": "post_video_views_organic_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_views_lifetime",
+            "fields": [],
+            "alias": "post_video_views_lifetime",
+            "length": 8,
+            "fieldName": "post_video_views_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_clicks_lifetime",
+            "fields": [],
+            "alias": "post_clicks_lifetime",
+            "length": 524288,
+            "fieldName": "post_clicks_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_impressions_fan_unique_lifetime",
+            "fields": [],
+            "alias": "post_impressions_fan_unique_lifetime",
+            "length": 1048576,
+            "fieldName": "post_impressions_fan_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_complete_views_organic_lifetime",
+            "fields": [],
+            "alias": "post_video_complete_views_organic_lifetime",
+            "length": 8,
+            "fieldName": "post_video_complete_views_organic_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_complete_views_paid_lifetime",
+            "fields": [],
+            "alias": "post_video_complete_views_paid_lifetime",
+            "length": 8,
+            "fieldName": "post_video_complete_views_paid_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_length_lifetime",
+            "fields": [],
+            "alias": "post_video_length_lifetime",
+            "length": 8,
+            "fieldName": "post_video_length_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_complete_views_organic_unique_lifetime",
+            "fields": [],
+            "alias": "post_video_complete_views_organic_unique_lifetime",
+            "length": 8,
+            "fieldName": "post_video_complete_views_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_complete_views_paid_unique_lifetime",
+            "fields": [],
+            "alias": "post_video_complete_views_paid_unique_lifetime",
+            "length": 8,
+            "fieldName": "post_video_complete_views_paid_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_view_time_organic_lifetime",
+            "fields": [],
+            "alias": "post_video_view_time_organic_lifetime",
+            "length": 8,
+            "fieldName": "post_video_view_time_organic_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_clicks_unique_lifetime",
+            "fields": [],
+            "alias": "post_clicks_unique_lifetime",
+            "length": 262144,
+            "fieldName": "post_clicks_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_impressions_organic_lifetime",
+            "fields": [],
+            "alias": "post_impressions_organic_lifetime",
+            "length": 2097152,
+            "fieldName": "post_impressions_organic_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_video_views_organic_unique_lifetime",
+            "fields": [],
+            "alias": "post_video_views_organic_unique_lifetime",
+            "length": 8,
+            "fieldName": "post_video_views_organic_unique_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_impressions_fan_lifetime",
+            "fields": [],
+            "alias": "post_impressions_fan_lifetime",
+            "length": 1048576,
+            "fieldName": "post_impressions_fan_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "post_engaged_fan_lifetime",
+            "fields": [],
+            "alias": "post_engaged_fan_lifetime",
+            "length": 131072,
+            "fieldName": "post_engaged_fan_lifetime",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

@@ -1,0 +1,1610 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_Intercom_conversations_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-25T08:23:27.107000Z",
+    "last_updated_at": "2026-06-25T08:23:27.107000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "intercom",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "intercom",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "increment",
+        "interval_by": "created_at",
+        "required_mapping_flag": false,
+        "include_conversation_parts": true,
+        "report": "conversations",
+        "time_period": "date_range",
+        "utc_offset": 0
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": [
+          "id"
+        ],
+        "mapping": [
+          {
+            "name": "type",
+            "type": "STRING",
+            "alias": "type",
+            "mode": "NULLABLE",
+            "fieldName": "type",
+            "fields": [],
+            "id": "type"
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "id",
+            "fields": [],
+            "id": "id"
+          },
+          {
+            "name": "created_at",
+            "type": "TIMESTAMP",
+            "alias": "created_at",
+            "mode": "NULLABLE",
+            "fieldName": "created_at",
+            "fields": [],
+            "id": "created_at"
+          },
+          {
+            "name": "updated_at",
+            "type": "TIMESTAMP",
+            "alias": "updated_at",
+            "mode": "NULLABLE",
+            "fieldName": "updated_at",
+            "fields": [],
+            "id": "updated_at"
+          },
+          {
+            "name": "waiting_since",
+            "type": "TIMESTAMP",
+            "alias": "waiting_since",
+            "mode": "NULLABLE",
+            "fieldName": "waiting_since",
+            "fields": [],
+            "id": "waiting_since"
+          },
+          {
+            "name": "snoozed_until",
+            "type": "TIMESTAMP",
+            "alias": "snoozed_until",
+            "mode": "NULLABLE",
+            "fieldName": "snoozed_until",
+            "fields": [],
+            "id": "snoozed_until"
+          },
+          {
+            "name": "source",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "source",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "id",
+                "fields": [],
+                "alias": "id",
+                "length": 16,
+                "fieldName": "id",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "delivered_as",
+                "fields": [],
+                "alias": "delivered_as",
+                "length": 32,
+                "fieldName": "delivered_as",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "subject",
+                "fields": [],
+                "alias": "subject",
+                "length": 256,
+                "fieldName": "subject",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "body",
+                "fields": [],
+                "alias": "body",
+                "length": 16384,
+                "fieldName": "body",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "author",
+                "fields": [
+                  {
+                    "name": "type",
+                    "fields": [],
+                    "alias": "type",
+                    "length": 8,
+                    "fieldName": "type",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "id",
+                    "fields": [],
+                    "alias": "id",
+                    "length": 32,
+                    "fieldName": "id",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "name",
+                    "fields": [],
+                    "alias": "name",
+                    "length": 32,
+                    "fieldName": "name",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "email",
+                    "fields": [],
+                    "alias": "email",
+                    "length": 64,
+                    "fieldName": "email",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  }
+                ],
+                "fieldName": "author",
+                "mode": "NULLABLE",
+                "type": "RECORD"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 32768,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "redacted",
+                "fields": [],
+                "alias": "redacted",
+                "length": 8,
+                "fieldName": "redacted",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              },
+              {
+                "name": "attachments",
+                "fields": [],
+                "alias": "attachments",
+                "length": 4096,
+                "fieldName": "attachments",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "id": "source"
+          },
+          {
+            "name": "contacts",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "contacts",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "contacts",
+                "fields": [],
+                "alias": "contacts",
+                "length": 512,
+                "fieldName": "contacts",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "id": "contacts"
+          },
+          {
+            "name": "first_contact_reply",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "first_contact_reply",
+            "fields": [
+              {
+                "name": "created_at",
+                "fields": [],
+                "alias": "created_at",
+                "length": 2147483648,
+                "fieldName": "created_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 32768,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "id": "first_contact_reply"
+          },
+          {
+            "name": "admin_assignee_id",
+            "type": "STRING",
+            "alias": "admin_assignee_id",
+            "mode": "NULLABLE",
+            "fieldName": "admin_assignee_id",
+            "fields": [],
+            "id": "admin_assignee_id"
+          },
+          {
+            "name": "team_assignee_id",
+            "type": "INTEGER",
+            "alias": "team_assignee_id",
+            "mode": "NULLABLE",
+            "fieldName": "team_assignee_id",
+            "fields": [],
+            "id": "team_assignee_id"
+          },
+          {
+            "name": "open",
+            "type": "BOOLEAN",
+            "alias": "open",
+            "mode": "NULLABLE",
+            "fieldName": "open",
+            "fields": [],
+            "id": "open"
+          },
+          {
+            "name": "state",
+            "type": "STRING",
+            "alias": "state",
+            "mode": "NULLABLE",
+            "fieldName": "state",
+            "fields": [],
+            "id": "state"
+          },
+          {
+            "name": "read",
+            "type": "BOOLEAN",
+            "alias": "read",
+            "mode": "NULLABLE",
+            "fieldName": "read",
+            "fields": [],
+            "id": "read"
+          },
+          {
+            "name": "tags",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "tags",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 8,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "tags",
+                "fields": [],
+                "alias": "tags",
+                "length": 1024,
+                "fieldName": "tags",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "id": "tags"
+          },
+          {
+            "name": "priority",
+            "type": "STRING",
+            "alias": "priority",
+            "mode": "NULLABLE",
+            "fieldName": "priority",
+            "fields": [],
+            "id": "priority"
+          },
+          {
+            "name": "sla_applied",
+            "type": "STRING",
+            "alias": "sla_applied",
+            "mode": "NULLABLE",
+            "fieldName": "sla_applied",
+            "fields": [],
+            "id": "sla_applied"
+          },
+          {
+            "name": "statistics",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "statistics",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 32,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "time_to_assignment",
+                "fields": [],
+                "alias": "time_to_assignment",
+                "length": 128,
+                "fieldName": "time_to_assignment",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "time_to_admin_reply",
+                "fields": [],
+                "alias": "time_to_admin_reply",
+                "length": 65536,
+                "fieldName": "time_to_admin_reply",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "time_to_first_close",
+                "fields": [],
+                "alias": "time_to_first_close",
+                "length": 2097152,
+                "fieldName": "time_to_first_close",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "time_to_last_close",
+                "fields": [],
+                "alias": "time_to_last_close",
+                "length": 8388608,
+                "fieldName": "time_to_last_close",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "median_time_to_reply",
+                "fields": [],
+                "alias": "median_time_to_reply",
+                "length": 8192,
+                "fieldName": "median_time_to_reply",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "first_contact_reply_at",
+                "fields": [],
+                "alias": "first_contact_reply_at",
+                "length": 2147483648,
+                "fieldName": "first_contact_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "first_assignment_at",
+                "fields": [],
+                "alias": "first_assignment_at",
+                "length": 2147483648,
+                "fieldName": "first_assignment_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "first_admin_reply_at",
+                "fields": [],
+                "alias": "first_admin_reply_at",
+                "length": 2147483648,
+                "fieldName": "first_admin_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "first_close_at",
+                "fields": [],
+                "alias": "first_close_at",
+                "length": 2147483648,
+                "fieldName": "first_close_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_assignment_at",
+                "fields": [],
+                "alias": "last_assignment_at",
+                "length": 2147483648,
+                "fieldName": "last_assignment_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_assignment_admin_reply_at",
+                "fields": [],
+                "alias": "last_assignment_admin_reply_at",
+                "length": 2147483648,
+                "fieldName": "last_assignment_admin_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_contact_reply_at",
+                "fields": [],
+                "alias": "last_contact_reply_at",
+                "length": 2147483648,
+                "fieldName": "last_contact_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_admin_reply_at",
+                "fields": [],
+                "alias": "last_admin_reply_at",
+                "length": 2147483648,
+                "fieldName": "last_admin_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_close_at",
+                "fields": [],
+                "alias": "last_close_at",
+                "length": 2147483648,
+                "fieldName": "last_close_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_closed_by_id",
+                "fields": [],
+                "alias": "last_closed_by_id",
+                "length": 8388608,
+                "fieldName": "last_closed_by_id",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "count_reopens",
+                "fields": [],
+                "alias": "count_reopens",
+                "length": 16,
+                "fieldName": "count_reopens",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "count_assignments",
+                "fields": [],
+                "alias": "count_assignments",
+                "length": 8,
+                "fieldName": "count_assignments",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "count_conversation_parts",
+                "fields": [],
+                "alias": "count_conversation_parts",
+                "length": 1024,
+                "fieldName": "count_conversation_parts",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "id": "statistics"
+          },
+          {
+            "name": "conversation_rating",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "conversation_rating",
+            "fields": [
+              {
+                "name": "rating",
+                "fields": [],
+                "alias": "rating",
+                "length": 8,
+                "fieldName": "rating",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "remark",
+                "fields": [],
+                "alias": "remark",
+                "length": 512,
+                "fieldName": "remark",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "created_at",
+                "fields": [],
+                "alias": "created_at",
+                "length": 2147483648,
+                "fieldName": "created_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "contact",
+                "fields": [
+                  {
+                    "name": "type",
+                    "fields": [],
+                    "alias": "type",
+                    "length": 4,
+                    "fieldName": "type",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "id",
+                    "fields": [],
+                    "alias": "id",
+                    "length": 32,
+                    "fieldName": "id",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  }
+                ],
+                "fieldName": "contact",
+                "mode": "NULLABLE",
+                "type": "RECORD"
+              },
+              {
+                "name": "teammate",
+                "fields": [
+                  {
+                    "name": "type",
+                    "fields": [],
+                    "alias": "type",
+                    "length": 8,
+                    "fieldName": "type",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "id",
+                    "fields": [],
+                    "alias": "id",
+                    "length": 8,
+                    "fieldName": "id",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  }
+                ],
+                "fieldName": "teammate",
+                "mode": "NULLABLE",
+                "type": "RECORD"
+              }
+            ],
+            "id": "conversation_rating"
+          },
+          {
+            "name": "teammates",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "teammates",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "admins",
+                "fields": [],
+                "alias": "admins",
+                "length": 512,
+                "fieldName": "admins",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "id": "teammates"
+          },
+          {
+            "name": "title",
+            "type": "STRING",
+            "alias": "title",
+            "mode": "NULLABLE",
+            "fieldName": "title",
+            "fields": [],
+            "id": "title"
+          },
+          {
+            "name": "custom_attributes",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "custom_attributes",
+            "fields": [
+              {
+                "name": "Eco_System",
+                "fields": [],
+                "alias": "Eco_System",
+                "length": 16,
+                "fieldName": "Eco_System",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "Escalated",
+                "fields": [],
+                "alias": "Escalated",
+                "length": 32,
+                "fieldName": "Escalated",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "Product_Area",
+                "fields": [],
+                "alias": "Product_Area",
+                "length": 64,
+                "fieldName": "Product_Area",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "Request_type",
+                "fields": [],
+                "alias": "Request_type",
+                "length": 16,
+                "fieldName": "Request_type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "Integration_type",
+                "fields": [],
+                "alias": "Integration_type",
+                "length": 16,
+                "fieldName": "Integration_type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "id": "custom_attributes"
+          },
+          {
+            "name": "topics",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "topics",
+            "fields": [],
+            "id": "topics"
+          },
+          {
+            "name": "conversation_parts",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fieldName": "conversation_parts",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 32,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "conversation_parts",
+                "fields": [],
+                "alias": "conversation_parts",
+                "length": 65535,
+                "fieldName": "conversation_parts",
+                "mode": "REPEATED",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 512,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "id": "conversation_parts"
+          },
+          {
+            "name": "",
+            "type": "TIMESTAMP",
+            "alias": "created_at_converted",
+            "mode": "NULLABLE",
+            "length": 256,
+            "fieldName": "created_at",
+            "id": "841210"
+          },
+          {
+            "name": "",
+            "type": "TIMESTAMP",
+            "alias": "updated_at_converted",
+            "mode": "NULLABLE",
+            "length": 256,
+            "fieldName": "updated_at",
+            "id": "480294"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "switch_tables",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "type",
+            "fields": [],
+            "alias": "type",
+            "length": 16,
+            "fieldName": "type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "id",
+            "fields": [],
+            "alias": "id",
+            "length": 16,
+            "fieldName": "id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "created_at",
+            "fields": [],
+            "alias": "created_at",
+            "length": 2147483648,
+            "fieldName": "created_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "updated_at",
+            "fields": [],
+            "alias": "updated_at",
+            "length": 2147483648,
+            "fieldName": "updated_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "waiting_since",
+            "fields": [],
+            "alias": "waiting_since",
+            "length": 2147483648,
+            "fieldName": "waiting_since",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "snoozed_until",
+            "fields": [],
+            "alias": "snoozed_until",
+            "length": 2147483648,
+            "fieldName": "snoozed_until",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "source",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "id",
+                "fields": [],
+                "alias": "id",
+                "length": 16,
+                "fieldName": "id",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "delivered_as",
+                "fields": [],
+                "alias": "delivered_as",
+                "length": 32,
+                "fieldName": "delivered_as",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "subject",
+                "fields": [],
+                "alias": "subject",
+                "length": 256,
+                "fieldName": "subject",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "body",
+                "fields": [],
+                "alias": "body",
+                "length": 16384,
+                "fieldName": "body",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "author",
+                "fields": [
+                  {
+                    "name": "type",
+                    "fields": [],
+                    "alias": "type",
+                    "length": 8,
+                    "fieldName": "type",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "id",
+                    "fields": [],
+                    "alias": "id",
+                    "length": 32,
+                    "fieldName": "id",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "name",
+                    "fields": [],
+                    "alias": "name",
+                    "length": 32,
+                    "fieldName": "name",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "email",
+                    "fields": [],
+                    "alias": "email",
+                    "length": 64,
+                    "fieldName": "email",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  }
+                ],
+                "fieldName": "author",
+                "mode": "NULLABLE",
+                "type": "RECORD"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 32768,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "redacted",
+                "fields": [],
+                "alias": "redacted",
+                "length": 8,
+                "fieldName": "redacted",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              },
+              {
+                "name": "attachments",
+                "fields": [],
+                "alias": "attachments",
+                "length": 4096,
+                "fieldName": "attachments",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "alias": "source",
+            "fieldName": "source",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "contacts",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "contacts",
+                "fields": [],
+                "alias": "contacts",
+                "length": 512,
+                "fieldName": "contacts",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "alias": "contacts",
+            "fieldName": "contacts",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "first_contact_reply",
+            "fields": [
+              {
+                "name": "created_at",
+                "fields": [],
+                "alias": "created_at",
+                "length": 2147483648,
+                "fieldName": "created_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "url",
+                "fields": [],
+                "alias": "url",
+                "length": 32768,
+                "fieldName": "url",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "first_contact_reply",
+            "fieldName": "first_contact_reply",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "admin_assignee_id",
+            "fields": [],
+            "alias": "admin_assignee_id",
+            "length": 8388608,
+            "fieldName": "admin_assignee_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "team_assignee_id",
+            "fields": [],
+            "alias": "team_assignee_id",
+            "length": 2097152,
+            "fieldName": "team_assignee_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "open",
+            "fields": [],
+            "alias": "open",
+            "length": 1,
+            "fieldName": "open",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "state",
+            "fields": [],
+            "alias": "state",
+            "length": 8,
+            "fieldName": "state",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "read",
+            "fields": [],
+            "alias": "read",
+            "length": 1,
+            "fieldName": "read",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "tags",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 8,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "tags",
+                "fields": [],
+                "alias": "tags",
+                "length": 1024,
+                "fieldName": "tags",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "alias": "tags",
+            "fieldName": "tags",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "priority",
+            "fields": [],
+            "alias": "priority",
+            "length": 16,
+            "fieldName": "priority",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "sla_applied",
+            "fields": [],
+            "alias": "sla_applied",
+            "length": 4,
+            "fieldName": "sla_applied",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "statistics",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 32,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "time_to_assignment",
+                "fields": [],
+                "alias": "time_to_assignment",
+                "length": 128,
+                "fieldName": "time_to_assignment",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "time_to_admin_reply",
+                "fields": [],
+                "alias": "time_to_admin_reply",
+                "length": 65536,
+                "fieldName": "time_to_admin_reply",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "time_to_first_close",
+                "fields": [],
+                "alias": "time_to_first_close",
+                "length": 2097152,
+                "fieldName": "time_to_first_close",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "time_to_last_close",
+                "fields": [],
+                "alias": "time_to_last_close",
+                "length": 8388608,
+                "fieldName": "time_to_last_close",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "median_time_to_reply",
+                "fields": [],
+                "alias": "median_time_to_reply",
+                "length": 8192,
+                "fieldName": "median_time_to_reply",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "first_contact_reply_at",
+                "fields": [],
+                "alias": "first_contact_reply_at",
+                "length": 2147483648,
+                "fieldName": "first_contact_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "first_assignment_at",
+                "fields": [],
+                "alias": "first_assignment_at",
+                "length": 2147483648,
+                "fieldName": "first_assignment_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "first_admin_reply_at",
+                "fields": [],
+                "alias": "first_admin_reply_at",
+                "length": 2147483648,
+                "fieldName": "first_admin_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "first_close_at",
+                "fields": [],
+                "alias": "first_close_at",
+                "length": 2147483648,
+                "fieldName": "first_close_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_assignment_at",
+                "fields": [],
+                "alias": "last_assignment_at",
+                "length": 2147483648,
+                "fieldName": "last_assignment_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_assignment_admin_reply_at",
+                "fields": [],
+                "alias": "last_assignment_admin_reply_at",
+                "length": 2147483648,
+                "fieldName": "last_assignment_admin_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_contact_reply_at",
+                "fields": [],
+                "alias": "last_contact_reply_at",
+                "length": 2147483648,
+                "fieldName": "last_contact_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_admin_reply_at",
+                "fields": [],
+                "alias": "last_admin_reply_at",
+                "length": 2147483648,
+                "fieldName": "last_admin_reply_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_close_at",
+                "fields": [],
+                "alias": "last_close_at",
+                "length": 2147483648,
+                "fieldName": "last_close_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "last_closed_by_id",
+                "fields": [],
+                "alias": "last_closed_by_id",
+                "length": 8388608,
+                "fieldName": "last_closed_by_id",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "count_reopens",
+                "fields": [],
+                "alias": "count_reopens",
+                "length": 16,
+                "fieldName": "count_reopens",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "count_assignments",
+                "fields": [],
+                "alias": "count_assignments",
+                "length": 8,
+                "fieldName": "count_assignments",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "count_conversation_parts",
+                "fields": [],
+                "alias": "count_conversation_parts",
+                "length": 1024,
+                "fieldName": "count_conversation_parts",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "alias": "statistics",
+            "fieldName": "statistics",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "conversation_rating",
+            "fields": [
+              {
+                "name": "rating",
+                "fields": [],
+                "alias": "rating",
+                "length": 8,
+                "fieldName": "rating",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "remark",
+                "fields": [],
+                "alias": "remark",
+                "length": 512,
+                "fieldName": "remark",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "created_at",
+                "fields": [],
+                "alias": "created_at",
+                "length": 2147483648,
+                "fieldName": "created_at",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "contact",
+                "fields": [
+                  {
+                    "name": "type",
+                    "fields": [],
+                    "alias": "type",
+                    "length": 4,
+                    "fieldName": "type",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "id",
+                    "fields": [],
+                    "alias": "id",
+                    "length": 32,
+                    "fieldName": "id",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  }
+                ],
+                "fieldName": "contact",
+                "mode": "NULLABLE",
+                "type": "RECORD"
+              },
+              {
+                "name": "teammate",
+                "fields": [
+                  {
+                    "name": "type",
+                    "fields": [],
+                    "alias": "type",
+                    "length": 8,
+                    "fieldName": "type",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  },
+                  {
+                    "name": "id",
+                    "fields": [],
+                    "alias": "id",
+                    "length": 8,
+                    "fieldName": "id",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  }
+                ],
+                "fieldName": "teammate",
+                "mode": "NULLABLE",
+                "type": "RECORD"
+              }
+            ],
+            "alias": "conversation_rating",
+            "length": 4,
+            "fieldName": "conversation_rating",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "teammates",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "admins",
+                "fields": [],
+                "alias": "admins",
+                "length": 512,
+                "fieldName": "admins",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "alias": "teammates",
+            "fieldName": "teammates",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "title",
+            "fields": [],
+            "alias": "title",
+            "length": 128,
+            "fieldName": "title",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "custom_attributes",
+            "fields": [
+              {
+                "name": "Eco_System",
+                "fields": [],
+                "alias": "Eco_System",
+                "length": 16,
+                "fieldName": "Eco_System",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "Escalated",
+                "fields": [],
+                "alias": "Escalated",
+                "length": 32,
+                "fieldName": "Escalated",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "Product_Area",
+                "fields": [],
+                "alias": "Product_Area",
+                "length": 64,
+                "fieldName": "Product_Area",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "Request_type",
+                "fields": [],
+                "alias": "Request_type",
+                "length": 16,
+                "fieldName": "Request_type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "Integration_type",
+                "fields": [],
+                "alias": "Integration_type",
+                "length": 16,
+                "fieldName": "Integration_type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "custom_attributes",
+            "fieldName": "custom_attributes",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "topics",
+            "fields": [],
+            "alias": "topics",
+            "fieldName": "topics",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "conversation_parts",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 32,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "conversation_parts",
+                "fields": [],
+                "alias": "conversation_parts",
+                "length": 65535,
+                "fieldName": "conversation_parts",
+                "mode": "REPEATED",
+                "type": "STRING"
+              },
+              {
+                "name": "total_count",
+                "fields": [],
+                "alias": "total_count",
+                "length": 512,
+                "fieldName": "total_count",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "alias": "conversation_parts",
+            "fieldName": "conversation_parts",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          }
+        ],
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

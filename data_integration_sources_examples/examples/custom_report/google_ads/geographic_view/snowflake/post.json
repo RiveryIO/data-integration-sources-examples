@@ -1,0 +1,597 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "Google_Ads_Campaign_Geo_View_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2023-03-01T14:38:52.187000Z",
+    "last_updated_at": "2026-06-29T08:16:15.532000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "accounts": [
+          "<ACCOUNTS - leave accounts empty to automatically discover/use all entities accessible via this connection; add specific entries to restrict to particular accounts. Each entry looks like: {\"manager_account\": <MANAGER_ACCOUNT>, \"manager_id\": <MANAGER_ID>, \"id\": <ID>, \"name\": <NAME>}.>"
+        ],
+        "filters": [],
+        "last_days": 31,
+        "connection_type": "google_ads",
+        "interval_time": "daily",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "interval_size": 1,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "gzipTypeMust": null,
+        "start_date": "2026-06-30 14:02:47.567000",
+        "utc_offset": 0,
+        "extract_method": "increment",
+        "end_date": null,
+        "quote": "\"",
+        "accounts_manual": false,
+        "required_mapping_flag": false,
+        "fz_batched": true,
+        "report": "geographic_view",
+        "time_period": "date_range",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "selectableWith": [],
+            "type": "INT64",
+            "name": "campaign.id",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "campaign.name",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "DATE",
+            "name": "campaign.start_date_time",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "DATE",
+            "name": "campaign.end_date_time",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "ad_group.status",
+            "parent": "ad_group"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "campaign.advertising_channel_type",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "geographic_view.country_criterion_id",
+            "parent": "geographic_view"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "geographic_view.location_type",
+            "parent": "geographic_view"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "ad_group.resource_name",
+            "parent": "ad_group"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.clicks",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "DOUBLE",
+            "name": "metrics.conversions",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.cost_micros",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "DOUBLE",
+            "name": "metrics.ctr",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.interactions",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.impressions",
+            "parent": "metrics"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "DATE",
+            "name": "segments.date",
+            "parent": "segments"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "geographic_view.resource_name",
+            "parent": "geographic_view"
+          }
+        ],
+        "increment_field": "segments.date",
+        "delimiter": ","
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "campaign_resourceName",
+            "type": "STRING",
+            "alias": "campaign_resourceName",
+            "mode": "NULLABLE",
+            "id": "campaign_resourceName",
+            "fields": [],
+            "fieldName": "campaign_resourceName"
+          },
+          {
+            "name": "campaign_advertisingChannelType",
+            "type": "STRING",
+            "alias": "campaign_advertisingChannelType",
+            "mode": "NULLABLE",
+            "id": "campaign_advertisingChannelType",
+            "fields": [],
+            "fieldName": "campaign_advertisingChannelType"
+          },
+          {
+            "name": "campaign_name",
+            "type": "STRING",
+            "alias": "campaign_name",
+            "mode": "NULLABLE",
+            "id": "campaign_name",
+            "fields": [],
+            "fieldName": "campaign_name"
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "alias": "campaign_id",
+            "mode": "NULLABLE",
+            "id": "campaign_id",
+            "fields": [],
+            "fieldName": "campaign_id"
+          },
+          {
+            "name": "campaign_startDate",
+            "type": "STRING",
+            "alias": "campaign_startDate",
+            "mode": "NULLABLE",
+            "id": "campaign_startDate",
+            "fields": [],
+            "fieldName": "campaign_startDate"
+          },
+          {
+            "name": "campaign_endDate",
+            "type": "STRING",
+            "alias": "campaign_endDate",
+            "mode": "NULLABLE",
+            "id": "campaign_endDate",
+            "fields": [],
+            "fieldName": "campaign_endDate"
+          },
+          {
+            "name": "adGroup_resourceName",
+            "type": "STRING",
+            "alias": "adGroup_resourceName",
+            "mode": "NULLABLE",
+            "id": "adGroup_resourceName",
+            "fields": [],
+            "fieldName": "adGroup_resourceName"
+          },
+          {
+            "name": "adGroup_status",
+            "type": "STRING",
+            "alias": "adGroup_status",
+            "mode": "NULLABLE",
+            "id": "adGroup_status",
+            "fields": [],
+            "fieldName": "adGroup_status"
+          },
+          {
+            "name": "metrics_clicks",
+            "type": "STRING",
+            "alias": "metrics_clicks",
+            "mode": "NULLABLE",
+            "id": "metrics_clicks",
+            "fields": [],
+            "fieldName": "metrics_clicks"
+          },
+          {
+            "name": "metrics_conversions",
+            "type": "FLOAT",
+            "alias": "metrics_conversions",
+            "mode": "NULLABLE",
+            "id": "metrics_conversions",
+            "fields": [],
+            "fieldName": "metrics_conversions"
+          },
+          {
+            "name": "metrics_costMicros",
+            "type": "STRING",
+            "alias": "metrics_costMicros",
+            "mode": "NULLABLE",
+            "id": "metrics_costMicros",
+            "fields": [],
+            "fieldName": "metrics_costMicros"
+          },
+          {
+            "name": "metrics_ctr",
+            "type": "FLOAT",
+            "alias": "metrics_ctr",
+            "mode": "NULLABLE",
+            "id": "metrics_ctr",
+            "fields": [],
+            "fieldName": "metrics_ctr"
+          },
+          {
+            "name": "metrics_impressions",
+            "type": "STRING",
+            "alias": "metrics_impressions",
+            "mode": "NULLABLE",
+            "id": "metrics_impressions",
+            "fields": [],
+            "fieldName": "metrics_impressions"
+          },
+          {
+            "name": "metrics_interactions",
+            "type": "STRING",
+            "alias": "metrics_interactions",
+            "mode": "NULLABLE",
+            "id": "metrics_interactions",
+            "fields": [],
+            "fieldName": "metrics_interactions"
+          },
+          {
+            "name": "segments_date",
+            "type": "STRING",
+            "alias": "segments_date",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "id": "segments_date",
+            "fields": [],
+            "fieldName": "segments_date"
+          },
+          {
+            "name": "geographicView_resourceName",
+            "type": "STRING",
+            "alias": "geographicView_resourceName",
+            "mode": "NULLABLE",
+            "id": "geographicView_resourceName",
+            "fields": [],
+            "fieldName": "geographicView_resourceName"
+          },
+          {
+            "name": "geographicView_locationType",
+            "type": "STRING",
+            "alias": "geographicView_locationType",
+            "mode": "NULLABLE",
+            "id": "geographicView_locationType",
+            "fields": [],
+            "fieldName": "geographicView_locationType"
+          },
+          {
+            "name": "geographicView_countryCriterionId",
+            "type": "STRING",
+            "alias": "geographicView_countryCriterionId",
+            "mode": "NULLABLE",
+            "id": "geographicView_countryCriterionId",
+            "fields": [],
+            "fieldName": "geographicView_countryCriterionId"
+          },
+          {
+            "name": "customer_id",
+            "type": "INTEGER",
+            "alias": "customer_id",
+            "mode": "NULLABLE",
+            "id": "customer_id",
+            "fields": [],
+            "fieldName": "customer_id"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "type": "STRING",
+            "alias": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "id": "customer_descriptiveName",
+            "fields": [],
+            "fieldName": "customer_descriptiveName"
+          }
+        ],
+        "sql_dialect": "legacy",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "delete_insert",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "dataset_id": "<YOUR_DATASET_ID>",
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1782711433540,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "campaign_resourceName",
+            "fields": [],
+            "alias": "campaign_resourceName",
+            "length": 64,
+            "fieldName": "campaign_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "campaign_advertisingChannelType",
+            "fields": [],
+            "alias": "campaign_advertisingChannelType",
+            "length": 8,
+            "fieldName": "campaign_advertisingChannelType",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "campaign_name",
+            "fields": [],
+            "alias": "campaign_name",
+            "length": 64,
+            "fieldName": "campaign_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "campaign_id",
+            "fields": [],
+            "alias": "campaign_id",
+            "length": 16,
+            "fieldName": "campaign_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "campaign_startDate",
+            "fields": [],
+            "alias": "campaign_startDate",
+            "length": 16,
+            "fieldName": "campaign_startDate",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "campaign_endDate",
+            "fields": [],
+            "alias": "campaign_endDate",
+            "length": 16,
+            "fieldName": "campaign_endDate",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroup_resourceName",
+            "fields": [],
+            "alias": "adGroup_resourceName",
+            "length": 64,
+            "fieldName": "adGroup_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "adGroup_status",
+            "fields": [],
+            "alias": "adGroup_status",
+            "length": 8,
+            "fieldName": "adGroup_status",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "metrics_clicks",
+            "fields": [],
+            "alias": "metrics_clicks",
+            "length": 2,
+            "fieldName": "metrics_clicks",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "metrics_conversions",
+            "fields": [],
+            "alias": "metrics_conversions",
+            "length": 32,
+            "fieldName": "metrics_conversions",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "metrics_costMicros",
+            "fields": [],
+            "alias": "metrics_costMicros",
+            "length": 8,
+            "fieldName": "metrics_costMicros",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "metrics_ctr",
+            "fields": [],
+            "alias": "metrics_ctr",
+            "length": 32,
+            "fieldName": "metrics_ctr",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "metrics_impressions",
+            "fields": [],
+            "alias": "metrics_impressions",
+            "length": 4,
+            "fieldName": "metrics_impressions",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "metrics_interactions",
+            "fields": [],
+            "alias": "metrics_interactions",
+            "length": 2,
+            "fieldName": "metrics_interactions",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "segments_date",
+            "fields": [],
+            "alias": "segments_date",
+            "length": 16,
+            "fieldName": "segments_date",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geographicView_resourceName",
+            "fields": [],
+            "alias": "geographicView_resourceName",
+            "length": 64,
+            "fieldName": "geographicView_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geographicView_locationType",
+            "fields": [],
+            "alias": "geographicView_locationType",
+            "length": 32,
+            "fieldName": "geographicView_locationType",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "geographicView_countryCriterionId",
+            "fields": [],
+            "alias": "geographicView_countryCriterionId",
+            "length": 4,
+            "fieldName": "geographicView_countryCriterionId",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customer_id",
+            "fields": [],
+            "alias": "customer_id",
+            "length": 2147483648,
+            "fieldName": "customer_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "fields": [],
+            "alias": "customer_descriptiveName",
+            "length": 16,
+            "fieldName": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

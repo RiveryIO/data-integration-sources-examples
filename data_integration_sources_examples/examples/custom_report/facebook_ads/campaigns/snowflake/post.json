@@ -1,0 +1,558 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "E2E - Facebook Ads Campaigns Report- selected cols__v2_example",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "facebook_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "ad_account_type": "ad_accounts_ids",
+        "is_ignore_exceptions": false,
+        "connection_type": "fb",
+        "interval_time": "daily",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "auto_complete": true,
+        "gzipTypeMust": null,
+        "start_date": null,
+        "report_columns": [
+          "id",
+          "account_id",
+          "adbatch",
+          "adlabels",
+          "bid_strategy",
+          "boosted_object_id",
+          "brand_lift_studies",
+          "budget_rebalance_flag",
+          "budget_remaining",
+          "buying_type",
+          "can_create_brand_lift_study",
+          "can_use_spend_cap",
+          "configured_status",
+          "created_time",
+          "daily_budget",
+          "effective_status",
+          "is_skadnetwork_attribution",
+          "lifetime_budget",
+          "name",
+          "objective",
+          "recommendations",
+          "smart_promotion_type",
+          "source_campaign",
+          "source_campaign_id",
+          "spend_cap",
+          "start_time",
+          "status",
+          "stop_time",
+          "updated_time",
+          "special_ad_category",
+          "special_ad_categories",
+          "iterative_split_test_configs",
+          "topline_id",
+          "upstream_events"
+        ],
+        "utc_offset": 0,
+        "data_level": "ad_account",
+        "end_date": null,
+        "quote": "\"",
+        "required_mapping_flag": false,
+        "campaigns_type": "campaigns_ids",
+        "fz_batched": true,
+        "time_resolution": "daily",
+        "report": "campaigns",
+        "time_period": "date_range",
+        "unified_attribution_setting_level": "",
+        "ads_type": "ads_ids",
+        "undefined": "daily",
+        "adsets_type": "adsets_ids",
+        "delimiter": ",",
+        "keep_deleted_records": true,
+        "extract_business_ad_accounts": false
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "_account_id",
+            "type": "STRING",
+            "alias": "_account_id",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_account_id",
+            "id": "_account_id"
+          },
+          {
+            "name": "_budget_rebalance_flag",
+            "type": "BOOLEAN",
+            "alias": "_budget_rebalance_flag",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_budget_rebalance_flag",
+            "id": "_budget_rebalance_flag"
+          },
+          {
+            "name": "_budget_remaining",
+            "type": "STRING",
+            "alias": "_budget_remaining",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_budget_remaining",
+            "id": "_budget_remaining"
+          },
+          {
+            "name": "_buying_type",
+            "type": "STRING",
+            "alias": "_buying_type",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_buying_type",
+            "id": "_buying_type"
+          },
+          {
+            "name": "_can_create_brand_lift_study",
+            "type": "BOOLEAN",
+            "alias": "_can_create_brand_lift_study",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_can_create_brand_lift_study",
+            "id": "_can_create_brand_lift_study"
+          },
+          {
+            "name": "_can_use_spend_cap",
+            "type": "BOOLEAN",
+            "alias": "_can_use_spend_cap",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_can_use_spend_cap",
+            "id": "_can_use_spend_cap"
+          },
+          {
+            "name": "_configured_status",
+            "type": "STRING",
+            "alias": "_configured_status",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_configured_status",
+            "id": "_configured_status"
+          },
+          {
+            "name": "_created_time",
+            "type": "STRING",
+            "alias": "_created_time",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_created_time",
+            "id": "_created_time"
+          },
+          {
+            "name": "_effective_status",
+            "type": "STRING",
+            "alias": "_effective_status",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_effective_status",
+            "id": "_effective_status"
+          },
+          {
+            "name": "_is_skadnetwork_attribution",
+            "type": "BOOLEAN",
+            "alias": "_is_skadnetwork_attribution",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_is_skadnetwork_attribution",
+            "id": "_is_skadnetwork_attribution"
+          },
+          {
+            "name": "_objective",
+            "type": "STRING",
+            "alias": "_objective",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_objective",
+            "id": "_objective"
+          },
+          {
+            "name": "_smart_promotion_type",
+            "type": "STRING",
+            "alias": "_smart_promotion_type",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_smart_promotion_type",
+            "id": "_smart_promotion_type"
+          },
+          {
+            "name": "_source_campaign_id",
+            "type": "STRING",
+            "alias": "_source_campaign_id",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_source_campaign_id",
+            "id": "_source_campaign_id"
+          },
+          {
+            "name": "_special_ad_category",
+            "type": "STRING",
+            "alias": "_special_ad_category",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_special_ad_category",
+            "id": "_special_ad_category"
+          },
+          {
+            "name": "_start_time",
+            "type": "STRING",
+            "alias": "_start_time",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_start_time",
+            "id": "_start_time"
+          },
+          {
+            "name": "_status",
+            "type": "STRING",
+            "alias": "_status",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_status",
+            "id": "_status"
+          },
+          {
+            "name": "_stop_time",
+            "type": "STRING",
+            "alias": "_stop_time",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_stop_time",
+            "id": "_stop_time"
+          },
+          {
+            "name": "_topline_id",
+            "type": "STRING",
+            "alias": "_topline_id",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_topline_id",
+            "id": "_topline_id"
+          },
+          {
+            "name": "_updated_time",
+            "type": "STRING",
+            "alias": "_updated_time",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_updated_time",
+            "id": "_updated_time"
+          },
+          {
+            "name": "_campaign_id",
+            "type": "STRING",
+            "alias": "_campaign_id",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_campaign_id",
+            "id": "_campaign_id"
+          },
+          {
+            "name": "_campagin_name",
+            "type": "STRING",
+            "alias": "_campagin_name",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_campagin_name",
+            "id": "_campagin_name"
+          },
+          {
+            "name": "_campaign_name",
+            "type": "STRING",
+            "alias": "_campaign_name",
+            "mode": "NULLABLE",
+            "fields": [],
+            "fieldName": "_campaign_name",
+            "id": "_campaign_name"
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "switch_tables",
+      "file_zone_settings": {
+        "path": "<YOUR_PATH>",
+        "bucket_name": "",
+        "partitioned_kind": "by_day",
+        "fz_loading_mode": "auto-period"
+      },
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "dataset_id": "<YOUR_DATASET_ID>",
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1780925755227,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "_account_id",
+            "fields": [],
+            "alias": "_account_id",
+            "length": 16,
+            "fieldName": "_account_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_budget_rebalance_flag",
+            "fields": [],
+            "alias": "_budget_rebalance_flag",
+            "length": 8,
+            "fieldName": "_budget_rebalance_flag",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_budget_remaining",
+            "fields": [],
+            "alias": "_budget_remaining",
+            "length": 1,
+            "fieldName": "_budget_remaining",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_buying_type",
+            "fields": [],
+            "alias": "_buying_type",
+            "length": 8,
+            "fieldName": "_buying_type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_can_create_brand_lift_study",
+            "fields": [],
+            "alias": "_can_create_brand_lift_study",
+            "length": 8,
+            "fieldName": "_can_create_brand_lift_study",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_can_use_spend_cap",
+            "fields": [],
+            "alias": "_can_use_spend_cap",
+            "length": 1,
+            "fieldName": "_can_use_spend_cap",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_configured_status",
+            "fields": [],
+            "alias": "_configured_status",
+            "length": 8,
+            "fieldName": "_configured_status",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_created_time",
+            "fields": [],
+            "alias": "_created_time",
+            "length": 32,
+            "fieldName": "_created_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_effective_status",
+            "fields": [],
+            "alias": "_effective_status",
+            "length": 8,
+            "fieldName": "_effective_status",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_is_skadnetwork_attribution",
+            "fields": [],
+            "alias": "_is_skadnetwork_attribution",
+            "length": 8,
+            "fieldName": "_is_skadnetwork_attribution",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_objective",
+            "fields": [],
+            "alias": "_objective",
+            "length": 16,
+            "fieldName": "_objective",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_smart_promotion_type",
+            "fields": [],
+            "alias": "_smart_promotion_type",
+            "length": 16,
+            "fieldName": "_smart_promotion_type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_source_campaign_id",
+            "fields": [],
+            "alias": "_source_campaign_id",
+            "length": 1,
+            "fieldName": "_source_campaign_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_special_ad_category",
+            "fields": [],
+            "alias": "_special_ad_category",
+            "length": 4,
+            "fieldName": "_special_ad_category",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_start_time",
+            "fields": [],
+            "alias": "_start_time",
+            "length": 32,
+            "fieldName": "_start_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_status",
+            "fields": [],
+            "alias": "_status",
+            "length": 8,
+            "fieldName": "_status",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_stop_time",
+            "fields": [],
+            "alias": "_stop_time",
+            "length": 32,
+            "fieldName": "_stop_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_topline_id",
+            "fields": [],
+            "alias": "_topline_id",
+            "length": 1,
+            "fieldName": "_topline_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_updated_time",
+            "fields": [],
+            "alias": "_updated_time",
+            "length": 32,
+            "fieldName": "_updated_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_campaign_id",
+            "fields": [],
+            "alias": "_campaign_id",
+            "length": 32,
+            "fieldName": "_campaign_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_campagin_name",
+            "fields": [],
+            "alias": "_campagin_name",
+            "length": 32,
+            "fieldName": "_campagin_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_campaign_name",
+            "fields": [],
+            "alias": "_campaign_name",
+            "length": 32,
+            "fieldName": "_campaign_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{Mail_Alert_Group}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{Mail_Alert_Group}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{Mail_Alert_Group}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

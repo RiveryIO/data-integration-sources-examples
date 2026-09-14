@@ -1,0 +1,97 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_SharePoint_kh_csv_2",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-08-03T20:38:53.325000Z",
+    "last_updated_at": "2026-08-03T20:38:53.325000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "sharepoint",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "sharepoint",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "extract_method": "all",
+        "folder_link": "<YOUR_FOLDER_LINK>",
+        "file_delimiter": "\\r\\n",
+        "sync_strategy": "merge_folder",
+        "interval_type": "datetime",
+        "required_mapping_flag": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "interval_time": "dont_split",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [
+          {
+            "file_type": "csv",
+            "fields": [],
+            "header_row": 1,
+            "file_adjs": {},
+            "has_headers": true
+          }
+        ],
+        "file_pattern": "*.csv",
+        "is_mapping_in_source": true,
+        "start_date": "2026-08-02 16:46:45.322000"
+      }
+    },
+    "target": {
+      "name": "knowledge_hub",
+      "connection_id": null,
+      "connection_name": null,
+      "repository_id": "<KH_REPOSITORY_ID>",
+      "knowledge_base_id": "<KH_KNOWLEDGE_BASE_ID>",
+      "load_mode": "append"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    },
+    "schedule_retry_config": {
+      "enable_scheduler_retry": false,
+      "retry_count": null,
+      "delay_between_retries": null
+    }
+  },
+  "schedulers": []
+}

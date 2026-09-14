@@ -1,0 +1,273 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_outbrain_snowflake",
+  "metadata": {
+    "description": "MCP predefined example: outbrain / snowflake"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "outbrain",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "outbrain",
+        "extract_method": "all",
+        "quote": "\"",
+        "delimiter": ",",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "campaigns",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "id": 0,
+            "fieldName": ""
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaigns",
+              "extract_method": "increment",
+              "table_name": "predefined_campaigns",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "start_date": "2026-07-07 09:56:21.112000",
+              "interval_by": "updated at",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "end_date": null,
+              "max_batch_time": 1783418224833
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "marketers",
+              "extract_method": "all",
+              "table_name": "predefined_marketers",
+              "utc_offset": 0,
+              "interval_chunk_options": {},
+              "merge_method": "switch_tables",
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "start_date": "2026-07-14 08:15:19.246000",
+              "report": "marketers",
+              "interval_by": "creationTime",
+              "datasource_id": "outbrain",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "columns": {},
+              "end_date": null,
+              "max_batch_time": 1784016932870,
+              "target_loading": "overwrite"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "performance_statistics_by_interest",
+              "extract_method": "increment",
+              "table_name": "predefined_performance_statistics_by_interest",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "start_date": "2026-07-07 09:56:21.889000",
+              "interval_by": "updated at",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "end_date": null,
+              "max_batch_time": 1783418224873
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "performance_statistics_by_publisher",
+              "extract_method": "increment",
+              "table_name": "predefined_performance_statistics_by_publisher",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "start_date": "2026-07-07 09:56:21.112000",
+              "interval_by": "updated at",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "end_date": null,
+              "max_batch_time": 1783418224833,
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "performance_statistics_by_section",
+              "extract_method": "increment",
+              "table_name": "predefined_performance_statistics_by_section",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "start_date": "2026-07-07 09:56:21.112000",
+              "interval_by": "updated at",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "end_date": null,
+              "max_batch_time": 1783418224833,
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "performance_staistics_by_platform",
+              "extract_method": "increment",
+              "table_name": "predefined_performance_staistics_by_platform",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "start_date": "2026-07-07 09:56:21.112000",
+              "interval_by": "updated at",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "end_date": null,
+              "max_batch_time": 1783418224833,
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaigns_performance_statistics",
+              "extract_method": "increment",
+              "table_name": "predefined_campaigns_performance_statistics",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "start_date": "2026-07-07 09:56:21.112000",
+              "interval_by": "updated at",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "end_date": null,
+              "max_batch_time": 1783418224833,
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "geo_performance_statistics",
+              "extract_method": "increment",
+              "table_name": "predefined_geo_performance_statistics",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "start_date": "2026-07-07 09:56:21.112000",
+              "interval_by": "updated at",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "end_date": null,
+              "max_batch_time": 1783418224833,
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "periodic_performance_statistics",
+              "extract_method": "increment",
+              "table_name": "predefined_periodic_performance_statistics",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "start_date": "2026-07-07 09:56:21.112000",
+              "interval_by": "updated at",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "end_date": null,
+              "max_batch_time": 1783418224833,
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

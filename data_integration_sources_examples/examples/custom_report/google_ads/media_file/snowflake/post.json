@@ -1,0 +1,383 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "Media File_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2021-06-15T04:05:42.899000Z",
+    "last_updated_at": "2026-06-30T14:34:06.471000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "accounts": [
+          "<ACCOUNTS - leave accounts empty to automatically discover/use all entities accessible via this connection; add specific entries to restrict to particular accounts. Each entry looks like: {\"manager_account\": <MANAGER_ACCOUNT>, \"manager_id\": <MANAGER_ID>, \"id\": <ID>, \"name\": <NAME>}.>"
+        ],
+        "filters": [],
+        "connection_type": "google_ads",
+        "interval_time": "monthly",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "interval_size": 1,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "gzipTypeMust": null,
+        "start_date": "2021-06-13 00:00:00",
+        "utc_offset": 0,
+        "extract_method": "all",
+        "end_date": null,
+        "quote": "\"",
+        "accounts_manual": false,
+        "required_mapping_flag": false,
+        "fz_batched": true,
+        "report": "media_file",
+        "time_period": "yesterday",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "parent": "media_file",
+            "type": "INT64",
+            "name": "media_file.id",
+            "selectableWith": []
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "media_file.audio.ad_duration_millis",
+            "parent": "media_file"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "media_file.file_size",
+            "parent": "media_file"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "media_file.mime_type",
+            "parent": "media_file"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "media_file.name",
+            "parent": "media_file"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "media_file.video.ad_duration_millis",
+            "parent": "media_file"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "media_file.video.youtube_video_id",
+            "parent": "media_file"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "media_file.type",
+            "parent": "media_file"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "customer.id",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "customer.descriptive_name",
+            "parent": "customer"
+          }
+        ],
+        "increment_field": null,
+        "delimiter": ","
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "customer_descriptiveName",
+            "type": "STRING",
+            "alias": "customer_descriptiveName",
+            "id": "customer_descriptiveName",
+            "fields": [],
+            "fieldName": "customer_descriptiveName"
+          },
+          {
+            "name": "customer_id",
+            "type": "INTEGER",
+            "alias": "customer_id",
+            "is_key": true,
+            "id": "customer_id",
+            "fields": [],
+            "fieldName": "customer_id"
+          },
+          {
+            "name": "mediaFile_audio_adDurationMillis",
+            "type": "INTEGER",
+            "alias": "mediaFile_audio_adDurationMillis",
+            "id": "mediaFile_audio_adDurationMillis",
+            "fields": [],
+            "fieldName": "mediaFile_audio_adDurationMillis"
+          },
+          {
+            "name": "mediaFile_fileSize",
+            "type": "INTEGER",
+            "alias": "mediaFile_fileSize",
+            "id": "mediaFile_fileSize",
+            "fields": [],
+            "fieldName": "mediaFile_fileSize"
+          },
+          {
+            "name": "mediaFile_id",
+            "type": "INTEGER",
+            "alias": "mediaFile_id",
+            "is_key": true,
+            "id": "mediaFile_id",
+            "fields": [],
+            "fieldName": "mediaFile_id"
+          },
+          {
+            "name": "mediaFile_mimeType",
+            "type": "STRING",
+            "alias": "mediaFile_mimeType",
+            "id": "mediaFile_mimeType",
+            "fields": [],
+            "fieldName": "mediaFile_mimeType"
+          },
+          {
+            "name": "mediaFile_name",
+            "type": "STRING",
+            "alias": "mediaFile_name",
+            "id": "mediaFile_name",
+            "fields": [],
+            "fieldName": "mediaFile_name"
+          },
+          {
+            "name": "mediaFile_type",
+            "type": "STRING",
+            "alias": "mediaFile_type",
+            "id": "mediaFile_type",
+            "fields": [],
+            "fieldName": "mediaFile_type"
+          },
+          {
+            "name": "mediaFile_video_adDurationMillis",
+            "type": "INTEGER",
+            "alias": "mediaFile_video_adDurationMillis",
+            "id": "mediaFile_video_adDurationMillis",
+            "fields": [],
+            "fieldName": "mediaFile_video_adDurationMillis"
+          },
+          {
+            "name": "mediaFile_video_youtubeVideoId",
+            "type": "STRING",
+            "alias": "mediaFile_video_youtubeVideoId",
+            "id": "mediaFile_video_youtubeVideoId",
+            "fields": [],
+            "fieldName": "mediaFile_video_youtubeVideoId"
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "compression": false,
+        "ignore_unknown_values": true,
+        "quote": "\"",
+        "skip_loaded_files": false,
+        "allow_quoted_new_line": true,
+        "header": 1,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "csvTypeMust": "json",
+        "sync_schema_back": true,
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "max_bad_records": 0,
+        "strip_outer_array": true,
+        "mapping_order": [],
+        "source_mapping": [
+          {
+            "source_name": "customer_descriptive_name",
+            "name": "customer_descriptiveName",
+            "fields": [],
+            "alias": "customer_descriptiveName",
+            "length": 2147483647,
+            "fieldName": "customer_descriptiveName",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "STRING"
+          },
+          {
+            "source_name": "customer_id",
+            "name": "customer_id",
+            "fields": [],
+            "alias": "customer_id",
+            "length": 64,
+            "fieldName": "customer_id",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "INTEGER"
+          },
+          {
+            "source_name": "media_file_audio_ad_duration_millis",
+            "name": "mediaFile_audio_adDurationMillis",
+            "fields": [],
+            "alias": "mediaFile_audio_adDurationMillis",
+            "length": 64,
+            "fieldName": "mediaFile_audio_adDurationMillis",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "INTEGER"
+          },
+          {
+            "source_name": "media_file_file_size",
+            "name": "mediaFile_fileSize",
+            "fields": [],
+            "alias": "mediaFile_fileSize",
+            "length": 64,
+            "fieldName": "mediaFile_fileSize",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "INTEGER"
+          },
+          {
+            "source_name": "media_file_id",
+            "name": "mediaFile_id",
+            "fields": [],
+            "alias": "mediaFile_id",
+            "length": 64,
+            "fieldName": "mediaFile_id",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "INTEGER"
+          },
+          {
+            "source_name": "media_file_mime_type",
+            "name": "mediaFile_mimeType",
+            "fields": [],
+            "alias": "mediaFile_mimeType",
+            "length": 2147483647,
+            "fieldName": "mediaFile_mimeType",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "STRING"
+          },
+          {
+            "source_name": "media_file_name",
+            "name": "mediaFile_name",
+            "fields": [],
+            "alias": "mediaFile_name",
+            "length": 2147483647,
+            "fieldName": "mediaFile_name",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "STRING"
+          },
+          {
+            "source_name": "media_file_type",
+            "name": "mediaFile_type",
+            "fields": [],
+            "alias": "mediaFile_type",
+            "length": 2147483647,
+            "fieldName": "mediaFile_type",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "STRING"
+          },
+          {
+            "source_name": "media_file_video_ad_duration_millis",
+            "name": "mediaFile_video_adDurationMillis",
+            "fields": [],
+            "alias": "mediaFile_video_adDurationMillis",
+            "length": 64,
+            "fieldName": "mediaFile_video_adDurationMillis",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "INTEGER"
+          },
+          {
+            "source_name": "media_file_video_youtube_video_id",
+            "name": "mediaFile_video_youtubeVideoId",
+            "fields": [],
+            "alias": "mediaFile_video_youtubeVideoId",
+            "length": 2147483647,
+            "fieldName": "mediaFile_video_youtubeVideoId",
+            "datasource_id": "google_ads",
+            "_id": "<UNKNOWN_ID>",
+            "type": "STRING"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

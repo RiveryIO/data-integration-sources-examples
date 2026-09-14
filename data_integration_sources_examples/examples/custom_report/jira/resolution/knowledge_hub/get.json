@@ -1,0 +1,87 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_jira_kh_resolution",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-27T19:38:43.639000Z",
+    "last_updated_at": "2026-07-27T19:38:43.639000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "jira",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "jira",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "required_mapping_flag": false,
+        "keep_raw_customfields": false,
+        "interval_time": "dont_split",
+        "utc_offset": 0,
+        "use_strict_datatypes": false,
+        "report": "resolution",
+        "time_period": "",
+        "is_fields_description_content_string": false
+      }
+    },
+    "target": {
+      "name": "knowledge_hub",
+      "connection_id": null,
+      "connection_name": null,
+      "repository_id": "<KH_REPOSITORY_ID>",
+      "knowledge_base_id": "<KH_KNOWLEDGE_BASE_ID>",
+      "load_mode": "append"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": []
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

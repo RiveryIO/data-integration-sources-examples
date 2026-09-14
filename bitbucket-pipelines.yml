@@ -1,0 +1,14 @@
+image: atlassian/default-image:4
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Publish squashed snapshot to public GitHub
+          script:
+            - 'git config user.name "Bitbucket Pipelines"'
+            - 'git config user.email "pipelines@boomi.com"'
+            - 'git checkout --orphan publish-snapshot'
+            - 'git add -A'
+            - 'git commit -m "Release $(date -u +%Y-%m-%d): snapshot from Bitbucket ${BITBUCKET_COMMIT:0:7}"'
+            - 'git push --force git@github.com:RiveryIO/data-integration-sources-examples.git publish-snapshot:main'

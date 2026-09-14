@@ -1,0 +1,211 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_yotpo_s3",
+  "metadata": {
+    "description": "MCP predefined example: yotpo / s3"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "yotpo",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "yotpo",
+        "extract_method": "all",
+        "quote": "\"",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "all_reviews",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>",
+      "additional_settings": {},
+      "table_name": "<YOUR_TABLE_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "daily_email_analytics_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_daily_email_analytics",
+              "max_batch_time": 1783948103188,
+              "end_date": null,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-07-13 13:49:32.078000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "products_v2",
+              "extract_method": "all",
+              "table_name": "predefined_products",
+              "max_batch_time": 1783948194466,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2024-01-06 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "review_for_specific_products_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_review_for_specific_products",
+              "max_batch_time": 1783948533563,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2024-01-01 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "email_analytics_raw_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_email_analytics_raw",
+              "max_batch_time": 1783948101933,
+              "end_date": null,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-07-13 13:49:28.558000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "all_reviews_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_all_reviews",
+              "datasource_id": "yotpo",
+              "end_date": null,
+              "include_review_metadata": false,
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "include_unpublished_reviews": true,
+              "update_report": true,
+              "report": "all_reviews",
+              "since_date_type": "created",
+              "start_date": "2026-07-13 13:49:27.543000",
+              "max_batch_time": 1783948101923,
+              "time_period": "date_range",
+              "last_days": 3,
+              "table_status": "tracked",
+              "columns": {}
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "email_unsubscribers_v2",
+              "extract_method": "all",
+              "table_name": "predefined_email_unsubscribers",
+              "max_batch_time": 1783948147474,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2024-01-06 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "product_grouping_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_product_grouping",
+              "max_batch_time": 1783948103188,
+              "end_date": null,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-07-13 13:49:32.078000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "orders_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_orders",
+              "max_batch_time": 1783948103188,
+              "end_date": null,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2026-07-13 13:49:32.078000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

@@ -1,0 +1,837 @@
+{
+  "name": "MCP_v2_predefined_twitter_ads_snowflake",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "metadata": {
+    "description": ""
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "twitter_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "twitter_ads",
+        "extract_method": "all",
+        "quote": "\"",
+        "required_mapping_flag": true,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report_type": "stats",
+        "normalize_results": true,
+        "report": "campaigns",
+        "accounts": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+            "value_type": "object_list",
+            "element_shape": {
+              "id": "",
+              "name": "",
+              "timezone": ""
+            },
+            "default": []
+          }
+        },
+        "gzipTypeMust": null,
+        "placement": [
+          "ALL_ON_TWITTER"
+        ],
+        "tweet_types": [
+          "PUBLISHED"
+        ]
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "id": 0,
+            "fieldName": ""
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_accounts_v2",
+              "extract_method": "all",
+              "table_name": "predefined_accounts",
+              "table_status": "tracked",
+              "datasource_id": "twitter_ads",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "with_deleted": true,
+              "max_batch_time": 1783295747420,
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "report_type": "stats",
+              "normalize_results": true,
+              "report": "accounts",
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "time_period": "date_range",
+              "trim_user": "true",
+              "start_date": "2024-05-29 00:00:00",
+              "columns": {},
+              "run_type_and_datasource": "predefined_report",
+              "interval_type": "date",
+              "interval_by": "created_at",
+              "utc_offset": 0,
+              "interval_chunk_options": {},
+              "end_date": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaign",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "audience_reach_avg_frequency": null,
+              "segment": null,
+              "with_deleted": true,
+              "metric_group_type": "regular",
+              "metrics_regular": [
+                "ENGAGEMENT",
+                "BILLING",
+                "VIDEO",
+                "MEDIA",
+                "WEB_CONVERSION",
+                "LIFE_TIME_VALUE_MOBILE_CONVERSION"
+              ]
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_campaigns_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaigns",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "with_deleted": true
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_cards_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_cards",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "with_deleted": true
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_funding_instrument_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_funding_instrument",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "audience_reach_avg_frequency": false,
+              "segment": null,
+              "with_deleted": true,
+              "metric_group_type": "regular",
+              "metrics_funding": [
+                "ENGAGEMENT",
+                "BILLING"
+              ]
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_funding_instruments_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_funding_instruments",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "with_deleted": true
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_line_item_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_line_item",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "entity": "line_item",
+              "segment": null,
+              "with_deleted": true,
+              "metric_group_type": "regular",
+              "metrics_regular": [
+                "ENGAGEMENT",
+                "BILLING",
+                "VIDEO",
+                "MEDIA",
+                "WEB_CONVERSION",
+                "LIFE_TIME_VALUE_MOBILE_CONVERSION"
+              ]
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_line_items_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_line_items",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "with_deleted": true
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_media_library_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_media_library",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-06-30 23:55:29.241000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "media_library": null,
+              "report": "media_library",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "max_batch_time": 1782863750753,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_organic_tweet_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_organic_tweet",
+              "placement_organic_tweet": [
+                "ALL_ON_TWITTER"
+              ],
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "metrics_organic": [
+                "ENGAGEMENT",
+                "VIDEO"
+              ],
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "updated_at",
+              "start_date": "2026-04-08 23:55:09.593000",
+              "columns": {
+                "account_time_end": {
+                  "is_checked": true,
+                  "alias": "report_end",
+                  "is_key": false
+                },
+                "account_time": {
+                  "is_checked": true,
+                  "alias": "report_start",
+                  "is_key": true
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "organic_tweet",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "segment": null,
+              "max_batch_time": 1775692562346,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "with_deleted": true,
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_promoted_tweet_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_promoted_tweet",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "with_deleted": true,
+              "run_by_dates": false
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_promoted_tweet_stats_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_promoted_tweet_stats",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report",
+              "segment": null,
+              "with_deleted": true,
+              "metric_group_type": "regular",
+              "metrics_regular": [
+                "ENGAGEMENT",
+                "BILLING",
+                "VIDEO",
+                "MEDIA",
+                "WEB_CONVERSION",
+                "LIFE_TIME_VALUE_MOBILE_CONVERSION"
+              ],
+              "run_by_dates": false
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "twitter_ads_scoped_timeline_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_scoped_timeline",
+              "scoped_to": "all",
+              "accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Twitter ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": "",
+                    "timezone": ""
+                  },
+                  "default": []
+                }
+              },
+              "report_type": "stats",
+              "normalize_results": true,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "created_at",
+              "start_date": "2026-07-05 23:55:29.896000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "twitter_ads",
+              "end_date": null,
+              "report": "scoped_timeline",
+              "interval_chunk_options": {},
+              "time_period": "month_to_date",
+              "trim_user": false,
+              "max_batch_time": 1783295756310,
+              "placement": [
+                "ALL_ON_TWITTER"
+              ],
+              "interval_type": "date",
+              "include_mentions_and_replies": "true",
+              "tweet_types": [
+                "PUBLISHED"
+              ],
+              "run_type_and_datasource": "predefined_report"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ],
+  "group_id": "<GROUP_ID>"
+}

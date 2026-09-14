@@ -1,0 +1,101 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "adobe_analytics-s3-analytics__v2_example",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "adobe_analytics",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "adobe_analytics",
+        "utc_offset": 0,
+        "dimensions": [
+          {
+            "definition": "",
+            "id": "variables/daterangeday",
+            "name": "Day"
+          },
+          {
+            "definition": "",
+            "id": "variables/campaign",
+            "name": "Tracking Code"
+          }
+        ],
+        "end_date": "2026-05-31 00:00:00",
+        "quote": "\"",
+        "segments": [
+          {
+            "name": "Segment_1",
+            "value": [
+              {
+                "id": "<YOUR_ID>",
+                "name": "<YOUR_NAME>"
+              }
+            ]
+          }
+        ],
+        "required_mapping_flag": true,
+        "delimiter": ",",
+        "fz_partition": "d",
+        "metrics": [
+          {
+            "definition": "",
+            "id": "metrics/visits",
+            "name": "Visits"
+          }
+        ],
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "interval_time": "dont_split",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report_suite": "vrs_volksw1_unitedkingdom",
+        "report": "analytics",
+        "time_period": "date_range",
+        "gzipTypeMust": null,
+        "start_date": "2026-05-10 00:00:00"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

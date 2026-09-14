@@ -1,0 +1,159 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "GoogleAds_PMax_Placements_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-30T17:39:45.109000Z",
+    "last_updated_at": "2026-06-30T17:39:45.109000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "accounts_ids": [
+          "<ACCOUNTS_IDS - leave accounts_ids empty to automatically discover/use all entities accessible via this connection; add specific ID(s) to restrict to particular accounts_ids(s).>"
+        ],
+        "filters": [],
+        "interval_time": "monthly",
+        "interval_size": 1,
+        "start_date": "2026-06-30 14:03:12.861000",
+        "utc_offset": 0,
+        "accounts_manual": true,
+        "required_mapping_flag": true,
+        "report": "performance_max_placement_view",
+        "time_period": "date_range",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "selectableWith": [],
+            "type": "INT64",
+            "name": "customer.id",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "customer.descriptive_name",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "campaign.id",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "campaign.name",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "campaign.serving_status",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "campaign.status",
+            "parent": "campaign"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.impressions",
+            "parent": "metrics"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "DATE",
+            "name": "segments.date",
+            "parent": "segments"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "campaign.advertising_channel_type",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "performance_max_placement_view.placement_type",
+            "parent": "performance_max_placement_view"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "performance_max_placement_view.placement",
+            "parent": "performance_max_placement_view"
+          }
+        ],
+        "increment_field": "segments.date"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

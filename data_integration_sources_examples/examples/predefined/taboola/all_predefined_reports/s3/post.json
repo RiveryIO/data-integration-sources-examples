@@ -1,0 +1,179 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_taboola_s3",
+  "metadata": {
+    "description": "MCP predefined example: taboola / s3"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "taboola",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "taboola",
+        "extract_method": "all",
+        "quote": "\"",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "revenue-summary",
+        "accounts": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All Taboola accounts on this connection, or specific ones? Leave as-is for all.",
+            "value_type": "object_list",
+            "element_shape": {
+              "id": "",
+              "name": ""
+            },
+            "default": []
+          }
+        },
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>",
+      "additional_settings": {},
+      "table_name": "<YOUR_TABLE_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "conversion_rules_v2",
+              "extract_method": "all",
+              "table_name": "predefined_conversion_rules",
+              "table_status": "tracked",
+              "max_batch_time": 1783948327095,
+              "interval_time": "dont_split",
+              "last_days": 0,
+              "time_period": "date_range",
+              "start_date": "2026-06-13 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "top_campaign_content_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_top_campaign_content",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 0,
+              "interval_by": "default",
+              "time_period": "date_range",
+              "start_date": "2026-06-13 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaign_summary_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_campaign_summary",
+              "report": "campaign-summary",
+              "utc_offset": 0,
+              "interval_chunk_options": {},
+              "end_date": null,
+              "table_status": "tracked",
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 0,
+              "include_multi_conversions": true,
+              "interval_by": "default",
+              "max_batch_time": 1759912469143,
+              "datasource_id": "taboola",
+              "time_period": "yesterday",
+              "dimension": "day",
+              "split_tables": "no",
+              "start_date": "2025-10-08 08:34:07.491000",
+              "columns": {
+                "date": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "date_end_period": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "report_end_date": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                },
+                "report_start_date": {
+                  "is_checked": true,
+                  "type": "TIMESTAMP"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "accounts_v2",
+              "extract_method": "all",
+              "table_name": "predefined_accounts",
+              "table_status": "tracked",
+              "max_batch_time": 1783948326096,
+              "interval_time": "dont_split",
+              "last_days": 0,
+              "time_period": "date_range",
+              "start_date": "2026-06-13 00:00:00"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

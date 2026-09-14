@@ -1,0 +1,270 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_intercom_postgres",
+  "metadata": {
+    "description": "MCP predefined example: intercom / postgres"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "intercom",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "intercom",
+        "extract_method": "all",
+        "quote": "\"",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "contacts",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "postgres_rds",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "fieldName": "",
+            "id": 0
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "analyze_table": true
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "admins",
+              "extract_method": "all",
+              "table_name": "predefined_admins",
+              "datasource_id": "intercom",
+              "merge_method": "merge",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "table_status": "tracked",
+              "report": "admins",
+              "max_batch_time": 1782995660922,
+              "time_period": "date_range",
+              "start_date": "2026-03-20 01:00:00",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "is_key": true
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "contacts",
+              "extract_method": "increment",
+              "table_name": "predefined_contacts",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 0,
+              "interval_by": "created_at",
+              "max_batch_time": 1782901532328,
+              "time_period": "date_range",
+              "start_date": "2026-07-01 10:24:37.273000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "conversations",
+              "extract_method": "increment",
+              "table_name": "predefined_conversations",
+              "table_status": "tracked",
+              "utc_offset": 0,
+              "interval_chunk_options": {},
+              "end_date": null,
+              "merge_method": "switch_tables",
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 0,
+              "interval_by": "created_at",
+              "max_batch_time": 1782902982865,
+              "interval_size": 1,
+              "report": "conversations",
+              "datasource_id": "intercom",
+              "time_period": "date_range",
+              "include_conversation_parts": true,
+              "start_date": "2026-07-01 10:24:37.642000",
+              "columns": {
+                "updated_at": {
+                  "is_checked": true,
+                  "is_key": false
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "teams",
+              "extract_method": "all",
+              "table_name": "predefined_teams",
+              "interval_time": "dont_split",
+              "table_status": "tracked",
+              "max_batch_time": 1782995662157,
+              "time_period": "date_range",
+              "start_date": "2026-03-20 01:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "segments",
+              "extract_method": "increment",
+              "table_name": "predefined_segments",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 0,
+              "interval_by": "created_at",
+              "time_period": "date_range",
+              "start_date": "2026-04-23 07:02:41.132000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "articles",
+              "extract_method": "all",
+              "table_name": "predefined_articles",
+              "datasource_id": "intercom",
+              "merge_method": "delete_insert",
+              "order_expression": "UPDATED_AT desc",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "table_status": "tracked",
+              "report": "articles",
+              "is_ordered_merge": false,
+              "max_batch_time": 1782995671298,
+              "time_period": "date_range",
+              "start_date": "2026-03-20 01:00:00",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "is_key": true
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "companies",
+              "extract_method": "all",
+              "table_name": "predefined_companies",
+              "interval_time": "dont_split",
+              "table_status": "tracked",
+              "max_batch_time": 1782995678669,
+              "time_period": "date_range",
+              "start_date": "2026-03-20 01:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "tickets",
+              "extract_method": "all",
+              "table_name": "predefined_tickets",
+              "datasource_id": "intercom",
+              "merge_method": "merge",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "table_status": "tracked",
+              "report": "admins",
+              "max_batch_time": 1782995660922,
+              "time_period": "date_range",
+              "start_date": "2026-03-20 01:00:00",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "is_key": true
+                }
+              },
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

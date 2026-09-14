@@ -1,0 +1,117 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_doubleclick_publisher_s3",
+  "metadata": {
+    "description": "MCP example: doubleclick_publisher predefined report"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ad_manager",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "doubleclick_publisher",
+        "extract_method": "increment",
+        "report_type": "report",
+        "quote": "\"",
+        "network_code": {
+          "__input__": {
+            "kind": "required",
+            "prompt": "Your Google Ad Manager network code (and its display name).",
+            "value_type": "object",
+            "element_shape": {
+              "id": "",
+              "name": ""
+            },
+            "example": {
+              "id": "123456789",
+              "name": "My Ad Manager Network"
+            }
+          }
+        },
+        "source_format": "CSV",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "update_increment_on_failures": false,
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [],
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "entity_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_entity",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "lastmodifieddatetime",
+              "max_batch_time": 1783433826065,
+              "time_period": "date_range",
+              "start_date": "2026-07-12 13:02:03.136000"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

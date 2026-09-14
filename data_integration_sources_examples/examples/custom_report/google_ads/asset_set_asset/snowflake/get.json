@@ -1,0 +1,252 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP Example - google_ads asset_set_asset (snowflake)",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP custom-report example (legacy)",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-30T17:36:14.362000Z",
+    "last_updated_at": "2026-06-30T17:36:14.362000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "parent": "ad_group",
+            "type": "ENUM",
+            "name": "ad_group.ad_rotation_mode",
+            "selectableWith": []
+          }
+        ],
+        "accounts_manual": false,
+        "required_mapping_flag": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [],
+        "report": "asset_set_asset"
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": null,
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "ad_type",
+            "fields": [],
+            "alias": "ad_type",
+            "length": 32,
+            "fieldName": "ad_type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveSearchAd_headlines",
+            "fields": [],
+            "alias": "ad_responsiveSearchAd_headlines",
+            "length": 1024,
+            "fieldName": "ad_responsiveSearchAd_headlines",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveSearchAd_descriptions",
+            "fields": [],
+            "alias": "ad_responsiveSearchAd_descriptions",
+            "length": 512,
+            "fieldName": "ad_responsiveSearchAd_descriptions",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_resourceName",
+            "fields": [],
+            "alias": "ad_resourceName",
+            "length": 64,
+            "fieldName": "ad_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_id",
+            "fields": [],
+            "alias": "ad_id",
+            "length": 16,
+            "fieldName": "ad_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_finalUrls",
+            "fields": [],
+            "alias": "ad_finalUrls",
+            "length": 512,
+            "fieldName": "ad_finalUrls",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "customer_id",
+            "fields": [],
+            "alias": "customer_id",
+            "length": 17179869184,
+            "fieldName": "customer_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "fields": [],
+            "alias": "customer_descriptiveName",
+            "length": 16,
+            "fieldName": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_displayUrl",
+            "fields": [],
+            "alias": "ad_displayUrl",
+            "length": 64,
+            "fieldName": "ad_displayUrl",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_name",
+            "fields": [],
+            "alias": "ad_name",
+            "length": 64,
+            "fieldName": "ad_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_headlines",
+            "fields": [],
+            "alias": "ad_responsiveDisplayAd_headlines",
+            "length": 256,
+            "fieldName": "ad_responsiveDisplayAd_headlines",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_descriptions",
+            "fields": [],
+            "alias": "ad_responsiveDisplayAd_descriptions",
+            "length": 1024,
+            "fieldName": "ad_responsiveDisplayAd_descriptions",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "ad_responsiveDisplayAd_callToActionText",
+            "fields": [],
+            "alias": "ad_responsiveDisplayAd_callToActionText",
+            "length": 16,
+            "fieldName": "ad_responsiveDisplayAd_callToActionText",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ],
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": []
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

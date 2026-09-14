@@ -1,0 +1,158 @@
+{
+  "name": "MCP_v2_Intercom Bigquery v2 - Segments_river_copied",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "intercom",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "intercom",
+        "extract_method": "incremental",
+        "end_date": null,
+        "quote": "\"",
+        "interval_by": "created_at",
+        "last_days": 7,
+        "fz_partition": "d",
+        "delimiter": ",",
+        "utc_offset": 0,
+        "report": "segments",
+        "fz_batched": true,
+        "time_period": "week_to_date",
+        "gzipTypeMust": null,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "include_count": true
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "is_key": true,
+            "fieldName": "id",
+            "id": 0
+          },
+          {
+            "name": "",
+            "type": "INTEGER",
+            "length": 256,
+            "fieldName": "count",
+            "id": "453656"
+          },
+          {
+            "name": "",
+            "type": "TIMESTAMP",
+            "length": 256,
+            "fieldName": "created_at",
+            "id": "500457"
+          },
+          {
+            "name": "",
+            "type": "STRING",
+            "length": 256,
+            "fieldName": "name",
+            "id": "645369"
+          },
+          {
+            "name": "",
+            "type": "STRING",
+            "length": 256,
+            "cluster_key": 2,
+            "fieldName": "person_type",
+            "id": "919607",
+            "sort": true
+          },
+          {
+            "name": "",
+            "type": "STRING",
+            "length": 256,
+            "cluster_key": 1,
+            "fieldName": "type",
+            "id": "549528",
+            "sort": true
+          },
+          {
+            "name": "",
+            "type": "TIMESTAMP",
+            "length": 256,
+            "fieldName": "updated_at",
+            "id": "803843"
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": "TIMESTAMP",
+        "partition_granularity": "DAY",
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [
+          "549528",
+          "919607"
+        ],
+        "ignore_unknown_values": true,
+        "delimiter": ","
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

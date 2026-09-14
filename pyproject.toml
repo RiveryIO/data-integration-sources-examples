@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-integration-sources-examples"
+dynamic = ["version"]
+description = "Data integration source example configurations"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{ name = "Boomi", email = "dev@boomi.com" }]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-mock",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-mock",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "data_integration_sources_examples.__version__"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

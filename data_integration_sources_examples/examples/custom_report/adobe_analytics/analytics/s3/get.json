@@ -1,0 +1,116 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "adobe_analytics-s3-analytics__v2_example",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-08T08:26:10.477000Z",
+    "last_updated_at": "2026-06-08T08:26:10.477000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "adobe_analytics",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "adobe_analytics",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "extract_method": "all",
+        "utc_offset": 0,
+        "dimensions": [
+          {
+            "definition": "",
+            "id": "variables/daterangeday",
+            "name": "Day"
+          },
+          {
+            "definition": "",
+            "id": "variables/campaign",
+            "name": "Tracking Code"
+          }
+        ],
+        "end_date": "2026-05-31 00:00:00",
+        "segments": [
+          {
+            "name": "Segment_1",
+            "value": [
+              {
+                "id": "<YOUR_ID>",
+                "name": "<YOUR_NAME>"
+              }
+            ]
+          }
+        ],
+        "required_mapping_flag": true,
+        "metrics": [
+          {
+            "definition": "",
+            "id": "metrics/visits",
+            "name": "Visits"
+          }
+        ],
+        "interval_time": "dont_split",
+        "report_suite": "vrs_volksw1_unitedkingdom",
+        "report": "analytics",
+        "time_period": "date_range",
+        "start_date": "2026-05-10 00:00:00"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

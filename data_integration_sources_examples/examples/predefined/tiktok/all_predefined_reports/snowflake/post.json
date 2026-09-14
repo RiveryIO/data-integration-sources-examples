@@ -1,0 +1,748 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_tiktok_snowflake",
+  "metadata": {
+    "description": "MCP predefined example: tiktok / snowflake"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "tiktok",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "tiktok",
+        "extract_method": "all",
+        "quote": "\"",
+        "required_mapping_flag": true,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "advertiser_id": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All TikTok advertisers on this connection, or specific ones? Leave as-is for all. Each entry is a bare advertiser id.",
+            "value_type": "string_list",
+            "default": []
+          }
+        },
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "campaigns",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "id": 0,
+            "fieldName": ""
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_campaign_basic_daily",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_campaign_basic_daily",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_basic_daily",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_basic_daily",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807946,
+              "start_date": "2026-07-08 14:09:41.970000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaigns",
+              "extract_method": "increment",
+              "table_name": "predefined_campaigns",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "objective_type": null,
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "modify_time",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:09:42.555000",
+              "columns": {
+                "insert_timestamp": {
+                  "is_expression": true,
+                  "expression": "current_timestamp()::timestamp_ntz",
+                  "alias": "insert_timestamp",
+                  "is_checked": true,
+                  "type": "TIMESTAMP",
+                  "order": 1
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "tiktok",
+              "end_date": null,
+              "report": "campaigns",
+              "primary_status": null,
+              "time_period": "date_range",
+              "max_batch_time": 1783519801796,
+              "interval_chunk_options": {
+                "disable_minutes": true,
+                "disable_hourly": true,
+                "disable_yearly": true
+              },
+              "fields": null,
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_adgroups_basic_daily",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_adgroups_basic_daily",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519803451,
+              "start_date": "2026-07-08 14:09:40.816000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_groups",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_groups",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "objective_type": null,
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "billing_events": null,
+              "interval_by": "modify_time",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:09:39.879000",
+              "columns": {
+                "insert_timestamp": {
+                  "is_expression": true,
+                  "expression": "current_timestamp()::timestamp_ntz",
+                  "alias": "insert_timestamp",
+                  "is_checked": true,
+                  "type": "TIMESTAMP",
+                  "order": 1
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "tiktok",
+              "end_date": null,
+              "report": "ad_groups",
+              "primary_status": null,
+              "time_period": "date_range",
+              "max_batch_time": 1783519798753,
+              "interval_chunk_options": {
+                "disable_minutes": true,
+                "disable_hourly": true,
+                "disable_yearly": true
+              },
+              "fields": null,
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ads",
+              "extract_method": "increment",
+              "table_name": "predefined_ads",
+              "image_mode": null,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "objective_type": null,
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "billing_events": null,
+              "interval_by": "modify_time",
+              "orderIndex": 2,
+              "start_date": "2026-07-08 14:09:40.478000",
+              "columns": {
+                "insert_timestamp": {
+                  "is_expression": true,
+                  "expression": "current_timestamp()::timestamp_ntz",
+                  "alias": "insert_timestamp",
+                  "is_checked": true,
+                  "type": "TIMESTAMP",
+                  "order": 1
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "tiktok",
+              "end_date": null,
+              "report": "ads",
+              "primary_status": null,
+              "time_period": "date_range",
+              "max_batch_time": 1783519804463,
+              "interval_chunk_options": {
+                "disable_minutes": true,
+                "disable_hourly": true,
+                "disable_yearly": true
+              },
+              "fields": null,
+              "interval_type": "datetime"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_campaign_platform",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_campaign_platform",
+              "report_type": "AUDIENCE",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "time_dimension": "stat_time_day",
+              "flat_nested_fields": true,
+              "interval_by": "stat_time_day",
+              "start_date": "2026-07-08 14:09:41.319000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "tiktok",
+              "data_level": "AUCTION_CAMPAIGN",
+              "end_date": null,
+              "metrics": [
+                "spend",
+                "impressions",
+                "clicks",
+                "cpm",
+                "cpc",
+                "ctr",
+                "conversion",
+                "cost_per_conversion",
+                "conversion_rate",
+                "real_time_conversion",
+                "real_time_cost_per_conversion",
+                "real_time_conversion_rate",
+                "result",
+                "result_rate",
+                "cost_per_result",
+                "real_time_result",
+                "real_time_cost_per_result",
+                "real_time_result_rate"
+              ],
+              "report": "auction_ads_report",
+              "time_period": "date_range",
+              "max_batch_time": 1783519803110,
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "interval_type": "datetime",
+              "AUDIENCE_dimensions": "platform"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_campaign_language",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_campaign_language",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "video_files",
+              "extract_method": "increment",
+              "table_name": "predefined_video_files",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_campaign_gender",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_campaign_gender",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_ad_group_skan",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_ad_group_skan",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_platform",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_platform",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_campaign_age",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_campaign_age",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_age",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_age",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_country",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_country",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "image_files",
+              "extract_method": "increment",
+              "table_name": "predefined_image_files",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_gender",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_gender",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "advertisers_info",
+              "extract_method": "increment",
+              "table_name": "predefined_advertisers_info",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_language",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_language",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_audience_campaign_country",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_audience_campaign_country",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "auction_ads_campaign_skan",
+              "extract_method": "increment",
+              "table_name": "predefined_auction_ads_campaign_skan",
+              "interval_chunk_options": {
+                "disable_daily": true,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": true,
+                "disable_weekly": true,
+                "disable_hourly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "stat_time_day",
+              "max_batch_time": 1783519807870,
+              "start_date": "2026-07-08 14:09:42.081000",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

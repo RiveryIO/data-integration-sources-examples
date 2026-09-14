@@ -1,0 +1,905 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_dv360_entity_lineitems",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "display_video_360",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "entity",
+      "cdc_settings": null,
+      "additional_settings": {
+        "partners_type": "<YOUR_PARTNERS_TYPE>",
+        "utc_offset": 0,
+        "filters": [],
+        "advertisers": "<YOUR_ADVERTISERS>",
+        "connection_type": "dv360",
+        "partners": "<YOUR_PARTNERS>",
+        "interval_time": "dont_split",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "interval_size": 1,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "gzipTypeMust": null,
+        "type": "FLOODLIGHT",
+        "quote": "\"",
+        "required_mapping_flag": false,
+        "fz_batched": true,
+        "report": "lineitems",
+        "time_period": "date_range",
+        "delimiter": ",",
+        "filter_partner": "<YOUR_FILTER_PARTNER>"
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "name",
+            "type": "STRING",
+            "alias": "name",
+            "mode": "NULLABLE",
+            "id": "name",
+            "fieldName": "name",
+            "fields": []
+          },
+          {
+            "name": "advertiserId",
+            "type": "STRING",
+            "alias": "advertiserId",
+            "mode": "NULLABLE",
+            "id": "advertiserId",
+            "fieldName": "advertiserId",
+            "fields": []
+          },
+          {
+            "name": "campaignId",
+            "type": "STRING",
+            "alias": "campaignId",
+            "mode": "NULLABLE",
+            "id": "campaignId",
+            "fieldName": "campaignId",
+            "fields": []
+          },
+          {
+            "name": "insertionOrderId",
+            "type": "STRING",
+            "alias": "insertionOrderId",
+            "mode": "NULLABLE",
+            "id": "insertionOrderId",
+            "fieldName": "insertionOrderId",
+            "fields": []
+          },
+          {
+            "name": "lineItemId",
+            "type": "STRING",
+            "alias": "lineItemId",
+            "mode": "NULLABLE",
+            "id": "lineItemId",
+            "fieldName": "lineItemId",
+            "fields": []
+          },
+          {
+            "name": "displayName",
+            "type": "STRING",
+            "alias": "displayName",
+            "mode": "NULLABLE",
+            "id": "displayName",
+            "fieldName": "displayName",
+            "fields": []
+          },
+          {
+            "name": "lineItemType",
+            "type": "STRING",
+            "alias": "lineItemType",
+            "mode": "NULLABLE",
+            "id": "lineItemType",
+            "fieldName": "lineItemType",
+            "fields": []
+          },
+          {
+            "name": "entityStatus",
+            "type": "STRING",
+            "alias": "entityStatus",
+            "mode": "NULLABLE",
+            "id": "entityStatus",
+            "fieldName": "entityStatus",
+            "fields": []
+          },
+          {
+            "name": "updateTime",
+            "type": "STRING",
+            "alias": "updateTime",
+            "mode": "NULLABLE",
+            "id": "updateTime",
+            "fieldName": "updateTime",
+            "fields": []
+          },
+          {
+            "name": "partnerCosts",
+            "type": "STRING",
+            "alias": "partnerCosts",
+            "mode": "REPEATED",
+            "id": "partnerCosts",
+            "fieldName": "partnerCosts",
+            "fields": []
+          },
+          {
+            "name": "flight",
+            "type": "VARIANT",
+            "alias": "flight",
+            "mode": "NULLABLE",
+            "id": "flight",
+            "fieldName": "flight",
+            "fields": [
+              {
+                "name": "flightDateType",
+                "fields": [],
+                "alias": "flightDateType",
+                "fieldName": "flightDateType",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "dateRange",
+                "fields": [
+                  {
+                    "name": "startDate",
+                    "fields": [
+                      {
+                        "name": "year",
+                        "fields": [],
+                        "alias": "year",
+                        "fieldName": "year",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "month",
+                        "fields": [],
+                        "alias": "month",
+                        "fieldName": "month",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "day",
+                        "fields": [],
+                        "alias": "day",
+                        "fieldName": "day",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      }
+                    ],
+                    "alias": "startDate",
+                    "fieldName": "startDate",
+                    "mode": "NULLABLE",
+                    "type": "VARIANT"
+                  },
+                  {
+                    "name": "endDate",
+                    "fields": [
+                      {
+                        "name": "year",
+                        "fields": [],
+                        "alias": "year",
+                        "fieldName": "year",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "month",
+                        "fields": [],
+                        "alias": "month",
+                        "fieldName": "month",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "day",
+                        "fields": [],
+                        "alias": "day",
+                        "fieldName": "day",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      }
+                    ],
+                    "alias": "endDate",
+                    "fieldName": "endDate",
+                    "mode": "NULLABLE",
+                    "type": "VARIANT"
+                  }
+                ],
+                "alias": "dateRange",
+                "fieldName": "dateRange",
+                "mode": "NULLABLE",
+                "type": "VARIANT"
+              }
+            ]
+          },
+          {
+            "name": "budget",
+            "type": "VARIANT",
+            "alias": "budget",
+            "mode": "NULLABLE",
+            "id": "budget",
+            "fieldName": "budget",
+            "fields": [
+              {
+                "name": "budgetAllocationType",
+                "fields": [],
+                "alias": "budgetAllocationType",
+                "fieldName": "budgetAllocationType",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "budgetUnit",
+                "fields": [],
+                "alias": "budgetUnit",
+                "fieldName": "budgetUnit",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "maxAmount",
+                "fields": [],
+                "alias": "maxAmount",
+                "fieldName": "maxAmount",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "pacing",
+            "type": "VARIANT",
+            "alias": "pacing",
+            "mode": "NULLABLE",
+            "id": "pacing",
+            "fieldName": "pacing",
+            "fields": [
+              {
+                "name": "pacingPeriod",
+                "fields": [],
+                "alias": "pacingPeriod",
+                "fieldName": "pacingPeriod",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "pacingType",
+                "fields": [],
+                "alias": "pacingType",
+                "fieldName": "pacingType",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "frequencyCap",
+            "type": "VARIANT",
+            "alias": "frequencyCap",
+            "mode": "NULLABLE",
+            "id": "frequencyCap",
+            "fieldName": "frequencyCap",
+            "fields": [
+              {
+                "name": "unlimited",
+                "fields": [],
+                "alias": "unlimited",
+                "fieldName": "unlimited",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ]
+          },
+          {
+            "name": "partnerRevenueModel",
+            "type": "VARIANT",
+            "alias": "partnerRevenueModel",
+            "mode": "NULLABLE",
+            "id": "partnerRevenueModel",
+            "fieldName": "partnerRevenueModel",
+            "fields": [
+              {
+                "name": "markupType",
+                "fields": [],
+                "alias": "markupType",
+                "fieldName": "markupType",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "markupAmount",
+                "fields": [],
+                "alias": "markupAmount",
+                "fieldName": "markupAmount",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "conversionCounting",
+            "type": "VARIANT",
+            "alias": "conversionCounting",
+            "mode": "NULLABLE",
+            "id": "conversionCounting",
+            "fieldName": "conversionCounting",
+            "fields": [
+              {
+                "name": "postViewCountPercentageMillis",
+                "fields": [],
+                "alias": "postViewCountPercentageMillis",
+                "fieldName": "postViewCountPercentageMillis",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ]
+          },
+          {
+            "name": "bidStrategy",
+            "type": "VARIANT",
+            "alias": "bidStrategy",
+            "mode": "NULLABLE",
+            "id": "bidStrategy",
+            "fieldName": "bidStrategy",
+            "fields": [
+              {
+                "name": "youtubeAndPartnersBid",
+                "fields": [
+                  {
+                    "name": "type",
+                    "fields": [],
+                    "alias": "type",
+                    "fieldName": "type",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  }
+                ],
+                "alias": "youtubeAndPartnersBid",
+                "fieldName": "youtubeAndPartnersBid",
+                "mode": "NULLABLE",
+                "type": "VARIANT"
+              }
+            ]
+          },
+          {
+            "name": "integrationDetails",
+            "type": "VARIANT",
+            "alias": "integrationDetails",
+            "mode": "NULLABLE",
+            "id": "integrationDetails",
+            "fieldName": "integrationDetails",
+            "fields": []
+          },
+          {
+            "name": "warningMessages",
+            "type": "STRING",
+            "alias": "warningMessages",
+            "mode": "REPEATED",
+            "id": "warningMessages",
+            "fieldName": "warningMessages",
+            "fields": []
+          },
+          {
+            "name": "reservationType",
+            "type": "STRING",
+            "alias": "reservationType",
+            "mode": "NULLABLE",
+            "id": "reservationType",
+            "fieldName": "reservationType",
+            "fields": []
+          },
+          {
+            "name": "youtubeAndPartnersSettings",
+            "type": "VARIANT",
+            "alias": "youtubeAndPartnersSettings",
+            "mode": "NULLABLE",
+            "id": "youtubeAndPartnersSettings",
+            "fieldName": "youtubeAndPartnersSettings",
+            "fields": [
+              {
+                "name": "inventorySourceSettings",
+                "fields": [
+                  {
+                    "name": "includeYoutube",
+                    "fields": [],
+                    "alias": "includeYoutube",
+                    "fieldName": "includeYoutube",
+                    "mode": "NULLABLE",
+                    "type": "BOOLEAN"
+                  }
+                ],
+                "alias": "inventorySourceSettings",
+                "fieldName": "inventorySourceSettings",
+                "mode": "NULLABLE",
+                "type": "VARIANT"
+              },
+              {
+                "name": "effectiveContentCategory",
+                "fields": [],
+                "alias": "effectiveContentCategory",
+                "fieldName": "effectiveContentCategory",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "thirdPartyMeasurementConfigs",
+                "fields": [],
+                "alias": "thirdPartyMeasurementConfigs",
+                "fieldName": "thirdPartyMeasurementConfigs",
+                "mode": "NULLABLE",
+                "type": "VARIANT"
+              }
+            ]
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "csv_reports": [
+          "sdf",
+          "new",
+          "existing"
+        ],
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "dataset_id": "<YOUR_DATASET_ID>",
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "json_reports": [
+          "lineitems"
+        ],
+        "start_date": 1762333783767,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "name",
+            "fields": [],
+            "alias": "name",
+            "fieldName": "name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "advertiserId",
+            "fields": [],
+            "alias": "advertiserId",
+            "fieldName": "advertiserId",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "campaignId",
+            "fields": [],
+            "alias": "campaignId",
+            "fieldName": "campaignId",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "insertionOrderId",
+            "fields": [],
+            "alias": "insertionOrderId",
+            "fieldName": "insertionOrderId",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "lineItemId",
+            "fields": [],
+            "alias": "lineItemId",
+            "fieldName": "lineItemId",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "displayName",
+            "fields": [],
+            "alias": "displayName",
+            "fieldName": "displayName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "lineItemType",
+            "fields": [],
+            "alias": "lineItemType",
+            "fieldName": "lineItemType",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "entityStatus",
+            "fields": [],
+            "alias": "entityStatus",
+            "fieldName": "entityStatus",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "updateTime",
+            "fields": [],
+            "alias": "updateTime",
+            "fieldName": "updateTime",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "partnerCosts",
+            "fields": [],
+            "alias": "partnerCosts",
+            "fieldName": "partnerCosts",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "flight",
+            "fields": [
+              {
+                "name": "flightDateType",
+                "fields": [],
+                "alias": "flightDateType",
+                "fieldName": "flightDateType",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "dateRange",
+                "fields": [
+                  {
+                    "name": "startDate",
+                    "fields": [
+                      {
+                        "name": "year",
+                        "fields": [],
+                        "alias": "year",
+                        "fieldName": "year",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "month",
+                        "fields": [],
+                        "alias": "month",
+                        "fieldName": "month",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "day",
+                        "fields": [],
+                        "alias": "day",
+                        "fieldName": "day",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      }
+                    ],
+                    "alias": "startDate",
+                    "fieldName": "startDate",
+                    "mode": "NULLABLE",
+                    "type": "VARIANT"
+                  },
+                  {
+                    "name": "endDate",
+                    "fields": [
+                      {
+                        "name": "year",
+                        "fields": [],
+                        "alias": "year",
+                        "fieldName": "year",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "month",
+                        "fields": [],
+                        "alias": "month",
+                        "fieldName": "month",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      },
+                      {
+                        "name": "day",
+                        "fields": [],
+                        "alias": "day",
+                        "fieldName": "day",
+                        "mode": "NULLABLE",
+                        "type": "INTEGER"
+                      }
+                    ],
+                    "alias": "endDate",
+                    "fieldName": "endDate",
+                    "mode": "NULLABLE",
+                    "type": "VARIANT"
+                  }
+                ],
+                "alias": "dateRange",
+                "fieldName": "dateRange",
+                "mode": "NULLABLE",
+                "type": "VARIANT"
+              }
+            ],
+            "alias": "flight",
+            "fieldName": "flight",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "budget",
+            "fields": [
+              {
+                "name": "budgetAllocationType",
+                "fields": [],
+                "alias": "budgetAllocationType",
+                "fieldName": "budgetAllocationType",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "budgetUnit",
+                "fields": [],
+                "alias": "budgetUnit",
+                "fieldName": "budgetUnit",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "maxAmount",
+                "fields": [],
+                "alias": "maxAmount",
+                "fieldName": "maxAmount",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "budget",
+            "fieldName": "budget",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "pacing",
+            "fields": [
+              {
+                "name": "pacingPeriod",
+                "fields": [],
+                "alias": "pacingPeriod",
+                "fieldName": "pacingPeriod",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "pacingType",
+                "fields": [],
+                "alias": "pacingType",
+                "fieldName": "pacingType",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "pacing",
+            "fieldName": "pacing",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "frequencyCap",
+            "fields": [
+              {
+                "name": "unlimited",
+                "fields": [],
+                "alias": "unlimited",
+                "fieldName": "unlimited",
+                "mode": "NULLABLE",
+                "type": "BOOLEAN"
+              }
+            ],
+            "alias": "frequencyCap",
+            "fieldName": "frequencyCap",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "partnerRevenueModel",
+            "fields": [
+              {
+                "name": "markupType",
+                "fields": [],
+                "alias": "markupType",
+                "fieldName": "markupType",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "markupAmount",
+                "fields": [],
+                "alias": "markupAmount",
+                "fieldName": "markupAmount",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "partnerRevenueModel",
+            "fieldName": "partnerRevenueModel",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "conversionCounting",
+            "fields": [
+              {
+                "name": "postViewCountPercentageMillis",
+                "fields": [],
+                "alias": "postViewCountPercentageMillis",
+                "fieldName": "postViewCountPercentageMillis",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "conversionCounting",
+            "fieldName": "conversionCounting",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "bidStrategy",
+            "fields": [
+              {
+                "name": "youtubeAndPartnersBid",
+                "fields": [
+                  {
+                    "name": "type",
+                    "fields": [],
+                    "alias": "type",
+                    "fieldName": "type",
+                    "mode": "NULLABLE",
+                    "type": "STRING"
+                  }
+                ],
+                "alias": "youtubeAndPartnersBid",
+                "fieldName": "youtubeAndPartnersBid",
+                "mode": "NULLABLE",
+                "type": "VARIANT"
+              }
+            ],
+            "alias": "bidStrategy",
+            "fieldName": "bidStrategy",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "integrationDetails",
+            "fields": [],
+            "alias": "integrationDetails",
+            "fieldName": "integrationDetails",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "warningMessages",
+            "fields": [],
+            "alias": "warningMessages",
+            "fieldName": "warningMessages",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "reservationType",
+            "fields": [],
+            "alias": "reservationType",
+            "fieldName": "reservationType",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "youtubeAndPartnersSettings",
+            "fields": [
+              {
+                "name": "inventorySourceSettings",
+                "fields": [
+                  {
+                    "name": "includeYoutube",
+                    "fields": [],
+                    "alias": "includeYoutube",
+                    "fieldName": "includeYoutube",
+                    "mode": "NULLABLE",
+                    "type": "BOOLEAN"
+                  }
+                ],
+                "alias": "inventorySourceSettings",
+                "fieldName": "inventorySourceSettings",
+                "mode": "NULLABLE",
+                "type": "VARIANT"
+              },
+              {
+                "name": "effectiveContentCategory",
+                "fields": [],
+                "alias": "effectiveContentCategory",
+                "fieldName": "effectiveContentCategory",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              },
+              {
+                "name": "thirdPartyMeasurementConfigs",
+                "fields": [],
+                "alias": "thirdPartyMeasurementConfigs",
+                "fieldName": "thirdPartyMeasurementConfigs",
+                "mode": "NULLABLE",
+                "type": "VARIANT"
+              }
+            ],
+            "alias": "youtubeAndPartnersSettings",
+            "fieldName": "youtubeAndPartnersSettings",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

@@ -1,0 +1,145 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "GoogleAds_SharedSetCriterion_NoAggregation_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2023-10-27T07:56:43.869000Z",
+    "last_updated_at": "2026-06-29T08:17:01.835000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "utc_offset": 0,
+        "extract_method": "all",
+        "quote": "\"",
+        "accounts_manual": true,
+        "accounts_ids": [
+          "<ACCOUNTS_IDS - leave accounts_ids empty to automatically discover/use all entities accessible via this connection; add specific ID(s) to restrict to particular accounts_ids(s).>"
+        ],
+        "interval_time": "monthly",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "selectableWith": [],
+            "type": "STRING",
+            "name": "customer.descriptive_name",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "customer.id",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "shared_criterion.type",
+            "parent": "shared_criterion"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "shared_set.id",
+            "parent": "shared_set"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "shared_set.name",
+            "parent": "shared_set"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "shared_set.status",
+            "parent": "shared_set"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "shared_criterion.keyword.text",
+            "parent": "shared_criterion"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "shared_criterion.keyword.match_type",
+            "parent": "shared_criterion"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "RESOURCE_NAME",
+            "name": "shared_criterion.shared_set",
+            "parent": "shared_criterion"
+          }
+        ],
+        "required_mapping_flag": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [],
+        "increment_field": null,
+        "report": "shared_criterion",
+        "fz_batched": true,
+        "gzipTypeMust": null,
+        "interval_size": 1,
+        "source_format": "NEWLINE_DELIMITED_JSON"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

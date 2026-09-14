@@ -1,0 +1,405 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_linkedin_social_databricks",
+  "metadata": {
+    "description": "MCP predefined example: linkedin_social / databricks"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "linkedin_social",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "linkedin_social",
+        "is_lifetime": false,
+        "extract_method": "all",
+        "quote": "\"",
+        "required_mapping_flag": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "report": "get_shares_statistics",
+        "delimiter": ",",
+        "utc_offset": 0,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "granularity": "Day",
+        "skip_shares_stats_without_activity_error": false,
+        "fz_batched": true,
+        "gzipTypeMust": null,
+        "include_posts": false
+      }
+    },
+    "target": {
+      "name": "databricks",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "totalShareStatistics_uniqueImpressionsCount",
+            "type": "INTEGER",
+            "alias": "totalShareStatistics_uniqueImpressionsCount",
+            "mode": "NULLABLE",
+            "fieldName": "totalShareStatistics_uniqueImpressionsCount",
+            "id": "totalShareStatistics_uniqueImpressionsCount",
+            "fields": []
+          },
+          {
+            "name": "totalShareStatistics_shareCount",
+            "type": "INTEGER",
+            "alias": "totalShareStatistics_shareCount",
+            "mode": "NULLABLE",
+            "fieldName": "totalShareStatistics_shareCount",
+            "id": "totalShareStatistics_shareCount",
+            "fields": []
+          },
+          {
+            "name": "totalShareStatistics_engagement",
+            "type": "FLOAT",
+            "alias": "totalShareStatistics_engagement",
+            "mode": "NULLABLE",
+            "fieldName": "totalShareStatistics_engagement",
+            "id": "totalShareStatistics_engagement",
+            "fields": []
+          },
+          {
+            "name": "totalShareStatistics_clickCount",
+            "type": "INTEGER",
+            "alias": "totalShareStatistics_clickCount",
+            "mode": "NULLABLE",
+            "fieldName": "totalShareStatistics_clickCount",
+            "id": "totalShareStatistics_clickCount",
+            "fields": []
+          },
+          {
+            "name": "totalShareStatistics_likeCount",
+            "type": "INTEGER",
+            "alias": "totalShareStatistics_likeCount",
+            "mode": "NULLABLE",
+            "fieldName": "totalShareStatistics_likeCount",
+            "id": "totalShareStatistics_likeCount",
+            "fields": []
+          },
+          {
+            "name": "totalShareStatistics_impressionCount",
+            "type": "INTEGER",
+            "alias": "totalShareStatistics_impressionCount",
+            "mode": "NULLABLE",
+            "fieldName": "totalShareStatistics_impressionCount",
+            "id": "totalShareStatistics_impressionCount",
+            "fields": []
+          },
+          {
+            "name": "totalShareStatistics_commentCount",
+            "type": "INTEGER",
+            "alias": "totalShareStatistics_commentCount",
+            "mode": "NULLABLE",
+            "fieldName": "totalShareStatistics_commentCount",
+            "id": "totalShareStatistics_commentCount",
+            "fields": []
+          },
+          {
+            "name": "organizationalEntity",
+            "type": "STRING",
+            "alias": "organizationalEntity",
+            "mode": "NULLABLE",
+            "fieldName": "organizationalEntity",
+            "id": "organizationalEntity",
+            "fields": []
+          },
+          {
+            "name": "share",
+            "type": "STRING",
+            "alias": "share",
+            "mode": "NULLABLE",
+            "fieldName": "share",
+            "id": "share",
+            "fields": []
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "catalog_name": "<YOUR_CATALOG_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "store_in_custom_location": null,
+      "custom_location_type": null,
+      "custom_location_path": null
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_countries",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_countries",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_iab_categories",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_iab_categories",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "organization_page_statistics",
+              "extract_method": "all",
+              "table_name": "predefined_organization_page_statistics",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_degrees",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_degrees",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "organization_followers",
+              "extract_method": "all",
+              "table_name": "predefined_organization_followers",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_functions",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_functions",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "organization_share_statistics",
+              "extract_method": "all",
+              "table_name": "predefined_organization_share_statistics",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_country_groups",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_country_groups",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "get_shares_statistics",
+              "extract_method": "all",
+              "table_name": "predefined_get_shares_statistics",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_industries",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_industries",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "get_posts",
+              "extract_method": "all",
+              "table_name": "predefined_get_posts",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_seniorities",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_seniorities",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_fields_of_study",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_fields_of_study",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "standardized_regions",
+              "extract_method": "all",
+              "table_name": "predefined_standardized_regions",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "max_batch_time": 1783519847724,
+              "start_date": "2026-05-24 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked",
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

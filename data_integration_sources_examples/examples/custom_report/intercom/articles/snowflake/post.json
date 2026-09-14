@@ -1,0 +1,362 @@
+{
+  "name": "MCP_v2_Intercom Bigquery v2 - Articles_river_copied",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "intercom",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "intercom",
+        "extract_method": "all",
+        "quote": "\"",
+        "required_mapping_flag": false,
+        "delimiter": ",",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_batched": true,
+        "report": "articles",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "id": "id",
+            "fieldName": "id",
+            "fields": []
+          },
+          {
+            "name": "type",
+            "type": "STRING",
+            "alias": "type",
+            "mode": "NULLABLE",
+            "cluster_key": 1,
+            "id": "type",
+            "fieldName": "type",
+            "fields": [],
+            "sort": true
+          },
+          {
+            "name": "workspace_id",
+            "type": "STRING",
+            "alias": "workspace_id",
+            "mode": "NULLABLE",
+            "id": "workspace_id",
+            "fieldName": "workspace_id",
+            "fields": []
+          },
+          {
+            "name": "parent_id",
+            "type": "INTEGER",
+            "alias": "parent_id",
+            "mode": "NULLABLE",
+            "id": "parent_id",
+            "fieldName": "parent_id",
+            "fields": []
+          },
+          {
+            "name": "parent_type",
+            "type": "STRING",
+            "alias": "parent_type",
+            "mode": "NULLABLE",
+            "cluster_key": 3,
+            "id": "parent_type",
+            "fieldName": "parent_type",
+            "fields": [],
+            "sort": true
+          },
+          {
+            "name": "title",
+            "type": "STRING",
+            "alias": "title",
+            "mode": "NULLABLE",
+            "id": "title",
+            "fieldName": "title",
+            "fields": []
+          },
+          {
+            "name": "description",
+            "type": "STRING",
+            "alias": "description",
+            "mode": "NULLABLE",
+            "id": "description",
+            "fieldName": "description",
+            "fields": []
+          },
+          {
+            "name": "body",
+            "type": "STRING",
+            "alias": "body",
+            "mode": "NULLABLE",
+            "id": "body",
+            "fieldName": "body",
+            "fields": []
+          },
+          {
+            "name": "author_id",
+            "type": "INTEGER",
+            "alias": "author_id",
+            "mode": "NULLABLE",
+            "id": "author_id",
+            "fieldName": "author_id",
+            "fields": []
+          },
+          {
+            "name": "state",
+            "type": "STRING",
+            "alias": "state",
+            "mode": "NULLABLE",
+            "cluster_key": 2,
+            "id": "state",
+            "fieldName": "state",
+            "fields": [],
+            "sort": true
+          },
+          {
+            "name": "created_at",
+            "type": "TIMESTAMP",
+            "alias": "created_at",
+            "mode": "NULLABLE",
+            "id": "created_at",
+            "fieldName": "created_at",
+            "fields": []
+          },
+          {
+            "name": "updated_at",
+            "type": "INTEGER",
+            "alias": "updated_at",
+            "mode": "NULLABLE",
+            "id": "updated_at",
+            "fieldName": "updated_at",
+            "fields": []
+          },
+          {
+            "name": "url",
+            "type": "STRING",
+            "alias": "url",
+            "mode": "NULLABLE",
+            "id": "url",
+            "fieldName": "url",
+            "fields": []
+          },
+          {
+            "name": "parent_ids",
+            "type": "INTEGER",
+            "alias": "parent_ids",
+            "mode": "REPEATED",
+            "id": "parent_ids",
+            "fieldName": "parent_ids",
+            "fields": []
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": "TIMESTAMP",
+        "partition_granularity": "DAY",
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [
+          "type",
+          "state",
+          "parent_type"
+        ],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "id",
+            "fields": [],
+            "alias": "id",
+            "length": 8,
+            "fieldName": "id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "type",
+            "fields": [],
+            "alias": "type",
+            "length": 8,
+            "fieldName": "type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "workspace_id",
+            "fields": [],
+            "alias": "workspace_id",
+            "length": 8,
+            "fieldName": "workspace_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "parent_id",
+            "fields": [],
+            "alias": "parent_id",
+            "length": 16777216,
+            "fieldName": "parent_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "parent_type",
+            "fields": [],
+            "alias": "parent_type",
+            "length": 16,
+            "fieldName": "parent_type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "title",
+            "fields": [],
+            "alias": "title",
+            "length": 64,
+            "fieldName": "title",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "description",
+            "fields": [],
+            "alias": "description",
+            "length": 256,
+            "fieldName": "description",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "body",
+            "fields": [],
+            "alias": "body",
+            "length": 65535,
+            "fieldName": "body",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "author_id",
+            "fields": [],
+            "alias": "author_id",
+            "length": 8388608,
+            "fieldName": "author_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "state",
+            "fields": [],
+            "alias": "state",
+            "length": 16,
+            "fieldName": "state",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "created_at",
+            "fields": [],
+            "alias": "created_at",
+            "length": 2147483648,
+            "fieldName": "created_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "updated_at",
+            "fields": [],
+            "alias": "updated_at",
+            "length": 2147483648,
+            "fieldName": "updated_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "url",
+            "fields": [],
+            "alias": "url",
+            "length": 128,
+            "fieldName": "url",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "parent_ids",
+            "fields": [],
+            "alias": "parent_ids",
+            "length": 16,
+            "fieldName": "parent_ids",
+            "mode": "REPEATED",
+            "type": "INTEGER"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

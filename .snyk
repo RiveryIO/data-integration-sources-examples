@@ -1,0 +1,13 @@
+# Snyk (https://snyk.io) policy file
+
+# Exclude example data files from code scanning
+# These are data files, not production code
+exclude:
+  code:
+    - data_integration_sources_examples/examples/**
+    - tests/**
+    - '*.egg-info/**'
+    - build/**
+    - dist/**
+    - .venv/**
+    - __pycache__/**

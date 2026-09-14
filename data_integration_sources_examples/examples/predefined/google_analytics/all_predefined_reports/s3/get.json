@@ -1,0 +1,1057 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_ganalytics_s3",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP example: Google Analytics (GA4) predefined reports."
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_analytics",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "ganalytics",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "extract_method": "all",
+        "account_type": "accounts_ids",
+        "profile_type": "profiles_ids",
+        "accounts_ids": [
+          "<GA4_ACCOUNT_ID - a bare GA4 Account ID string, e.g. \"12345678\" (ID only, no name; the backend resolves the name). Add one entry per account; leave the array empty to pull all accessible accounts.>"
+        ],
+        "profiles_from_api": true,
+        "properties_ids": [
+          "<GA4_PROPERTY_ID - a bare GA4 Property ID string, e.g. \"987654321\" (the numeric property under the selected account). Add one entry per property; leave the array empty to pull all properties of the selected account(s).>"
+        ],
+        "properties_type": "properties_ids",
+        "time_period_cohort": "last_7_days",
+        "ga4_advanced_filters": false,
+        "report": "ga4_standard",
+        "cohort_size": "day"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_demographics_age_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_demographics_age",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_demographics_city_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_demographics_city",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.680000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_cohort_by_7_days_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_cohort_by_7_days",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_demographics_country_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_demographics_country",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_demographics_gender_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_demographics_gender",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_demographics_interests_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_demographics_interests",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_demographics_language_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_demographics_language",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_demographics_region_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_demographics_region",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_engagement_content_group_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_engagement_content_group",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_engagement_conversions_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_engagement_conversions",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_engagement_events_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_engagement_events",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_engagement_pages_path_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_engagement_pages_path",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_engagement_pages_title_and_screen_class_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_engagement_pages_title_and_screen_class",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_engagement_pages_title_and_screen_name_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_engagement_pages_title_and_screen_name",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_mcf_assisted_conversions_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_mcf_assisted_conversions",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_mcf_conversion_path_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_mcf_conversion_path",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_mcf_path_length_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_mcf_path_length",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_mcf_time_lag_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_mcf_time_lag",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_ecommerce_purchases_item_category_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_ecommerce_purchases_item_category",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_ecommerce_purchases_item_category_2_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_ecommerce_purchases_item_category_2",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_ecommerce_purchases_item_category_3_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_ecommerce_purchases_item_category_3",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_ecommerce_purchases_item_category_4_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_ecommerce_purchases_item_category_4",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_ecommerce_purchases_item_category_5_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_ecommerce_purchases_item_category_5",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_ecommerce_purchases_item_category_report_combined_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_ecommerce_purchases_item_category_report_combined",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_ecommerce_purchases_item_id_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_ecommerce_purchases_item_id",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_ecommerce_purchases_item_name_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_ecommerce_purchases_item_name",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_publisher_ads_ad_format_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_publisher_ads_ad_format",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_publisher_ads_ad_source_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_publisher_ads_ad_source",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_publisher_ads_ad_unit_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_publisher_ads_ad_unit",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_monetization_publisher_ads_page_path_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_monetization_publisher_ads_page_path",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_standard_events_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_standard_events",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_standard_monthly_users_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_standard_monthly_users",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_standard_sessions_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_standard_sessions",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_standard_users_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_standard_users",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_standard_weekly_users_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_standard_weekly_users",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_app_version_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_app_version",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_browser_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_browser",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_device_category_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_device_category",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_operating_system_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_operating_system",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_os_version_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_os_version",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_os_with_version_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_os_with_version",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_platform_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_platform",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_platform_device_catagory_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_platform_device_catagory",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_tech_screen_resolution_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_tech_screen_resolution",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_traffic_acquisition_session_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_traffic_acquisition_session_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_traffic_acquisition_session_default_channel_grouping_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_traffic_acquisition_session_default_channel_grouping",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_traffic_acquisition_session_medium_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_traffic_acquisition_session_medium",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_traffic_acquisition_session_source_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_traffic_acquisition_session_source",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_traffic_acquisition_session_source_medium_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_traffic_acquisition_session_source_medium",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_traffic_acquisition_session_source_platform_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_traffic_acquisition_session_source_platform",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_user_acquisition_first_user_campaign_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_user_acquisition_first_user_campaign",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_user_acquisition_first_user_google_ads_ad_group_name_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_user_acquisition_first_user_google_ads_ad_group_name",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_user_acquisition_first_user_google_ads_network_type_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_user_acquisition_first_user_google_ads_network_type",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_user_acquisition_first_user_medium_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_user_acquisition_first_user_medium",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_user_acquisition_first_user_source_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_user_acquisition_first_user_source",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_user_acquisition_first_user_source_medium_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_user_acquisition_first_user_source_medium",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ganalytics_user_acquisition_first_user_source_platform_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_user_acquisition_first_user_source_platform",
+              "table_status": "tracked",
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "date",
+              "time_period": "date_range",
+              "start_date": "2026-07-05 16:23:19.073000"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

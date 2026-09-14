@@ -1,0 +1,94 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_jira_kh_change_logs",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-27T18:14:06.448000Z",
+    "last_updated_at": "2026-07-27T18:14:06.448000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": "2026-07-27T18:14:39.310000Z",
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "jira",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "custom_query": "<CUSTOM_QUERY — a JQL filter expression; leave empty to skip this filter>",
+        "utc_offset": 0,
+        "is_fields_description_content_string": false,
+        "connection_type": "jira",
+        "interval_time": "dont_split",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "gzipTypeMust": null,
+        "projects": [
+          "<PROJECTS — leave projects empty to automatically discover/use all entities accessible via this connection; add specific entries to restrict to particular projects. Each entry looks like: {\"id\": <ID>, \"name\": <NAME>}.>"
+        ],
+        "start_date": "2026-07-27 18:16:43.918000",
+        "extract_method": "all",
+        "quote": "\"",
+        "required_mapping_flag": false,
+        "fz_batched": true,
+        "report": "issue_changelogs",
+        "time_period": "date_range",
+        "excluded_projects": [],
+        "delimiter": ",",
+        "use_strict_datatypes": false,
+        "keep_raw_customfields": false,
+        "end_date": null
+      }
+    },
+    "target": {
+      "name": "knowledge_hub",
+      "connection_id": null,
+      "connection_name": null,
+      "repository_id": "<KH_REPOSITORY_ID>",
+      "knowledge_base_id": "<KH_KNOWLEDGE_BASE_ID>",
+      "load_mode": "append"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": []
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

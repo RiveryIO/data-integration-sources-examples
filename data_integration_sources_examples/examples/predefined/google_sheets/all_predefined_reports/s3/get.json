@@ -1,0 +1,189 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_gspreadsheet_s3",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-23T12:27:53.664000Z",
+    "last_updated_at": "2026-06-23T12:27:53.664000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_sheets",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "gspreadsheet",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "CSV",
+        "filters": [
+          {
+            "file_type": "csv",
+            "csv_details": {
+              "quotechar": "\"",
+              "delimiter": ","
+            },
+            "has_headers": true,
+            "required_tabs": 1,
+            "header_row": 1
+          }
+        ],
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "start_header": {
+          "header_row": 1
+        },
+        "required_mapping_flag": true,
+        "required_tabs": "custos_contabeis",
+        "extract_type": "file",
+        "has_headers": true,
+        "interval_time": "dont_split",
+        "source_column_by": "name",
+        "start_date": "2026-06-23 11:23:41.859000",
+        "null_rep_words": "#N/A",
+        "object_guid": "<YOUR_OBJECT_GUID>",
+        "fields": [
+          {
+            "source_type": "source",
+            "length": 8,
+            "type": "STRING",
+            "name": "dt_mes",
+            "alias": "dt_mes"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "custo_sistema_fraude",
+            "alias": "custo_sistema_fraude"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "custo_infratech",
+            "alias": "custo_infratech"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "custo_contabil_scr",
+            "alias": "custo_contabil_scr"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "despesas_pessoal",
+            "alias": "despesas_pessoal"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "despesas_gerais",
+            "alias": "despesas_gerais"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "marketing_estrategico",
+            "alias": "marketing_estrategico"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "d_e_a",
+            "alias": "d_e_a"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "custo_perdas_fraude_cartoes",
+            "alias": "custo_perdas_fraude_cartoes"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "custo_perdas_fraude_conta",
+            "alias": "custo_perdas_fraude_conta"
+          },
+          {
+            "source_type": "source",
+            "type": "FLOAT",
+            "name": "custo_perdas_fraude_emprestimos",
+            "alias": "custo_perdas_fraude_emprestimos"
+          },
+          {
+            "source_type": "source",
+            "type": "TIMESTAMP",
+            "name": "dt_atualizacao",
+            "exp": "",
+            "alias": "dt_atualizacao"
+          },
+          {
+            "source_type": "static",
+            "type": "STRING",
+            "exp": "U",
+            "alias": "op_column"
+          }
+        ],
+        "interval_type": "datetime",
+        "is_dayfirst": false,
+        "is_mapping_in_source": true,
+        "end_header": {
+          "header_row": 1
+        }
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

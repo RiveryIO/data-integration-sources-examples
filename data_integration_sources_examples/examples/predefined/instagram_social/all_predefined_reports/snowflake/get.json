@@ -1,0 +1,440 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_instagram_social_snowflake",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP predefined example: instagram_social / snowflake",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-12T11:34:56.860000Z",
+    "last_updated_at": "2026-07-12T11:34:56.860000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "instagram_social",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "instagram_social",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "extract_method": "all",
+        "account_metrics": [
+          "impressions"
+        ],
+        "required_mapping_flag": false,
+        "account_fields": [
+          "media_count"
+        ],
+        "interval_time": "dont_split",
+        "accounts": [
+          {
+            "id": "<YOUR_ID>",
+            "name": "<YOUR_NAME>"
+          }
+        ],
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "insights_account",
+        "time_period": "date_range",
+        "period": "day",
+        "utc_offset": 0
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "media_count",
+            "type": "INTEGER",
+            "alias": "media_count",
+            "mode": "NULLABLE",
+            "id": "media_count",
+            "fields": [],
+            "fieldName": "media_count"
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "id": "id",
+            "fields": [],
+            "fieldName": "id"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "switch_tables",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "connection_type": "snowflake",
+        "max_bad_records": 0,
+        "ignore_unknown_values": true,
+        "allow_jagged_rows": true,
+        "allow_quoted_new_line": true,
+        "mapping_order": [],
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "quote": "\"",
+        "delimiter": ","
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_all_medias",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_all_medias",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520130539,
+              "start_date": "2026-07-08 14:13:19.886000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_image_new_metrics",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_image_new_metrics",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1763078552740,
+              "start_date": "2025-11-14 00:02:13.985000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_account_lifetime",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_account_lifetime",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "sync_schema_back": false,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520012848,
+              "start_date": "2026-07-08 14:13:17.494000",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_account_daily",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_account_daily",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "sync_schema_back": false,
+              "interval_by": "create_time",
+              "max_batch_time": 1763078570521,
+              "start_date": "2025-11-14 00:02:37.674000",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_story_new_metrics",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_story_new_metrics",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1762905723302,
+              "start_date": "2025-11-12 00:01:45.735000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_all_medias_new_metrics",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_all_medias_new_metrics",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520173843,
+              "start_date": "2026-07-08 14:13:19.380000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_video",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_video",
+              "media_fields": [
+                "caption",
+                "comments_count",
+                "id",
+                "ig_id",
+                "like_count",
+                "media_type",
+                "permalink",
+                "owner",
+                "timestamp",
+                "username"
+              ],
+              "period": "lifetime",
+              "accounts": [
+                {
+                  "id": "<YOUR_ID>",
+                  "name": "<YOUR_NAME>"
+                }
+              ],
+              "story_metrics": [
+                "exits",
+                "impressions",
+                "reach",
+                "replies",
+                "taps_forward",
+                "taps_back"
+              ],
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "photo_video_metrics": [
+                "reach",
+                "saved"
+              ],
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "sync_schema_back": false,
+              "interval_by": "create_time",
+              "media_type": "video",
+              "start_date": "2026-07-08 14:13:17.098000",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "instagram_social",
+              "carousel_album_metrics": [
+                "carousel_album_engagement",
+                "carousel_album_impressions",
+                "carousel_album_reach",
+                "carousel_album_saved",
+                "carousel_album_video_views"
+              ],
+              "report": "insights_media",
+              "time_period": "date_range",
+              "max_batch_time": 1783520098741,
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "target_loading": "merge"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_video_new_metrics",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_video_new_metrics",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520088666,
+              "start_date": "2026-07-08 14:13:17.497000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_image",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_image",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "sync_schema_back": false,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520042125,
+              "start_date": "2026-07-08 14:13:16.731000",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "accounts",
+              "extract_method": "increment",
+              "table_name": "predefined_accounts",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520130539,
+              "start_date": "2026-07-08 14:13:19.886000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_carousel",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_carousel",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520130539,
+              "start_date": "2026-07-08 14:13:19.886000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_media_story",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_media_story",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520130539,
+              "start_date": "2026-07-08 14:13:19.886000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "insights_account_daily_with_views",
+              "extract_method": "increment",
+              "table_name": "predefined_insights_account_daily_with_views",
+              "interval_chunk_options": {},
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "create_time",
+              "max_batch_time": 1783520130539,
+              "start_date": "2026-07-08 14:13:19.886000",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

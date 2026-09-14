@@ -1,0 +1,165 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "GoogleAds_CampaignAsset_NoAggregation_Japan_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-30T17:36:46.783000Z",
+    "last_updated_at": "2026-06-30T17:36:46.783000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "accounts_ids": [
+          "<ACCOUNTS_IDS - leave accounts_ids empty to automatically discover/use all entities accessible via this connection; add specific ID(s) to restrict to particular accounts_ids(s).>"
+        ],
+        "filters": [],
+        "interval_time": "monthly",
+        "interval_size": 1,
+        "start_date": "2026-06-30 13:59:44.193000",
+        "utc_offset": 0,
+        "accounts_manual": true,
+        "required_mapping_flag": true,
+        "report": "campaign_asset",
+        "time_period": "date_range",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "selectableWith": [],
+            "type": "STRING",
+            "name": "customer.descriptive_name",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "customer.id",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "campaign.id",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "campaign.name",
+            "parent": "campaign"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "ad_group.id",
+            "parent": "ad_group"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "ad_group.name",
+            "parent": "ad_group"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "campaign_asset.field_type",
+            "parent": "campaign_asset"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.impressions",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.clicks",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.cost_micros",
+            "parent": "metrics"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "DATE",
+            "name": "segments.month",
+            "parent": "segments"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "INT32",
+            "name": "segments.year",
+            "parent": "segments"
+          }
+        ],
+        "increment_field": "segments.month"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

@@ -1,0 +1,468 @@
+{
+  "name": "MCP_v2_Intercom Bigquery v2 - Companies_river_copied",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "intercom",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "intercom",
+        "extract_method": "all",
+        "quote": "\"",
+        "required_mapping_flag": false,
+        "delimiter": ",",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_batched": true,
+        "report": "companies",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "type",
+            "type": "STRING",
+            "alias": "type",
+            "mode": "NULLABLE",
+            "cluster_key": 1,
+            "fieldName": "type",
+            "fields": [],
+            "id": "type",
+            "sort": true
+          },
+          {
+            "name": "company_id",
+            "type": "STRING",
+            "alias": "company_id",
+            "mode": "NULLABLE",
+            "fieldName": "company_id",
+            "fields": [],
+            "id": "company_id"
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "alias": "id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "id",
+            "fields": [],
+            "id": "id"
+          },
+          {
+            "name": "app_id",
+            "type": "STRING",
+            "alias": "app_id",
+            "mode": "NULLABLE",
+            "fieldName": "app_id",
+            "fields": [],
+            "id": "app_id"
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "alias": "name",
+            "mode": "NULLABLE",
+            "fieldName": "name",
+            "fields": [],
+            "sort": false,
+            "id": "name"
+          },
+          {
+            "name": "created_at",
+            "type": "TIMESTAMP",
+            "alias": "created_at",
+            "mode": "NULLABLE",
+            "fieldName": "created_at",
+            "fields": [],
+            "id": "created_at"
+          },
+          {
+            "name": "updated_at",
+            "type": "INTEGER",
+            "alias": "updated_at",
+            "mode": "NULLABLE",
+            "fieldName": "updated_at",
+            "fields": [],
+            "id": "updated_at"
+          },
+          {
+            "name": "last_request_at",
+            "type": "INTEGER",
+            "alias": "last_request_at",
+            "mode": "NULLABLE",
+            "fieldName": "last_request_at",
+            "fields": [],
+            "id": "last_request_at"
+          },
+          {
+            "name": "monthly_spend",
+            "type": "INTEGER",
+            "alias": "monthly_spend",
+            "mode": "NULLABLE",
+            "fieldName": "monthly_spend",
+            "fields": [],
+            "id": "monthly_spend"
+          },
+          {
+            "name": "session_count",
+            "type": "INTEGER",
+            "alias": "session_count",
+            "mode": "NULLABLE",
+            "fieldName": "session_count",
+            "fields": [],
+            "id": "session_count"
+          },
+          {
+            "name": "user_count",
+            "type": "INTEGER",
+            "alias": "user_count",
+            "mode": "NULLABLE",
+            "fieldName": "user_count",
+            "fields": [],
+            "id": "user_count"
+          },
+          {
+            "name": "size",
+            "type": "INTEGER",
+            "alias": "size",
+            "mode": "NULLABLE",
+            "fieldName": "size",
+            "fields": [],
+            "id": "size"
+          },
+          {
+            "name": "industry",
+            "type": "STRING",
+            "alias": "industry",
+            "mode": "NULLABLE",
+            "cluster_key": 2,
+            "fieldName": "industry",
+            "fields": [],
+            "id": "industry",
+            "sort": true
+          },
+          {
+            "name": "tags",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "tags",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 8,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "id": "tags"
+          },
+          {
+            "name": "segments",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "segments",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "id": "segments"
+          },
+          {
+            "name": "plan",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "plan",
+            "fields": [],
+            "id": "plan"
+          },
+          {
+            "name": "custom_attributes",
+            "type": "RECORD",
+            "alias": null,
+            "mode": "NULLABLE",
+            "fieldName": "custom_attributes",
+            "fields": [],
+            "id": "custom_attributes"
+          },
+          {
+            "name": "website",
+            "type": "STRING",
+            "alias": "website",
+            "mode": "NULLABLE",
+            "fieldName": "website",
+            "fields": [],
+            "id": "website"
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": "TIMESTAMP",
+        "partition_granularity": "DAY",
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [
+          "type",
+          "industry"
+        ],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "type",
+            "fields": [],
+            "alias": "type",
+            "length": 8,
+            "fieldName": "type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "company_id",
+            "fields": [],
+            "alias": "company_id",
+            "length": 64,
+            "fieldName": "company_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "id",
+            "fields": [],
+            "alias": "id",
+            "length": 32,
+            "fieldName": "id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "app_id",
+            "fields": [],
+            "alias": "app_id",
+            "length": 8,
+            "fieldName": "app_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "name",
+            "fields": [],
+            "alias": "name",
+            "length": 128,
+            "fieldName": "name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "created_at",
+            "fields": [],
+            "alias": "created_at",
+            "length": 2147483648,
+            "fieldName": "created_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "updated_at",
+            "fields": [],
+            "alias": "updated_at",
+            "length": 2147483648,
+            "fieldName": "updated_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "last_request_at",
+            "fields": [],
+            "alias": "last_request_at",
+            "length": 2147483648,
+            "fieldName": "last_request_at",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "monthly_spend",
+            "fields": [],
+            "alias": "monthly_spend",
+            "length": 8,
+            "fieldName": "monthly_spend",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "session_count",
+            "fields": [],
+            "alias": "session_count",
+            "length": 8,
+            "fieldName": "session_count",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "user_count",
+            "fields": [],
+            "alias": "user_count",
+            "length": 1,
+            "fieldName": "user_count",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "size",
+            "fields": [],
+            "alias": "size",
+            "length": 262144,
+            "fieldName": "size",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "industry",
+            "fields": [],
+            "alias": "industry",
+            "length": 256,
+            "fieldName": "industry",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "tags",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 8,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "tags",
+            "fieldName": "tags",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "segments",
+            "fields": [
+              {
+                "name": "type",
+                "fields": [],
+                "alias": "type",
+                "length": 16,
+                "fieldName": "type",
+                "mode": "NULLABLE",
+                "type": "STRING"
+              }
+            ],
+            "alias": "segments",
+            "fieldName": "segments",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "plan",
+            "fields": [],
+            "alias": "plan",
+            "fieldName": "plan",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "custom_attributes",
+            "fields": [],
+            "alias": "custom_attributes",
+            "fieldName": "custom_attributes",
+            "mode": "NULLABLE",
+            "type": "RECORD"
+          },
+          {
+            "name": "website",
+            "fields": [],
+            "alias": "website",
+            "length": 64,
+            "fieldName": "website",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ]
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

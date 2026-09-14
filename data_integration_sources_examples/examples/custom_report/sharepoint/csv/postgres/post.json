@@ -1,0 +1,251 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_SharePoint_kh_Postgres",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-08-04T08:02:55.380000Z",
+    "last_updated_at": "2026-08-04T08:02:55.380000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "sharepoint",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "sharepoint",
+        "folder_link": "<YOUR_FOLDER_LINK>",
+        "extract_method": "all",
+        "file_delimiter": "\\r\\n",
+        "sync_strategy": "merge_folder",
+        "quote": "\"",
+        "interval_type": "datetime",
+        "required_mapping_flag": false,
+        "delimiter": ",",
+        "fz_partition": "d",
+        "source_format": "CSV",
+        "interval_time": "dont_split",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [
+          {
+            "file_type": "csv",
+            "fields": [],
+            "header_row": 1,
+            "file_adjs": {},
+            "has_headers": true
+          }
+        ],
+        "file_pattern": "*.csv",
+        "is_mapping_in_source": true,
+        "gzipTypeMust": null,
+        "end_date": null,
+        "start_date": "2026-08-03 12:53:17"
+      }
+    },
+    "target": {
+      "name": "postgres_rds",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "dateid",
+            "type": "INTEGER",
+            "is_key": true,
+            "fieldName": "dateid",
+            "id": "dateid",
+            "fields": []
+          },
+          {
+            "name": "codate",
+            "type": "DATE",
+            "fields": [],
+            "fieldName": "codate",
+            "id": "codate"
+          },
+          {
+            "name": "delta",
+            "type": "FLOAT",
+            "fields": [],
+            "fieldName": "delta",
+            "id": "delta"
+          },
+          {
+            "name": "departmentname",
+            "type": "VARCHAR",
+            "fields": [],
+            "fieldName": "departmentname",
+            "id": "departmentname"
+          },
+          {
+            "name": "region",
+            "type": "VARCHAR",
+            "fields": [],
+            "fieldName": "region",
+            "id": "region"
+          },
+          {
+            "name": "industry",
+            "type": "VARCHAR",
+            "fields": [],
+            "fieldName": "industry",
+            "id": "industry"
+          },
+          {
+            "name": "datasource",
+            "type": "VARCHAR",
+            "fields": [],
+            "fieldName": "datasource",
+            "id": "datasource"
+          },
+          {
+            "name": "rundate",
+            "type": "DATE",
+            "fields": [],
+            "fieldName": "rundate",
+            "id": "rundate"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "delete_insert",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "allow_quoted_new_line": true,
+        "header": 1,
+        "max_bad_records": 0,
+        "recreate_keys": false,
+        "compression": false,
+        "analyze_tables": true,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "quote": "\"",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "fieldName": "dateid",
+            "length": 8,
+            "type": "INTEGER",
+            "name": "dateid",
+            "fields": []
+          },
+          {
+            "time_format": "%m/%d/%Y",
+            "fieldName": "codate",
+            "type": "DATE",
+            "name": "codate",
+            "fields": []
+          },
+          {
+            "fieldName": "delta",
+            "type": "FLOAT",
+            "name": "delta",
+            "fields": []
+          },
+          {
+            "fieldName": "departmentname",
+            "length": 4,
+            "type": "VARCHAR",
+            "name": "departmentname",
+            "fields": []
+          },
+          {
+            "fieldName": "region",
+            "length": 2,
+            "type": "VARCHAR",
+            "name": "region",
+            "fields": []
+          },
+          {
+            "fieldName": "industry",
+            "length": 4,
+            "type": "VARCHAR",
+            "name": "industry",
+            "fields": []
+          },
+          {
+            "fieldName": "datasource",
+            "length": 4,
+            "type": "VARCHAR",
+            "name": "datasource",
+            "fields": []
+          },
+          {
+            "time_format": "%Y-%m-%d",
+            "fieldName": "rundate",
+            "type": "DATE",
+            "name": "rundate",
+            "fields": []
+          }
+        ],
+        "start_date": 1785830613422
+      },
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "analyze_table": true
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    },
+    "schedule_retry_config": null
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

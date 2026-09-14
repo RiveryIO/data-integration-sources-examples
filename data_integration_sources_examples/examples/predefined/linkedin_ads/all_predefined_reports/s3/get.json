@@ -1,0 +1,302 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_linkedin_s3",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP predefined example: linkedin / s3",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-09T13:40:40.880000Z",
+    "last_updated_at": "2026-07-09T13:40:40.880000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "linkedin_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "linkedin",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "extract_method": "all",
+        "filter_nested_keys": true,
+        "report": "ads_statistics",
+        "accounts": [
+          {
+            "id": "<YOUR_ACCOUNT_ID>",
+            "name": "<YOUR_ACCOUNT_NAME>"
+          }
+        ]
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaign_groups_v2",
+              "extract_method": "all",
+              "table_name": "predefined_campaign_groups",
+              "max_batch_time": 1783520200131,
+              "datasource_id": "linkedin",
+              "campaigns_groups_status": [],
+              "bypass_errors": false,
+              "merge_method": "merge",
+              "required_mapping_flag": true,
+              "update_report": true,
+              "last_days": 3,
+              "sync_schema_back": false,
+              "start_date": "2021-09-14 21:21:56.685000",
+              "report": "campaign_groups",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "mode": "REQUIRED"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaigns_v2",
+              "extract_method": "all",
+              "table_name": "predefined_campaigns",
+              "datasource_id": "linkedin",
+              "bypass_errors": false,
+              "merge_method": "merge",
+              "filter_nested_keys": true,
+              "update_report": true,
+              "last_days": 3,
+              "sync_schema_back": false,
+              "max_batch_time": 1783520202539,
+              "start_date": "2021-09-14 21:21:58.106000",
+              "report": "campaigns",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "mode": "REQUIRED"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "accounts_v2",
+              "extract_method": "all",
+              "table_name": "predefined_accounts",
+              "datasource_id": "linkedin",
+              "bypass_errors": false,
+              "merge_method": "merge",
+              "filter_nested_keys": true,
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "mode": "REQUIRED"
+                }
+              },
+              "required_mapping_flag": true,
+              "update_report": true,
+              "last_days": 3,
+              "sync_schema_back": false,
+              "max_batch_time": 1783520199061,
+              "start_date": "2021-09-14 21:21:57.814000",
+              "report": "accounts",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked",
+              "accounts_status": [
+                "ACTIVE"
+              ]
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_analytics_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ad_analytics",
+              "max_batch_time": 1783520200131,
+              "datasource_id": "linkedin",
+              "campaigns_groups_status": [],
+              "bypass_errors": false,
+              "merge_method": "merge",
+              "required_mapping_flag": true,
+              "update_report": true,
+              "last_days": 3,
+              "sync_schema_back": false,
+              "start_date": "2021-09-14 21:21:56.685000",
+              "report": "campaign_groups",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "mode": "REQUIRED"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "creatives_shares_v2",
+              "extract_method": "all",
+              "table_name": "predefined_creatives_shares",
+              "max_batch_time": 1783520200131,
+              "datasource_id": "linkedin",
+              "campaigns_groups_status": [],
+              "bypass_errors": false,
+              "merge_method": "merge",
+              "required_mapping_flag": true,
+              "update_report": true,
+              "last_days": 3,
+              "sync_schema_back": false,
+              "start_date": "2021-09-14 21:21:56.685000",
+              "report": "campaign_groups",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "mode": "REQUIRED"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "creatives_posts_v2",
+              "extract_method": "all",
+              "table_name": "predefined_creatives_posts",
+              "max_batch_time": 1783520200131,
+              "datasource_id": "linkedin",
+              "campaigns_groups_status": [],
+              "bypass_errors": false,
+              "merge_method": "merge",
+              "required_mapping_flag": true,
+              "update_report": true,
+              "last_days": 3,
+              "sync_schema_back": false,
+              "start_date": "2021-09-14 21:21:56.685000",
+              "report": "campaign_groups",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "mode": "REQUIRED"
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_statistics_v2",
+              "extract_method": "all",
+              "table_name": "predefined_ad_statistics",
+              "max_batch_time": 1783520200131,
+              "datasource_id": "linkedin",
+              "campaigns_groups_status": [],
+              "bypass_errors": false,
+              "merge_method": "merge",
+              "required_mapping_flag": true,
+              "update_report": true,
+              "last_days": 3,
+              "sync_schema_back": false,
+              "start_date": "2021-09-14 21:21:56.685000",
+              "report": "campaign_groups",
+              "time_period": "date_range",
+              "target_loading": "merge",
+              "table_status": "tracked",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "mode": "REQUIRED"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

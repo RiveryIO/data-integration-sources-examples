@@ -1,0 +1,231 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "PPC Deep-dive 6_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-30T17:36:21.095000Z",
+    "last_updated_at": "2026-06-30T17:36:21.095000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "google_ads",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "accounts": [
+          "<ACCOUNTS - leave accounts empty to automatically discover/use all entities accessible via this connection; add specific entries to restrict to particular accounts. Each entry looks like: {\"id\": <ID>, \"manager_account\": <MANAGER_ACCOUNT>, \"manager_id\": <MANAGER_ID>, \"name\": <NAME>}.>"
+        ],
+        "filters": [],
+        "interval_time": "monthly",
+        "interval_size": 1,
+        "start_date": "2021-03-31 00:00:00",
+        "utc_offset": 0,
+        "accounts_manual": false,
+        "required_mapping_flag": true,
+        "report": "bidding_strategy",
+        "time_period": "date_range",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "selectableWith": [],
+            "type": "INT64",
+            "name": "customer.id",
+            "parent": "customer"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "bidding_strategy.campaign_count",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "bidding_strategy.target_cpa.cpc_bid_ceiling_micros",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "bidding_strategy.target_impression_share.location",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "bidding_strategy.id",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "bidding_strategy.name",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "bidding_strategy.type",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "bidding_strategy.target_cpa.target_cpa_micros",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "DOUBLE",
+            "name": "bidding_strategy.target_roas.target_roas",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "INT64",
+            "name": "bidding_strategy.target_spend.target_spend_micros",
+            "parent": "bidding_strategy"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.impressions",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.clicks",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "INT64",
+            "name": "metrics.cost_micros",
+            "parent": "metrics"
+          },
+          {
+            "category": "METRIC",
+            "type": "DOUBLE",
+            "name": "metrics.all_conversions",
+            "parent": "metrics"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "DATE",
+            "name": "segments.date",
+            "parent": "segments"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "DATE",
+            "name": "segments.month",
+            "parent": "segments"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "INT32",
+            "name": "segments.year",
+            "parent": "segments"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "ENUM",
+            "name": "segments.device",
+            "parent": "segments"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "ENUM",
+            "name": "segments.day_of_week",
+            "parent": "segments"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "INT32",
+            "name": "segments.hour",
+            "parent": "segments"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "STRING",
+            "name": "segments.conversion_action_name",
+            "parent": "segments"
+          },
+          {
+            "category": "SEGMENT",
+            "type": "ENUM",
+            "name": "segments.conversion_action_category",
+            "parent": "segments"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "customer.descriptive_name",
+            "parent": "customer"
+          }
+        ],
+        "increment_field": "segments.month"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

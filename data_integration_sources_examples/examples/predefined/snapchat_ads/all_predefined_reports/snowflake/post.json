@@ -1,0 +1,425 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_snapchat_ads_snowflake",
+  "metadata": {
+    "description": "MCP predefined example: snapchat_ads / snowflake"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "snapchat_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "snapchat_ads",
+        "organizations": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All Snapchat organizations on this connection, or specific ones? Leave as-is for all.",
+            "value_type": "object_list",
+            "element_shape": {
+              "id": "",
+              "name": ""
+            },
+            "default": []
+          }
+        },
+        "extract_method": "all",
+        "gzipTypeMust": null,
+        "quote": "\"",
+        "required_mapping_flag": true,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "interval_time": "dont_split",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "ad_accounts": {
+          "__input__": {
+            "kind": "all_or_subset",
+            "prompt": "All Snapchat ad accounts on this connection, or specific ones? Leave as-is for all.",
+            "value_type": "object_list",
+            "element_shape": {
+              "id": "",
+              "name": ""
+            },
+            "default": []
+          }
+        },
+        "report": "ad_stats",
+        "time_period": "date_range",
+        "include_skad_network_metrics": false,
+        "conversion_source_types": "total",
+        "start_date": "2023-03-07 00:00:00",
+        "utc_offset": 0
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "fieldName": "",
+            "id": 0
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "switch_tables",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_stats",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_stats",
+              "ad_accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Snapchat ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "default": []
+                }
+              },
+              "pivot": null,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "start_time",
+              "conversion_source_types": "total",
+              "pivot_str": "country",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "snapchat_ads",
+              "end_date": null,
+              "dim_fields": [
+                "impressions",
+                "spend",
+                "swipes",
+                "saves",
+                "shares",
+                "total_installs",
+                "quartile_1",
+                "quartile_2",
+                "quartile_3",
+                "attachment_quartile_1",
+                "attachment_quartile_2",
+                "attachment_quartile_3",
+                "attachment_total_view_time_millis",
+                "attachment_view_completion",
+                "attachment_video_views",
+                "video_views",
+                "view_completion",
+                "story_opens",
+                "story_completes",
+                "conversion_purchases",
+                "conversion_purchases_value",
+                "conversion_save",
+                "conversion_start_checkout",
+                "conversion_add_cart",
+                "conversion_view_content",
+                "conversion_add_billing",
+                "conversion_sign_ups",
+                "conversion_searches",
+                "conversion_level_completes",
+                "conversion_app_opens",
+                "conversion_page_views"
+              ],
+              "granularity": "DAY",
+              "report": "ad_stats",
+              "time_period": "previous_month_to_date",
+              "organizations": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Snapchat organizations on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "default": []
+                }
+              },
+              "max_batch_time": 1783416262629,
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "start_date": "2026-07-07 00:00:00",
+              "dimension": "GEO"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_accounts",
+              "extract_method": "all",
+              "table_name": "predefined_ad_accounts",
+              "table_status": "tracked",
+              "max_batch_time": 1783415590427,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2022-10-05 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaign_stats",
+              "extract_method": "increment",
+              "table_name": "predefined_campaign_stats",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "disable_minutes": true,
+                "disable_hourly": true,
+                "disable_yearly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "start_time",
+              "max_batch_time": 1783416127455,
+              "time_period": "previous_month_to_date",
+              "start_date": "2026-07-07 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "campaigns",
+              "extract_method": "all",
+              "table_name": "predefined_campaigns",
+              "table_status": "tracked",
+              "max_batch_time": 1783415616078,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2022-10-05 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_squads",
+              "extract_method": "all",
+              "table_name": "predefined_ad_squads",
+              "table_status": "tracked",
+              "max_batch_time": 1783415605849,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2022-10-05 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ad_squad_stats",
+              "extract_method": "increment",
+              "table_name": "predefined_ad_squad_stats",
+              "table_status": "tracked",
+              "interval_chunk_options": {
+                "disable_minutes": true,
+                "disable_hourly": true,
+                "disable_yearly": true
+              },
+              "end_date": null,
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "start_time",
+              "max_batch_time": 1783416194579,
+              "time_period": "previous_month_to_date",
+              "start_date": "2026-07-07 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "ads",
+              "extract_method": "all",
+              "table_name": "predefined_ads",
+              "table_status": "tracked",
+              "max_batch_time": 1783415622167,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2022-10-05 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "organizations",
+              "extract_method": "all",
+              "table_name": "predefined_organizations",
+              "table_status": "tracked",
+              "max_batch_time": 1783415599416,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2022-10-05 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "audience_filters",
+              "extract_method": "increment",
+              "table_name": "predefined_audience_filters",
+              "ad_accounts": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Snapchat ad accounts on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "default": []
+                }
+              },
+              "pivot": null,
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "start_time",
+              "conversion_source_types": "total",
+              "pivot_str": "country",
+              "columns": {},
+              "utc_offset": 0,
+              "datasource_id": "snapchat_ads",
+              "end_date": null,
+              "dim_fields": [
+                "impressions",
+                "spend",
+                "swipes",
+                "saves",
+                "shares",
+                "total_installs",
+                "quartile_1",
+                "quartile_2",
+                "quartile_3",
+                "attachment_quartile_1",
+                "attachment_quartile_2",
+                "attachment_quartile_3",
+                "attachment_total_view_time_millis",
+                "attachment_view_completion",
+                "attachment_video_views",
+                "video_views",
+                "view_completion",
+                "story_opens",
+                "story_completes",
+                "conversion_purchases",
+                "conversion_purchases_value",
+                "conversion_save",
+                "conversion_start_checkout",
+                "conversion_add_cart",
+                "conversion_view_content",
+                "conversion_add_billing",
+                "conversion_sign_ups",
+                "conversion_searches",
+                "conversion_level_completes",
+                "conversion_app_opens",
+                "conversion_page_views"
+              ],
+              "granularity": "DAY",
+              "report": "ad_stats",
+              "time_period": "previous_month_to_date",
+              "organizations": {
+                "__input__": {
+                  "kind": "all_or_subset",
+                  "prompt": "All Snapchat organizations on this connection, or specific ones? Leave as-is for all.",
+                  "value_type": "object_list",
+                  "element_shape": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "default": []
+                }
+              },
+              "max_batch_time": 1783416262629,
+              "interval_chunk_options": {},
+              "interval_type": "datetime",
+              "start_date": "2026-07-07 00:00:00",
+              "dimension": "GEO",
+              "report_id": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

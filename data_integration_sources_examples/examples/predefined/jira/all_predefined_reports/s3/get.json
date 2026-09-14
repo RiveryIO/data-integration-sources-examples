@@ -1,0 +1,278 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_jira_s3",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "MCP predefined example: jira / s3",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-07-09T15:33:54.375000Z",
+    "last_updated_at": "2026-07-09T15:33:54.375000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "jira",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "jira",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "is_convert_file": false,
+        "extract_method": "all",
+        "required_mapping_flag": true,
+        "report": "project",
+        "interval_time": "dont_split",
+        "keep_raw_customfields": false,
+        "time_period": "",
+        "utc_offset": 0,
+        "is_fields_description_content_string": false
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": null,
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "project_type_v2",
+              "extract_method": "all",
+              "table_name": "predefined_project_type",
+              "table_status": "tracked",
+              "max_batch_time": 1783583406814,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-09 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "project_v2",
+              "extract_method": "all",
+              "table_name": "predefined_project",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-09 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "project_category_v2",
+              "extract_method": "all",
+              "table_name": "predefined_project_category",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2025-05-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "sprint_v2",
+              "extract_method": "all",
+              "table_name": "predefined_sprint",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-09 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "issue_v2",
+              "extract_method": "increment",
+              "table_name": "predefined_issue",
+              "interval_chunk_options": {
+                "disable_daily": false,
+                "disable_minutes": true,
+                "disable_yearly": true,
+                "disable_monthly": false,
+                "disable_weekly": false,
+                "disable_hourly": true
+              },
+              "interval_type": "datetime",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "interval_by": "fields_updated",
+              "start_date": "2025-05-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "issue_fields_v2",
+              "extract_method": "all",
+              "table_name": "predefined_issue_fields",
+              "table_status": "tracked",
+              "max_batch_time": 1783583407447,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-09 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "resolution_v2",
+              "extract_method": "all",
+              "table_name": "predefined_resolution",
+              "table_status": "tracked",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-09 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "group_users_v2",
+              "extract_method": "all",
+              "table_name": "predefined_group_users",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2025-05-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "project_role_v2",
+              "extract_method": "all",
+              "table_name": "predefined_project_role",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2025-05-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "user_v2",
+              "extract_method": "all",
+              "table_name": "predefined_user",
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "start_date": "2025-05-20 00:00:00",
+              "time_period": "date_range",
+              "table_status": "tracked"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "group_v2",
+              "extract_method": "all",
+              "table_name": "predefined_group",
+              "table_status": "tracked",
+              "max_batch_time": 1783583406814,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-09 00:00:00"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "work_logs_v2",
+              "extract_method": "all",
+              "table_name": "predefined_work_logs",
+              "table_status": "tracked",
+              "max_batch_time": 1783583406814,
+              "interval_time": "dont_split",
+              "last_days": 3,
+              "time_period": "date_range",
+              "start_date": "2026-06-09 00:00:00"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": "0 0/1 1/1 * *",
+      "is_enabled": false
+    }
+  ]
+}

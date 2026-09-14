@@ -1,0 +1,342 @@
+{
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "Google Ads - Asset - Full_river_copied",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "active",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2025-02-05T19:43:21.766000Z",
+    "last_updated_at": "2026-06-30T14:33:36.392000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "google_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "google_ads_connection_copied",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "accounts": [
+          "<ACCOUNTS - leave accounts empty to automatically discover/use all entities accessible via this connection; add specific entries to restrict to particular accounts. Each entry looks like: {\"manager_account\": <MANAGER_ACCOUNT>, \"manager_id\": <MANAGER_ID>, \"id\": <ID>, \"name\": <NAME>}.>"
+        ],
+        "filters": [],
+        "connection_type": "google_ads",
+        "interval_time": "monthly",
+        "fz_partition": "d",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "interval_size": 1,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "gzipTypeMust": null,
+        "utc_offset": 0,
+        "extract_method": "all",
+        "end_date": null,
+        "quote": "\"",
+        "accounts_manual": false,
+        "required_mapping_flag": false,
+        "fz_batched": true,
+        "report": "asset",
+        "time_period": "date_range",
+        "report_field_list": [
+          {
+            "category": "ATTRIBUTE",
+            "parent": "asset",
+            "type": "INT64",
+            "name": "asset.id",
+            "selectableWith": []
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "asset.name",
+            "parent": "asset"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "asset.call_asset.phone_number",
+            "parent": "asset"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "STRING",
+            "name": "asset.call_asset.country_code",
+            "parent": "asset"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "asset.type",
+            "parent": "asset"
+          },
+          {
+            "category": "ATTRIBUTE",
+            "type": "ENUM",
+            "name": "asset.source",
+            "parent": "asset"
+          }
+        ],
+        "increment_field": null,
+        "delimiter": ","
+      }
+    },
+    "target": {
+      "name": "databricks",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "asset_resourceName",
+            "type": "STRING",
+            "alias": "asset_resourceName",
+            "mode": "NULLABLE",
+            "fieldName": "asset_resourceName",
+            "fields": [],
+            "id": "asset_resourceName"
+          },
+          {
+            "name": "asset_type",
+            "type": "STRING",
+            "alias": "asset_type",
+            "mode": "NULLABLE",
+            "fieldName": "asset_type",
+            "fields": [],
+            "id": "asset_type"
+          },
+          {
+            "name": "asset_id",
+            "type": "STRING",
+            "alias": "asset_id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "asset_id",
+            "fields": [],
+            "id": "asset_id"
+          },
+          {
+            "name": "asset_source",
+            "type": "STRING",
+            "alias": "asset_source",
+            "mode": "NULLABLE",
+            "fieldName": "asset_source",
+            "fields": [],
+            "id": "asset_source"
+          },
+          {
+            "name": "customer_id",
+            "type": "STRING",
+            "alias": "customer_id",
+            "mode": "NULLABLE",
+            "is_key": true,
+            "fieldName": "customer_id",
+            "fields": [],
+            "id": "customer_id"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "type": "STRING",
+            "alias": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "fieldName": "customer_descriptiveName",
+            "fields": [],
+            "id": "customer_descriptiveName"
+          },
+          {
+            "name": "asset_name",
+            "type": "STRING",
+            "alias": "asset_name",
+            "mode": "NULLABLE",
+            "fieldName": "asset_name",
+            "fields": [],
+            "id": "asset_name"
+          },
+          {
+            "name": "asset_callAsset_countryCode",
+            "type": "STRING",
+            "alias": "asset_callAsset_countryCode",
+            "mode": "NULLABLE",
+            "fieldName": "asset_callAsset_countryCode",
+            "fields": [],
+            "id": "asset_callAsset_countryCode"
+          },
+          {
+            "name": "asset_callAsset_phoneNumber",
+            "type": "STRING",
+            "alias": "asset_callAsset_phoneNumber",
+            "mode": "NULLABLE",
+            "fieldName": "asset_callAsset_phoneNumber",
+            "fields": [],
+            "id": "asset_callAsset_phoneNumber"
+          },
+          {
+            "name": "",
+            "type": "DATE",
+            "alias": "run_date",
+            "expression": "CURRENT_DATE",
+            "length": 256,
+            "id": "913109"
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "merge",
+      "merge_method": "merge",
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1738784773251,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "asset_resourceName",
+            "fields": [],
+            "alias": "asset_resourceName",
+            "length": 64,
+            "fieldName": "asset_resourceName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_type",
+            "fields": [],
+            "alias": "asset_type",
+            "length": 32,
+            "fieldName": "asset_type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_id",
+            "fields": [],
+            "alias": "asset_id",
+            "length": 16,
+            "fieldName": "asset_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_source",
+            "fields": [],
+            "alias": "asset_source",
+            "length": 32,
+            "fieldName": "asset_source",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "customer_id",
+            "fields": [],
+            "alias": "customer_id",
+            "length": 4294967296,
+            "fieldName": "customer_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "customer_descriptiveName",
+            "fields": [],
+            "alias": "customer_descriptiveName",
+            "length": 16,
+            "fieldName": "customer_descriptiveName",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_name",
+            "fields": [],
+            "alias": "asset_name",
+            "length": 32,
+            "fieldName": "asset_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_callAsset_countryCode",
+            "fields": [],
+            "alias": "asset_callAsset_countryCode",
+            "length": 2,
+            "fieldName": "asset_callAsset_countryCode",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "asset_callAsset_phoneNumber",
+            "fields": [],
+            "alias": "asset_callAsset_phoneNumber",
+            "length": 16,
+            "fieldName": "asset_callAsset_phoneNumber",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          }
+        ]
+      },
+      "catalog_name": "<YOUR_CATALOG_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "store_in_custom_location": null,
+      "custom_location_type": null,
+      "custom_location_path": null
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

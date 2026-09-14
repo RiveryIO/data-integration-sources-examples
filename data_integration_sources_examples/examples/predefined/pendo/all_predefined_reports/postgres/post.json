@@ -1,0 +1,513 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_predefined_pendo_postgres",
+  "metadata": {
+    "description": "MCP predefined example: pendo / postgres"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "pendo",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "predefined_report",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "pendo",
+        "extract_method": "all",
+        "quote": "\"",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "report": "accounts",
+        "gzipTypeMust": null
+      }
+    },
+    "target": {
+      "name": "postgres_rds",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "",
+            "type": "STRING",
+            "fieldName": "",
+            "id": 0
+          }
+        ],
+        "sql_dialect": null,
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": "<YOUR_TARGET_PREFIX>",
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": null,
+      "file_zone_settings": null,
+      "file_path_destination": null,
+      "additional_settings": {},
+      "schema_name": "<YOUR_SCHEMA_NAME>",
+      "analyze_table": true
+    },
+    "schemas": [
+      {
+        "name": "no_schema",
+        "tables": [
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "events",
+              "extract_method": "increment",
+              "table_name": "predefined_events",
+              "table_status": "tracked",
+              "utc_offset": 0,
+              "interval_chunk_options": {
+                "default_interval": "dont_split",
+                "disable_yearly": true
+              },
+              "end_date": null,
+              "merge_method": "switch_tables",
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "events",
+              "interval_by": "day",
+              "max_batch_time": 1783952115062,
+              "orderIndex": 2,
+              "datasource_id": "pendo",
+              "time_period": "date_range",
+              "filter_by": "all",
+              "start_date": "2026-07-13 14:14:41.416000",
+              "columns": {
+                "pageId": {
+                  "is_checked": true,
+                  "is_key": true
+                },
+                "parameters": {
+                  "is_checked": true,
+                  "is_key": true
+                },
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                },
+                "appId": {
+                  "is_checked": true,
+                  "is_key": true
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "visitors_by_accounts",
+              "extract_method": "all",
+              "table_name": "predefined_visitors_by_accounts",
+              "table_status": "tracked",
+              "max_batch_time": 1783952119192,
+              "datasource_id": "pendo",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "visitors",
+              "orderIndex": 2,
+              "time_period": "date_range",
+              "filter_by": "account_ids",
+              "start_date": "2023-03-27 00:00:00",
+              "columns": {
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "accounts",
+              "extract_method": "all",
+              "table_name": "predefined_accounts",
+              "table_status": "tracked",
+              "datasource_id": "pendo",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "max_batch_time": 1783952094522,
+              "orderIndex": 2,
+              "report": "accounts",
+              "time_period": "date_range",
+              "start_date": "2023-03-27 00:00:00",
+              "columns": {
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "features",
+              "extract_method": "all",
+              "table_name": "predefined_features",
+              "table_status": "tracked",
+              "max_batch_time": 1783952089820,
+              "datasource_id": "pendo",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "features",
+              "orderIndex": 2,
+              "time_period": "date_range",
+              "start_date": "2023-03-27 00:00:00",
+              "columns": {
+                "id": {
+                  "is_checked": true,
+                  "mode": "REQUIRED"
+                },
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "mode": "REQUIRED",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "guides",
+              "extract_method": "all",
+              "table_name": "predefined_guides",
+              "table_status": "tracked",
+              "max_batch_time": 1783952091269,
+              "datasource_id": "pendo",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "guides",
+              "orderIndex": 2,
+              "time_period": "date_range",
+              "start_date": "2023-03-27 00:00:00",
+              "columns": {
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "feature_events",
+              "extract_method": "increment",
+              "table_name": "predefined_feature_events",
+              "table_status": "tracked",
+              "utc_offset": 0,
+              "interval_chunk_options": {
+                "default_interval": "dont_split",
+                "disable_yearly": true
+              },
+              "end_date": null,
+              "merge_method": "switch_tables",
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "feature_events",
+              "interval_by": "day",
+              "max_batch_time": 1783952091960,
+              "orderIndex": 2,
+              "datasource_id": "pendo",
+              "time_period": "date_range",
+              "filter_by": "feature_ids",
+              "start_date": "2026-07-13 14:14:36.382000",
+              "columns": {
+                "properties": {
+                  "is_checked": true,
+                  "type": "STRING"
+                },
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "mode": "REQUIRED",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                },
+                "appId": {
+                  "is_checked": true,
+                  "is_key": true
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "track_events",
+              "extract_method": "increment",
+              "table_name": "predefined_track_events",
+              "filter_by": "track_ids",
+              "table_status": "tracked",
+              "merge_method": "switch_tables",
+              "interval_time": "daily",
+              "update_report": true,
+              "last_days": 3,
+              "interval_by": "day",
+              "interval_size": 1,
+              "orderIndex": 2,
+              "start_date": "2026-07-07 09:13:03.093000",
+              "columns": {
+                "parameters": {
+                  "is_checked": true,
+                  "is_key": false
+                },
+                "properties": {
+                  "is_checked": true,
+                  "is_key": false,
+                  "type": "STRING"
+                },
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              },
+              "utc_offset": 0,
+              "datasource_id": "pendo",
+              "end_date": null,
+              "report": "track_events",
+              "time_period": "date_range",
+              "max_batch_time": 1783952110169,
+              "interval_chunk_options": {
+                "default_interval": "dont_split",
+                "disable_yearly": true
+              },
+              "interval_type": "date",
+              "target_loading": "merge"
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "visitors",
+              "extract_method": "all",
+              "table_name": "predefined_visitors",
+              "table_status": "tracked",
+              "max_batch_time": 1783952118106,
+              "datasource_id": "pendo",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "visitors",
+              "orderIndex": 2,
+              "time_period": "date_range",
+              "filter_by": "all",
+              "start_date": "2023-03-27 00:00:00",
+              "columns": {
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "page_events",
+              "extract_method": "increment",
+              "table_name": "predefined_page_events",
+              "table_status": "tracked",
+              "utc_offset": 0,
+              "interval_chunk_options": {
+                "default_interval": "dont_split",
+                "disable_yearly": true
+              },
+              "end_date": null,
+              "merge_method": "switch_tables",
+              "interval_type": "date",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "page_events",
+              "interval_by": "day",
+              "max_batch_time": 1783952144135,
+              "orderIndex": 2,
+              "datasource_id": "pendo",
+              "time_period": "date_range",
+              "filter_by": "page_ids",
+              "start_date": "2026-07-13 14:14:37.637000",
+              "columns": {
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "reports",
+              "extract_method": "all",
+              "table_name": "predefined_reports",
+              "table_status": "tracked",
+              "max_batch_time": 1783415595570,
+              "datasource_id": "pendo",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "reports",
+              "orderIndex": 2,
+              "time_period": "date_range",
+              "start_date": "2023-03-27 00:00:00",
+              "columns": {
+                "pendo_instance": {
+                  "is_key": true,
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              }
+            }
+          },
+          {
+            "run_type_and_datasource": "predefined_report",
+            "details": {
+              "is_selected": true,
+              "target_table": "track_types",
+              "extract_method": "all",
+              "table_name": "predefined_track_types",
+              "table_status": "tracked",
+              "max_batch_time": 1783952097596,
+              "datasource_id": "pendo",
+              "merge_method": "switch_tables",
+              "interval_time": "dont_split",
+              "update_report": true,
+              "last_days": 3,
+              "report": "track_types",
+              "orderIndex": 2,
+              "time_period": "date_range",
+              "start_date": "2023-03-27 00:00:00",
+              "columns": {
+                "pendo_instance": {
+                  "is_expression": true,
+                  "expression": "'Wazee_Digital'",
+                  "alias": "pendo_instance",
+                  "is_checked": true,
+                  "type": "STRING",
+                  "order": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "run_timeout_seconds": 1800,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": [
+    {
+      "cron_expression": null,
+      "is_enabled": false
+    }
+  ]
+}

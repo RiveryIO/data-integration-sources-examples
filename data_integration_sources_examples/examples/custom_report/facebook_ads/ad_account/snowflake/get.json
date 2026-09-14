@@ -1,0 +1,974 @@
+{
+  "cross_id": "<RIVER_ID>",
+  "account_id": "<ACCOUNT_ID>",
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "E2E - Facebook Ads Ad Account Report__v2_example",
+  "environment_id": "<ENVIRONMENT_ID>",
+  "environment_name": "Example Environment",
+  "group_id": "<GROUP_ID>",
+  "group_name": "Global",
+  "metadata": {
+    "description": "",
+    "river_status": "disabled",
+    "current_version_id": "<VERSION_ID>",
+    "created_by": "Example User",
+    "last_updated_by": "Example User",
+    "created_at": "2026-06-08T15:10:29.203000Z",
+    "last_updated_at": "2026-06-08T15:10:29.203000Z",
+    "is_deleted": false,
+    "suspended": null,
+    "last_activated": null,
+    "last_disabled": null
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "facebook_ads",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "fb",
+        "quote": "\"",
+        "fz_partition": "d",
+        "fz_batched": true,
+        "delimiter": ",",
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "extract_method": "all",
+        "ad_account_type": "ad_accounts_ids",
+        "is_ignore_exceptions": false,
+        "utc_offset": 0,
+        "interval_time": "daily",
+        "auto_complete": true,
+        "report_columns": [],
+        "data_level": "ad_account",
+        "required_mapping_flag": false,
+        "campaigns_type": "campaigns_ids",
+        "time_resolution": "daily",
+        "report": "ad_account",
+        "time_period": "date_range",
+        "unified_attribution_setting_level": "",
+        "ads_type": "ads_ids",
+        "undefined": "daily",
+        "adsets_type": "adsets_ids",
+        "keep_deleted_records": false,
+        "extract_business_ad_accounts": false
+      }
+    },
+    "target": {
+      "name": "snowflake",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "snowflake_target_connection_copied",
+      "single_table_settings": {
+        "escape_character": null,
+        "match_keys": null,
+        "mapping": [
+          {
+            "name": "_account_id",
+            "type": "STRING",
+            "alias": "_account_id",
+            "mode": "NULLABLE",
+            "fieldName": "_account_id",
+            "fields": [],
+            "id": "_account_id"
+          },
+          {
+            "name": "_account_status",
+            "type": "INTEGER",
+            "alias": "_account_status",
+            "mode": "NULLABLE",
+            "fieldName": "_account_status",
+            "fields": [],
+            "id": "_account_status"
+          },
+          {
+            "name": "_age",
+            "type": "FLOAT",
+            "alias": "_age",
+            "mode": "NULLABLE",
+            "fieldName": "_age",
+            "fields": [],
+            "id": "_age"
+          },
+          {
+            "name": "_amount_spent",
+            "type": "STRING",
+            "alias": "_amount_spent",
+            "mode": "NULLABLE",
+            "fieldName": "_amount_spent",
+            "fields": [],
+            "id": "_amount_spent"
+          },
+          {
+            "name": "_balance",
+            "type": "STRING",
+            "alias": "_balance",
+            "mode": "NULLABLE",
+            "fieldName": "_balance",
+            "fields": [],
+            "id": "_balance"
+          },
+          {
+            "name": "_business_city",
+            "type": "STRING",
+            "alias": "_business_city",
+            "mode": "NULLABLE",
+            "fieldName": "_business_city",
+            "fields": [],
+            "id": "_business_city"
+          },
+          {
+            "name": "_business_name",
+            "type": "STRING",
+            "alias": "_business_name",
+            "mode": "NULLABLE",
+            "fieldName": "_business_name",
+            "fields": [],
+            "id": "_business_name"
+          },
+          {
+            "name": "_business_street",
+            "type": "STRING",
+            "alias": "_business_street",
+            "mode": "NULLABLE",
+            "fieldName": "_business_street",
+            "fields": [],
+            "id": "_business_street"
+          },
+          {
+            "name": "_business_street2",
+            "type": "STRING",
+            "alias": "_business_street2",
+            "mode": "NULLABLE",
+            "fieldName": "_business_street2",
+            "fields": [],
+            "id": "_business_street2"
+          },
+          {
+            "name": "_can_create_brand_lift_study",
+            "type": "BOOLEAN",
+            "alias": "_can_create_brand_lift_study",
+            "mode": "NULLABLE",
+            "fieldName": "_can_create_brand_lift_study",
+            "fields": [],
+            "id": "_can_create_brand_lift_study"
+          },
+          {
+            "name": "_capabilities",
+            "type": "STRING",
+            "alias": "_capabilities",
+            "mode": "REPEATED",
+            "fieldName": "_capabilities",
+            "fields": [],
+            "id": "_capabilities"
+          },
+          {
+            "name": "_created_time",
+            "type": "STRING",
+            "alias": "_created_time",
+            "mode": "NULLABLE",
+            "fieldName": "_created_time",
+            "fields": [],
+            "id": "_created_time"
+          },
+          {
+            "name": "_currency",
+            "type": "STRING",
+            "alias": "_currency",
+            "mode": "NULLABLE",
+            "fieldName": "_currency",
+            "fields": [],
+            "id": "_currency"
+          },
+          {
+            "name": "_disable_reason",
+            "type": "INTEGER",
+            "alias": "_disable_reason",
+            "mode": "NULLABLE",
+            "fieldName": "_disable_reason",
+            "fields": [],
+            "id": "_disable_reason"
+          },
+          {
+            "name": "_has_migrated_permissions",
+            "type": "BOOLEAN",
+            "alias": "_has_migrated_permissions",
+            "mode": "NULLABLE",
+            "fieldName": "_has_migrated_permissions",
+            "fields": [],
+            "id": "_has_migrated_permissions"
+          },
+          {
+            "name": "_id",
+            "type": "STRING",
+            "alias": "_id",
+            "mode": "NULLABLE",
+            "fieldName": "_id",
+            "fields": [],
+            "id": "_id"
+          },
+          {
+            "name": "_is_attribution_spec_system_default",
+            "type": "BOOLEAN",
+            "alias": "_is_attribution_spec_system_default",
+            "mode": "NULLABLE",
+            "fieldName": "_is_attribution_spec_system_default",
+            "fields": [],
+            "id": "_is_attribution_spec_system_default"
+          },
+          {
+            "name": "_is_direct_deals_enabled",
+            "type": "BOOLEAN",
+            "alias": "_is_direct_deals_enabled",
+            "mode": "NULLABLE",
+            "fieldName": "_is_direct_deals_enabled",
+            "fields": [],
+            "id": "_is_direct_deals_enabled"
+          },
+          {
+            "name": "_is_in_3ds_authorization_enabled_market",
+            "type": "BOOLEAN",
+            "alias": "_is_in_3ds_authorization_enabled_market",
+            "mode": "NULLABLE",
+            "fieldName": "_is_in_3ds_authorization_enabled_market",
+            "fields": [],
+            "id": "_is_in_3ds_authorization_enabled_market"
+          },
+          {
+            "name": "_is_notifications_enabled",
+            "type": "BOOLEAN",
+            "alias": "_is_notifications_enabled",
+            "mode": "NULLABLE",
+            "fieldName": "_is_notifications_enabled",
+            "fields": [],
+            "id": "_is_notifications_enabled"
+          },
+          {
+            "name": "_is_personal",
+            "type": "INTEGER",
+            "alias": "_is_personal",
+            "mode": "NULLABLE",
+            "fieldName": "_is_personal",
+            "fields": [],
+            "id": "_is_personal"
+          },
+          {
+            "name": "_is_prepay_account",
+            "type": "BOOLEAN",
+            "alias": "_is_prepay_account",
+            "mode": "NULLABLE",
+            "fieldName": "_is_prepay_account",
+            "fields": [],
+            "id": "_is_prepay_account"
+          },
+          {
+            "name": "_is_tax_id_required",
+            "type": "BOOLEAN",
+            "alias": "_is_tax_id_required",
+            "mode": "NULLABLE",
+            "fieldName": "_is_tax_id_required",
+            "fields": [],
+            "id": "_is_tax_id_required"
+          },
+          {
+            "name": "_min_campaign_group_spend_cap",
+            "type": "STRING",
+            "alias": "_min_campaign_group_spend_cap",
+            "mode": "NULLABLE",
+            "fieldName": "_min_campaign_group_spend_cap",
+            "fields": [],
+            "id": "_min_campaign_group_spend_cap"
+          },
+          {
+            "name": "_min_daily_budget",
+            "type": "INTEGER",
+            "alias": "_min_daily_budget",
+            "mode": "NULLABLE",
+            "fieldName": "_min_daily_budget",
+            "fields": [],
+            "id": "_min_daily_budget"
+          },
+          {
+            "name": "_offsite_pixels_tos_accepted",
+            "type": "BOOLEAN",
+            "alias": "_offsite_pixels_tos_accepted",
+            "mode": "NULLABLE",
+            "fieldName": "_offsite_pixels_tos_accepted",
+            "fields": [],
+            "id": "_offsite_pixels_tos_accepted"
+          },
+          {
+            "name": "_owner",
+            "type": "STRING",
+            "alias": "_owner",
+            "mode": "NULLABLE",
+            "fieldName": "_owner",
+            "fields": [],
+            "id": "_owner"
+          },
+          {
+            "name": "_spend_cap",
+            "type": "STRING",
+            "alias": "_spend_cap",
+            "mode": "NULLABLE",
+            "fieldName": "_spend_cap",
+            "fields": [],
+            "id": "_spend_cap"
+          },
+          {
+            "name": "_tax_id_status",
+            "type": "INTEGER",
+            "alias": "_tax_id_status",
+            "mode": "NULLABLE",
+            "fieldName": "_tax_id_status",
+            "fields": [],
+            "id": "_tax_id_status"
+          },
+          {
+            "name": "_tax_id_type",
+            "type": "STRING",
+            "alias": "_tax_id_type",
+            "mode": "NULLABLE",
+            "fieldName": "_tax_id_type",
+            "fields": [],
+            "id": "_tax_id_type"
+          },
+          {
+            "name": "_timezone_id",
+            "type": "INTEGER",
+            "alias": "_timezone_id",
+            "mode": "NULLABLE",
+            "fieldName": "_timezone_id",
+            "fields": [],
+            "id": "_timezone_id"
+          },
+          {
+            "name": "_timezone_name",
+            "type": "STRING",
+            "alias": "_timezone_name",
+            "mode": "NULLABLE",
+            "fieldName": "_timezone_name",
+            "fields": [],
+            "id": "_timezone_name"
+          },
+          {
+            "name": "_timezone_offset_hours_utc",
+            "type": "INTEGER",
+            "alias": "_timezone_offset_hours_utc",
+            "mode": "NULLABLE",
+            "fieldName": "_timezone_offset_hours_utc",
+            "fields": [],
+            "id": "_timezone_offset_hours_utc"
+          },
+          {
+            "name": "_tos_accepted",
+            "type": "VARIANT",
+            "alias": "_tos_accepted",
+            "mode": "NULLABLE",
+            "fieldName": "_tos_accepted",
+            "fields": [
+              {
+                "name": "_web_custom_audience_tos",
+                "fields": [],
+                "alias": "_web_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_web_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "_custom_audience_tos",
+                "fields": [],
+                "alias": "_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "_value_based_custom_audience_tos",
+                "fields": [],
+                "alias": "_value_based_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_value_based_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "id": "_tos_accepted"
+          },
+          {
+            "name": "_user_tasks",
+            "type": "STRING",
+            "alias": "_user_tasks",
+            "mode": "REPEATED",
+            "fieldName": "_user_tasks",
+            "fields": [],
+            "id": "_user_tasks"
+          },
+          {
+            "name": "_user_tos_accepted",
+            "type": "VARIANT",
+            "alias": "_user_tos_accepted",
+            "mode": "NULLABLE",
+            "fieldName": "_user_tos_accepted",
+            "fields": [
+              {
+                "name": "_custom_audience_tos",
+                "fields": [],
+                "alias": "_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "_value_based_custom_audience_tos",
+                "fields": [],
+                "alias": "_value_based_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_value_based_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "id": "_user_tos_accepted"
+          },
+          {
+            "name": "_users",
+            "type": "VARIANT",
+            "alias": "_users",
+            "mode": "NULLABLE",
+            "fieldName": "_users",
+            "fields": [
+              {
+                "name": "_data",
+                "fields": [],
+                "alias": "_data",
+                "length": 128,
+                "fieldName": "_data",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "id": "_users"
+          },
+          {
+            "name": "_account_name",
+            "type": "STRING",
+            "alias": "_account_name",
+            "mode": "NULLABLE",
+            "fieldName": "_account_name",
+            "fields": [],
+            "id": "_account_name"
+          },
+          {
+            "name": "_ios_fourteen_campaign_limits_campaign_group_limit",
+            "type": "INTEGER",
+            "alias": "_ios_fourteen_campaign_limits_campaign_group_limit",
+            "mode": "NULLABLE",
+            "fieldName": "_ios_fourteen_campaign_limits_campaign_group_limit",
+            "fields": [],
+            "id": "_ios_fourteen_campaign_limits_campaign_group_limit"
+          },
+          {
+            "name": "_ios_fourteen_campaign_limits_campaign_limit",
+            "type": "INTEGER",
+            "alias": "_ios_fourteen_campaign_limits_campaign_limit",
+            "mode": "NULLABLE",
+            "fieldName": "_ios_fourteen_campaign_limits_campaign_limit",
+            "fields": [],
+            "id": "_ios_fourteen_campaign_limits_campaign_limit"
+          }
+        ],
+        "sql_dialect": "standard",
+        "split_tables": "no",
+        "split_data": null,
+        "split_interval": null,
+        "partition_type": null,
+        "partition_granularity": null,
+        "distribution_method": null
+      },
+      "table_name": "<YOUR_TABLE_NAME>",
+      "target_prefix": null,
+      "is_ordered_merge_key": null,
+      "order_expression": null,
+      "loading_method": "overwrite",
+      "merge_method": "switch_tables",
+      "file_zone_settings": {
+        "path": "<YOUR_PATH>",
+        "bucket_name": "",
+        "partitioned_kind": "by_day",
+        "fz_loading_mode": "auto-period"
+      },
+      "file_path_destination": null,
+      "additional_settings": {
+        "datasource_id": "snowflake",
+        "use_rivery_metadata": false,
+        "number_of_errors_allowed": 0,
+        "allow_jagged_rows": true,
+        "strip_outer_array": true,
+        "skip_loaded_files": false,
+        "header": 1,
+        "max_bad_records": 0,
+        "allow_quoted_new_line": true,
+        "dataset_id": "<YOUR_DATASET_ID>",
+        "compression": false,
+        "sync_schema_back": false,
+        "source_format": "NEWLINE_DELIMITED_JSON",
+        "fz_path": "<YOUR_FZ_PATH>",
+        "start_date": 1780925662156,
+        "quote": "\"",
+        "csvTypeMust": "json",
+        "fz_batched": true,
+        "mapping_order": [],
+        "ignore_unknown_values": true,
+        "delimiter": ",",
+        "source_mapping": [
+          {
+            "name": "_account_id",
+            "fields": [],
+            "alias": "_account_id",
+            "length": 16,
+            "fieldName": "_account_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_account_status",
+            "fields": [],
+            "alias": "_account_status",
+            "length": 1,
+            "fieldName": "_account_status",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "_age",
+            "fields": [],
+            "alias": "_age",
+            "length": 16,
+            "fieldName": "_age",
+            "mode": "NULLABLE",
+            "type": "FLOAT"
+          },
+          {
+            "name": "_amount_spent",
+            "fields": [],
+            "alias": "_amount_spent",
+            "length": 1,
+            "fieldName": "_amount_spent",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_balance",
+            "fields": [],
+            "alias": "_balance",
+            "length": 1,
+            "fieldName": "_balance",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_business_city",
+            "fields": [],
+            "alias": "_business_city",
+            "length": 8,
+            "fieldName": "_business_city",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_business_name",
+            "fields": [],
+            "alias": "_business_name",
+            "length": 8,
+            "fieldName": "_business_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_business_street",
+            "fields": [],
+            "alias": "_business_street",
+            "length": 8,
+            "fieldName": "_business_street",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_business_street2",
+            "fields": [],
+            "alias": "_business_street2",
+            "length": 8,
+            "fieldName": "_business_street2",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_can_create_brand_lift_study",
+            "fields": [],
+            "alias": "_can_create_brand_lift_study",
+            "length": 8,
+            "fieldName": "_can_create_brand_lift_study",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_capabilities",
+            "fields": [],
+            "alias": "_capabilities",
+            "length": 8192,
+            "fieldName": "_capabilities",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "_created_time",
+            "fields": [],
+            "alias": "_created_time",
+            "length": 32,
+            "fieldName": "_created_time",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_currency",
+            "fields": [],
+            "alias": "_currency",
+            "length": 4,
+            "fieldName": "_currency",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_disable_reason",
+            "fields": [],
+            "alias": "_disable_reason",
+            "length": 8,
+            "fieldName": "_disable_reason",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "_has_migrated_permissions",
+            "fields": [],
+            "alias": "_has_migrated_permissions",
+            "length": 1,
+            "fieldName": "_has_migrated_permissions",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_id",
+            "fields": [],
+            "alias": "_id",
+            "length": 32,
+            "fieldName": "_id",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_is_attribution_spec_system_default",
+            "fields": [],
+            "alias": "_is_attribution_spec_system_default",
+            "length": 1,
+            "fieldName": "_is_attribution_spec_system_default",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_is_direct_deals_enabled",
+            "fields": [],
+            "alias": "_is_direct_deals_enabled",
+            "length": 8,
+            "fieldName": "_is_direct_deals_enabled",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_is_in_3ds_authorization_enabled_market",
+            "fields": [],
+            "alias": "_is_in_3ds_authorization_enabled_market",
+            "length": 8,
+            "fieldName": "_is_in_3ds_authorization_enabled_market",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_is_notifications_enabled",
+            "fields": [],
+            "alias": "_is_notifications_enabled",
+            "length": 1,
+            "fieldName": "_is_notifications_enabled",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_is_personal",
+            "fields": [],
+            "alias": "_is_personal",
+            "length": 8,
+            "fieldName": "_is_personal",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "_is_prepay_account",
+            "fields": [],
+            "alias": "_is_prepay_account",
+            "length": 8,
+            "fieldName": "_is_prepay_account",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_is_tax_id_required",
+            "fields": [],
+            "alias": "_is_tax_id_required",
+            "length": 8,
+            "fieldName": "_is_tax_id_required",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_min_campaign_group_spend_cap",
+            "fields": [],
+            "alias": "_min_campaign_group_spend_cap",
+            "length": 8,
+            "fieldName": "_min_campaign_group_spend_cap",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_min_daily_budget",
+            "fields": [],
+            "alias": "_min_daily_budget",
+            "length": 512,
+            "fieldName": "_min_daily_budget",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "_offsite_pixels_tos_accepted",
+            "fields": [],
+            "alias": "_offsite_pixels_tos_accepted",
+            "length": 1,
+            "fieldName": "_offsite_pixels_tos_accepted",
+            "mode": "NULLABLE",
+            "type": "BOOLEAN"
+          },
+          {
+            "name": "_owner",
+            "fields": [],
+            "alias": "_owner",
+            "length": 16,
+            "fieldName": "_owner",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_spend_cap",
+            "fields": [],
+            "alias": "_spend_cap",
+            "length": 1,
+            "fieldName": "_spend_cap",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_tax_id_status",
+            "fields": [],
+            "alias": "_tax_id_status",
+            "length": 8,
+            "fieldName": "_tax_id_status",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "_tax_id_type",
+            "fields": [],
+            "alias": "_tax_id_type",
+            "length": 1,
+            "fieldName": "_tax_id_type",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_timezone_id",
+            "fields": [],
+            "alias": "_timezone_id",
+            "length": 128,
+            "fieldName": "_timezone_id",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "_timezone_name",
+            "fields": [],
+            "alias": "_timezone_name",
+            "length": 16,
+            "fieldName": "_timezone_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_timezone_offset_hours_utc",
+            "fields": [],
+            "alias": "_timezone_offset_hours_utc",
+            "length": 4,
+            "fieldName": "_timezone_offset_hours_utc",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "_tos_accepted",
+            "fields": [
+              {
+                "name": "_web_custom_audience_tos",
+                "fields": [],
+                "alias": "_web_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_web_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "_custom_audience_tos",
+                "fields": [],
+                "alias": "_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "_value_based_custom_audience_tos",
+                "fields": [],
+                "alias": "_value_based_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_value_based_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "alias": "_tos_accepted",
+            "fieldName": "_tos_accepted",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "_user_tasks",
+            "fields": [],
+            "alias": "_user_tasks",
+            "length": 64,
+            "fieldName": "_user_tasks",
+            "mode": "REPEATED",
+            "type": "STRING"
+          },
+          {
+            "name": "_user_tos_accepted",
+            "fields": [
+              {
+                "name": "_custom_audience_tos",
+                "fields": [],
+                "alias": "_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              },
+              {
+                "name": "_value_based_custom_audience_tos",
+                "fields": [],
+                "alias": "_value_based_custom_audience_tos",
+                "length": 1,
+                "fieldName": "_value_based_custom_audience_tos",
+                "mode": "NULLABLE",
+                "type": "INTEGER"
+              }
+            ],
+            "alias": "_user_tos_accepted",
+            "fieldName": "_user_tos_accepted",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "_users",
+            "fields": [
+              {
+                "name": "_data",
+                "fields": [],
+                "alias": "_data",
+                "length": 128,
+                "fieldName": "_data",
+                "mode": "REPEATED",
+                "type": "STRING"
+              }
+            ],
+            "alias": "_users",
+            "fieldName": "_users",
+            "mode": "NULLABLE",
+            "type": "VARIANT"
+          },
+          {
+            "name": "_account_name",
+            "fields": [],
+            "alias": "_account_name",
+            "length": 32,
+            "fieldName": "_account_name",
+            "mode": "NULLABLE",
+            "type": "STRING"
+          },
+          {
+            "name": "_ios_fourteen_campaign_limits_campaign_group_limit",
+            "fields": [],
+            "alias": "_ios_fourteen_campaign_limits_campaign_group_limit",
+            "length": 16,
+            "fieldName": "_ios_fourteen_campaign_limits_campaign_group_limit",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          },
+          {
+            "name": "_ios_fourteen_campaign_limits_campaign_limit",
+            "fields": [],
+            "alias": "_ios_fourteen_campaign_limits_campaign_limit",
+            "length": 8,
+            "fieldName": "_ios_fourteen_campaign_limits_campaign_limit",
+            "mode": "NULLABLE",
+            "type": "INTEGER"
+          }
+        ],
+        "connection_type": "snowflake"
+      },
+      "database_name": "<YOUR_DATABASE_NAME>",
+      "schema_name": "<YOUR_SCHEMA_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{Mail_Alert_Group}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{Mail_Alert_Group}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{Mail_Alert_Group}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}

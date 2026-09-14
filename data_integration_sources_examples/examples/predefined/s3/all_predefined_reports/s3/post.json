@@ -1,0 +1,89 @@
+{
+  "kind": "main_river",
+  "type": "source_to_target",
+  "name": "MCP_v2_s3_s3",
+  "group_id": "<GROUP_ID>",
+  "metadata": {
+    "description": "",
+    "river_status": "active"
+  },
+  "properties": {
+    "properties_type": "source_to_target",
+    "source": {
+      "name": "s3",
+      "connection_id": "<SOURCE_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "run_type": "regular",
+      "cdc_settings": null,
+      "additional_settings": {
+        "connection_type": "aws",
+        "convert_file_type": "parquet",
+        "extract_method": "all",
+        "end_date": null,
+        "quote": "\"",
+        "start_date": "2025-11-20 08:58:34.770000",
+        "interval_type": "datetime",
+        "interval_time": "dont_split",
+        "file_pattern": "*test.json*",
+        "fz_partition": "d",
+        "delimiter": ",",
+        "fz_batched": true,
+        "fz_path": "<YOUR_FZ_PATH>",
+        "filters": [
+          {
+            "file_adjs": {},
+            "file_type": "json",
+            "fields": [],
+            "csv_details": {
+              "quotechar": "\"",
+              "delimiter": ","
+            },
+            "is_compressed": false,
+            "required_tabs": 1,
+            "header_row": 1,
+            "has_headers": true
+          }
+        ],
+        "copied_files": "remain_original",
+        "bucket": "<YOUR_S3_BUCKET>",
+        "gzipTypeMust": null,
+        "file_path": "<YOUR_FILE_PATH>",
+        "is_convert_file": true,
+        "source_format": "NEWLINE_DELIMITED_JSON"
+      }
+    },
+    "target": {
+      "name": "s3",
+      "connection_id": "<TARGET_CONNECTION_ID>",
+      "connection_name": "<YOUR_CONNECTION_NAME>",
+      "single_table_settings": null,
+      "path": "<YOUR_PATH>",
+      "partitioned_kind": "by_day",
+      "fz_loading_mode": "auto-period",
+      "convert_file_type": "parquet",
+      "bucket_name": "<YOUR_BUCKET_NAME>"
+    },
+    "schemas": []
+  },
+  "settings": {
+    "run_timeout_seconds": null,
+    "notification": {
+      "warning": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "failure": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": null
+      },
+      "run_threshold": {
+        "email": "{DEFAULT_EMAIL_GROUP}",
+        "is_enabled": false,
+        "execution_time_limit_seconds": 0
+      }
+    }
+  },
+  "schedulers": []
+}
